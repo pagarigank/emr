@@ -1,0 +1,728 @@
+            'scheduled_date' => $this->or_scheduled_date,
+            'start_time' => $this->or_start_time ?: null,
+            'end_time' => $this->or_end_time ?: null,
+            'pre_op_notes' => $this->or_pre_op_notes ?: null,
+            'intra_op_notes' => $this->or_intra_op_notes ?: null,
+            'post_op_notes' => $this->or_post_op_notes ?: null,
+            'status' => 'Scheduled',
+            'is_active' => true,
+            'history' => 1,
+            'created_by' => $uid,
+            'created_date' => $now,
+            'updated_by' => $uid,
+            'updated_date' => $now,
+        ]);
+
+        $this->closeOrScheduleModal();
+        $this->dispatch('toast', type: 'success', message: 'OR schedule created successfully.');
+    }
+
+    private function generateOrScheduleCode(int $tid): string
+    {
+        $num = (OrSchedule::withoutGlobalScopes()->where('tenant_id', $tid)->max('id') ?? 0) + 1;
+        return 'ORS-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+    }
+
+    private function resetOrScheduleForm(): void
+    {
+        $this->reset([
+            'or_room_id', 'or_surgeon_id', 'or_anesthesiologist_id',
+            'or_procedure_type', 'or_procedure_description',
+            'or_scheduled_date', 'or_start_time', 'or_end_time',
+            'or_pre_op_notes', 'or_intra_op_notes', 'or_post_op_notes',
+        ]);
+    }
+
+    public function closeOrScheduleModal(): void
+    {
+        $this->showOrScheduleModal = false;
+        $this->resetOrScheduleForm();
+    }
+
+    // ——— Order Refresh ———
+    public function refreshOrders(): void
+    {
+        if ($this->treatingId === null) return;
+        $this->dispatch('$refresh');
+    }
+
+    // ——— Inline Order Status Updates ———
+    public function updateLabItemStatus(int $itemId, string $status): void
+    {
+        $uid = $this->currentUserId();
+        $item = LabRequestItem::findOrFail($itemId);
+        $item->update([
+            'status' => $status,
+            'updated_by' => $uid,
+            'updated_date' => now(),
+        ]);
+
+        $allStatuses = $item->labRequest->items->pluck('status')->unique()->values();
+        $parentStatus = match (true) {
+            $allStatuses->every(fn ($s) => $s === 'Completed') => 'Completed',
+            $allStatuses->contains('Processing') || $allStatuses->contains('Collected') => 'Processing',
+            $allStatuses->contains('Cancelled') && $allStatuses->count() === 1 => 'Cancelled',
+            default => 'Pending',
+        };
+        $item->labRequest->update(['status' => $parentStatus, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $this->dispatch('toast', type: 'success', message: 'Lab item status updated.');
+    }
+
+    public function cancelLabRequest(int $requestId): void
+    {
+        $uid = $this->currentUserId();
+        $now = now();
+        LabRequest::findOrFail($requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        LabRequestItem::where('lab_request_id', $requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        $this->dispatch('toast', type: 'success', message: 'Lab request cancelled.');
+    }
+
+    public function updateCsrItemStatus(int $itemId, string $status): void
+    {
+        $uid = $this->currentUserId();
+        $item = CsrRequestItem::findOrFail($itemId);
+        $item->update(['status' => $status, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $allStatuses = $item->csrRequest->items->pluck('status')->unique()->values();
+        $parentStatus = match (true) {
+            $allStatuses->every(fn ($s) => $s === 'Complete') => 'Complete',
+            $allStatuses->contains('Approved') || $allStatuses->contains('Partial') => 'Partial',
+            $allStatuses->contains('Cancelled') && $allStatuses->count() === 1 => 'Cancelled',
+            default => 'Pending',
+        };
+        $item->csrRequest->update(['status' => $parentStatus, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $this->dispatch('toast', type: 'success', message: 'CSR item status updated.');
+    }
+
+    public function cancelCsrRequest(int $requestId): void
+    {
+        $uid = $this->currentUserId();
+        $now = now();
+        CsrRequest::findOrFail($requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        CsrRequestItem::where('csr_request_id', $requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        $this->dispatch('toast', type: 'success', message: 'CSR request cancelled.');
+    }
+
+    public function updateRadiologyItemStatus(int $itemId, string $status): void
+    {
+        $uid = $this->currentUserId();
+        $item = RadiologyRequestItem::findOrFail($itemId);
+        $item->update(['status' => $status, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $allStatuses = $item->radiologyRequest->items->pluck('status')->unique()->values();
+        $parentStatus = match (true) {
+            $allStatuses->every(fn ($s) => $s === 'Complete') => 'Complete',
+            $allStatuses->contains('Approved') || $allStatuses->contains('Partial') => 'Partial',
+            $allStatuses->contains('Cancelled') && $allStatuses->count() === 1 => 'Cancelled',
+            default => 'Pending',
+        };
+        $item->radiologyRequest->update(['status' => $parentStatus, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $this->dispatch('toast', type: 'success', message: 'Radiology item status updated.');
+    }
+
+    public function cancelRadiologyRequest(int $requestId): void
+    {
+        $uid = $this->currentUserId();
+        $now = now();
+        RadiologyRequest::findOrFail($requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        RadiologyRequestItem::where('radiology_request_id', $requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        $this->dispatch('toast', type: 'success', message: 'Radiology request cancelled.');
+    }
+
+    public function updatePharmacyItemStatus(int $itemId, string $status): void
+    {
+        $uid = $this->currentUserId();
+        $item = PharmacyRequestItem::findOrFail($itemId);
+        $item->update(['status' => $status, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $allStatuses = $item->pharmacyRequest->items->pluck('status')->unique()->values();
+        $parentStatus = match (true) {
+            $allStatuses->every(fn ($s) => $s === 'Complete') => 'Complete',
+            $allStatuses->contains('Approved') || $allStatuses->contains('Partial') => 'Partial',
+            $allStatuses->contains('Cancelled') && $allStatuses->count() === 1 => 'Cancelled',
+            default => 'Pending',
+        };
+        $item->pharmacyRequest->update(['status' => $parentStatus, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $this->dispatch('toast', type: 'success', message: 'Pharmacy item status updated.');
+    }
+
+    public function cancelPharmacyRequest(int $requestId): void
+    {
+        $uid = $this->currentUserId();
+        $now = now();
+        PharmacyRequest::findOrFail($requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        PharmacyRequestItem::where('pharmacy_request_id', $requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        $this->dispatch('toast', type: 'success', message: 'Pharmacy request cancelled.');
+    }
+
+    public function updateProcedureItemStatus(int $itemId, string $status): void
+    {
+        $uid = $this->currentUserId();
+        $item = ProcedureRequestItem::findOrFail($itemId);
+        $item->update(['status' => $status, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $allStatuses = $item->procedureRequest->items->pluck('status')->unique()->values();
+        $parentStatus = match (true) {
+            $allStatuses->every(fn ($s) => $s === 'Complete') => 'Complete',
+            $allStatuses->contains('Approved') || $allStatuses->contains('Partial') => 'Partial',
+            $allStatuses->contains('Cancelled') && $allStatuses->count() === 1 => 'Cancelled',
+            default => 'Pending',
+        };
+        $item->procedureRequest->update(['status' => $parentStatus, 'updated_by' => $uid, 'updated_date' => now()]);
+
+        $this->dispatch('toast', type: 'success', message: 'Procedure item status updated.');
+    }
+
+    public function cancelProcedureRequest(int $requestId): void
+    {
+        $uid = $this->currentUserId();
+        $now = now();
+        ProcedureRequest::findOrFail($requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        ProcedureRequestItem::where('procedure_request_id', $requestId)->update(['status' => 'Cancelled', 'updated_by' => $uid, 'updated_date' => $now]);
+        $this->dispatch('toast', type: 'success', message: 'Procedure request cancelled.');
+    }
+
+    // ——— Order Requests ———
+    public function openOrderLab(): void
+    {
+        $this->orderLabSelection = [];
+        $this->orderLabPriority = 'Routine';
+        $this->orderLabNotes = '';
+        $this->showOrderLabModal = true;
+    }
+
+    public function openOrderCsr(): void
+    {
+        $this->orderCsrSelection = [];
+        $this->orderCsrQuantities = [];
+        $this->orderCsrNotes = '';
+        $this->showOrderCsrModal = true;
+    }
+
+    public function openOrderRadiology(): void
+    {
+        $this->orderRadiologySelection = [];
+        $this->orderRadiologyPriority = 'Routine';
+        $this->orderRadiologyNotes = '';
+        $this->showOrderRadiologyModal = true;
+    }
+
+    public function openOrderPharmacy(): void
+    {
+        $this->orderPharmacySelection = [];
+        $this->orderPharmacyQuantities = [];
+        $this->orderPharmacyFrequencies = [];
+        $this->orderPharmacyRoutes = [];
+        $this->orderPharmacyPriority = 'Routine';
+        $this->orderPharmacyNotes = '';
+        $this->showOrderPharmacyModal = true;
+    }
+
+    public function openOrderProcedure(): void
+    {
+        $this->orderProcedureSelection = [];
+        $this->orderProcedureQuantities = [];
+        $this->orderProcedureNotes = '';
+        $this->showOrderProcedureModal = true;
+    }
+
+    public function requestLabOrder(): void
+    {
+        $this->validate([
+            'orderLabSelection' => ['required', 'array', 'min:1'],
+            'orderLabSelection.*' => ['required', 'integer'],
+            'orderLabPriority' => ['required', 'string', 'in:Routine,Urgent,STAT'],
+            'orderLabNotes' => ['nullable', 'string', 'max:2000'],
+        ], ['orderLabSelection.required' => 'Select at least one test or panel.']);
+
+        $adm = ObConsultation::findOrFail($this->treatingId);
+        $tid = $this->currentTenantId();
+        $uid = $this->currentUserId();
+        $now = now();
+
+        $code = $this->generateLabRequestCode($tid);
+        $total = 0;
+        $items = [];
+
+        foreach ($this->orderLabSelection as $id) {
+            $test = LabTest::find($id);
+            if ($test) {
+                $charge = (float) ($test->standard_charge ?? 0);
+                $items[] = [
+                    'item_type' => 'Test',
+                    'lab_test_id' => $test->id,
+                    'test_name' => $test->name,
+                    'charge_amount' => $charge,
+                ];
+                $total += $charge;
+            }
+        }
+
+        $request = LabRequest::create([
+            'tenant_id' => $tid,
+            'ob_consultation_id' => $adm->id,
+            'request_code' => $code,
+            'patient_id' => $adm->patient_id,
+            'requesting_department_id' => $this->obDepartmentId(),
+            'requesting_doctor_id' => $adm->attending_physician_id,
+            'priority' => $this->orderLabPriority,
+            'request_notes' => 'Ordered from OB Consultation' . ($this->orderLabNotes ? "\n\n" . $this->orderLabNotes : ''),
+            'status' => 'Pending',
+            'billing_status' => 'Pending',
+            'total_charge' => $total,
+            'is_active' => true,
+            'history' => 1,
+            'created_by' => $uid,
+            'created_date' => $now,
+            'updated_by' => $uid,
+            'updated_date' => $now,
+        ]);
+
+        foreach ($items as $li) {
+            $request->items()->create(array_merge($li, [
+                'status' => 'Pending', 'is_active' => true, 'history' => 1,
+                'created_by' => $uid, 'created_date' => $now,
+                'updated_by' => $uid, 'updated_date' => $now,
+            ]));
+        }
+
+        $this->showOrderLabModal = false;
+        $this->orderLabSelection = [];
+        $this->orderLabNotes = '';
+        $this->dispatch('toast', type: 'success', message: "Lab request {$code} created.");
+    }
+
+    public function requestCsrOrder(): void
+    {
+        $this->validate([
+            'orderCsrSelection' => ['required', 'array', 'min:1'],
+            'orderCsrSelection.*' => ['required', 'integer'],
+            'orderCsrQuantities' => ['nullable', 'array'],
+            'orderCsrNotes' => ['nullable', 'string', 'max:2000'],
+        ], ['orderCsrSelection.required' => 'Select at least one supply item.']);
+
+        $adm = ObConsultation::findOrFail($this->treatingId);
+        $tid = $this->currentTenantId();
+        $uid = $this->currentUserId();
+        $now = now();
+
+        $code = $this->generateCsrRequestCode($tid);
+        $total = 0;
+        $items = [];
+
+        foreach ($this->orderCsrSelection as $id) {
+            $item = Item::find($id);
+            if ($item) {
+                $qty = max(1, (int) ($this->orderCsrQuantities[$id] ?? 1));
+                $cost = (float) ($item->unit_cost ?? 0);
+                $lineTotal = $qty * $cost;
+                $items[] = [
+                    'item_id' => $item->id, 'item_name' => $item->name, 'item_code' => $item->code,
+                    'supply_unit_name' => $item->unit?->name ?? '', 'quantity' => $qty,
+                    'unit_cost' => $cost, 'total_cost' => $lineTotal,
+                ];
+                $total += $lineTotal;
+            }
+        }
+
+        $request = CsrRequest::create([
+            'tenant_id' => $tid, 'ob_consultation_id' => $adm->id, 'request_code' => $code,
+            'requesting_department_id' => $this->obDepartmentId(), 'requesting_person' => auth()->user()?->full_name ?? session('jwt_user.full_name', 'System'),
+            'status' => 'Pending', 'billing_status' => 'Pending', 'total_amount' => $total,
+            'notes' => 'Ordered from OB Consultation' . ($this->orderCsrNotes ? "\n\n" . $this->orderCsrNotes : ''),
+            'is_active' => true, 'history' => 1, 'created_by' => $uid, 'created_date' => $now,
+            'updated_by' => $uid, 'updated_date' => $now,
+        ]);
+
+        foreach ($items as $li) {
+            $request->items()->create(array_merge($li, [
+                'status' => 'Pending', 'is_active' => true, 'history' => 1,
+                'created_by' => $uid, 'created_date' => $now,
+                'updated_by' => $uid, 'updated_date' => $now,
+            ]));
+        }
+
+        $this->showOrderCsrModal = false;
+        $this->orderCsrSelection = [];
+        $this->orderCsrQuantities = [];
+        $this->orderCsrNotes = '';
+        $this->dispatch('toast', type: 'success', message: "Supply request {$code} created.");
+    }
+
+    public function requestRadiologyOrder(): void
+    {
+        $this->validate([
+            'orderRadiologySelection' => ['required', 'array', 'min:1'],
+            'orderRadiologySelection.*' => ['required', 'integer'],
+            'orderRadiologyPriority' => ['required', 'string', 'in:Routine,Urgent,STAT'],
+            'orderRadiologyNotes' => ['nullable', 'string', 'max:2000'],
+        ], ['orderRadiologySelection.required' => 'Select at least one exam type.']);
+
+        $adm = ObConsultation::findOrFail($this->treatingId);
+        $tid = $this->currentTenantId();
+        $uid = $this->currentUserId();
+        $now = now();
+
+        $code = $this->generateRadiologyRequestCode($tid);
+        $total = 0;
+        $items = [];
+
+        foreach ($this->orderRadiologySelection as $id) {
+            $exam = RadiologyExamType::with('modality')->find($id);
+            if ($exam) {
+                $charge = (float) ($exam->standard_charge ?? 0);
+                $items[] = [
+                    'exam_type_id' => $exam->id, 'exam_name' => $exam->name,
+                    'modality_name' => $exam->modality?->name ?? '', 'charge_amount' => $charge,
+                ];
+                $total += $charge;
+            }
+        }
+
+        $request = RadiologyRequest::create([
+            'tenant_id' => $tid, 'ob_consultation_id' => $adm->id, 'request_code' => $code,
+            'requesting_department_id' => $this->obDepartmentId(), 'requesting_person' => auth()->user()?->full_name ?? session('jwt_user.full_name', 'System'),
+            'status' => 'Pending', 'billing_status' => 'Pending', 'total_amount' => $total,
+            'notes' => 'Ordered from OB Consultation' . ($this->orderRadiologyNotes ? "\n\n" . $this->orderRadiologyNotes : ''),
+            'is_active' => true, 'history' => 1, 'created_by' => $uid, 'created_date' => $now,
+            'updated_by' => $uid, 'updated_date' => $now,
+        ]);
+
+        foreach ($items as $li) {
+            $request->items()->create(array_merge($li, [
+                'status' => 'Pending', 'is_active' => true, 'history' => 1,
+                'created_by' => $uid, 'created_date' => $now,
+                'updated_by' => $uid, 'updated_date' => $now,
+            ]));
+        }
+
+        $this->showOrderRadiologyModal = false;
+        $this->orderRadiologySelection = [];
+        $this->orderRadiologyNotes = '';
+        $this->dispatch('toast', type: 'success', message: "Radiology request {$code} created.");
+    }
+
+    public function requestPharmacyOrder(): void
+    {
+        $this->validate([
+            'orderPharmacySelection' => ['required', 'array', 'min:1'],
+            'orderPharmacySelection.*' => ['required', 'integer'],
+            'orderPharmacyPriority' => ['required', 'string', 'in:Routine,Urgent,STAT'],
+            'orderPharmacyNotes' => ['nullable', 'string', 'max:2000'],
+        ], ['orderPharmacySelection.required' => 'Select at least one drug.']);
+
+        $adm = ObConsultation::findOrFail($this->treatingId);
+        $tid = $this->currentTenantId();
+        $uid = $this->currentUserId();
+        $now = now();
+
+        $code = $this->generatePharmacyRequestCode($tid);
+        $total = 0;
+        $items = [];
+
+        foreach ($this->orderPharmacySelection as $id) {
+            $drug = Drug::find($id);
+            if ($drug) {
+                $qty = max(1, (int) ($this->orderPharmacyQuantities[$id] ?? 1));
+                $cost = (float) ($drug->batches()->where('quantity_on_hand', '>', 0)->avg('selling_price') ?: 0);
+                $lineTotal = $qty * $cost;
+                $items[] = [
+                    'drug_id'             => $drug->id,
+                    'item_id'             => $drug->id,
+                    'item_name'           => $drug->generic_name . ' ' . $drug->drug_strength,
+                    'item_code'           => $drug->drug_code,
+                    'supply_unit_name'    => $drug->dosage_form ?? '',
+                    'generic_name'        => $drug->generic_name,
+                    'brand_name'          => $drug->brand_name ?? null,
+                    'dosage_form'         => $drug->dosage_form ?? null,
+                    'philhealth_item_code'=> $drug->philhealth_item_code ?? null,
+                    'dosage'              => $drug->drug_strength ?? '',
+                    'frequency'           => $this->orderPharmacyFrequencies[$id] ?? null,
+                    'route'               => $this->orderPharmacyRoutes[$id] ?? $drug->route ?? null,
+                    'quantity'            => $qty,
+                    'unit_cost'           => $cost,
+                    'total_cost'          => $lineTotal,
+                ];
+                $total += $lineTotal;
+            }
+        }
+
+        $request = PharmacyRequest::create([
+            'tenant_id' => $tid, 'ob_consultation_id' => $adm->id, 'request_code' => $code,
+            'requesting_department_id' => $this->obDepartmentId(), 'requesting_person' => auth()->user()?->full_name ?? session('jwt_user.full_name', 'System'),
+            'priority' => $this->orderPharmacyPriority, 'status' => 'Pending', 'billing_status' => 'Pending',
+            'total_amount' => $total,
+            'notes' => 'Ordered from OB Consultation' . ($this->orderPharmacyNotes ? "\n\n" . $this->orderPharmacyNotes : ''),
+            'is_active' => true, 'history' => 1, 'created_by' => $uid, 'created_date' => $now,
+            'updated_by' => $uid, 'updated_date' => $now,
+        ]);
+
+        foreach ($items as $li) {
+            $request->items()->create(array_merge($li, [
+                'status' => 'Pending', 'is_active' => true, 'history' => 1,
+                'created_by' => $uid, 'created_date' => $now,
+                'updated_by' => $uid, 'updated_date' => $now,
+            ]));
+        }
+
+        $this->showOrderPharmacyModal = false;
+        $this->orderPharmacySelection = [];
+        $this->orderPharmacyQuantities = [];
+        $this->orderPharmacyFrequencies = [];
+        $this->orderPharmacyRoutes = [];
+        $this->orderPharmacyNotes = '';
+        $this->dispatch('toast', type: 'success', message: "Pharmacy request {$code} created.");
+    }
+
+    public function requestProcedureOrder(): void
+    {
+        $this->validate([
+            'orderProcedureSelection' => ['required', 'array', 'min:1'],
+            'orderProcedureSelection.*' => ['required', 'integer'],
+            'orderProcedureNotes' => ['nullable', 'string', 'max:2000'],
+        ], ['orderProcedureSelection.required' => 'Select at least one procedure.']);
+
+        $adm = ObConsultation::findOrFail($this->treatingId);
+        $tid = $this->currentTenantId();
+        $uid = $this->currentUserId();
+        $now = now();
+
+        $code = $this->generateProcedureRequestCode($tid);
+        $total = 0;
+        $items = [];
+
+        foreach ($this->orderProcedureSelection as $id) {
+            $procedure = Procedure::with('category')->find($id);
+            if ($procedure) {
+                $qty = max(1, (int) ($this->orderProcedureQuantities[$id] ?? 1));
+                $charge = (float) ($procedure->standard_charge ?? 0);
+                $lineTotal = $qty * $charge;
+                $items[] = [
+                    'procedure_id' => $procedure->id, 'procedure_name' => $procedure->name,
+                    'category_name' => $procedure->category?->name ?? '', 'quantity' => $qty,
+                    'unit_charge' => $charge, 'total_charge' => $lineTotal,
+                ];
+                $total += $lineTotal;
+            }
+        }
+
+        $request = ProcedureRequest::create([
+            'tenant_id' => $tid, 'ob_consultation_id' => $adm->id, 'request_code' => $code,
+            'requesting_department_id' => $this->obDepartmentId(), 'requesting_doctor_id' => $adm->attending_physician_id,
+            'status' => 'Pending', 'billing_status' => 'Pending', 'total_amount' => $total,
+            'notes' => 'Ordered from OB Consultation' . ($this->orderProcedureNotes ? "\n\n" . $this->orderProcedureNotes : ''),
+            'is_active' => true, 'history' => 1, 'created_by' => $uid, 'created_date' => $now,
+            'updated_by' => $uid, 'updated_date' => $now,
+        ]);
+
+        foreach ($items as $li) {
+            $request->items()->create(array_merge($li, [
+                'status' => 'Pending', 'is_active' => true, 'history' => 1,
+                'created_by' => $uid, 'created_date' => $now,
+                'updated_by' => $uid, 'updated_date' => $now,
+            ]));
+        }
+
+        $this->showOrderProcedureModal = false;
+        $this->orderProcedureSelection = [];
+        $this->orderProcedureQuantities = [];
+        $this->orderProcedureNotes = '';
+        $this->dispatch('toast', type: 'success', message: "Procedure request {$code} created.");
+    }
+
+    private function generateLabRequestCode(int $tid): string
+    {
+        $num = (LabRequest::withoutGlobalScopes()->where('tenant_id', $tid)->max('id') ?? 0) + 1;
+        return 'LR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+    }
+
+    private function generateCsrRequestCode(int $tid): string
+    {
+        $num = (CsrRequest::withoutGlobalScopes()->where('tenant_id', $tid)->max('id') ?? 0) + 1;
+        return 'CR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+    }
+
+    private function generateRadiologyRequestCode(int $tid): string
+    {
+        $num = (RadiologyRequest::withoutGlobalScopes()->where('tenant_id', $tid)->max('id') ?? 0) + 1;
+        return 'RR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+    }
+
+    private function generatePharmacyRequestCode(int $tid): string
+    {
+        $num = (PharmacyRequest::withoutGlobalScopes()->where('tenant_id', $tid)->max('id') ?? 0) + 1;
+        return 'PR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+    }
+
+    private function generateProcedureRequestCode(int $tid): string
+    {
+        $num = (ProcedureRequest::withoutGlobalScopes()->where('tenant_id', $tid)->max('id') ?? 0) + 1;
+        return 'PRCD-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+    }
+
+    // ——— Disposition ———
+    public function saveDisposition(): void
+    {
+        $validated = $this->validate([
+            'disposition' => ['required', 'string', 'in:Pending,Delivered,Admitted to Ward,Admitted to ICU,Discharged Home,AMA,Expired'],
+            'discharge_instructions' => ['nullable', 'string', 'max:5000'],
+        ]);
+
+        $adm = ObConsultation::findOrFail($this->treatingId);
+
+        $status = 'Active';
+        $dispositionDate = null;
+
+        if ($validated['disposition'] !== 'Pending') {
+            $status = 'Completed';
+            $dispositionDate = now();
+        }
+
+        $adm->update([
+            'disposition' => $validated['disposition'],
+            'status' => $status,
+            'disposition_datetime' => $dispositionDate,
+            'discharge_instructions' => $validated['discharge_instructions'],
+            'updated_by' => $this->currentUserId(),
+            'updated_date' => now(),
+        ]);
+
+        $this->dispatch('toast', type: 'success', message: 'Disposition updated.');
+        if ($this->showTreatmentForm) {
+            $this->showTreatmentForm = false;
+            $this->reset(['treatingId']);
+        }
+    }
+
+    public function render()
+    {
+        $statusFilter = $this->showCompleted ? 'Completed' : 'Active';
+
+        $consultations = ObConsultation::with(['patient', 'attendingPhysician', 'visitType'])
+            ->where('status', $statusFilter)
+            ->when(!$this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+            ->when($this->search, fn ($q) =>
+                $q->where(fn ($inner) =>
+                    $inner->where('consultation_code', 'like', '%' . $this->search . '%')
+                        ->orWhereHas('patient', fn ($p) =>
+                            $p->where('last_name', 'like', '%' . $this->search . '%')
+                                ->orWhere('first_name', 'like', '%' . $this->search . '%')
+                        )
+                )
+            )
+            ->when($this->showCompleted, fn ($q) => $q->orderBy('disposition_datetime', 'desc'), fn ($q) => $q->orderBy($this->sortField, $this->sortDirection))
+            ->paginate($this->perPage);
+
+        $activeConsultation = null;
+        $labOrders = collect();
+        $csrOrders = collect();
+        $radiologyOrders = collect();
+        $pharmacyOrders = collect();
+        $procedureOrders = collect();
+        $labTests = collect();
+        $supplyItems = collect();
+        $examTypes = collect();
+        $drugs = collect();
+        $procedures = collect();
+        $erOrSchedules = collect();
+        $orRooms = collect();
+        $orDoctors = collect();
+
+        if ($this->showTreatmentForm && $this->treatingId !== null) {
+            $activeConsultation = ObConsultation::with([
+                'patient', 'attendingPhysician', 'visitType',
+                'labRequests.items', 'csrRequests.items', 'radiologyRequests.items',
+                'pharmacyRequests.items', 'procedureRequests.items',
+            ])->find($this->treatingId);
+
+            $labOrders = $activeConsultation->labRequests()->with('items.labTest', 'items.labPanel')
+                ->orderBy('created_date', 'desc')->get();
+            $csrOrders = $activeConsultation->csrRequests()->with('items.item')
+                ->orderBy('created_date', 'desc')->get();
+            $radiologyOrders = $activeConsultation->radiologyRequests()->with('items.examType')
+                ->orderBy('created_date', 'desc')->get();
+            $pharmacyOrders = $activeConsultation->pharmacyRequests()->with('items.drug')
+                ->orderBy('created_date', 'desc')->get();
+            $procedureOrders = $activeConsultation->procedureRequests()->with('items.procedure')
+                ->orderBy('created_date', 'desc')->get();
+
+            $erOrSchedules = OrSchedule::with(['orRoom', 'surgeon', 'anesthesiologist'])
+                ->where('ob_consultation_id', $this->treatingId)
+                ->orderBy('scheduled_date', 'desc')
+                ->get();
+        }
+
+        $patients = collect();
+        if ($this->patient_search && !$this->patient_id) {
+            $s = '%' . $this->patient_search . '%';
+            $patients = Patient::where(function ($q) use ($s) {
+                $q->where('last_name', 'like', $s)
+                    ->orWhere('first_name', 'like', $s)
+                    ->orWhere('patient_code', 'like', $s);
+            })->when(!$this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+                ->orderBy('last_name')->take(10)->get();
+        }
+        $labTests = LabTest::where('is_active', true)
+            ->when(!$this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+            ->orderBy('name')->get(['id', 'code', 'name', 'standard_charge']);
+
+        $supplyItems = Item::where('is_active', true)
+            ->when(!$this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+            ->whereHas('batches', function ($query) {
+                $query->where('quantity_on_hand', '>', 0)
+                      ->where('expiry_date', '>=', now()->toDateString())
+                      ->where('history', 1)
+                      ->where('is_active', 1);
+            })
+            ->with('unit')->orderBy('name')->get(['id', 'code', 'name', 'unit_cost']);
+
+        $examTypes = RadiologyExamType::where('is_active', true)
+            ->when(!$this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+            ->with('modality')->orderBy('name')->get(['id', 'code', 'name', 'standard_charge']);
+
+        $drugs = Drug::where('is_active', true)
+            ->when(! $this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+            ->whereHas('batches', function ($query) {
+                $query->where('quantity_on_hand', '>', 0)
+                      ->where('expiry_date', '>=', now()->toDateString())
+                      ->where('history', 1)
+                      ->where('is_active', 1);
+            })
+            ->orderBy('generic_name')
+            ->get(['id', 'drug_code', 'generic_name', 'brand_name', 'drug_strength', 'dosage_form', 'route']);
+
+        $procedures = Procedure::where('is_active', true)
+            ->when(!$this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+            ->with('category')->orderBy('name')
+            ->get(['id', 'name', 'category_id', 'standard_charge']);
+
+        $orRooms = OrRoom::query()
+            ->where('tenant_id', $this->currentTenantId())
+            ->where('status', 'Available')
+            ->orderBy('name')
+            ->get(['id', 'code', 'name']);
+
+        $orDoctors = HealthCareProfessional::query()
+            ->where('tenant_id', $this->currentTenantId())
+            ->orderBy('full_name')
+            ->get(['id', 'full_name']);
+
+        $physicians = HealthCareProfessional::when(!$this->isSuperAdmin(), fn ($q) => $q->where('tenant_id', $this->currentTenantId()))
+            ->orderBy('full_name')->get();
+
+        $visitTypes = ObVisitType::where('is_active', true)
+            ->orderBy('name')->get(['id', 'name']);
+
+        return view('livewire.ob.ob-consultation-crud', compact(
+            'consultations', 'activeConsultation', 'labOrders', 'csrOrders',
+            'radiologyOrders', 'pharmacyOrders', 'procedureOrders',
+            'labTests', 'supplyItems', 'examTypes', 'drugs', 'procedures',
+            'erOrSchedules', 'orRooms', 'orDoctors',
+            'patients', 'physicians', 'visitTypes', 'statusFilter',
+        ));
+    }
+}

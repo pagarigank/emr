@@ -1,0 +1,153 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - button [ref=f1e6]
+        - generic [ref=f1e9]:
+          - img "SITHEMR Logo" [ref=f1e10]
+          - heading "SITHEMR" [level=1] [ref=f1e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f1e14]:
+        - generic [ref=f1e15]: D
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: Demo Hospital Admin
+          - generic [ref=f1e18]: tenant_admin
+  - generic [ref=f1e21]:
+    - navigation [ref=f1e22]:
+      - generic [ref=f1e23]:
+        - generic [ref=f1e24]:
+          - paragraph [ref=f1e25]: Main
+          - link "Dashboard" [ref=f1e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f1e29] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=f1e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f1e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f1e38]:
+          - paragraph [ref=f1e39]: Clinical Modules
+          - button "OPD" [ref=f1e41]
+          - button "Emergency Room" [ref=f1e49]
+          - button "Admission & Wards" [ref=f1e57]
+          - link "Nursing" [ref=f1e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f1e68]
+          - button "Delivery" [ref=f1e76]
+          - button "Operating Room" [ref=f1e84]
+          - button "Renal Care" [ref=f1e92]
+        - generic [ref=f1e99]:
+          - paragraph [ref=f1e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f1e102]
+          - button "Radiology" [ref=f1e110]
+          - button "Pharmacy" [ref=f1e119]
+          - button "Procedures" [ref=f1e127]
+          - button "CSR / Supply" [ref=f1e136]
+        - generic [ref=f1e143]:
+          - paragraph [ref=f1e144]: Financial & Claims
+          - button "Billing" [ref=f1e146]
+          - button "PhilHealth" [ref=f1e154]
+          - button "YAKAP" [ref=f1e162]
+          - link "Transactions" [ref=f1e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f1e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f1e175]:
+          - paragraph [ref=f1e176]: Administration
+          - button "Masters" [ref=f1e178]
+          - link "Roles" [ref=f1e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f1e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f1e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f1e198]:
+      - generic [ref=f1e200]:
+        - generic [ref=f1e201]:
+          - button "Back to Patient List" [ref=f1e292]
+          - generic [ref=f1e206]:
+            - generic [ref=f1e207]:
+              - generic [ref=f1e212]:
+                - heading "demo3, demo3" [level=2] [ref=f1e295]
+                - generic [ref=f1e296]:
+                  - generic [ref=f1e297]: ADM-00001
+                  - generic [ref=f1e300]: "20260000001011"
+              - generic [ref=f1e301]:
+                - generic [ref=f1e302]:
+                  - paragraph [ref=f1e303]: Admitted
+                  - paragraph [ref=f1e304]: Jul 23, 2026 05:12 AM
+                - generic [ref=f1e305]:
+                  - paragraph [ref=f1e306]: Room / Ward
+                  - paragraph [ref=f1e307]: Ward Room 101Cardiology Ward
+                - button "Transfer Room" [ref=f1e308]
+            - generic [ref=f1e215]:
+              - generic [ref=f1e216]:
+                - paragraph [ref=f1e311]: Admission Type
+                - paragraph [ref=f1e312]: Emergency
+              - generic [ref=f1e313]:
+                - paragraph [ref=f1e314]: Source
+                - paragraph [ref=f1e315]: ER
+              - generic [ref=f1e316]:
+                - paragraph [ref=f1e317]: Attending Physician
+                - paragraph [ref=f1e318]: Dr. Juan Dela Cruz
+              - generic [ref=f1e319]:
+                - paragraph [ref=f1e320]: Admitting Diagnosis
+                - paragraph [ref=f1e321]: sdfsd
+          - navigation [ref=f1e323]:
+            - button [ref=f1e324]
+            - button [ref=f1e328]
+            - button [ref=f1e332]
+            - button [ref=f1e336]
+            - button [ref=f1e340]
+            - button [ref=f1e344]
+          - generic [ref=f1e348]:
+            - heading "Vital Signs History" [level=3] [ref=f1e349]
+            - button "Record Vitals" [active] [ref=f1e350]
+          - generic [ref=f1e353]:
+            - paragraph [ref=f1e356]: No vital signs recorded yet.
+            - paragraph [ref=f1e357]: Click "Record Vitals" to add the first measurement.
+        - generic [ref=f1e360]:
+          - generic [ref=f1e361]:
+            - heading "Record Vital Signs" [level=3] [ref=f1e362]
+            - button [ref=f1e363]
+          - generic [ref=f1e366]:
+            - generic [ref=f1e367]:
+              - generic [ref=f1e368]:
+                - generic [ref=f1e369]: Temperature (°C)
+                - spinbutton "36.5" [ref=f1e370]
+              - generic [ref=f1e371]:
+                - generic [ref=f1e372]: Heart Rate (bpm)
+                - spinbutton "72" [ref=f1e373]
+              - generic [ref=f1e374]:
+                - generic [ref=f1e375]: Respiratory Rate (/min)
+                - spinbutton "16" [ref=f1e376]
+              - generic [ref=f1e377]:
+                - generic [ref=f1e378]: BP Systolic (mmHg)
+                - spinbutton "120" [ref=f1e379]
+              - generic [ref=f1e380]:
+                - generic [ref=f1e381]: BP Diastolic (mmHg)
+                - spinbutton "80" [ref=f1e382]
+              - generic [ref=f1e383]:
+                - generic [ref=f1e384]: O₂ Saturation (%)
+                - spinbutton "98" [ref=f1e385]
+              - generic [ref=f1e386]:
+                - generic [ref=f1e387]: Pain Score (0-10)
+                - spinbutton "0" [ref=f1e388]
+              - generic [ref=f1e389]:
+                - generic [ref=f1e390]: Blood Sugar (mg/dL)
+                - spinbutton "100" [ref=f1e391]
+              - generic [ref=f1e392]:
+                - generic [ref=f1e393]: Level of Consciousness
+                - combobox [ref=f1e394]:
+                  - option "— Select —" [selected]
+                  - option "Alert"
+                  - option "Verbal"
+                  - option "Pain"
+                  - option "Unresponsive"
+            - generic [ref=f1e395]:
+              - generic [ref=f1e396]: Notes
+              - textbox "Optional notes..." [ref=f1e397]
+            - generic [ref=f1e398]:
+              - button "Cancel" [ref=f1e399]
+              - button "Save Vitals" [ref=f1e400]
+  - contentinfo [ref=f1e289]:
+    - paragraph [ref=f1e291]: © 2026 SITHEMR. All rights reserved.

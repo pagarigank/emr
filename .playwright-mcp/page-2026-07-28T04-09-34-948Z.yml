@@ -1,0 +1,379 @@
+- generic [ref=f116e2]:
+  - banner [ref=f116e3]:
+    - generic [ref=f116e4]:
+      - generic [ref=f116e5]:
+        - button [ref=f116e6]
+        - generic [ref=f116e9]:
+          - img "SITHEMR Logo" [ref=f116e10]
+          - heading "SITHEMR" [level=1] [ref=f116e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f116e14]:
+        - generic [ref=f116e15]: D
+        - generic [ref=f116e16]:
+          - generic [ref=f116e17]: Demo Hospital Admin
+          - generic [ref=f116e18]: tenant_admin
+  - generic [ref=f116e21]:
+    - navigation [ref=f116e22]:
+      - generic [ref=f116e23]:
+        - generic [ref=f116e24]:
+          - paragraph [ref=f116e25]: Main
+          - link "Dashboard" [ref=f116e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f116e29] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=f116e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f116e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f116e38]:
+          - paragraph [ref=f116e39]: Clinical Modules
+          - button "OPD" [ref=f116e41]
+          - generic [ref=f116e48]:
+            - button "Emergency Room" [ref=f116e49]
+            - generic [ref=f116e56]:
+              - link "Triage Records" [ref=f116e57] [cursor=pointer]:
+                - /url: /er/triage
+              - link "ER Area" [ref=f116e61] [cursor=pointer]:
+                - /url: /er/area
+              - link "Acuity Levels" [ref=f116e66] [cursor=pointer]:
+                - /url: /er/acuity-levels
+              - link "Mobility Statuses" [ref=f116e71] [cursor=pointer]:
+                - /url: /er/mobility-statuses
+              - link "ER Zones" [ref=f116e75] [cursor=pointer]:
+                - /url: /er/zones
+              - link "ER Beds" [ref=f116e80] [cursor=pointer]:
+                - /url: /er/beds
+          - button "Admission & Wards" [ref=f116e86]
+          - link "Nursing" [ref=f116e93] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f116e97]
+          - button "Delivery" [ref=f116e105]
+          - button "Operating Room" [ref=f116e113]
+          - button "Renal Care" [ref=f116e121]
+        - generic [ref=f116e128]:
+          - paragraph [ref=f116e129]: Ancillary & Logistics
+          - button "Laboratory" [ref=f116e131]
+          - button "Radiology" [ref=f116e139]
+          - button "Pharmacy" [ref=f116e148]
+          - button "Procedures" [ref=f116e156]
+          - button "CSR / Supply" [ref=f116e165]
+        - generic [ref=f116e172]:
+          - paragraph [ref=f116e173]: Financial & Claims
+          - button "Billing" [ref=f116e175]
+          - button "PhilHealth" [ref=f116e183]
+          - button "YAKAP" [ref=f116e191]
+          - link "Transactions" [ref=f116e198] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f116e201] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f116e204]:
+          - paragraph [ref=f116e205]: Administration
+          - button "Masters" [ref=f116e207]
+          - link "Roles" [ref=f116e214] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f116e219] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f116e223] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f116e227]:
+      - generic [ref=f116e231]:
+        - generic [ref=f116e232]:
+          - generic [ref=f116e330]:
+            - generic [ref=f116e332]:
+              - generic [ref=f116e333]:
+                - heading "ER Treatment Record" [level=2] [ref=f116e334]
+                - paragraph [ref=f116e335]: "Encounter #ERA-20260728-4900"
+              - generic [ref=f116e336]:
+                - generic [ref=f116e337]: Urgent (ESI-3)
+                - generic [ref=f116e338]: Active
+            - generic [ref=f116e339]:
+              - generic [ref=f116e340]:
+                - paragraph [ref=f116e341]: Patient
+                - paragraph [ref=f116e342]: Dela Cruz, Juan
+                - paragraph [ref=f116e343]: 36 yrs old / Male
+              - generic [ref=f116e344]:
+                - paragraph [ref=f116e345]: Bed / Zone
+                - paragraph [ref=f116e346]: Trauma Bed 1
+                - paragraph [ref=f116e347]: Red Zone (Resuscitation)
+              - generic [ref=f116e348]:
+                - paragraph [ref=f116e349]: Attending Physician
+                - paragraph [ref=f116e350]: Dr. Dr. Maria Santos
+              - generic [ref=f116e351]:
+                - paragraph [ref=f116e352]: Arrival / Elapsed
+                - paragraph [ref=f116e353]: Jul 28, 2026 04:08
+                - paragraph [ref=f116e354]: 57 seconds ago
+            - generic [ref=f116e355]:
+              - generic [ref=f116e356]:
+                - paragraph [ref=f116e357]: Temp
+                - paragraph [ref=f116e358]: 37.5°
+              - generic [ref=f116e359]:
+                - paragraph [ref=f116e360]: HR
+                - paragraph [ref=f116e361]: "88"
+              - generic [ref=f116e362]:
+                - paragraph [ref=f116e363]: RR
+                - paragraph [ref=f116e364]: "18"
+              - generic [ref=f116e365]:
+                - paragraph [ref=f116e366]: BP
+                - paragraph [ref=f116e367]: 130/85
+              - generic [ref=f116e368]:
+                - paragraph [ref=f116e369]: SpO2
+                - paragraph [ref=f116e370]: 97.00%
+              - generic [ref=f116e371]:
+                - paragraph [ref=f116e372]: Pain
+                - paragraph [ref=f116e373]: 7/10
+              - generic [ref=f116e374]:
+                - paragraph [ref=f116e375]: LOC
+                - paragraph [ref=f116e376]: Alert
+              - generic [ref=f116e377]:
+                - paragraph [ref=f116e378]: Arrival
+                - paragraph [ref=f116e379]: Walk-in
+            - generic [ref=f116e380]:
+              - paragraph [ref=f116e381]: Initial Diagnosis
+              - paragraph [ref=f116e382]: Acute appendicitis, rule out
+            - generic [ref=f116e385] [cursor=pointer]:
+              - checkbox "OECB (Outpatient Emergency Care Benefit) PhilHealth OECB package — Annex A fixed fee schedule applies" [ref=f116e386]
+              - generic [ref=f116e387]:
+                - text: OECB (Outpatient Emergency Care Benefit)
+                - paragraph [ref=f116e388]: PhilHealth OECB package — Annex A fixed fee schedule applies
+          - navigation "Tabs" [ref=f116e390]:
+            - button "Clinical Notes" [ref=f116e391]
+            - button "Orders & Interventions" [ref=f116e394]
+            - button "Disposition" [ref=f116e397]
+            - button "OR Schedule" [ref=f116e400]
+          - generic [ref=f116e403]:
+            - generic [ref=f116e435]:
+              - generic [ref=f116e436]:
+                - heading "Orders Summary (Medications, IV Fluids, Consults, etc.)" [level=3] [ref=f116e437]
+                - 'textbox "e.g. Medications: - Morphine 4mg IV push for pain - Ondansetron 4mg IV for nausea IV Fluids: - Normal Saline 1L bolus @ 500mL/hr Procedures: - Laceration repair, left forearm (4-0 Nylon, 5 sutures) Consults: - Cardiology consult called 14:30, Dr. Santos responding..." [ref=f116e440]':
+                  - /placeholder: "e.g.\nMedications:\n- Morphine 4mg IV push for pain\n- Ondansetron 4mg IV for nausea\n\nIV Fluids:\n- Normal Saline 1L bolus @ 500mL/hr\n\nProcedures:\n- Laceration repair, left forearm (4-0 Nylon, 5 sutures)\n\nConsults:\n- Cardiology consult called 14:30, Dr. Santos responding..."
+              - generic [ref=f116e441]:
+                - generic [ref=f116e442]:
+                  - heading "Laboratory Orders 0" [level=3] [ref=f116e443]:
+                    - text: Laboratory Orders
+                    - generic [ref=f116e446]: "0"
+                  - button "Request Lab Test" [ref=f116e447]
+                - table [ref=f116e451]:
+                  - rowgroup [ref=f116e452]:
+                    - row [ref=f116e453]:
+                      - 'columnheader "Request #" [ref=f116e454]'
+                      - columnheader "Items" [ref=f116e455]
+                      - columnheader "Priority" [ref=f116e456]
+                      - columnheader "Status" [ref=f116e457]
+                      - columnheader "Billing" [ref=f116e458]
+                      - columnheader "Total" [ref=f116e459]
+                      - columnheader "Date" [ref=f116e460]
+                      - columnheader "Actions" [ref=f116e461]
+                  - rowgroup [ref=f116e462]:
+                    - row [ref=f116e463]:
+                      - cell "No lab orders placed yet." [ref=f116e464]
+              - generic [ref=f116e465]:
+                - generic [ref=f116e466]:
+                  - heading "Supply Orders (CSR) 0" [level=3] [ref=f116e467]:
+                    - text: Supply Orders (CSR)
+                    - generic [ref=f116e470]: "0"
+                  - button "Request Supply" [ref=f116e471]
+                - table [ref=f116e475]:
+                  - rowgroup [ref=f116e476]:
+                    - row [ref=f116e477]:
+                      - 'columnheader "Request #" [ref=f116e478]'
+                      - columnheader "Items" [ref=f116e479]
+                      - columnheader "Status" [ref=f116e480]
+                      - columnheader "Billing" [ref=f116e481]
+                      - columnheader "Total" [ref=f116e482]
+                      - columnheader "Date" [ref=f116e483]
+                      - columnheader "Actions" [ref=f116e484]
+                  - rowgroup [ref=f116e485]:
+                    - row [ref=f116e486]:
+                      - cell "No supply orders placed yet." [ref=f116e487]
+              - generic [ref=f116e488]:
+                - generic [ref=f116e489]:
+                  - heading "Radiology Orders 0" [level=3] [ref=f116e490]:
+                    - text: Radiology Orders
+                    - generic [ref=f116e493]: "0"
+                  - button "Request Exam" [ref=f116e494]
+                - table [ref=f116e498]:
+                  - rowgroup [ref=f116e499]:
+                    - row [ref=f116e500]:
+                      - 'columnheader "Request #" [ref=f116e501]'
+                      - columnheader "Exams" [ref=f116e502]
+                      - columnheader "Status" [ref=f116e503]
+                      - columnheader "Billing" [ref=f116e504]
+                      - columnheader "Total" [ref=f116e505]
+                      - columnheader "Date" [ref=f116e506]
+                      - columnheader "Actions" [ref=f116e507]
+                  - rowgroup [ref=f116e508]:
+                    - row [ref=f116e509]:
+                      - cell "No radiology orders placed yet." [ref=f116e510]
+              - generic [ref=f116e511]:
+                - generic [ref=f116e512]:
+                  - heading "Pharmacy Orders 0" [level=3] [ref=f116e513]:
+                    - text: Pharmacy Orders
+                    - generic [ref=f116e516]: "0"
+                  - button "Request Medication" [ref=f116e517]
+                - table [ref=f116e521]:
+                  - rowgroup [ref=f116e522]:
+                    - row [ref=f116e523]:
+                      - 'columnheader "Request #" [ref=f116e524]'
+                      - columnheader "Medications" [ref=f116e525]
+                      - columnheader "Priority" [ref=f116e526]
+                      - columnheader "Status" [ref=f116e527]
+                      - columnheader "Billing" [ref=f116e528]
+                      - columnheader "Total" [ref=f116e529]
+                      - columnheader "Date" [ref=f116e530]
+                      - columnheader "Actions" [ref=f116e531]
+                  - rowgroup [ref=f116e532]:
+                    - row [ref=f116e533]:
+                      - cell "No pharmacy orders placed yet." [ref=f116e534]
+              - generic [ref=f116e535]:
+                - generic [ref=f116e536]:
+                  - heading "Procedure Orders 0" [level=3] [ref=f116e537]:
+                    - text: Procedure Orders
+                    - generic [ref=f116e540]: "0"
+                  - button "Request Procedure" [ref=f116e541]
+                - table [ref=f116e545]:
+                  - rowgroup [ref=f116e546]:
+                    - row [ref=f116e547]:
+                      - 'columnheader "Request #" [ref=f116e548]'
+                      - columnheader "Procedures" [ref=f116e549]
+                      - columnheader "Status" [ref=f116e550]
+                      - columnheader "Billing" [ref=f116e551]
+                      - columnheader "Total" [ref=f116e552]
+                      - columnheader "Date" [ref=f116e553]
+                      - columnheader "Actions" [ref=f116e554]
+                  - rowgroup [ref=f116e555]:
+                    - row [ref=f116e556]:
+                      - cell "No procedure orders placed yet." [ref=f116e557]
+            - generic [ref=f116e425]:
+              - generic [ref=f116e426]: Changes are auto-saved per section
+              - generic [ref=f116e429]:
+                - button "← Back to List" [ref=f116e430]
+                - button [ref=f116e431]
+        - generic [ref=f116e560]:
+          - generic [ref=f116e561]:
+            - heading "Order Lab Tests" [level=3] [ref=f116e562]
+            - button [ref=f116e563]
+          - generic [ref=f116e566]:
+            - paragraph [ref=f116e567]: Select tests or panels to order for this patient.
+            - generic [ref=f116e568]:
+              - generic [ref=f116e569]:
+                - generic [ref=f116e570]: Priority
+                - combobox [ref=f116e571]:
+                  - option "Routine"
+                  - option "Urgent" [selected]
+                  - option "STAT"
+              - generic [ref=f116e572]:
+                - generic [ref=f116e573]: Notes (optional)
+                - textbox "e.g. Fasting, stat..." [ref=f116e574]
+            - generic [ref=f116e575]:
+              - generic [ref=f116e576] [cursor=pointer]:
+                - checkbox "APTT — Activated Partial Thromboplastin Time ₱250.00" [ref=f116e577]
+                - paragraph [ref=f116e579]: APTT — Activated Partial Thromboplastin Time
+                - generic [ref=f116e580]: ₱250.00
+              - generic [ref=f116e581] [cursor=pointer]:
+                - checkbox "ALT — ALT (SGPT) ₱200.00" [ref=f116e582]
+                - paragraph [ref=f116e584]: ALT — ALT (SGPT)
+                - generic [ref=f116e585]: ₱200.00
+              - generic [ref=f116e586] [cursor=pointer]:
+                - checkbox "ANTI_HBS — Anti-HBs (Hepatitis B Antibody) ₱400.00" [ref=f116e587]
+                - paragraph [ref=f116e589]: ANTI_HBS — Anti-HBs (Hepatitis B Antibody)
+                - generic [ref=f116e590]: ₱400.00
+              - generic [ref=f116e591] [cursor=pointer]:
+                - checkbox "AST — AST (SGOT) ₱200.00" [ref=f116e592]
+                - paragraph [ref=f116e594]: AST — AST (SGOT)
+                - generic [ref=f116e595]: ₱200.00
+              - generic [ref=f116e596] [cursor=pointer]:
+                - checkbox "BUN — Blood Urea Nitrogen ₱180.00" [ref=f116e597]
+                - paragraph [ref=f116e599]: BUN — Blood Urea Nitrogen
+                - generic [ref=f116e600]: ₱180.00
+              - generic [ref=f116e601] [cursor=pointer]:
+                - checkbox "CL — Chloride ₱250.00" [ref=f116e602]
+                - paragraph [ref=f116e604]: CL — Chloride
+                - generic [ref=f116e605]: ₱250.00
+              - generic [ref=f116e606] [cursor=pointer]:
+                - checkbox "CBC — Complete Blood Count ₱350.00" [checked] [active] [ref=f116e607]
+                - paragraph [ref=f116e609]: CBC — Complete Blood Count
+                - generic [ref=f116e610]: ₱350.00
+              - generic [ref=f116e611] [cursor=pointer]:
+                - checkbox "CREA — Creatinine ₱200.00" [ref=f116e612]
+                - paragraph [ref=f116e614]: CREA — Creatinine
+                - generic [ref=f116e615]: ₱200.00
+              - generic [ref=f116e616] [cursor=pointer]:
+                - checkbox "DENGUE — Dengue NS1 Antigen ₱500.00" [ref=f116e617]
+                - paragraph [ref=f116e619]: DENGUE — Dengue NS1 Antigen
+                - generic [ref=f116e620]: ₱500.00
+              - generic [ref=f116e621] [cursor=pointer]:
+                - checkbox "ESR — Erythrocyte Sedimentation Rate ₱120.00" [ref=f116e622]
+                - paragraph [ref=f116e624]: ESR — Erythrocyte Sedimentation Rate
+                - generic [ref=f116e625]: ₱120.00
+              - generic [ref=f116e626] [cursor=pointer]:
+                - checkbox "GLU — Glucose (FBS) ₱180.00" [ref=f116e627]
+                - paragraph [ref=f116e629]: GLU — Glucose (FBS)
+                - generic [ref=f116e630]: ₱180.00
+              - generic [ref=f116e631] [cursor=pointer]:
+                - checkbox "HBSAG — HBsAg (Hepatitis B Surface Antigen) ₱350.00" [ref=f116e632]
+                - paragraph [ref=f116e634]: HBSAG — HBsAg (Hepatitis B Surface Antigen)
+                - generic [ref=f116e635]: ₱350.00
+              - generic [ref=f116e636] [cursor=pointer]:
+                - checkbox "HDL — HDL Cholesterol ₱220.00" [ref=f116e637]
+                - paragraph [ref=f116e639]: HDL — HDL Cholesterol
+                - generic [ref=f116e640]: ₱220.00
+              - generic [ref=f116e641] [cursor=pointer]:
+                - checkbox "HCT — Hematocrit ₱150.00" [ref=f116e642]
+                - paragraph [ref=f116e644]: HCT — Hematocrit
+                - generic [ref=f116e645]: ₱150.00
+              - generic [ref=f116e646] [cursor=pointer]:
+                - checkbox "HGB — Hemoglobin ₱150.00" [ref=f116e647]
+                - paragraph [ref=f116e649]: HGB — Hemoglobin
+                - generic [ref=f116e650]: ₱150.00
+              - generic [ref=f116e651] [cursor=pointer]:
+                - checkbox "LDL — LDL Cholesterol ₱220.00" [ref=f116e652]
+                - paragraph [ref=f116e654]: LDL — LDL Cholesterol
+                - generic [ref=f116e655]: ₱220.00
+              - generic [ref=f116e656] [cursor=pointer]:
+                - checkbox "PLT — Platelet Count ₱180.00" [ref=f116e657]
+                - paragraph [ref=f116e659]: PLT — Platelet Count
+                - generic [ref=f116e660]: ₱180.00
+              - generic [ref=f116e661] [cursor=pointer]:
+                - checkbox "K — Potassium ₱250.00" [ref=f116e662]
+                - paragraph [ref=f116e664]: K — Potassium
+                - generic [ref=f116e665]: ₱250.00
+              - generic [ref=f116e666] [cursor=pointer]:
+                - checkbox "PT — Prothrombin Time ₱250.00" [ref=f116e667]
+                - paragraph [ref=f116e669]: PT — Prothrombin Time
+                - generic [ref=f116e670]: ₱250.00
+              - generic [ref=f116e671] [cursor=pointer]:
+                - checkbox "RBC — Red Blood Cell Count ₱180.00" [ref=f116e672]
+                - paragraph [ref=f116e674]: RBC — Red Blood Cell Count
+                - generic [ref=f116e675]: ₱180.00
+              - generic [ref=f116e676] [cursor=pointer]:
+                - checkbox "NA — Sodium ₱250.00" [ref=f116e677]
+                - paragraph [ref=f116e679]: NA — Sodium
+                - generic [ref=f116e680]: ₱250.00
+              - generic [ref=f116e681] [cursor=pointer]:
+                - checkbox "CHOL — Total Cholesterol ₱200.00" [ref=f116e682]
+                - paragraph [ref=f116e684]: CHOL — Total Cholesterol
+                - generic [ref=f116e685]: ₱200.00
+              - generic [ref=f116e686] [cursor=pointer]:
+                - checkbox "TG — Triglycerides ₱200.00" [ref=f116e687]
+                - paragraph [ref=f116e689]: TG — Triglycerides
+                - generic [ref=f116e690]: ₱200.00
+              - generic [ref=f116e691] [cursor=pointer]:
+                - checkbox "UA — Uric Acid ₱150.00" [ref=f116e692]
+                - paragraph [ref=f116e694]: UA — Uric Acid
+                - generic [ref=f116e695]: ₱150.00
+              - generic [ref=f116e696] [cursor=pointer]:
+                - checkbox "U_A — Urinalysis ₱120.00" [ref=f116e697]
+                - paragraph [ref=f116e699]: U_A — Urinalysis
+                - generic [ref=f116e700]: ₱120.00
+              - generic [ref=f116e701] [cursor=pointer]:
+                - checkbox "VDRL — VDRL / RPR (Syphilis) ₱250.00" [ref=f116e702]
+                - paragraph [ref=f116e704]: VDRL — VDRL / RPR (Syphilis)
+                - generic [ref=f116e705]: ₱250.00
+              - generic [ref=f116e706] [cursor=pointer]:
+                - checkbox "WBC — White Blood Cell Count ₱180.00" [ref=f116e707]
+                - paragraph [ref=f116e709]: WBC — White Blood Cell Count
+                - generic [ref=f116e710]: ₱180.00
+            - generic [ref=f116e711]:
+              - button "Cancel" [ref=f116e712]
+              - button "Place Lab Order" [ref=f116e713]
+  - contentinfo [ref=f116e327]:
+    - paragraph [ref=f116e329]: © 2026 SITHEMR. All rights reserved.

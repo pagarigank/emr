@@ -1,0 +1,46 @@
+{
+  "page": {"width_mm": 215.9, "height_mm": 279.4, "margins_mm": {"top": 20, "bottom": 20, "left": 18, "right": 18}},
+  "header": "SITHEHR - Hospital Management & Records System  |  User Manual",
+  "footer": "Confidential - For Internal Use Only",
+  "footer_page_numbers": true,
+  "blocks": [
+    {"type":"heading","text":"SITHEHR - Hospital Management & Records System","level":0},
+    {"type":"paragraph","text":""},
+    {"type":"paragraph","runs":[{"text":"User Manual","bold":true,"italic":true}]},
+    {"type":"paragraph","text":""},
+    {"type":"paragraph","runs":[
+      {"text":"Version: ","bold":true},{"text":"1.0  |  "},
+      {"text":"Date: ","bold":true},{"text":"September 2026  |  "},
+      {"text":"Stack: ","bold":true},{"text":"Laravel 12 + Livewire 4 + Tailwind CSS v4 + DomPDF"}
+    ]},
+    {"type":"paragraph","text":""},
+    {"type":"heading","text":"Document Control","level":2},
+    {"type":"table","header":["Field","Value"],"rows":[
+      ["Application","SITHEHR (Hospital Management & Records System)"],
+      ["Purpose","End-user operational manual for all HMR modules"],
+      ["Audience","Hospital administrators, doctors, nurses, lab/radiology/pharmacy/CSR staff, billing officers, PhilHealth administrators, medical records officers"],
+      ["Platform","Web application - Chrome/Edge/Firefox desktop browser"],
+      ["Backend","Laravel 12, PHP 8.2, Microsoft SQL Server, JWT auth"],
+      ["Frontend","Livewire 4 (reactive components), Tailwind CSS v4, Alpine.js, DomPDF for PDF reports"],
+      ["Database","Microsoft SQL Server (MSSQL) - DB: sithemr, Host: 127.0.0.1:1433"],
+      ["Admin Login","admin@demohospital.com / Admin@12345 (DEMO hospital, tenant ID 1)"]
+    ]},
+    {"type":"page_break"},
+    {"type":"heading","text":"Table of Contents","level":1},
+    {"type":"toc"},
+    {"type":"page_break"},
+    {"type":"heading","text":"1. System Overview","level":1},
+    {"type":"paragraph","text":"SITHEHR is a comprehensive Hospital Management and Records System (HMR) built for multi-tenant hospital operations. It covers the full patient journey - from public self-service appointment booking, patient registration, outpatient and emergency encounters, inpatient and ICU admission, operating room scheduling, laboratory and radiology services, pharmacy and medical supply dispensing, billing and payments, PhilHealth claims, medical certificate generation, specialty care (OB, delivery, renal/dialysis), primary care (YAKAP), and complete administrative back-office (master data, user/role management, audit logging, and reporting)."},
+    {"type":"paragraph","text":""},
+    {"type":"paragraph","runs":[
+      {"text":"Core architectural features: ","bold":true},
+      {"text":"(1) Multi-tenancy - each hospital is a tenant with isolated data scope; (2) Soft deletes - records are deactivated via a history flag (history=1 = active), never physically removed; (3) Audit trail - every create and update logs created_by/created_date and updated_by/updated_date; (4) JWT authentication stored in an HTTP-only cookie; (5) Permission-based route protection - every page requires a specific permission (e.g. permission:lab.manage); (6) PDF reporting via Barryvdh DomPDF for invoices, receipts, statements of account, PhilHealth claim forms, lab/radiology results, ER EECL, and medical certificates; (7) Public appointment booking at /book-appointment - the only route accessible without login."}
+    ]},
+    {"type":"paragraph","text":""},
+    {"type":"paragraph","runs":[
+      {"text":"Technology stack: ","bold":true},
+      {"text":"PHP 8.2.12 on XAMPP, Laravel 12 framework, Livewire 4 for reactive server-side components, Tailwind CSS v4 for styling, Alpine.js for lightweight client interactivity, Barryvdh DomPDF for PDF generation, tymon/jwt-auth for token-based authentication, phpoffice/phpspreadsheet for spreadsheet exports. Frontend assets are built with Vite and published to public/build/ (run npm run build after frontend changes)."}
+    ]},
+    {"type":"page_break"}
+  ]
+}

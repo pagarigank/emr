@@ -1,0 +1,226 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - button "Delivery" [ref=e97]:
+          - generic [ref=e98]:
+            - img [ref=e99]
+            - generic [ref=e101]: Delivery
+          - img [ref=e102]
+        - button "Wards" [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic [ref=e109]: Wards
+          - img [ref=e110]
+        - link "Admission" [ref=e112] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e113]
+          - text: Admission
+        - link "Nursing" [ref=e115] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e116]
+          - text: Nursing
+        - link "Billing" [ref=e118] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e119]
+          - text: Billing
+        - link "Fund Sources" [ref=e121] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e122]
+          - text: Fund Sources
+        - button "OR" [ref=e125]:
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e129]: OR
+          - img [ref=e130]
+        - button "Emergency Room" [ref=e133]:
+          - generic [ref=e134]:
+            - img [ref=e135]
+            - generic [ref=e137]: Emergency Room
+          - img [ref=e138]
+        - button "OPD" [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - generic [ref=e145]: OPD
+          - img [ref=e146]
+        - button "OB" [ref=e149]:
+          - generic [ref=e150]:
+            - img [ref=e151]
+            - generic [ref=e153]: OB
+          - img [ref=e154]
+        - button "PhilHealth" [ref=e157]:
+          - generic [ref=e158]:
+            - img [ref=e159]
+            - generic [ref=e161]: PhilHealth
+          - img [ref=e162]
+        - button "YAKAP" [ref=e165]:
+          - generic [ref=e166]:
+            - img [ref=e167]
+            - generic [ref=e169]: YAKAP
+          - img [ref=e170]
+    - main [ref=e172]:
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - heading "Billing & Invoices" [level=2] [ref=e177]
+            - paragraph [ref=e178]: Manage patient invoices, service charges, and payments.
+          - button "Generate Invoice" [ref=e179]:
+            - img [ref=e180]
+            - text: Generate Invoice
+        - generic [ref=e182]:
+          - generic [ref=e184]:
+            - img [ref=e186]
+            - generic [ref=e188]:
+              - paragraph [ref=e189]: Unbilled Services
+              - paragraph [ref=e190]: ₱6,110.88
+          - generic [ref=e192]:
+            - img [ref=e194]
+            - generic [ref=e196]:
+              - paragraph [ref=e197]: Outstanding Balance
+              - paragraph [ref=e198]: ₱0.00
+          - generic [ref=e200]:
+            - img [ref=e202]
+            - generic [ref=e204]:
+              - paragraph [ref=e205]: Total Collected
+              - paragraph [ref=e206]: ₱0.00
+        - navigation [ref=e208]:
+          - button "For Billing" [ref=e209]:
+            - generic [ref=e210]:
+              - img [ref=e211]
+              - text: For Billing
+          - button "Invoices" [ref=e213]:
+            - generic [ref=e214]:
+              - img [ref=e215]
+              - text: Invoices
+          - button "Payments" [ref=e217]:
+            - generic [ref=e218]:
+              - img [ref=e219]
+              - text: Payments
+          - button "Reports" [ref=e221]:
+            - generic [ref=e222]:
+              - img [ref=e223]
+              - text: Reports
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - generic [ref=e227]:
+              - generic:
+                - img
+              - textbox "Search request code, type, or department…" [ref=e228]
+            - generic [ref=e229]:
+              - generic [ref=e230]: "Rows:"
+              - combobox [ref=e231]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+          - table [ref=e233]:
+            - rowgroup [ref=e234]:
+              - row "Source Request Code Patient Department Amount Date" [ref=e235]:
+                - columnheader [ref=e236]
+                - columnheader "Source" [ref=e237]
+                - columnheader "Request Code" [ref=e238]
+                - columnheader "Patient" [ref=e239]
+                - columnheader "Department" [ref=e240]
+                - columnheader "Amount" [ref=e241]
+                - columnheader "Date" [ref=e242]
+            - rowgroup [ref=e243]:
+              - row "Pharmacy PR-00004 Dr. Cruz Emergency Room ₱340.88 2026-06-28" [ref=e244]:
+                - cell [ref=e245]:
+                  - checkbox [ref=e246]
+                - cell "Pharmacy" [ref=e247]:
+                  - generic [ref=e248]: Pharmacy
+                - cell "PR-00004" [ref=e249]
+                - cell "Dr. Cruz" [ref=e250]
+                - cell "Emergency Room" [ref=e251]
+                - cell "₱340.88" [ref=e252]
+                - cell "2026-06-28" [ref=e253]
+              - row "CSR CR-00003 Nurse Maria Emergency Room ₱270.00 2026-06-28" [ref=e254]:
+                - cell [ref=e255]:
+                  - checkbox [ref=e256]
+                - cell "CSR" [ref=e257]:
+                  - generic [ref=e258]: CSR
+                - cell "CR-00003" [ref=e259]
+                - cell "Nurse Maria" [ref=e260]
+                - cell "Emergency Room" [ref=e261]
+                - cell "₱270.00" [ref=e262]
+                - cell "2026-06-28" [ref=e263]
+              - row "OECB ERA-20260627-9034 Santos, Maria ER ₱5,500.00 2026-06-27" [ref=e264]:
+                - cell [ref=e265]:
+                  - checkbox [ref=e266]
+                - cell "OECB" [ref=e267]:
+                  - generic [ref=e268]: OECB
+                - cell "ERA-20260627-9034" [ref=e269]
+                - cell "Santos, Maria" [ref=e270]
+                - cell "ER" [ref=e271]
+                - cell "₱5,500.00" [ref=e272]
+                - cell "2026-06-27" [ref=e273]
+  - contentinfo [ref=e274]:
+    - paragraph [ref=e276]: © 2026 SITHEMR. All rights reserved.

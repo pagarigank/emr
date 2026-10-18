@@ -1,0 +1,24 @@
+- generic [ref=e3]:
+  - generic [ref=e4]: SITHEMR
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - heading "Welcome back" [level=2] [ref=e16]
+        - paragraph [ref=e17]: Sign in to access your clinical dashboard
+      - generic [ref=e42]: Invalid email or password.
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: Email Address
+          - textbox "Email Address" [ref=e22]:
+            - /placeholder: you@sithemr.com
+            - text: admin@demohospital.com
+        - generic [ref=e23]:
+          - generic [ref=e24]: Password
+          - generic [ref=e25]:
+            - textbox "Password" [ref=e26]:
+              - /placeholder: ••••••••••
+              - text: Admin@1234
+            - button [ref=e27]
+        - button [ref=e32]
+      - generic [ref=e37]: 256-bit encrypted · Secure session · Multi-tenant isolated
+    - paragraph [ref=e41]: © 2026 SITHEMR · Hospital Electronic Medical Records

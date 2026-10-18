@@ -1,0 +1,396 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - button "Delivery" [ref=e97]:
+          - generic [ref=e98]:
+            - img [ref=e99]
+            - generic [ref=e101]: Delivery
+          - img [ref=e102]
+        - button "Wards" [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic [ref=e109]: Wards
+          - img [ref=e110]
+        - link "Admission" [ref=e112] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e113]
+          - text: Admission
+        - link "Nursing" [ref=e115] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e116]
+          - text: Nursing
+        - link "Billing" [ref=e118] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e119]
+          - text: Billing
+        - link "Fund Sources" [ref=e121] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e122]
+          - text: Fund Sources
+        - button "OR" [ref=e125]:
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e129]: OR
+          - img [ref=e130]
+        - button "Emergency Room" [ref=e133]:
+          - generic [ref=e134]:
+            - img [ref=e135]
+            - generic [ref=e137]: Emergency Room
+          - img [ref=e138]
+        - button "OPD" [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - generic [ref=e145]: OPD
+          - img [ref=e146]
+        - button "OB" [ref=e149]:
+          - generic [ref=e150]:
+            - img [ref=e151]
+            - generic [ref=e153]: OB
+          - img [ref=e154]
+        - button "PhilHealth" [ref=e157]:
+          - generic [ref=e158]:
+            - img [ref=e159]
+            - generic [ref=e161]: PhilHealth
+          - img [ref=e162]
+        - button "YAKAP" [ref=e165]:
+          - generic [ref=e166]:
+            - img [ref=e167]
+            - generic [ref=e169]: YAKAP
+          - img [ref=e170]
+    - main [ref=e172]:
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - heading "Patient Registration" [level=2] [ref=e177]
+            - paragraph [ref=e178]: Manage patient demographic records.
+          - button "Register Patient" [ref=e179]:
+            - img [ref=e180]
+            - text: Register Patient
+        - generic [ref=e182]:
+          - generic [ref=e183]:
+            - generic:
+              - img
+            - textbox "Search code, name, or contact…" [ref=e184]
+          - generic [ref=e185]:
+            - generic [ref=e186]: "Rows:"
+            - combobox [ref=e187]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e189]:
+          - rowgroup [ref=e190]:
+            - row "Patient Code ↑ Last Name ↑↓ First Name ↑↓ Date of Birth ↑↓ Contact No ↑↓ Status Actions" [ref=e191]:
+              - columnheader "Patient Code ↑" [ref=e192] [cursor=pointer]:
+                - generic [ref=e193]:
+                  - text: Patient Code
+                  - generic [ref=e194]: ↑
+              - columnheader "Last Name ↑↓" [ref=e195] [cursor=pointer]:
+                - generic [ref=e196]:
+                  - text: Last Name
+                  - generic [ref=e197]: ↑↓
+              - columnheader "First Name ↑↓" [ref=e198] [cursor=pointer]:
+                - generic [ref=e199]:
+                  - text: First Name
+                  - generic [ref=e200]: ↑↓
+              - columnheader "Date of Birth ↑↓" [ref=e201] [cursor=pointer]:
+                - generic [ref=e202]:
+                  - text: Date of Birth
+                  - generic [ref=e203]: ↑↓
+              - columnheader "Contact No ↑↓" [ref=e204] [cursor=pointer]:
+                - generic [ref=e205]:
+                  - text: Contact No
+                  - generic [ref=e206]: ↑↓
+              - columnheader "Status" [ref=e207]
+              - columnheader "Actions" [ref=e208]
+          - rowgroup [ref=e209]:
+            - row "20260000001001 Dela Cruz Juan May 15, 1980 — Active" [ref=e210]:
+              - cell "20260000001001" [ref=e211]
+              - cell "Dela Cruz" [ref=e212]
+              - cell "Juan" [ref=e213]
+              - cell "May 15, 1980" [ref=e214]
+              - cell "—" [ref=e215]
+              - cell "Active" [ref=e216]:
+                - generic [ref=e217]: Active
+              - cell [ref=e218]:
+                - generic [ref=e219]:
+                  - button "Edit" [ref=e220]:
+                    - img [ref=e221]
+                  - button "Archive" [ref=e223]:
+                    - img [ref=e224]
+            - row "20260000001002 Santos Maria Aug 22, 1992 — Active" [ref=e226]:
+              - cell "20260000001002" [ref=e227]
+              - cell "Santos" [ref=e228]
+              - cell "Maria" [ref=e229]
+              - cell "Aug 22, 1992" [ref=e230]
+              - cell "—" [ref=e231]
+              - cell "Active" [ref=e232]:
+                - generic [ref=e233]: Active
+              - cell [ref=e234]:
+                - generic [ref=e235]:
+                  - button "Edit" [ref=e236]:
+                    - img [ref=e237]
+                  - button "Archive" [ref=e239]:
+                    - img [ref=e240]
+            - row "20260000001003 Penduko Pedro Nov 03, 1975 — Active" [ref=e242]:
+              - cell "20260000001003" [ref=e243]
+              - cell "Penduko" [ref=e244]
+              - cell "Pedro" [ref=e245]
+              - cell "Nov 03, 1975" [ref=e246]
+              - cell "—" [ref=e247]
+              - cell "Active" [ref=e248]:
+                - generic [ref=e249]: Active
+              - cell [ref=e250]:
+                - generic [ref=e251]:
+                  - button "Edit" [ref=e252]:
+                    - img [ref=e253]
+                  - button "Archive" [ref=e255]:
+                    - img [ref=e256]
+            - row "20260000001004 Rivera Leonor Feb 14, 1988 — Active" [ref=e258]:
+              - cell "20260000001004" [ref=e259]
+              - cell "Rivera" [ref=e260]
+              - cell "Leonor" [ref=e261]
+              - cell "Feb 14, 1988" [ref=e262]
+              - cell "—" [ref=e263]
+              - cell "Active" [ref=e264]:
+                - generic [ref=e265]: Active
+              - cell [ref=e266]:
+                - generic [ref=e267]:
+                  - button "Edit" [ref=e268]:
+                    - img [ref=e269]
+                  - button "Archive" [ref=e271]:
+                    - img [ref=e272]
+            - row "20260000001005 Bonifacio Andres Dec 30, 1995 — Active" [ref=e274]:
+              - cell "20260000001005" [ref=e275]
+              - cell "Bonifacio" [ref=e276]
+              - cell "Andres" [ref=e277]
+              - cell "Dec 30, 1995" [ref=e278]
+              - cell "—" [ref=e279]
+              - cell "Active" [ref=e280]:
+                - generic [ref=e281]: Active
+              - cell [ref=e282]:
+                - generic [ref=e283]:
+                  - button "Edit" [ref=e284]:
+                    - img [ref=e285]
+                  - button "Archive" [ref=e287]:
+                    - img [ref=e288]
+            - row "20260000001006 Rizal Jose Jun 19, 1990 — Active" [ref=e290]:
+              - cell "20260000001006" [ref=e291]
+              - cell "Rizal" [ref=e292]
+              - cell "Jose" [ref=e293]
+              - cell "Jun 19, 1990" [ref=e294]
+              - cell "—" [ref=e295]
+              - cell "Active" [ref=e296]:
+                - generic [ref=e297]: Active
+              - cell [ref=e298]:
+                - generic [ref=e299]:
+                  - button "Edit" [ref=e300]:
+                    - img [ref=e301]
+                  - button "Archive" [ref=e303]:
+                    - img [ref=e304]
+            - row "20260000001007 Silang Gabriela Mar 08, 1998 — Active" [ref=e306]:
+              - cell "20260000001007" [ref=e307]
+              - cell "Silang" [ref=e308]
+              - cell "Gabriela" [ref=e309]
+              - cell "Mar 08, 1998" [ref=e310]
+              - cell "—" [ref=e311]
+              - cell "Active" [ref=e312]:
+                - generic [ref=e313]: Active
+              - cell [ref=e314]:
+                - generic [ref=e315]:
+                  - button "Edit" [ref=e316]:
+                    - img [ref=e317]
+                  - button "Archive" [ref=e319]:
+                    - img [ref=e320]
+            - row "20260000001008 Aguinaldo Emilio Apr 22, 1985 — Active" [ref=e322]:
+              - cell "20260000001008" [ref=e323]
+              - cell "Aguinaldo" [ref=e324]
+              - cell "Emilio" [ref=e325]
+              - cell "Apr 22, 1985" [ref=e326]
+              - cell "—" [ref=e327]
+              - cell "Active" [ref=e328]:
+                - generic [ref=e329]: Active
+              - cell [ref=e330]:
+                - generic [ref=e331]:
+                  - button "Edit" [ref=e332]:
+                    - img [ref=e333]
+                  - button "Archive" [ref=e335]:
+                    - img [ref=e336]
+            - row "20260000001009 Aquino Melchora Jan 06, 1970 — Active" [ref=e338]:
+              - cell "20260000001009" [ref=e339]
+              - cell "Aquino" [ref=e340]
+              - cell "Melchora" [ref=e341]
+              - cell "Jan 06, 1970" [ref=e342]
+              - cell "—" [ref=e343]
+              - cell "Active" [ref=e344]:
+                - generic [ref=e345]: Active
+              - cell [ref=e346]:
+                - generic [ref=e347]:
+                  - button "Edit" [ref=e348]:
+                    - img [ref=e349]
+                  - button "Archive" [ref=e351]:
+                    - img [ref=e352]
+            - row "20260000001010 Mabini Apolinario Jul 23, 1982 — Active" [ref=e354]:
+              - cell "20260000001010" [ref=e355]
+              - cell "Mabini" [ref=e356]
+              - cell "Apolinario" [ref=e357]
+              - cell "Jul 23, 1982" [ref=e358]
+              - cell "—" [ref=e359]
+              - cell "Active" [ref=e360]:
+                - generic [ref=e361]: Active
+              - cell [ref=e362]:
+                - generic [ref=e363]:
+                  - button "Edit" [ref=e364]:
+                    - img [ref=e365]
+                  - button "Archive" [ref=e367]:
+                    - img [ref=e368]
+        - navigation "Pagination Navigation" [ref=e372]:
+          - generic [ref=e373]:
+            - paragraph [ref=e375]: Showing 1 to 10 of 12 results
+            - generic [ref=e377]:
+              - generic "&laquo; Previous" [ref=e379]:
+                - img [ref=e381]
+              - generic [ref=e385]: "1"
+              - button "Go to page 2" [ref=e387]: "2"
+              - button "Next &raquo;" [ref=e389]:
+                - img [ref=e390]
+        - generic [ref=e489]:
+          - generic [ref=e490]:
+            - heading "Register New Patient" [level=3] [ref=e491]
+            - button [ref=e492]:
+              - img [ref=e493]
+          - generic [ref=e495]:
+            - button "1. Identity" [active] [ref=e496]
+            - button "2. Demographics" [ref=e497]
+            - button "3. Family & IDs" [ref=e498]
+            - button "4. Contact & Address" [ref=e499]
+            - button "5. Clinical" [ref=e500]
+          - generic [ref=e501]:
+            - generic [ref=e503]:
+              - generic [ref=e504]:
+                - generic [ref=e505]:
+                  - generic [ref=e506]: Patient Code *
+                  - textbox "Patient Code *" [ref=e507]: "20260000001013"
+                - generic [ref=e509] [cursor=pointer]:
+                  - checkbox "PhilHealth Member" [checked] [ref=e510]
+                  - generic [ref=e511]: PhilHealth Member
+              - generic [ref=e542]:
+                - paragraph [ref=e543]:
+                  - img [ref=e544]
+                  - text: A draft eClaim will be created automatically. You can complete the PhilHealth PIN and other details from the eClaims module later.
+                - generic [ref=e546]:
+                  - generic [ref=e547]: Link to Member Record (optional)
+                  - combobox "Link to Member Record (optional)" [ref=e548]:
+                    - option "— Select existing member record (if available) —" [selected]
+                    - option "10-8395196-3 — Bonifacio, Andres"
+                    - option "10-6763383-9 — Dela Cruz, Juan"
+                    - option "12-3456789-0 — Luna, Juan"
+                    - option "10-3550189-8 — Penduko, Pedro"
+                    - option "10-6892781-1 — Rivera, Leonor"
+                    - option "10-5617191-7 — Santos, Maria"
+              - generic [ref=e512]:
+                - generic [ref=e513]:
+                  - generic [ref=e514]: Last Name *
+                  - textbox "Last Name *" [ref=e515]: Luna
+                - generic [ref=e516]:
+                  - generic [ref=e517]: First Name *
+                  - textbox "First Name *" [ref=e518]: Juan
+                - generic [ref=e519]:
+                  - generic [ref=e520]: Middle Name
+                  - textbox "Middle Name" [ref=e521]
+                - generic [ref=e522]:
+                  - generic [ref=e523]: Suffix
+                  - combobox "Suffix" [ref=e524]:
+                    - option "—" [selected]
+                    - option "Jr."
+                    - option "Sr."
+                    - option "II"
+                    - option "III"
+                    - option "IV"
+                    - option "V"
+              - generic [ref=e525]:
+                - generic [ref=e526]:
+                  - generic [ref=e527]: Date of Birth
+                  - textbox "Date of Birth" [ref=e528]: 1990-01-15
+                - generic [ref=e529]:
+                  - generic [ref=e530]: Place of Birth
+                  - textbox "Place of Birth" [ref=e531]
+                - generic [ref=e532]:
+                  - generic [ref=e533]: Maiden Name
+                  - textbox "Maiden Name" [ref=e534]
+            - generic [ref=e535]:
+              - generic [ref=e536]:
+                - button [ref=e537]
+                - generic [ref=e539]: Active Patient
+              - button "Next" [ref=e541]
+  - contentinfo [ref=e392]:
+    - paragraph [ref=e394]: © 2026 SITHEMR. All rights reserved.

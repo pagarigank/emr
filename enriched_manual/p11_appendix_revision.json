@@ -1,0 +1,126 @@
+[
+    {"type":"heading","text":"20. Appendix","level":1},
+    {"type":"heading","text":"A. Role-Based Access Summary","level":2},
+    {"type":"table","header":["Role","Key Permissions","Main Modules Accessible"],"rows":[
+      ["Superadmin","All permissions","Everything - all modules, admin, all master data, all reports, all print functions"],
+      ["Tenant Admin (Hospital Admin)","admin.masters, admin.roles, admin.role-permissions, admin.audit-log, admin.users, admin.users.permissions, admin.tenants, admin.settings","All master data (country, region, province, city, barangay, religion, gender, civil status, nationality, occupation, blood type, relationship, hospital, departments, permissions), all user/role management, audit log, settings. Plus all clinical module permissions typically granted to hospital admin."],
+      ["Doctor (Attending Physician)","opd.view, er.triage, admission.view, lab.view, radiology.view, pharmacy.view, procedure.view, billing.view, philhealth.view, medical-records.view, doctors.dashboard, doctors.chart, doctors.schedule, patient.view","OPD consultations (create, edit, SOAP, orders), ER triage, ER admission and treatment, lab results viewing, radiology results viewing, pharmacy requests viewing, procedures viewing, billing invoices/payments viewing, PhilHealth claims viewing, medical records/certificates, doctors dashboard and schedule, patient registration (view/search only typically)."],
+      ["Nurse","opd.view, er.triage, nursing.view, admission.view, lab.view, pharmacy.view, procedure.view","OPD (vitals entry, create encounter support), ER triage, nursing dashboard, admission support, lab/pharmacy/procedure order entry support. Vitals entry is the nurse's primary function in OPD (openVitals/saveVitals in OpdConsultationCrud)."],
+      ["Pharmacist","pharmacy.manage, pharmacy.dispense, pharmacy.view, pharmacy.reports, pharmacy.request.print, pharmacy.request.encounter-print","Pharmacy master data (drugs, drug batches, inventory, PO, stock adjustments), dispensing, PMR viewing, pharmacy reports, printing pharmacy requests."],
+      ["Laboratory Technologist","lab.manage, lab.result, lab.dispense, lab.result.print","Lab master data (sections, units, specimen types, instruments, tests, panels, reference ranges), lab results entry (lab_result, lab_result_number, result_interpretation), lab material dispensing, printing lab results."],
+      ["Radiologic Technologist","radiology.manage, radiology.result, radiology.dispense","Radiology master data (modalities, body parts, exam types), radiology results entry (findings, impression), radiology supply dispensing, printing radiology reports."],
+      ["Pathologist / Lab Supervisor","lab.manage, lab.result (with review), lab.result.print","All lab technologist permissions PLUS result review (is_reviewed, reviewed_by, reviewed_date) and verifying results (Verified status)."],
+      ["Radiologist","radiology.manage, radiology.result (with report), radiology.result.print, radiology.dicom","All rad tech permissions PLUS radiologist report finalization (radiologist_findings, radiology_impression, is_reviewed, reviewed_by)."],
+      ["Billing Officer","billing.view, billing.manage","Billing dashboard, invoices (create, edit, discount), payments (record), patient account ledger, manual charges, printing (invoice, receipt, statement), fund sources and insurance providers management."],
+      ["PhilHealth Administrator","philhealth.view, philhealth.manage, philhealth.reports","PhilHealth master data (ICD10, RVS, case rates, HC professionals, members), PhilHealth claims (create, submit, manage line items, batches), all PhilHealth claim form PDFs (E-SOAP, CF1-CF5, EECL), PhilHealth reports."],
+      ["Medical Records Officer","medical-records.view","Medical certificate generation (all certificate types), patient chart access."],
+      ["CSR / Supply Officer","csr.manage, csr.dispense, supply.request.print, supply.request.encounter-print","Supply master data (units, categories, suppliers, stock locations, items, inventory, stock adjustments), CSR dispensing, printing CSR requests."],
+      ["YAKAP / Primary Care Admin","yakap.view, yakap.manage, konsulta.view","YAKAP dashboard, empanelments (CRUD), FPE records, screenings, capitation, Konsulta consultations."],
+      ["OB / Gynecology Specialist","ob.view, delivery.view","OB visit types, fetal presentations, contraceptive methods, OB consultations, delivery types, complications, rooms, schedule, delivery records."],
+      ["Renal / Dialysis Specialist","renal.view","Renal care dialysis types, dialysis sessions CRUD."],
+      ["OR / Surgical Team","or.view","OR rooms, OR schedule (create, edit, reschedule, perform, post-op notes)."],
+      ["Ward / Bed Manager","admission.view","Admission CRUD, ICU wards/beds, MICU patients/assessments, ward wards/room types/rooms, room transfers, transfers."],
+      ["HMO / Insurance Coordinator","billing.view, billing.manage, philhealth.view","Billing (insurance payments, HMO payments), PhilHealth (insurance-related claims)."],
+      ["Supervisor / Head Nurse","nursing.view, opd.view, er.triage, admission.view, plus review permissions","Nursing dashboard, all nursing functions plus review/verification capabilities for orders and results."],
+      ["Auditor / Compliance Officer","admin.audit-log","Read-only access to audit log for compliance review."],
+      ["Receptionist / Front Desk","patient.view, opd.view (limited), public.book (if applicable)","Patient registration (create, search), may assist with OPD encounter creation, public appointment booking (if access granted)."]
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"B. User Interface Conventions","level":2},
+    {"type":"bullet_list","items":[
+      "All forms use Livewire 4 reactive components. When you change a field, the form reacts immediately on the server (no full page reload).",
+      "Cascading dropdowns (country->region->province->city->barangay, patient->philhealth member) use wire:model.live for real-time updates. Plain wire:model is deferred and would not re-render the dependent dropdown.",
+      "Never use wire:change - this throws DirectlyCallingLifecycleHooksNotAllowedException in Livewire 4. Use wire:model.live instead for cascading UI.",
+      "Pagination is standard across all list views. Use the page navigation controls at the bottom of lists.",
+      "Search boxes auto-filter on input (Livewire updatingX methods reset the page when the search term changes).",
+      "Modal dialogs are used for create/edit forms and detail views. Close modals with the X button or the Close button inside.",
+      "Flash messages (success/error) appear at the top of the page after actions. They auto-dismiss after a few seconds.",
+      "Table views show data in a grid with column headers. Click column headers to sort (ascending/descending toggle).",
+      "Print/PDF buttons generate documents server-side via DomPDF. The browser downloads the PDF file. Open it with your PDF viewer and print from there.",
+      "The sidebar/top navigation shows all accessible pages based on your permissions. Pages you cannot access are hidden.",
+      "The dashboard is the landing page after login. It shows today's activity and quick-access cards to major modules."
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"C. Data Flow: Patient Journey End to End","level":2},
+    {"type":"paragraph","text":"This section traces a typical patient's complete journey through the system, from registration to discharge, showing which modules and records are created at each step."},
+    {"type":"heading","text":"C.1 Outpatient Journey (walk-in OPD consultation)","level":3},
+    {"type":"numbered_list","items":[
+      "Patient arrives at hospital.",
+      "Step 1: Patient Registration - If new patient, register at Patients (/patients). Create patient record with demographics, address, contact, PhilHealth membership (if applicable). Patient code generated (e.g. 202600000001). If existing patient, skip to step 2.",
+      "Step 2: OPD Consultation Creation - At OPD, create OPD consultation (OPD > Consultations > Create New). Search/select patient. Fill: OPD Clinic, Attending Physician, Consultation Type, Visit Type, Referral Source. Save. Consultation code generated (OPD-00001). Status: Pending.",
+      "Step 3: Nursing Vitals Entry - Nurse enters vitals (BP, HR, temp, RR, weight, height, O2 sat, chief complaint) via Enter Vitals button. Status advances to In Progress.",
+      "Step 4: Doctor SOAP Documentation - Doctor fills SOAP: HPI, physical exam, assessment, treatment plan, orders summary, disposition, follow-up date. Status becomes Completed (if disposition set).",
+      "Step 5: Orders (if needed) - Doctor places orders: Lab (LR-XXXXX), Pharmacy (PR-XXXXX), CSR (CR-XXXXX), Radiology (Rad-XXXXX), Procedure (Proc-XXXXX). Each order created with request code and items.",
+      "Step 6: Order Fulfillment - Lab tech enters results (Lab > Results). Pharmacist dispenses (Pharmacy > Dispensing). CSR officer dispenses supplies (Supply > Dispensing). Rad tech performs exam, radiologist reports (Radiology > Results). Procedures performed (Procedures > Dispensing). Each updates the request status.",
+      "Step 7: Billing - Billing officer creates invoice (INV-XXXXX) from unbilled services (lab charges, pharmacy charges, CSR charges, radiology charges, procedure charges, manual charges). Applies discount if needed. Records patient payment (PAY-XXXXX). Prints invoice and receipt as needed.",
+      "Step 8: PhilHealth Claim (if eligible) - If patient has active PhilHealth membership and the visit qualifies, file PhilHealth claim (PhilHealth > Claims). Link to OPD consultation. Add services with RVS codes. Submit claim. Generate CF1-CF5 forms for submission.",
+      "Step 9: Certificate (if needed) - If patient needs a medical certificate, generate from Medical Records (/medical-records). Select certificate type, patient, encounter. Generate PDF.",
+      "Step 10: Follow-up - If follow-up needed, next_follow_up_date is set on the consultation. Patient returns for follow-up visit, new OPD consultation created."
+    ]},
+    {"type":"heading","text":"C.2 Emergency Journey (ER admission to discharge)","level":3},
+    {"type":"numbered_list","items":[
+      "Step 1: Triage - Patient arrives at ER. Create triage record (ER > Triage): patient, acuity level (1-5), mobility status, triage notes. Triage captures severity.",
+      "Step 2: ER Admission - Create ER admission (ER > Admission): patient, ER bed (status -> Occupied), attending physician, initial diagnosis, mode of arrival. Admission code: ER#<id>.",
+      "Step 3: Treatment - Doctor fills treatment form: HPI, physical exam, assessment, orders summary, treatment notes, OECB (if applicable - add OECB entries with core presentation, auto-fetches package code and fixed fee), disposition, discharge instructions.",
+      "Step 4: Orders - Doctor places orders from ER: Lab (LR-), Pharmacy (PR-), CSR (CR-), Radiology (Rad-), Procedure (Proc-). Priority defaults to 'Urgent' for ER.",
+      "Step 5: Order Fulfillment - Same as OPD (lab results, pharmacy dispensing, CSR dispensing, radiology exam+report, procedure performance).",
+      "Step 6: EECL PDF (if OECB) - If is_oecb=true, generate EECL PDF (route: er.admission.eeclpdf). PDF includes all OECB entries, triage, bed/zone, diagnosis, disposition. For emergency billing/PhilHealth.",
+      "Step 7: Disposition - Set final disposition: Discharged (goes home), Admitted (transferred to inpatient ward/ICU), Referred (to another facility), Left Without Being Seen, Against Medical Advice, Expired. Bed status updated (occupied bed -> Available if discharged).",
+      "Step 8: Billing - Billing officer creates invoice (INV-XXXXX) from ER charges. Records payment. If PhilHealth member, file PhilHealth claim (Emergency type). Generate EECL claim form PDF.",
+      "Step 9: Inpatient Admission (if admitted) - If disposition = Admitted, create inpatient admission (Admission /admission): patient, admitting diagnosis, attending physician, admission type, ward room or ICU bed (status -> Occupied). Admission code: ADM#<id>. The ER admission links to the inpatient admission."
+    ]},
+    {"type":"heading","text":"C.3 Inpatient Journey (admission to discharge)","level":3},
+    {"type":"numbered_list","items":[
+      "Step 1: Inpatient Admission - Create admission (Admission /admission): patient, admitting diagnosis, attending physician, admission type, ward room or ICU bed (status -> Occupied), admission date. Admission code: ADM#<id>.",
+      "Step 2: Ward/ICU Care - Throughout stay: vitals, nursing notes, physician rounds, orders (lab, pharmacy, CSR, radiology, procedure daily), medications dispensed, procedures performed. All linked to the admission record. Bed/room status managed. MICU patients get periodic assessment parameters.",
+      "Step 3: OR Procedure (if needed) - Schedule OR procedure (OR > Schedule): patient, OR room, procedure type/description, surgeon, anesthesiologist, date/time. Perform procedure: intra-op notes, post-op notes. OR schedule updates.",
+      "Step 4: Discharge - On discharge: set discharge date, discharge diagnosis, discharge disposition, discharge instructions. Bed/room status freed (Occupied -> Available). Admission status becomes 'Discharged'.",
+      "Step 5: Billing - Billing officer creates invoice (INV-XXXXX) from all inpatient charges (cumulative lab, pharmacy, CSR, radiology, procedure charges, room/bed charges, OR charges, etc.). Records payment. If PhilHealth, file inpatient claim (Inpatient type). Generate CF1-CF5 forms.",
+      "Step 6: Certificate - If needed, generate discharge summary/medical certificate from Medical Records.",
+      "Step 7: Follow-up - If follow-up needed, patient returns to OPD. New OPD consultation created, linked to admission if needed."
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"D. Model and Database Conventions","level":2},
+    {"type":"bullet_list","items":[
+      "All models use $timestamps = false - there are no automatic created_at/updated_at columns. Instead, audit columns created_by, created_date, updated_by, updated_date are managed explicitly in every create() and update() call.",
+      "All models use $guarded = ['id'] - all other fields are mass-assignable.",
+      "Soft deletes use a history column: 1 = current/active, 0 = deactivated. The global scope filters to history = 1. To query across all history states or across tenants, use withoutGlobalScopes() and re-add ->where('history', 1) and ->where('tenant_id', $tid) manually.",
+      "Tenant scoping: all tenant-scoped models use the ScopedByTenant trait. This trait automatically adds ->where('tenant_id', request()->attributes->get('tenant_id')) to every query. The tenant_id is set on the request when a user logs in.",
+      "Foreign keys follow Laravel conventions: {relation}_id (e.g. patient_id, department_id, health_care_professional_id).",
+      "Audit columns: created_by (int - user ID), created_date (datetime), updated_by (int - user ID), updated_date (datetime). Set explicitly on every create/update. For public booking (no authenticated user), created_by/updated_by can be null.",
+      "Multi-tenancy: tenant_id = hospitals.id. DEMO hospital = id 1. All tenant-scoped records have tenant_id field. When running raw queries or withoutGlobalScopes, always filter by tenant_id.",
+      "Unique constraints often include tenant_id and history in the rule (e.g. unique:patients,patient_code,NULL,id,tenant_id,{tid},history,1). This ensures uniqueness per tenant per active record.",
+      "MS SQL Server quirks: SUBSTRING takes 3 arguments (expression, start, length). Unlike MySQL, there is no 2-argument form. When writing raw SQL with DB::statement(), use SUBSTRING correctly.",
+      "Relationships: Eloquent relationships (belongsTo, hasMany, belongsToMany) are standard. Some models use belongsToThrough for indirect relationships (e.g. PayoutTransaction -> SC via PayoutCutoff)."
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"E. Development and Deployment Notes","level":2},
+    {"type":"bullet_list","items":[
+      "Stack: Laravel 12, PHP 8.2.12, XAMPP on Windows, Microsoft SQL Server (MSSQL) database. Frontend: Livewire 4, Tailwind CSS v4, Alpine.js v3.15, Vite 7.",
+      "Environment: .env file contains APP_URL, DB_CONNECTION=sqlsrv, DB_HOST=127.0.0.1, DB_PORT=1433, DB_DATABASE=sithemr, DB_USERNAME=root, DB_PASSWORD=P@ssw0rd.",
+      "Do NOT install doctrine/dbal - use raw DB::statement() for column changes (schema modifications). The project explicitly avoids doctrine/dbal.",
+      "Frontend build: npm run build - compiles Vite assets (CSS + JS) to public/build/. Run this after any Blade/Vue/Tailwind changes. npm run dev runs hot-reload dev server. package.json has \"type\": \"module\" - E2E test scripts must be .cjs files.",
+      "JWT Auth: tymon/jwt-auth v2.3. JWT token stored in HTTP-only cookie 'jwt_token'. JwtMiddleware wraps the entire web group. Public routes must be explicitly added to the skip list in app/Http/Middleware/JwtMiddleware.php.",
+      "Livewire 4: use wire:model.live for cascading UI. NEVER wire:change. snake_case for public component properties.",
+      "PDF Engine: Barryvdh DomPDF v3.1. All PDF generation is server-side. PDF templates are Blade templates rendered to HTML then converted to PDF. PDFs are downloaded by the browser.",
+      "Spreadsheet: PHPOffice PHPSpreadsheet v5.8. Used for Excel export in reports.",
+      "E2E Testing: Playwright installed locally only (not in package.json - run npm install playwright --no-save). Browser downloaded (npx playwright install chromium). Test scripts must be .cjs (because package.json has \"type\": \"module\"). Run with node. Delete after passing.",
+      "Admin login: admin@demohospital.com / Admin@12345 (DEMO hospital, tenant ID 1).",
+      "Public booking: /book-appointment is the only route accessible without login. Patients self-book appointments. The booking generates appointment_code (APT-XXXXX format).",
+      "Rate limiting: /login throttled to 10 attempts per 1 minute.",
+      "Multi-tenancy: tenant_id = hospitals.id. ScopedByTenant trait auto-filters. DEMO hospital = id 1.",
+      "History soft delete: history column (1=current). Global scope filters history=1. When using withoutGlobalScopes(), add ->where('history', 1) and ->where('tenant_id', $tid) manually.",
+      "Debugging tips: (1) If a dropdown is empty, check if master data exists for your tenant. (2) If you get 403, check your role's permissions. (3) If a page expired, refresh and log in again. (4) For raw SQL on MSSQL, remember SUBSTRING needs 3 args. (5) For queries across tenants, use withoutGlobalScopes() + manual tenant/history filters."
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"F. Revision History","level":2},
+    {"type":"table","header":["Version","Date","Author","Changes"],"rows":[
+      ["1.0","September 2026","HMR Team","Initial user manual release. Covered system overview, login/dashboard, master data, patient registration, public appointment booking, OPD, ER, inpatient/ICU/ward/OR, laboratory, radiology, pharmacy, CSR, procedures, billing, PhilHealth, medical records, doctors module, OB, delivery, renal care, nursing, YAKAP, Konsulta, procedures, transfers, reports, settings, renal care, FAQ with 11 categories and 50+ questions, and appendix with role-based access summary, UI conventions, patient journey flows, model conventions, and development notes."],
+      ["2.0 (Enhanced)","September 2026","HMR Team","Enhanced version with significantly deeper detail: complete field-level references for all major models (Patient with 70+ fields, OpdConsultation, ErAdmission, DoctorAppointment, BillingInvoice/BillingLineItem/BillingPayment, PhilHealthClaim/ClaimService, LabRequest/LabRequestItem, RadiologyRequest/RadiologyRequestItem, PharmacyRequest/PharmacyRequestItem, CsrRequest/CsrRequestItem, ProcedureRequest/ProcedureRequestItem, YAKAP empanelments/FPE/screenings/capitation), exact request code formats (LR-/PR-/CR-/Rad-/Proc-/OPD-/APT-/INV-/PAY-/PH-/YAP-), complete validation rules for patient registration, full order placement workflows for all 5 order types (lab/pharmacy/CSR/radiology/procedure) from OPD and ER with transaction details, OECB structure and workflow, complete PhilHealth claim form PDF descriptions (E-SOAP/CF1-CF5/EECL), complete doctor schedule management workflow from source code, cascading dropdown logic for geographic hierarchy and patient-philhealth, ER bed management real-time status updates, MICU assessment parameters detail, complete payment/discount logic (two-level discount, overpayment handling), billing line item types, PhilHealth claim lifecycle, patient journey end-to-end flows (OPD/ER/Inpatient), complete role-based access table (18+ roles), UI conventions, model/database conventions, and development/deployment notes."]
+    ]}
+  ]

@@ -1,0 +1,120 @@
+- generic [ref=f4e2]:
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - generic [ref=f4e5]:
+        - button [ref=f4e6]
+        - generic [ref=f4e9]:
+          - img "SITHEMR Logo" [ref=f4e10]
+          - heading "SITHEMR" [level=1] [ref=f4e11]
+      - button "S Super Administrator superadmin" [ref=f4e14]:
+        - generic [ref=f4e15]: S
+        - generic [ref=f4e16]:
+          - generic [ref=f4e17]: Super Administrator
+          - generic [ref=f4e18]: superadmin
+  - generic [ref=f4e21]:
+    - navigation [ref=f4e22]:
+      - generic [ref=f4e23]:
+        - generic [ref=f4e24]:
+          - paragraph [ref=f4e25]: Main
+          - link "Dashboard" [ref=f4e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f4e29] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=f4e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f4e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f4e38]:
+          - paragraph [ref=f4e39]: Clinical Modules
+          - button "OPD" [ref=f4e41]
+          - button "Emergency Room" [ref=f4e49]
+          - button "Admission & Wards" [ref=f4e57]
+          - link "Nursing" [ref=f4e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f4e68]
+          - button "Delivery" [ref=f4e76]
+          - button "Operating Room" [ref=f4e84]
+          - button "Renal Care" [ref=f4e92]
+        - generic [ref=f4e99]:
+          - paragraph [ref=f4e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f4e102]
+          - button "Radiology" [ref=f4e110]
+          - button "Pharmacy" [ref=f4e119]
+          - button "Procedures" [ref=f4e127]
+          - button "CSR / Supply" [ref=f4e136]
+        - generic [ref=f4e143]:
+          - paragraph [ref=f4e144]: Financial & Claims
+          - generic [ref=f4e145]:
+            - button "Billing" [ref=f4e146]
+            - generic [ref=f4e153]:
+              - link "Invoices" [ref=f4e154] [cursor=pointer]:
+                - /url: /billing
+              - link "Fund Sources" [ref=f4e158] [cursor=pointer]:
+                - /url: /billing/fund-sources
+          - button "PhilHealth" [ref=f4e163]
+          - button "YAKAP" [ref=f4e171]
+          - link "Konsulta" [ref=f4e179] [cursor=pointer]:
+            - /url: /konsulta
+          - link "Transactions" [ref=f4e183] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f4e186] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f4e189]:
+          - paragraph [ref=f4e190]: Administration
+          - button "Masters" [ref=f4e192]
+          - link "Roles" [ref=f4e199] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f4e204] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f4e208] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f4e212]:
+      - generic [ref=f4e214]:
+        - generic [ref=f4e216]:
+          - heading "Billing & Invoices" [level=2] [ref=f4e217]
+          - paragraph [ref=f4e218]: Manage patient invoices, service charges, and payments.
+        - generic [ref=f4e219]:
+          - generic [ref=f4e225]:
+            - paragraph [ref=f4e226]: Unbilled Services
+            - paragraph [ref=f4e227]: ₱468.50
+          - generic [ref=f4e233]:
+            - paragraph [ref=f4e234]: Outstanding Balance
+            - paragraph [ref=f4e235]: ₱1,168.50
+          - generic [ref=f4e241]:
+            - paragraph [ref=f4e242]: Total Collected
+            - paragraph [ref=f4e243]: ₱0.00
+        - navigation [ref=f4e245]:
+          - button [ref=f4e246]
+          - button [ref=f4e250]
+          - button [ref=f4e254]
+          - button [ref=f4e258]
+          - button [ref=f4e262]
+        - generic [ref=f4e266]:
+          - textbox "Search patient name or code…" [ref=f4e269]
+          - table [ref=f4e272]:
+            - rowgroup [ref=f4e273]:
+              - row [ref=f4e274]:
+                - columnheader "Patient" [ref=f4e275]
+                - columnheader "Total Charges" [ref=f4e276]
+                - columnheader "Total Payments" [ref=f4e277]
+                - columnheader "Balance" [ref=f4e278]
+                - columnheader "Entries" [ref=f4e279]
+                - columnheader "Last Activity" [ref=f4e280]
+                - columnheader "Actions" [ref=f4e281]
+            - rowgroup [ref=f4e282]:
+              - row [ref=f4e283]:
+                - cell "Santos, Maria 20260000001002" [ref=f4e284]:
+                  - generic [ref=f4e285]: Santos, Maria
+                  - generic [ref=f4e286]: "20260000001002"
+                - cell "₱1,168.50" [ref=f4e287]
+                - cell "₱0.00" [ref=f4e288]
+                - cell "₱1,168.50" [ref=f4e289]
+                - cell "2" [ref=f4e290]
+                - cell "Jul 15, 2026" [ref=f4e291]
+                - cell [ref=f4e292]:
+                  - generic [ref=f4e293]:
+                    - button "Ledger" [ref=f4e294]
+                    - button "Pay" [ref=f4e297]
+                    - button "Charge" [ref=f4e300]
+  - contentinfo [ref=f4e303]:
+    - paragraph [ref=f4e305]: © 2026 SITHEMR. All rights reserved.

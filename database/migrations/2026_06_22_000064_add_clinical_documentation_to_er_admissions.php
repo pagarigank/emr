@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('er_admissions', function (Blueprint $table) {
+            $table->text('history_of_present_illness')->nullable()->after('initial_diagnosis');
+            $table->text('physical_exam_findings')->nullable()->after('history_of_present_illness');
+            $table->text('assessment')->nullable()->after('physical_exam_findings');
+            $table->text('orders_summary')->nullable()->after('assessment')->comment('Medications, labs, imaging, procedures ordered');
+            $table->text('discharge_instructions')->nullable()->after('disposition_datetime');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('er_admissions', function (Blueprint $table) {
+            $table->dropColumn(['history_of_present_illness', 'physical_exam_findings', 'assessment', 'orders_summary', 'discharge_instructions']);
+        });
+    }
+};

@@ -1,0 +1,402 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: Main
+          - link "Dashboard" [ref=e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Clinical Modules
+          - button "OPD" [ref=e41]
+          - button "Emergency Room" [ref=e49]
+          - button "Admission & Wards" [ref=e57]
+          - link "Nursing" [ref=e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=e68]
+          - button "Delivery" [ref=e76]
+          - button "Operating Room" [ref=e84]
+          - button "Renal Care" [ref=e92]
+        - generic [ref=e99]:
+          - paragraph [ref=e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=e102]
+          - button "Radiology" [ref=e110]
+          - button "Pharmacy" [ref=e119]
+          - button "Procedures" [ref=e127]
+          - button "CSR / Supply" [ref=e136]
+        - generic [ref=e143]:
+          - paragraph [ref=e144]: Financial & Claims
+          - button "Billing" [ref=e146]
+          - button "PhilHealth" [ref=e154]
+          - button "YAKAP" [ref=e162]
+          - link "Transactions" [ref=e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=e175]:
+          - paragraph [ref=e176]: Administration
+          - button "Masters" [ref=e178]
+          - link "Roles" [ref=e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=e198]:
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - button "Back to Patient List" [ref=e314]
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - generic [ref=e212]:
+                - heading "demo3, demo3" [level=2] [ref=e317]
+                - generic [ref=e318]:
+                  - generic [ref=e319]: ADM-00001
+                  - generic [ref=e322]: "20260000001011"
+              - generic [ref=e323]:
+                - generic [ref=e324]:
+                  - paragraph [ref=e325]: Admitted
+                  - paragraph [ref=e326]: Jul 23, 2026 05:12 AM
+                - generic [ref=e327]:
+                  - paragraph [ref=e328]: Room / Ward
+                  - paragraph [ref=e329]: Ward Room 101Cardiology Ward
+                - button "Transfer Room" [ref=e330]
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - paragraph [ref=e333]: Admission Type
+                - paragraph [ref=e334]: Emergency
+              - generic [ref=e335]:
+                - paragraph [ref=e336]: Source
+                - paragraph [ref=e337]: ER
+              - generic [ref=e338]:
+                - paragraph [ref=e339]: Attending Physician
+                - paragraph [ref=e340]: Dr. Juan Dela Cruz
+              - generic [ref=e341]:
+                - paragraph [ref=e342]: Admitting Diagnosis
+                - paragraph [ref=e343]: sdfsd
+          - navigation [ref=e345]:
+            - button [ref=e346]
+            - button [ref=e350]
+            - button [ref=e354]
+            - button [ref=e358]
+            - button [ref=e362]
+            - button [ref=e366]
+          - generic [ref=e425]:
+            - generic [ref=e426]:
+              - heading "Orders & Interventions" [level=3] [ref=e427]
+              - button "Place Order" [active] [ref=e428]
+            - generic [ref=e431]:
+              - generic [ref=e432]:
+                - heading "Laboratory Requests 2" [level=4] [ref=e433]:
+                  - text: Laboratory Requests
+                  - generic [ref=e435]: "2"
+                - button "Request Lab Test" [ref=e436]
+              - table [ref=e440]:
+                - rowgroup [ref=e441]:
+                  - row [ref=e442]:
+                    - 'columnheader "Request #" [ref=e443]'
+                    - columnheader "Items" [ref=e444]
+                    - columnheader "Priority" [ref=e445]
+                    - columnheader "Status" [ref=e446]
+                    - columnheader "Billing" [ref=e447]
+                    - columnheader "Total" [ref=e448]
+                    - columnheader "Date" [ref=e449]
+                    - columnheader "Actions" [ref=e450]
+                - rowgroup [ref=e451]:
+                  - row [ref=e452]:
+                    - cell "LR-00003" [ref=e453]
+                    - cell "Complete Blood Count Cancelled Blood Urea Nitrogen Cancelled" [ref=e454]:
+                      - generic [ref=e455]:
+                        - generic [ref=e456]:
+                          - generic [ref=e457]: Complete Blood Count
+                          - generic [ref=e458]: Cancelled
+                        - generic [ref=e459]:
+                          - generic [ref=e460]: Blood Urea Nitrogen
+                          - generic [ref=e461]: Cancelled
+                    - cell "Routine" [ref=e462]
+                    - cell "Cancelled" [ref=e463]
+                    - cell "Pending" [ref=e464]
+                    - cell "₱530.00" [ref=e465]
+                    - cell "Jul 24, 03:56" [ref=e466]
+                    - cell "—" [ref=e467]
+                  - row [ref=e468]:
+                    - cell "LR-00002" [ref=e469]
+                    - cell "Activated Partial Thromboplastin Time Completed" [ref=e470]:
+                      - generic [ref=e472]:
+                        - generic [ref=e473]: Activated Partial Thromboplastin Time
+                        - generic [ref=e474]: Completed
+                    - cell "Routine" [ref=e475]
+                    - cell "Completed" [ref=e476]
+                    - cell "Billed" [ref=e477]
+                    - cell "₱250.00" [ref=e478]
+                    - cell "Jul 23, 05:14" [ref=e479]
+                    - cell "—" [ref=e480]
+            - generic [ref=e481]:
+              - generic [ref=e482]:
+                - heading "Pharmacy Requests 2" [level=4] [ref=e483]:
+                  - text: Pharmacy Requests
+                  - generic [ref=e485]: "2"
+                - button "Request Medication" [ref=e486]
+              - table [ref=e490]:
+                - rowgroup [ref=e491]:
+                  - row [ref=e492]:
+                    - 'columnheader "Request #" [ref=e493]'
+                    - columnheader "Medications" [ref=e494]
+                    - columnheader "Priority" [ref=e495]
+                    - columnheader "Status" [ref=e496]
+                    - columnheader "Billing" [ref=e497]
+                    - columnheader "Total" [ref=e498]
+                    - columnheader "Date" [ref=e499]
+                    - columnheader "Actions" [ref=e500]
+                - rowgroup [ref=e501]:
+                  - row [ref=e502]:
+                    - cell "PR-00003" [ref=e503]
+                    - cell "Paracetamol 500mg (x1.00) Cancelled Amoxicillin 500mg (x1.00) Cancelled" [ref=e504]:
+                      - generic [ref=e505]:
+                        - generic [ref=e506]:
+                          - generic [ref=e507]: Paracetamol 500mg (x1.00)
+                          - generic [ref=e508]: Cancelled
+                        - generic [ref=e509]:
+                          - generic [ref=e510]: Amoxicillin 500mg (x1.00)
+                          - generic [ref=e511]: Cancelled
+                    - cell "Routine" [ref=e512]
+                    - cell "Cancelled" [ref=e513]
+                    - cell "Pending" [ref=e514]
+                    - cell "₱257.10" [ref=e515]
+                    - cell "Jul 24, 03:56" [ref=e516]
+                    - cell "—" [ref=e517]
+                  - row [ref=e518]:
+                    - cell "PR-00002" [ref=e519]
+                    - cell "0.9% NaCl IV 1L (x1.00) Cancelled Amlodipine 5mg (x1.00) Cancelled" [ref=e520]:
+                      - generic [ref=e521]:
+                        - generic [ref=e522]:
+                          - generic [ref=e523]: 0.9% NaCl IV 1L (x1.00)
+                          - generic [ref=e524]: Cancelled
+                        - generic [ref=e525]:
+                          - generic [ref=e526]: Amlodipine 5mg (x1.00)
+                          - generic [ref=e527]: Cancelled
+                    - cell "Routine" [ref=e528]
+                    - cell "Cancelled" [ref=e529]
+                    - cell "Pending" [ref=e530]
+                    - cell "₱789.47" [ref=e531]
+                    - cell "Jul 23, 05:28" [ref=e532]
+                    - cell "—" [ref=e533]
+            - generic [ref=e534]:
+              - generic [ref=e535]:
+                - heading "CSR / Supply Requests 2" [level=4] [ref=e536]:
+                  - text: CSR / Supply Requests
+                  - generic [ref=e538]: "2"
+                - button "Request Supply" [ref=e539]
+              - table [ref=e543]:
+                - rowgroup [ref=e544]:
+                  - row [ref=e545]:
+                    - 'columnheader "Request #" [ref=e546]'
+                    - columnheader "Items" [ref=e547]
+                    - columnheader "Status" [ref=e548]
+                    - columnheader "Billing" [ref=e549]
+                    - columnheader "Total" [ref=e550]
+                    - columnheader "Date" [ref=e551]
+                    - columnheader "Actions" [ref=e552]
+                - rowgroup [ref=e553]:
+                  - row [ref=e554]:
+                    - cell "CR-00004" [ref=e555]
+                    - cell "Disposable Syringe 10cc (x1.00) Cancelled Alcohol Swab (Box/100) (x1.00) Cancelled Gauze Pad 4x4 (Pack/100) (x1.00) Cancelled Surgical Mask (Box/50) (x1.00) Cancelled IV Set with drip chamber (x1.00) Cancelled IV Fluid D5LR 1L (x1.00) Cancelled IV Fluid PNSS 1L (x1.00) Cancelled" [ref=e556]:
+                      - generic [ref=e557]:
+                        - generic [ref=e558]:
+                          - generic [ref=e559]: Disposable Syringe 10cc (x1.00)
+                          - generic [ref=e560]: Cancelled
+                        - generic [ref=e561]:
+                          - generic [ref=e562]: Alcohol Swab (Box/100) (x1.00)
+                          - generic [ref=e563]: Cancelled
+                        - generic [ref=e564]:
+                          - generic [ref=e565]: Gauze Pad 4x4 (Pack/100) (x1.00)
+                          - generic [ref=e566]: Cancelled
+                        - generic [ref=e567]:
+                          - generic [ref=e568]: Surgical Mask (Box/50) (x1.00)
+                          - generic [ref=e569]: Cancelled
+                        - generic [ref=e570]:
+                          - generic [ref=e571]: IV Set with drip chamber (x1.00)
+                          - generic [ref=e572]: Cancelled
+                        - generic [ref=e573]:
+                          - generic [ref=e574]: IV Fluid D5LR 1L (x1.00)
+                          - generic [ref=e575]: Cancelled
+                        - generic [ref=e576]:
+                          - generic [ref=e577]: IV Fluid PNSS 1L (x1.00)
+                          - generic [ref=e578]: Cancelled
+                    - cell "Cancelled" [ref=e579]
+                    - cell "Pending" [ref=e580]
+                    - cell "₱502.00" [ref=e581]
+                    - cell "Jul 24, 03:44" [ref=e582]
+                    - cell "—" [ref=e583]
+                  - row [ref=e584]:
+                    - cell "CR-00003" [ref=e585]
+                    - cell "Alcohol Swab (Box/100) (x1.00) Cancelled Betadine Solution 30ml (x1.00) Cancelled" [ref=e586]:
+                      - generic [ref=e587]:
+                        - generic [ref=e588]:
+                          - generic [ref=e589]: Alcohol Swab (Box/100) (x1.00)
+                          - generic [ref=e590]: Cancelled
+                        - generic [ref=e591]:
+                          - generic [ref=e592]: Betadine Solution 30ml (x1.00)
+                          - generic [ref=e593]: Cancelled
+                    - cell "Cancelled" [ref=e594]
+                    - cell "Pending" [ref=e595]
+                    - cell "₱140.00" [ref=e596]
+                    - cell "Jul 23, 07:21" [ref=e597]
+                    - cell "—" [ref=e598]
+        - generic [ref=e601]:
+          - generic [ref=e602]:
+            - heading "Place Orders" [level=3] [ref=e603]
+            - button [ref=e604]
+          - generic [ref=e607]:
+            - generic [ref=e608]:
+              - generic [ref=e609]: Order Type
+              - generic [ref=e610]:
+                - button "Lab" [ref=e611]
+                - button "Pharmacy" [ref=e612]
+                - button "CSR" [ref=e613]
+                - button "Radiology" [ref=e614]
+                - button "Procedure" [ref=e615]
+            - generic [ref=e616]:
+              - generic [ref=e617]: Priority
+              - combobox [ref=e618]:
+                - option "Routine" [selected]
+                - option "Urgent"
+                - option "STAT"
+            - generic [ref=e619]:
+              - generic [ref=e620]: Select Items
+              - generic [ref=e621]:
+                - generic [ref=e623] [cursor=pointer]:
+                  - checkbox "APTT ₱250.00" [ref=e624]
+                  - paragraph [ref=e626]: APTT
+                  - generic [ref=e627]: ₱250.00
+                - generic [ref=e629] [cursor=pointer]:
+                  - checkbox "ALT ₱200.00" [ref=e630]
+                  - paragraph [ref=e632]: ALT
+                  - generic [ref=e633]: ₱200.00
+                - generic [ref=e635] [cursor=pointer]:
+                  - checkbox "ANTI_HBS ₱400.00" [ref=e636]
+                  - paragraph [ref=e638]: ANTI_HBS
+                  - generic [ref=e639]: ₱400.00
+                - generic [ref=e641] [cursor=pointer]:
+                  - checkbox "AST ₱200.00" [ref=e642]
+                  - paragraph [ref=e644]: AST
+                  - generic [ref=e645]: ₱200.00
+                - generic [ref=e647] [cursor=pointer]:
+                  - checkbox "BUN ₱180.00" [ref=e648]
+                  - paragraph [ref=e650]: BUN
+                  - generic [ref=e651]: ₱180.00
+                - generic [ref=e653] [cursor=pointer]:
+                  - checkbox "CL ₱250.00" [ref=e654]
+                  - paragraph [ref=e656]: CL
+                  - generic [ref=e657]: ₱250.00
+                - generic [ref=e659] [cursor=pointer]:
+                  - checkbox "CBC ₱350.00" [ref=e660]
+                  - paragraph [ref=e662]: CBC
+                  - generic [ref=e663]: ₱350.00
+                - generic [ref=e665] [cursor=pointer]:
+                  - checkbox "CREA ₱200.00" [ref=e666]
+                  - paragraph [ref=e668]: CREA
+                  - generic [ref=e669]: ₱200.00
+                - generic [ref=e671] [cursor=pointer]:
+                  - checkbox "DENGUE ₱500.00" [ref=e672]
+                  - paragraph [ref=e674]: DENGUE
+                  - generic [ref=e675]: ₱500.00
+                - generic [ref=e677] [cursor=pointer]:
+                  - checkbox "ESR ₱120.00" [ref=e678]
+                  - paragraph [ref=e680]: ESR
+                  - generic [ref=e681]: ₱120.00
+                - generic [ref=e683] [cursor=pointer]:
+                  - checkbox "GLU ₱180.00" [ref=e684]
+                  - paragraph [ref=e686]: GLU
+                  - generic [ref=e687]: ₱180.00
+                - generic [ref=e689] [cursor=pointer]:
+                  - checkbox "HBSAG ₱350.00" [ref=e690]
+                  - paragraph [ref=e692]: HBSAG
+                  - generic [ref=e693]: ₱350.00
+                - generic [ref=e695] [cursor=pointer]:
+                  - checkbox "HDL ₱220.00" [ref=e696]
+                  - paragraph [ref=e698]: HDL
+                  - generic [ref=e699]: ₱220.00
+                - generic [ref=e701] [cursor=pointer]:
+                  - checkbox "HCT ₱150.00" [ref=e702]
+                  - paragraph [ref=e704]: HCT
+                  - generic [ref=e705]: ₱150.00
+                - generic [ref=e707] [cursor=pointer]:
+                  - checkbox "HGB ₱150.00" [ref=e708]
+                  - paragraph [ref=e710]: HGB
+                  - generic [ref=e711]: ₱150.00
+                - generic [ref=e713] [cursor=pointer]:
+                  - checkbox "LDL ₱220.00" [ref=e714]
+                  - paragraph [ref=e716]: LDL
+                  - generic [ref=e717]: ₱220.00
+                - generic [ref=e719] [cursor=pointer]:
+                  - checkbox "PLT ₱180.00" [ref=e720]
+                  - paragraph [ref=e722]: PLT
+                  - generic [ref=e723]: ₱180.00
+                - generic [ref=e725] [cursor=pointer]:
+                  - checkbox "K ₱250.00" [ref=e726]
+                  - paragraph [ref=e728]: K
+                  - generic [ref=e729]: ₱250.00
+                - generic [ref=e731] [cursor=pointer]:
+                  - checkbox "PT ₱250.00" [ref=e732]
+                  - paragraph [ref=e734]: PT
+                  - generic [ref=e735]: ₱250.00
+                - generic [ref=e737] [cursor=pointer]:
+                  - checkbox "RBC ₱180.00" [ref=e738]
+                  - paragraph [ref=e740]: RBC
+                  - generic [ref=e741]: ₱180.00
+                - generic [ref=e743] [cursor=pointer]:
+                  - checkbox "NA ₱250.00" [ref=e744]
+                  - paragraph [ref=e746]: NA
+                  - generic [ref=e747]: ₱250.00
+                - generic [ref=e749] [cursor=pointer]:
+                  - checkbox "CHOL ₱200.00" [ref=e750]
+                  - paragraph [ref=e752]: CHOL
+                  - generic [ref=e753]: ₱200.00
+                - generic [ref=e755] [cursor=pointer]:
+                  - checkbox "TG ₱200.00" [ref=e756]
+                  - paragraph [ref=e758]: TG
+                  - generic [ref=e759]: ₱200.00
+                - generic [ref=e761] [cursor=pointer]:
+                  - checkbox "UA ₱150.00" [ref=e762]
+                  - paragraph [ref=e764]: UA
+                  - generic [ref=e765]: ₱150.00
+                - generic [ref=e767] [cursor=pointer]:
+                  - checkbox "U_A ₱120.00" [ref=e768]
+                  - paragraph [ref=e770]: U_A
+                  - generic [ref=e771]: ₱120.00
+                - generic [ref=e773] [cursor=pointer]:
+                  - checkbox "VDRL ₱250.00" [ref=e774]
+                  - paragraph [ref=e776]: VDRL
+                  - generic [ref=e777]: ₱250.00
+                - generic [ref=e779] [cursor=pointer]:
+                  - checkbox "WBC ₱180.00" [ref=e780]
+                  - paragraph [ref=e782]: WBC
+                  - generic [ref=e783]: ₱180.00
+            - generic [ref=e784]:
+              - generic [ref=e785]: Notes
+              - textbox "Optional notes for the order..." [ref=e786]
+            - button "Add Lab to Order" [disabled] [ref=e788]
+            - generic [ref=e791]:
+              - button "Cancel" [ref=e792]
+              - button "Place 0 Order(s)" [disabled] [ref=e793]
+  - contentinfo [ref=e311]:
+    - paragraph [ref=e313]: © 2026 SITHEMR. All rights reserved.

@@ -1,0 +1,560 @@
+- generic [ref=e642]:
+  - banner [ref=e643]:
+    - generic [ref=e644]:
+      - generic [ref=e645]:
+        - button [ref=e646]:
+          - img [ref=e647]
+        - generic [ref=e649]:
+          - img "SITHEMR Logo" [ref=e650]
+          - heading "SITHEMR" [level=1] [ref=e651]
+      - button "S Super Administrator superadmin" [ref=e654]:
+        - generic [ref=e655]: S
+        - generic [ref=e656]:
+          - generic [ref=e657]: Super Administrator
+          - generic [ref=e658]: superadmin
+        - img [ref=e659]
+  - generic [ref=e661]:
+    - navigation [ref=e662]:
+      - generic [ref=e663]:
+        - generic [ref=e664]:
+          - paragraph [ref=e665]: Main
+          - link "Dashboard" [ref=e666] [cursor=pointer]:
+            - /url: /
+            - img [ref=e667]
+            - text: Dashboard
+          - link "Doctors Portal" [ref=e669] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+            - img [ref=e670]
+            - text: Doctors Portal
+          - link "Patients" [ref=e672] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=e673]
+            - text: Patients
+          - link "Medical Records" [ref=e675] [cursor=pointer]:
+            - /url: /medical-records
+            - img [ref=e676]
+            - text: Medical Records
+        - generic [ref=e678]:
+          - paragraph [ref=e679]: Clinical Modules
+          - button "OPD" [ref=e681]:
+            - generic [ref=e682]:
+              - img [ref=e683]
+              - generic [ref=e685]: OPD
+            - img [ref=e686]
+          - button "Emergency Room" [ref=e689]:
+            - generic [ref=e690]:
+              - img [ref=e691]
+              - generic [ref=e693]: Emergency Room
+            - img [ref=e694]
+          - button "Admission & Wards" [ref=e697]:
+            - generic [ref=e698]:
+              - img [ref=e699]
+              - generic [ref=e701]: Admission & Wards
+            - img [ref=e702]
+          - link "Nursing" [ref=e704] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=e705]
+            - text: Nursing
+          - button "Obstetrics (OB)" [ref=e708]:
+            - generic [ref=e709]:
+              - img [ref=e710]
+              - generic [ref=e712]: Obstetrics (OB)
+            - img [ref=e713]
+          - button "Delivery" [ref=e716]:
+            - generic [ref=e717]:
+              - img [ref=e718]
+              - generic [ref=e720]: Delivery
+            - img [ref=e721]
+          - button "Operating Room" [ref=e724]:
+            - generic [ref=e725]:
+              - img [ref=e726]
+              - generic [ref=e728]: Operating Room
+            - img [ref=e729]
+          - button "Renal Care" [ref=e732]:
+            - generic [ref=e733]:
+              - img [ref=e734]
+              - generic [ref=e736]: Renal Care
+            - img [ref=e737]
+        - generic [ref=e739]:
+          - paragraph [ref=e740]: Ancillary & Logistics
+          - button "Laboratory" [ref=e742]:
+            - generic [ref=e743]:
+              - img [ref=e744]
+              - generic [ref=e746]: Laboratory
+            - img [ref=e747]
+          - button "Radiology" [ref=e750]:
+            - generic [ref=e751]:
+              - img [ref=e752]
+              - generic [ref=e755]: Radiology
+            - img [ref=e756]
+          - button "Pharmacy" [ref=e759]:
+            - generic [ref=e760]:
+              - img [ref=e761]
+              - generic [ref=e763]: Pharmacy
+            - img [ref=e764]
+          - button "Procedures" [ref=e767]:
+            - generic [ref=e768]:
+              - img [ref=e769]
+              - generic [ref=e772]: Procedures
+            - img [ref=e773]
+          - button "CSR / Supply" [ref=e776]:
+            - generic [ref=e777]:
+              - img [ref=e778]
+              - generic [ref=e780]: CSR / Supply
+            - img [ref=e781]
+        - generic [ref=e783]:
+          - paragraph [ref=e784]: Financial & Claims
+          - button "Billing" [ref=e786]:
+            - generic [ref=e787]:
+              - img [ref=e788]
+              - generic [ref=e790]: Billing
+            - img [ref=e791]
+          - button "PhilHealth" [ref=e794]:
+            - generic [ref=e795]:
+              - img [ref=e796]
+              - generic [ref=e798]: PhilHealth
+            - img [ref=e799]
+          - button "YAKAP" [ref=e802]:
+            - generic [ref=e803]:
+              - img [ref=e804]
+              - generic [ref=e806]: YAKAP
+            - img [ref=e807]
+          - link "Transactions" [ref=e809] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=e810]
+            - text: Transactions
+          - link "Reports" [ref=e812] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=e813]
+            - text: Reports
+          - link "Reports" [ref=e815] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=e816]
+            - text: Reports
+        - generic [ref=e818]:
+          - paragraph [ref=e819]: Administration
+          - button "Masters" [ref=e821]:
+            - generic [ref=e822]:
+              - img [ref=e823]
+              - generic [ref=e825]: Masters
+            - img [ref=e826]
+          - link "Roles" [ref=e828] [cursor=pointer]:
+            - /url: /admin/roles
+            - img [ref=e829]
+            - generic [ref=e832]: Roles
+          - link "Role Permissions" [ref=e833] [cursor=pointer]:
+            - /url: /admin/role-permissions
+            - img [ref=e834]
+            - generic [ref=e836]: Role Permissions
+          - link "Audit Trail" [ref=e837] [cursor=pointer]:
+            - /url: /admin/audit-log
+            - img [ref=e838]
+            - generic [ref=e840]: Audit Trail
+    - main [ref=e841]:
+      - generic [ref=e843]:
+        - generic [ref=e845]:
+          - heading "Role Permissions" [level=2] [ref=e846]
+          - paragraph [ref=e847]: Assign permissions to system roles
+        - generic [ref=e848]:
+          - generic [ref=e849]: Select Role
+          - combobox "Select Role" [ref=e850]:
+            - option "Doctor"
+            - option "Staff"
+            - option "Super Admin" [selected]
+            - option "Tenant Admin"
+        - generic [ref=e851]:
+          - generic [ref=e852]:
+            - heading "Administration" [level=3] [ref=e854]
+            - generic [ref=e855]:
+              - generic [ref=e856] [cursor=pointer]:
+                - checkbox "Manage Departments admin.departments" [checked] [ref=e858]
+                - generic [ref=e859]:
+                  - generic [ref=e860]: Manage Departments
+                  - generic [ref=e861]: admin.departments
+              - generic [ref=e862] [cursor=pointer]:
+                - checkbox "Manage Master Data admin.masters" [checked] [ref=e864]
+                - generic [ref=e865]:
+                  - generic [ref=e866]: Manage Master Data
+                  - generic [ref=e867]: admin.masters
+              - generic [ref=e868] [cursor=pointer]:
+                - checkbox "Manage Settings admin.settings" [checked] [ref=e870]
+                - generic [ref=e871]:
+                  - generic [ref=e872]: Manage Settings
+                  - generic [ref=e873]: admin.settings
+              - generic [ref=e874] [cursor=pointer]:
+                - checkbox "Manage Tenants admin.tenants" [checked] [ref=e876]
+                - generic [ref=e877]:
+                  - generic [ref=e878]: Manage Tenants
+                  - generic [ref=e879]: admin.tenants
+              - generic [ref=e880] [cursor=pointer]:
+                - checkbox "Manage Users admin.users" [checked] [ref=e882]
+                - generic [ref=e883]:
+                  - generic [ref=e884]: Manage Users
+                  - generic [ref=e885]: admin.users
+          - generic [ref=e886]:
+            - heading "Admission" [level=3] [ref=e888]
+            - generic [ref=e889]:
+              - generic [ref=e890] [cursor=pointer]:
+                - checkbox "Create Admissions admission.create" [checked] [ref=e892]
+                - generic [ref=e893]:
+                  - generic [ref=e894]: Create Admissions
+                  - generic [ref=e895]: admission.create
+              - generic [ref=e896] [cursor=pointer]:
+                - checkbox "Discharge Patients admission.discharge" [checked] [ref=e898]
+                - generic [ref=e899]:
+                  - generic [ref=e900]: Discharge Patients
+                  - generic [ref=e901]: admission.discharge
+              - generic [ref=e902] [cursor=pointer]:
+                - checkbox "View Admissions admission.view" [checked] [ref=e904]
+                - generic [ref=e905]:
+                  - generic [ref=e906]: View Admissions
+                  - generic [ref=e907]: admission.view
+          - generic [ref=e908]:
+            - heading "Billing" [level=3] [ref=e910]
+            - generic [ref=e911]:
+              - generic [ref=e912] [cursor=pointer]:
+                - checkbox "Cancel Invoices billing.cancel" [checked] [ref=e914]
+                - generic [ref=e915]:
+                  - generic [ref=e916]: Cancel Invoices
+                  - generic [ref=e917]: billing.cancel
+              - generic [ref=e918] [cursor=pointer]:
+                - checkbox "Create Invoices billing.create" [checked] [ref=e920]
+                - generic [ref=e921]:
+                  - generic [ref=e922]: Create Invoices
+                  - generic [ref=e923]: billing.create
+              - generic [ref=e924] [cursor=pointer]:
+                - checkbox "Manage Billing Master Data billing.manage" [checked] [ref=e926]
+                - generic [ref=e927]:
+                  - generic [ref=e928]: Manage Billing Master Data
+                  - generic [ref=e929]: billing.manage
+              - generic [ref=e930] [cursor=pointer]:
+                - checkbox "Record Payments billing.payment" [checked] [ref=e932]
+                - generic [ref=e933]:
+                  - generic [ref=e934]: Record Payments
+                  - generic [ref=e935]: billing.payment
+              - generic [ref=e936] [cursor=pointer]:
+                - checkbox "View Billing Records billing.view" [checked] [ref=e938]
+                - generic [ref=e939]:
+                  - generic [ref=e940]: View Billing Records
+                  - generic [ref=e941]: billing.view
+          - generic [ref=e942]:
+            - heading "CSR/Supply" [level=3] [ref=e944]
+            - generic [ref=e945]:
+              - generic [ref=e946] [cursor=pointer]:
+                - checkbox "Dispense Supplies csr.dispense" [checked] [ref=e948]
+                - generic [ref=e949]:
+                  - generic [ref=e950]: Dispense Supplies
+                  - generic [ref=e951]: csr.dispense
+              - generic [ref=e952] [cursor=pointer]:
+                - checkbox "Manage CSR Master Data csr.manage" [checked] [ref=e954]
+                - generic [ref=e955]:
+                  - generic [ref=e956]: Manage CSR Master Data
+                  - generic [ref=e957]: csr.manage
+              - generic [ref=e958] [cursor=pointer]:
+                - checkbox "Request Supplies csr.request" [checked] [ref=e960]
+                - generic [ref=e961]:
+                  - generic [ref=e962]: Request Supplies
+                  - generic [ref=e963]: csr.request
+              - generic [ref=e964] [cursor=pointer]:
+                - checkbox "View CSR Requests csr.view" [checked] [ref=e966]
+                - generic [ref=e967]:
+                  - generic [ref=e968]: View CSR Requests
+                  - generic [ref=e969]: csr.view
+          - generic [ref=e970]:
+            - heading "Dashboard" [level=3] [ref=e972]
+            - generic [ref=e974] [cursor=pointer]:
+              - checkbox "View Dashboard dashboard.view" [checked] [ref=e976]
+              - generic [ref=e977]:
+                - generic [ref=e978]: View Dashboard
+                - generic [ref=e979]: dashboard.view
+          - generic [ref=e980]:
+            - heading "Delivery" [level=3] [ref=e982]
+            - generic [ref=e983]:
+              - generic [ref=e984] [cursor=pointer]:
+                - checkbox "Manage Deliveries delivery.manage" [checked] [ref=e986]
+                - generic [ref=e987]:
+                  - generic [ref=e988]: Manage Deliveries
+                  - generic [ref=e989]: delivery.manage
+              - generic [ref=e990] [cursor=pointer]:
+                - checkbox "View Delivery Records delivery.view" [checked] [ref=e992]
+                - generic [ref=e993]:
+                  - generic [ref=e994]: View Delivery Records
+                  - generic [ref=e995]: delivery.view
+          - generic [ref=e996]:
+            - heading "Doctors Portal" [level=3] [ref=e998]
+            - generic [ref=e999]:
+              - generic [ref=e1000] [cursor=pointer]:
+                - checkbox "Place Orders doctors.orders" [checked] [ref=e1002]
+                - generic [ref=e1003]:
+                  - generic [ref=e1004]: Place Orders
+                  - generic [ref=e1005]: doctors.orders
+              - generic [ref=e1006] [cursor=pointer]:
+                - checkbox "View Doctors Dashboard doctors.dashboard" [checked] [ref=e1008]
+                - generic [ref=e1009]:
+                  - generic [ref=e1010]: View Doctors Dashboard
+                  - generic [ref=e1011]: doctors.dashboard
+              - generic [ref=e1012] [cursor=pointer]:
+                - checkbox "View Patient Chart doctors.chart" [checked] [ref=e1014]
+                - generic [ref=e1015]:
+                  - generic [ref=e1016]: View Patient Chart
+                  - generic [ref=e1017]: doctors.chart
+          - generic [ref=e1018]:
+            - heading "ER" [level=3] [ref=e1020]
+            - generic [ref=e1021]:
+              - generic [ref=e1022] [cursor=pointer]:
+                - checkbox "Manage ER Admissions er.manage" [checked] [ref=e1024]
+                - generic [ref=e1025]:
+                  - generic [ref=e1026]: Manage ER Admissions
+                  - generic [ref=e1027]: er.manage
+              - generic [ref=e1028] [cursor=pointer]:
+                - checkbox "Perform ER Triage er.triage" [checked] [ref=e1030]
+                - generic [ref=e1031]:
+                  - generic [ref=e1032]: Perform ER Triage
+                  - generic [ref=e1033]: er.triage
+              - generic [ref=e1034] [cursor=pointer]:
+                - checkbox "Set ER Disposition er.disposition" [checked] [ref=e1036]
+                - generic [ref=e1037]:
+                  - generic [ref=e1038]: Set ER Disposition
+                  - generic [ref=e1039]: er.disposition
+          - generic [ref=e1040]:
+            - heading "Laboratory" [level=3] [ref=e1042]
+            - generic [ref=e1043]:
+              - generic [ref=e1044] [cursor=pointer]:
+                - checkbox "Dispense Lab Tests lab.dispense" [checked] [ref=e1046]
+                - generic [ref=e1047]:
+                  - generic [ref=e1048]: Dispense Lab Tests
+                  - generic [ref=e1049]: lab.dispense
+              - generic [ref=e1050] [cursor=pointer]:
+                - checkbox "Enter Lab Results lab.result" [checked] [ref=e1052]
+                - generic [ref=e1053]:
+                  - generic [ref=e1054]: Enter Lab Results
+                  - generic [ref=e1055]: lab.result
+              - generic [ref=e1056] [cursor=pointer]:
+                - checkbox "Manage Lab Master Data lab.manage" [checked] [ref=e1058]
+                - generic [ref=e1059]:
+                  - generic [ref=e1060]: Manage Lab Master Data
+                  - generic [ref=e1061]: lab.manage
+              - generic [ref=e1062] [cursor=pointer]:
+                - checkbox "Request Lab Tests lab.request" [checked] [ref=e1064]
+                - generic [ref=e1065]:
+                  - generic [ref=e1066]: Request Lab Tests
+                  - generic [ref=e1067]: lab.request
+              - generic [ref=e1068] [cursor=pointer]:
+                - checkbox "View Lab Requests lab.view" [checked] [ref=e1070]
+                - generic [ref=e1071]:
+                  - generic [ref=e1072]: View Lab Requests
+                  - generic [ref=e1073]: lab.view
+          - generic [ref=e1074]:
+            - heading "Medical Records" [level=3] [ref=e1076]
+            - generic [ref=e1078] [cursor=pointer]:
+              - checkbox "View Medical Records medical-records.view" [checked] [ref=e1080]
+              - generic [ref=e1081]:
+                - generic [ref=e1082]: View Medical Records
+                - generic [ref=e1083]: medical-records.view
+          - generic [ref=e1084]:
+            - heading "Nursing" [level=3] [ref=e1086]
+            - generic [ref=e1087]:
+              - generic [ref=e1088] [cursor=pointer]:
+                - checkbox "Manage Nursing Care nursing.manage" [checked] [ref=e1090]
+                - generic [ref=e1091]:
+                  - generic [ref=e1092]: Manage Nursing Care
+                  - generic [ref=e1093]: nursing.manage
+              - generic [ref=e1094] [cursor=pointer]:
+                - checkbox "View Nursing Notes nursing.view" [checked] [ref=e1096]
+                - generic [ref=e1097]:
+                  - generic [ref=e1098]: View Nursing Notes
+                  - generic [ref=e1099]: nursing.view
+          - generic [ref=e1100]:
+            - heading "OB" [level=3] [ref=e1102]
+            - generic [ref=e1103]:
+              - generic [ref=e1104] [cursor=pointer]:
+                - checkbox "Create OB Consultations ob.create" [checked] [ref=e1106]
+                - generic [ref=e1107]:
+                  - generic [ref=e1108]: Create OB Consultations
+                  - generic [ref=e1109]: ob.create
+              - generic [ref=e1110] [cursor=pointer]:
+                - checkbox "View OB Consultations ob.view" [checked] [ref=e1112]
+                - generic [ref=e1113]:
+                  - generic [ref=e1114]: View OB Consultations
+                  - generic [ref=e1115]: ob.view
+          - generic [ref=e1116]:
+            - heading "OPD" [level=3] [ref=e1118]
+            - generic [ref=e1119]:
+              - generic [ref=e1120] [cursor=pointer]:
+                - checkbox "Create OPD Consultations opd.create" [checked] [ref=e1122]
+                - generic [ref=e1123]:
+                  - generic [ref=e1124]: Create OPD Consultations
+                  - generic [ref=e1125]: opd.create
+              - generic [ref=e1126] [cursor=pointer]:
+                - checkbox "Edit OPD Consultations opd.edit" [checked] [ref=e1128]
+                - generic [ref=e1129]:
+                  - generic [ref=e1130]: Edit OPD Consultations
+                  - generic [ref=e1131]: opd.edit
+              - generic [ref=e1132] [cursor=pointer]:
+                - checkbox "View OPD Consultations opd.view" [checked] [ref=e1134]
+                - generic [ref=e1135]:
+                  - generic [ref=e1136]: View OPD Consultations
+                  - generic [ref=e1137]: opd.view
+          - generic [ref=e1138]:
+            - heading "OR" [level=3] [ref=e1140]
+            - generic [ref=e1141]:
+              - generic [ref=e1142] [cursor=pointer]:
+                - checkbox "Schedule OR Procedures or.schedule" [checked] [ref=e1144]
+                - generic [ref=e1145]:
+                  - generic [ref=e1146]: Schedule OR Procedures
+                  - generic [ref=e1147]: or.schedule
+              - generic [ref=e1148] [cursor=pointer]:
+                - checkbox "View OR Schedules or.view" [checked] [ref=e1150]
+                - generic [ref=e1151]:
+                  - generic [ref=e1152]: View OR Schedules
+                  - generic [ref=e1153]: or.view
+          - generic [ref=e1154]:
+            - heading "Patient" [level=3] [ref=e1156]
+            - generic [ref=e1157]:
+              - generic [ref=e1158] [cursor=pointer]:
+                - checkbox "Create Patients patient.create" [checked] [ref=e1160]
+                - generic [ref=e1161]:
+                  - generic [ref=e1162]: Create Patients
+                  - generic [ref=e1163]: patient.create
+              - generic [ref=e1164] [cursor=pointer]:
+                - checkbox "Edit Patients patient.edit" [checked] [ref=e1166]
+                - generic [ref=e1167]:
+                  - generic [ref=e1168]: Edit Patients
+                  - generic [ref=e1169]: patient.edit
+              - generic [ref=e1170] [cursor=pointer]:
+                - checkbox "View Patients patient.view" [checked] [ref=e1172]
+                - generic [ref=e1173]:
+                  - generic [ref=e1174]: View Patients
+                  - generic [ref=e1175]: patient.view
+          - generic [ref=e1176]:
+            - heading "Pharmacy" [level=3] [ref=e1178]
+            - generic [ref=e1179]:
+              - generic [ref=e1180] [cursor=pointer]:
+                - checkbox "Dispense Medications pharmacy.dispense" [checked] [ref=e1182]
+                - generic [ref=e1183]:
+                  - generic [ref=e1184]: Dispense Medications
+                  - generic [ref=e1185]: pharmacy.dispense
+              - generic [ref=e1186] [cursor=pointer]:
+                - checkbox "Manage Pharmacy Master Data pharmacy.manage" [checked] [ref=e1188]
+                - generic [ref=e1189]:
+                  - generic [ref=e1190]: Manage Pharmacy Master Data
+                  - generic [ref=e1191]: pharmacy.manage
+              - generic [ref=e1192] [cursor=pointer]:
+                - checkbox "Request Medications pharmacy.request" [checked] [ref=e1194]
+                - generic [ref=e1195]:
+                  - generic [ref=e1196]: Request Medications
+                  - generic [ref=e1197]: pharmacy.request
+              - generic [ref=e1198] [cursor=pointer]:
+                - checkbox "View Pharmacy Requests pharmacy.view" [checked] [ref=e1200]
+                - generic [ref=e1201]:
+                  - generic [ref=e1202]: View Pharmacy Requests
+                  - generic [ref=e1203]: pharmacy.view
+          - generic [ref=e1204]:
+            - heading "PhilHealth" [level=3] [ref=e1206]
+            - generic [ref=e1207]:
+              - generic [ref=e1208] [cursor=pointer]:
+                - checkbox "Manage PhilHealth Claims philhealth.manage" [checked] [ref=e1210]
+                - generic [ref=e1211]:
+                  - generic [ref=e1212]: Manage PhilHealth Claims
+                  - generic [ref=e1213]: philhealth.manage
+              - generic [ref=e1214] [cursor=pointer]:
+                - checkbox "View PhilHealth Records philhealth.view" [checked] [ref=e1216]
+                - generic [ref=e1217]:
+                  - generic [ref=e1218]: View PhilHealth Records
+                  - generic [ref=e1219]: philhealth.view
+          - generic [ref=e1220]:
+            - heading "Procedures" [level=3] [ref=e1222]
+            - generic [ref=e1223]:
+              - generic [ref=e1224] [cursor=pointer]:
+                - checkbox "Manage Procedure Master Data procedure.manage" [checked] [ref=e1226]
+                - generic [ref=e1227]:
+                  - generic [ref=e1228]: Manage Procedure Master Data
+                  - generic [ref=e1229]: procedure.manage
+              - generic [ref=e1230] [cursor=pointer]:
+                - checkbox "Perform Procedures procedure.dispense" [checked] [ref=e1232]
+                - generic [ref=e1233]:
+                  - generic [ref=e1234]: Perform Procedures
+                  - generic [ref=e1235]: procedure.dispense
+              - generic [ref=e1236] [cursor=pointer]:
+                - checkbox "Request Procedures procedure.request" [checked] [ref=e1238]
+                - generic [ref=e1239]:
+                  - generic [ref=e1240]: Request Procedures
+                  - generic [ref=e1241]: procedure.request
+              - generic [ref=e1242] [cursor=pointer]:
+                - checkbox "View Procedure Requests procedure.view" [checked] [ref=e1244]
+                - generic [ref=e1245]:
+                  - generic [ref=e1246]: View Procedure Requests
+                  - generic [ref=e1247]: procedure.view
+          - generic [ref=e1248]:
+            - heading "Radiology" [level=3] [ref=e1250]
+            - generic [ref=e1251]:
+              - generic [ref=e1252] [cursor=pointer]:
+                - checkbox "Dispense Radiology Exams radiology.dispense" [checked] [ref=e1254]
+                - generic [ref=e1255]:
+                  - generic [ref=e1256]: Dispense Radiology Exams
+                  - generic [ref=e1257]: radiology.dispense
+              - generic [ref=e1258] [cursor=pointer]:
+                - checkbox "Enter Radiology Results radiology.result" [checked] [ref=e1260]
+                - generic [ref=e1261]:
+                  - generic [ref=e1262]: Enter Radiology Results
+                  - generic [ref=e1263]: radiology.result
+              - generic [ref=e1264] [cursor=pointer]:
+                - checkbox "Manage Radiology Master Data radiology.manage" [checked] [ref=e1266]
+                - generic [ref=e1267]:
+                  - generic [ref=e1268]: Manage Radiology Master Data
+                  - generic [ref=e1269]: radiology.manage
+              - generic [ref=e1270] [cursor=pointer]:
+                - checkbox "Request Radiology Exams radiology.request" [checked] [ref=e1272]
+                - generic [ref=e1273]:
+                  - generic [ref=e1274]: Request Radiology Exams
+                  - generic [ref=e1275]: radiology.request
+              - generic [ref=e1276] [cursor=pointer]:
+                - checkbox "View Radiology Requests radiology.view" [checked] [ref=e1278]
+                - generic [ref=e1279]:
+                  - generic [ref=e1280]: View Radiology Requests
+                  - generic [ref=e1281]: radiology.view
+          - generic [ref=e1282]:
+            - heading "Renal Care" [level=3] [ref=e1284]
+            - generic [ref=e1285]:
+              - generic [ref=e1286] [cursor=pointer]:
+                - checkbox "Manage Dialysis Sessions renal.manage" [checked] [ref=e1288]
+                - generic [ref=e1289]:
+                  - generic [ref=e1290]: Manage Dialysis Sessions
+                  - generic [ref=e1291]: renal.manage
+              - generic [ref=e1292] [cursor=pointer]:
+                - checkbox "View Dialysis Sessions renal.view" [checked] [ref=e1294]
+                - generic [ref=e1295]:
+                  - generic [ref=e1296]: View Dialysis Sessions
+                  - generic [ref=e1297]: renal.view
+          - generic [ref=e1298]:
+            - heading "Reports" [level=3] [ref=e1300]
+            - generic [ref=e1301]:
+              - generic [ref=e1302] [cursor=pointer]:
+                - checkbox "Manage Reports reports.manage" [checked] [ref=e1304]
+                - generic [ref=e1305]:
+                  - generic [ref=e1306]: Manage Reports
+                  - generic [ref=e1307]: reports.manage
+              - generic [ref=e1308] [cursor=pointer]:
+                - checkbox "View Reports reports.view" [checked] [ref=e1310]
+                - generic [ref=e1311]:
+                  - generic [ref=e1312]: View Reports
+                  - generic [ref=e1313]: reports.view
+          - generic [ref=e1314]:
+            - heading "YAKAP" [level=3] [ref=e1316]
+            - generic [ref=e1317]:
+              - generic [ref=e1318] [cursor=pointer]:
+                - checkbox "Manage YAKAP yakap.manage" [checked] [ref=e1320]
+                - generic [ref=e1321]:
+                  - generic [ref=e1322]: Manage YAKAP
+                  - generic [ref=e1323]: yakap.manage
+              - generic [ref=e1324] [cursor=pointer]:
+                - checkbox "View YAKAP Records yakap.view" [checked] [ref=e1326]
+                - generic [ref=e1327]:
+                  - generic [ref=e1328]: View YAKAP Records
+                  - generic [ref=e1329]: yakap.view
+        - button "Save Permissions" [ref=e1331]:
+          - generic [ref=e1332]:
+            - img [ref=e1333]
+            - text: Save Permissions
+  - contentinfo [ref=e1335]:
+    - paragraph [ref=e1337]: © 2026 SITHEMR. All rights reserved.

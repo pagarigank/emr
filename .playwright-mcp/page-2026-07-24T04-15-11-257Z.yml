@@ -1,0 +1,147 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: Main
+          - link "Dashboard" [ref=e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Clinical Modules
+          - button "OPD" [ref=e41]
+          - button "Emergency Room" [ref=e49]
+          - button "Admission & Wards" [ref=e57]
+          - link "Nursing" [ref=e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=e68]
+          - button "Delivery" [ref=e76]
+          - button "Operating Room" [ref=e84]
+          - button "Renal Care" [ref=e92]
+        - generic [ref=e99]:
+          - paragraph [ref=e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=e102]
+          - button "Radiology" [ref=e110]
+          - button "Pharmacy" [ref=e119]
+          - button "Procedures" [ref=e127]
+          - button "CSR / Supply" [ref=e136]
+        - generic [ref=e143]:
+          - paragraph [ref=e144]: Financial & Claims
+          - button "Billing" [ref=e146]
+          - button "PhilHealth" [ref=e154]
+          - button "YAKAP" [ref=e162]
+          - link "Transactions" [ref=e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=e175]:
+          - paragraph [ref=e176]: Administration
+          - button "Masters" [ref=e178]
+          - link "Roles" [ref=e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=e198]:
+      - generic [ref=e201]:
+        - button "Back to Patient List" [ref=e314]
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - generic [ref=e212]:
+              - heading "demo3, demo3" [level=2] [ref=e317]
+              - generic [ref=e318]:
+                - generic [ref=e319]: ADM-00001
+                - generic [ref=e322]: "20260000001011"
+            - generic [ref=e323]:
+              - generic [ref=e324]:
+                - paragraph [ref=e325]: Admitted
+                - paragraph [ref=e326]: Jul 23, 2026 05:12 AM
+              - generic [ref=e327]:
+                - paragraph [ref=e328]: Room / Ward
+                - paragraph [ref=e329]: Ward Room 101Cardiology Ward
+              - button "Transfer Room" [ref=e330]
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - paragraph [ref=e333]: Admission Type
+              - paragraph [ref=e334]: Emergency
+            - generic [ref=e335]:
+              - paragraph [ref=e336]: Source
+              - paragraph [ref=e337]: ER
+            - generic [ref=e338]:
+              - paragraph [ref=e339]: Attending Physician
+              - paragraph [ref=e340]: Dr. Juan Dela Cruz
+            - generic [ref=e341]:
+              - paragraph [ref=e342]: Admitting Diagnosis
+              - paragraph [ref=e343]: sdfsd
+        - navigation [ref=e345]:
+          - button [ref=e346]
+          - button [ref=e350]
+          - button [ref=e354]
+          - button [ref=e358]
+          - button [ref=e362]
+          - button [ref=e366]
+        - generic [ref=e370]:
+          - heading "Vital Signs History" [level=3] [ref=e371]
+          - button "Record Vitals" [ref=e372]
+        - table [ref=e375]:
+          - rowgroup [ref=e376]:
+            - row [ref=e377]:
+              - columnheader "Date/Time" [ref=e378]
+              - columnheader "Temp (°C)" [ref=e379]
+              - columnheader "HR (bpm)" [ref=e380]
+              - columnheader "RR (/min)" [ref=e381]
+              - columnheader "BP (mmHg)" [ref=e382]
+              - columnheader "SpO₂ (%)" [ref=e383]
+              - columnheader "Pain" [ref=e384]
+              - columnheader "LOC" [ref=e385]
+              - columnheader "BS (mg/dL)" [ref=e386]
+              - columnheader "Actions" [ref=e387]
+          - rowgroup [ref=e388]:
+            - row [ref=e389]:
+              - cell "Jul 23, 05:20 AM" [ref=e390]
+              - cell "—" [ref=e391]
+              - cell "—" [ref=e392]
+              - cell "—" [ref=e393]
+              - cell "—" [ref=e394]
+              - cell "—" [ref=e395]
+              - cell "—" [ref=e396]
+              - cell "Alert" [ref=e397]
+              - cell "—" [ref=e398]
+              - cell [ref=e399]:
+                - generic [ref=e400]:
+                  - button "Edit" [ref=e401]
+                  - button "Delete" [ref=e404]
+            - row [ref=e407]:
+              - cell "Jul 23, 05:13 AM" [ref=e408]
+              - cell "33.0" [ref=e409]
+              - cell "72" [ref=e410]
+              - cell "16" [ref=e411]
+              - cell "120/80" [ref=e412]
+              - cell "98.00" [ref=e413]
+              - cell "1" [ref=e414]
+              - cell "Alert" [ref=e415]
+              - cell "100.00" [ref=e416]
+              - cell [ref=e417]:
+                - generic [ref=e418]:
+                  - button "Edit" [ref=e419]
+                  - button "Delete" [ref=e422]
+  - contentinfo [ref=e311]:
+    - paragraph [ref=e313]: © 2026 SITHEMR. All rights reserved.

@@ -1,0 +1,140 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: Main
+          - link "Dashboard" [ref=e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Clinical Modules
+          - button "OPD" [ref=e41]
+          - button "Emergency Room" [ref=e49]
+          - button "Admission & Wards" [ref=e57]
+          - link "Nursing" [ref=e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=e68]
+          - button "Delivery" [ref=e76]
+          - button "Operating Room" [ref=e84]
+          - button "Renal Care" [ref=e92]
+        - generic [ref=e99]:
+          - paragraph [ref=e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=e102]
+          - button "Radiology" [ref=e110]
+          - button "Pharmacy" [ref=e119]
+          - button "Procedures" [ref=e127]
+          - button "CSR / Supply" [ref=e136]
+        - generic [ref=e143]:
+          - paragraph [ref=e144]: Financial & Claims
+          - button "Billing" [ref=e146]
+          - button "PhilHealth" [ref=e154]
+          - button "YAKAP" [ref=e162]
+          - link "Transactions" [ref=e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=e175]:
+          - paragraph [ref=e176]: Administration
+          - button "Masters" [ref=e178]
+          - link "Roles" [ref=e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=e198]:
+      - generic [ref=e201]:
+        - generic [ref=e203]:
+          - heading "In-Patient Nursing" [level=2] [ref=e204]
+          - paragraph [ref=e205]: Manage admitted patients, vitals, care notes, and discharges.
+        - generic [ref=e206]:
+          - generic [ref=e212]:
+            - paragraph [ref=e213]: Admitted
+            - paragraph [ref=e214]: "1"
+          - generic [ref=e220]:
+            - paragraph [ref=e221]: Occupied Beds
+            - paragraph [ref=e222]: "1"
+          - generic [ref=e228]:
+            - paragraph [ref=e229]: Due for Vitals
+            - paragraph [ref=e230]: "1"
+          - generic [ref=e236]:
+            - paragraph [ref=e237]: Pending Orders
+            - paragraph [ref=e238]: "0"
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - heading "Patients Due for Vitals (no vitals in last 8 hours)" [level=3] [ref=e241]
+            - generic [ref=e244]: 1 patients
+          - generic [ref=e247] [cursor=pointer]:
+            - generic [ref=e248]: D
+            - generic [ref=e249]:
+              - paragraph [ref=e250]: demo3, demo3
+              - paragraph [ref=e251]: Ward Room 101 · ADM-00001
+        - generic [ref=e254]:
+          - heading "Recent Vitals Recorded" [level=3] [ref=e256]
+          - generic [ref=e259]:
+            - generic [ref=e260] [cursor=pointer]:
+              - generic [ref=e261]:
+                - generic [ref=e262]: 05:20 AM
+                - generic [ref=e263]:
+                  - paragraph [ref=e264]: demo3, demo3
+                  - paragraph [ref=e265]: "Temp: —°C · HR: — · BP: —/—"
+              - generic [ref=e266]: Ward Room 101
+            - generic [ref=e267] [cursor=pointer]:
+              - generic [ref=e268]:
+                - generic [ref=e269]: 05:13 AM
+                - generic [ref=e270]:
+                  - paragraph [ref=e271]: demo3, demo3
+                  - paragraph [ref=e272]: "Temp: 33.0°C · HR: 72 · BP: 120/80"
+              - generic [ref=e273]: Ward Room 101
+        - generic [ref=e274]:
+          - textbox "Search by patient name, admission code, or diagnosis…" [ref=e276]
+          - generic [ref=e277]:
+            - generic [ref=e278] [cursor=pointer]:
+              - checkbox "Show discharged" [ref=e279]
+              - generic [ref=e280]: Show discharged
+            - generic [ref=e281]:
+              - generic [ref=e282]: "Rows:"
+              - combobox [ref=e283]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+        - table [ref=e285]:
+          - rowgroup [ref=e286]:
+            - row [ref=e287]:
+              - 'columnheader "Admission # ↑↓" [ref=e288] [cursor=pointer]'
+              - columnheader "Patient" [ref=e290]
+              - columnheader "Ward / Room" [ref=e291]
+              - columnheader "Physician" [ref=e292]
+              - columnheader "Admission Date" [ref=e293]
+              - columnheader "Status" [ref=e294]
+              - columnheader "Actions" [ref=e295]
+          - rowgroup [ref=e296]:
+            - row [ref=e297]:
+              - cell "ADM-00001" [ref=e298]
+              - cell "demo3, demo3 20260000001011" [ref=e299]
+              - cell "Ward Room 101 Cardiology Ward" [ref=e300]
+              - cell "Dr. Juan Dela Cruz" [ref=e301]
+              - cell "Jul 23, 2026 05:12 AM" [ref=e302]
+              - cell "Admitted" [ref=e303]
+              - cell [ref=e305]:
+                - button "Manage Patient" [ref=e307]
+  - contentinfo [ref=e311]:
+    - paragraph [ref=e313]: © 2026 SITHEMR. All rights reserved.

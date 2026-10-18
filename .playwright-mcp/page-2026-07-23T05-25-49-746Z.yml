@@ -1,0 +1,147 @@
+- generic [ref=f6e2]:
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - generic [ref=f6e5]:
+        - button [ref=f6e6]
+        - generic [ref=f6e9]:
+          - img "SITHEMR Logo" [ref=f6e10]
+          - heading "SITHEMR" [level=1] [ref=f6e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f6e14]:
+        - generic [ref=f6e15]: D
+        - generic [ref=f6e16]:
+          - generic [ref=f6e17]: Demo Hospital Admin
+          - generic [ref=f6e18]: tenant_admin
+  - generic [ref=f6e21]:
+    - navigation [ref=f6e22]:
+      - generic [ref=f6e23]:
+        - generic [ref=f6e24]:
+          - paragraph [ref=f6e25]: Main
+          - link "Dashboard" [ref=f6e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f6e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=f6e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f6e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f6e38]:
+          - paragraph [ref=f6e39]: Clinical Modules
+          - button "OPD" [ref=f6e41]
+          - button "Emergency Room" [ref=f6e49]
+          - button "Admission & Wards" [ref=f6e57]
+          - link "Nursing" [ref=f6e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f6e68]
+          - button "Delivery" [ref=f6e76]
+          - button "Operating Room" [ref=f6e84]
+          - button "Renal Care" [ref=f6e92]
+        - generic [ref=f6e99]:
+          - paragraph [ref=f6e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f6e102]
+          - button "Radiology" [ref=f6e110]
+          - button "Pharmacy" [ref=f6e119]
+          - button "Procedures" [ref=f6e127]
+          - button "CSR / Supply" [ref=f6e136]
+        - generic [ref=f6e143]:
+          - paragraph [ref=f6e144]: Financial & Claims
+          - button "Billing" [ref=f6e146]
+          - button "PhilHealth" [ref=f6e154]
+          - button "YAKAP" [ref=f6e162]
+          - link "Transactions" [ref=f6e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f6e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f6e175]:
+          - paragraph [ref=f6e176]: Administration
+          - button "Masters" [ref=f6e178]
+          - link "Roles" [ref=f6e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f6e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f6e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f6e198]:
+      - generic [ref=f6e201]:
+        - button "Back to Patient List" [ref=f6e299]
+        - generic [ref=f6e206]:
+          - generic [ref=f6e207]:
+            - generic [ref=f6e212]:
+              - heading "demo3, demo3" [level=2] [ref=f6e302]
+              - generic [ref=f6e303]:
+                - generic [ref=f6e304]: ADM-00001
+                - generic [ref=f6e307]: "20260000001011"
+            - generic [ref=f6e308]:
+              - generic [ref=f6e309]:
+                - paragraph [ref=f6e310]: Admitted
+                - paragraph [ref=f6e311]: Jul 23, 2026 05:12 AM
+              - generic [ref=f6e312]:
+                - paragraph [ref=f6e313]: Room / Ward
+                - paragraph [ref=f6e314]: Ward Room 101Cardiology Ward
+              - button "Transfer Room" [ref=f6e315]
+          - generic [ref=f6e215]:
+            - generic [ref=f6e216]:
+              - paragraph [ref=f6e318]: Admission Type
+              - paragraph [ref=f6e319]: Emergency
+            - generic [ref=f6e320]:
+              - paragraph [ref=f6e321]: Source
+              - paragraph [ref=f6e322]: ER
+            - generic [ref=f6e323]:
+              - paragraph [ref=f6e324]: Attending Physician
+              - paragraph [ref=f6e325]: Dr. Juan Dela Cruz
+            - generic [ref=f6e326]:
+              - paragraph [ref=f6e327]: Admitting Diagnosis
+              - paragraph [ref=f6e328]: sdfsd
+        - navigation [ref=f6e330]:
+          - button [ref=f6e331]
+          - button [ref=f6e335]
+          - button [ref=f6e339]
+          - button [ref=f6e343]
+          - button [ref=f6e347]
+          - button [ref=f6e351]
+        - generic [ref=f6e355]:
+          - heading "Vital Signs History" [level=3] [ref=f6e356]
+          - button "Record Vitals" [ref=f6e357]
+        - table [ref=f6e361]:
+          - rowgroup [ref=f6e362]:
+            - row [ref=f6e363]:
+              - columnheader "Date/Time" [ref=f6e364]
+              - columnheader "Temp (°C)" [ref=f6e365]
+              - columnheader "HR (bpm)" [ref=f6e366]
+              - columnheader "RR (/min)" [ref=f6e367]
+              - columnheader "BP (mmHg)" [ref=f6e368]
+              - columnheader "SpO₂ (%)" [ref=f6e369]
+              - columnheader "Pain" [ref=f6e370]
+              - columnheader "LOC" [ref=f6e371]
+              - columnheader "BS (mg/dL)" [ref=f6e372]
+              - columnheader "Actions" [ref=f6e373]
+          - rowgroup [ref=f6e374]:
+            - row [ref=f6e375]:
+              - cell "Jul 23, 05:20 AM" [ref=f6e376]
+              - cell "—" [ref=f6e377]
+              - cell "—" [ref=f6e378]
+              - cell "—" [ref=f6e379]
+              - cell "—" [ref=f6e380]
+              - cell "—" [ref=f6e381]
+              - cell "—" [ref=f6e382]
+              - cell "Alert" [ref=f6e383]
+              - cell "—" [ref=f6e384]
+              - cell [ref=f6e385]:
+                - generic [ref=f6e386]:
+                  - button "Edit" [ref=f6e387]
+                  - button "Delete" [ref=f6e390]
+            - row [ref=f6e393]:
+              - cell "Jul 23, 05:13 AM" [ref=f6e394]
+              - cell "33.0" [ref=f6e395]
+              - cell "72" [ref=f6e396]
+              - cell "16" [ref=f6e397]
+              - cell "120/80" [ref=f6e398]
+              - cell "98.00" [ref=f6e399]
+              - cell "1" [ref=f6e400]
+              - cell "Alert" [ref=f6e401]
+              - cell "100.00" [ref=f6e402]
+              - cell [ref=f6e403]:
+                - generic [ref=f6e404]:
+                  - button "Edit" [ref=f6e405]
+                  - button "Delete" [ref=f6e408]
+  - contentinfo [ref=f6e296]:
+    - paragraph [ref=f6e298]: © 2026 SITHEMR. All rights reserved.

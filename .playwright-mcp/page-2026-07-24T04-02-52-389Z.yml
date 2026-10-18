@@ -1,0 +1,140 @@
+- generic [ref=f14e2]:
+  - banner [ref=f14e3]:
+    - generic [ref=f14e4]:
+      - generic [ref=f14e5]:
+        - button [ref=f14e6]
+        - generic [ref=f14e9]:
+          - img "SITHEMR Logo" [ref=f14e10]
+          - heading "SITHEMR" [level=1] [ref=f14e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f14e14]:
+        - generic [ref=f14e15]: D
+        - generic [ref=f14e16]:
+          - generic [ref=f14e17]: Demo Hospital Admin
+          - generic [ref=f14e18]: tenant_admin
+  - generic [ref=f14e21]:
+    - navigation [ref=f14e22]:
+      - generic [ref=f14e23]:
+        - generic [ref=f14e24]:
+          - paragraph [ref=f14e25]: Main
+          - link "Dashboard" [ref=f14e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f14e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=f14e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f14e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f14e38]:
+          - paragraph [ref=f14e39]: Clinical Modules
+          - button "OPD" [ref=f14e41]
+          - button "Emergency Room" [ref=f14e49]
+          - button "Admission & Wards" [ref=f14e57]
+          - link "Nursing" [ref=f14e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f14e68]
+          - button "Delivery" [ref=f14e76]
+          - button "Operating Room" [ref=f14e84]
+          - button "Renal Care" [ref=f14e92]
+        - generic [ref=f14e99]:
+          - paragraph [ref=f14e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f14e102]
+          - button "Radiology" [ref=f14e110]
+          - button "Pharmacy" [ref=f14e119]
+          - button "Procedures" [ref=f14e127]
+          - button "CSR / Supply" [ref=f14e136]
+        - generic [ref=f14e143]:
+          - paragraph [ref=f14e144]: Financial & Claims
+          - button "Billing" [ref=f14e146]
+          - button "PhilHealth" [ref=f14e154]
+          - button "YAKAP" [ref=f14e162]
+          - link "Transactions" [ref=f14e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f14e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f14e175]:
+          - paragraph [ref=f14e176]: Administration
+          - button "Masters" [ref=f14e178]
+          - link "Roles" [ref=f14e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f14e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f14e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f14e198]:
+      - generic [ref=f14e201]:
+        - generic [ref=f14e203]:
+          - heading "In-Patient Nursing" [level=2] [ref=f14e204]
+          - paragraph [ref=f14e205]: Manage admitted patients, vitals, care notes, and discharges.
+        - generic [ref=f14e206]:
+          - generic [ref=f14e212]:
+            - paragraph [ref=f14e213]: Admitted
+            - paragraph [ref=f14e214]: "1"
+          - generic [ref=f14e220]:
+            - paragraph [ref=f14e221]: Occupied Beds
+            - paragraph [ref=f14e222]: "1"
+          - generic [ref=f14e228]:
+            - paragraph [ref=f14e229]: Due for Vitals
+            - paragraph [ref=f14e230]: "1"
+          - generic [ref=f14e236]:
+            - paragraph [ref=f14e237]: Pending Orders
+            - paragraph [ref=f14e238]: "0"
+        - generic [ref=f14e239]:
+          - generic [ref=f14e240]:
+            - heading "Patients Due for Vitals (no vitals in last 8 hours)" [level=3] [ref=f14e241]
+            - generic [ref=f14e244]: 1 patients
+          - generic [ref=f14e247] [cursor=pointer]:
+            - generic [ref=f14e248]: D
+            - generic [ref=f14e249]:
+              - paragraph [ref=f14e250]: demo3, demo3
+              - paragraph [ref=f14e251]: Ward Room 101 · ADM-00001
+        - generic [ref=f14e254]:
+          - heading "Recent Vitals Recorded" [level=3] [ref=f14e256]
+          - generic [ref=f14e259]:
+            - generic [ref=f14e260] [cursor=pointer]:
+              - generic [ref=f14e261]:
+                - generic [ref=f14e262]: 05:20 AM
+                - generic [ref=f14e263]:
+                  - paragraph [ref=f14e264]: demo3, demo3
+                  - paragraph [ref=f14e265]: "Temp: —°C · HR: — · BP: —/—"
+              - generic [ref=f14e266]: Ward Room 101
+            - generic [ref=f14e267] [cursor=pointer]:
+              - generic [ref=f14e268]:
+                - generic [ref=f14e269]: 05:13 AM
+                - generic [ref=f14e270]:
+                  - paragraph [ref=f14e271]: demo3, demo3
+                  - paragraph [ref=f14e272]: "Temp: 33.0°C · HR: 72 · BP: 120/80"
+              - generic [ref=f14e273]: Ward Room 101
+        - generic [ref=f14e274]:
+          - textbox "Search by patient name, admission code, or diagnosis…" [ref=f14e276]
+          - generic [ref=f14e277]:
+            - generic [ref=f14e278] [cursor=pointer]:
+              - checkbox "Show discharged" [ref=f14e279]
+              - generic [ref=f14e280]: Show discharged
+            - generic [ref=f14e281]:
+              - generic [ref=f14e282]: "Rows:"
+              - combobox [ref=f14e283]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+        - table [ref=f14e285]:
+          - rowgroup [ref=f14e286]:
+            - row [ref=f14e287]:
+              - 'columnheader "Admission # ↑↓" [ref=f14e288] [cursor=pointer]'
+              - columnheader "Patient" [ref=f14e290]
+              - columnheader "Ward / Room" [ref=f14e291]
+              - columnheader "Physician" [ref=f14e292]
+              - columnheader "Admission Date" [ref=f14e293]
+              - columnheader "Status" [ref=f14e294]
+              - columnheader "Actions" [ref=f14e295]
+          - rowgroup [ref=f14e296]:
+            - row [ref=f14e297]:
+              - cell "ADM-00001" [ref=f14e298]
+              - cell "demo3, demo3 20260000001011" [ref=f14e299]
+              - cell "Ward Room 101 Cardiology Ward" [ref=f14e300]
+              - cell "Dr. Juan Dela Cruz" [ref=f14e301]
+              - cell "Jul 23, 2026 05:12 AM" [ref=f14e302]
+              - cell "Admitted" [ref=f14e303]
+              - cell [ref=f14e305]:
+                - button "Manage Patient" [ref=f14e307]
+  - contentinfo [ref=f14e311]:
+    - paragraph [ref=f14e313]: © 2026 SITHEMR. All rights reserved.

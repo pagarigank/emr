@@ -1,0 +1,263 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - generic [ref=e64]:
+          - button "Pharmacy" [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e69]: Pharmacy
+            - img [ref=e70]
+          - generic [ref=e72]:
+            - link "Drug Formulary" [ref=e73] [cursor=pointer]:
+              - /url: /pharmacy/drugs
+            - link "Drug Batches" [ref=e74] [cursor=pointer]:
+              - /url: /pharmacy/drug-batches
+            - link "Stock Dashboard" [ref=e75] [cursor=pointer]:
+              - /url: /pharmacy/inventory
+            - link "Dispensing" [ref=e76] [cursor=pointer]:
+              - /url: /pharmacy/dispensing
+            - link "Purchase Orders" [ref=e77] [cursor=pointer]:
+              - /url: /pharmacy/purchase-orders
+            - link "Stock Adjustments" [ref=e78] [cursor=pointer]:
+              - /url: /pharmacy/stock-adjustments
+            - link "Patient Med Record" [ref=e79] [cursor=pointer]:
+              - /url: /pharmacy/patient-medication-record
+            - link "Reports" [ref=e80] [cursor=pointer]:
+              - /url: /pharmacy/reports
+        - button "Procedures" [ref=e82]:
+          - generic [ref=e83]:
+            - img [ref=e84]
+            - generic [ref=e86]: Procedures
+          - img [ref=e87]
+        - button "Radiology" [ref=e90]:
+          - generic [ref=e91]:
+            - img [ref=e92]
+            - generic [ref=e94]: Radiology
+          - img [ref=e95]
+        - button "Renal Care" [ref=e98]:
+          - generic [ref=e99]:
+            - img [ref=e100]
+            - generic [ref=e102]: Renal Care
+          - img [ref=e103]
+        - button "Delivery" [ref=e106]:
+          - generic [ref=e107]:
+            - img [ref=e108]
+            - generic [ref=e110]: Delivery
+          - img [ref=e111]
+        - button "Wards" [ref=e114]:
+          - generic [ref=e115]:
+            - img [ref=e116]
+            - generic [ref=e118]: Wards
+          - img [ref=e119]
+        - link "Admission" [ref=e121] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e122]
+          - text: Admission
+        - link "Nursing" [ref=e124] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e125]
+          - text: Nursing
+        - link "Billing" [ref=e127] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e128]
+          - text: Billing
+        - link "Fund Sources" [ref=e130] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e131]
+          - text: Fund Sources
+        - button "OR" [ref=e134]:
+          - generic [ref=e135]:
+            - img [ref=e136]
+            - generic [ref=e138]: OR
+          - img [ref=e139]
+        - button "Emergency Room" [ref=e142]:
+          - generic [ref=e143]:
+            - img [ref=e144]
+            - generic [ref=e146]: Emergency Room
+          - img [ref=e147]
+        - button "OPD" [ref=e150]:
+          - generic [ref=e151]:
+            - img [ref=e152]
+            - generic [ref=e154]: OPD
+          - img [ref=e155]
+        - button "OB" [ref=e158]:
+          - generic [ref=e159]:
+            - img [ref=e160]
+            - generic [ref=e162]: OB
+          - img [ref=e163]
+        - button "PhilHealth" [ref=e166]:
+          - generic [ref=e167]:
+            - img [ref=e168]
+            - generic [ref=e170]: PhilHealth
+          - img [ref=e171]
+        - button "YAKAP" [ref=e174]:
+          - generic [ref=e175]:
+            - img [ref=e176]
+            - generic [ref=e178]: YAKAP
+          - img [ref=e179]
+    - main [ref=e181]:
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - heading "Pharmacy Dispensing" [level=2] [ref=e186]
+            - paragraph [ref=e187]: Create and manage medication requests from all departments.
+          - button "New Request" [ref=e188]:
+            - img [ref=e189]
+            - text: New Request
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - generic:
+              - img
+            - textbox "Search request code or person…" [ref=e193]
+          - generic [ref=e194]:
+            - generic [ref=e195]: "Rows:"
+            - combobox [ref=e196]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e198]:
+          - rowgroup [ref=e199]:
+            - row "Request Code ↑↓ Department Patient / Requesting Person Priority Items Total Amount Status Billing Actions" [ref=e200]:
+              - columnheader "Request Code ↑↓" [ref=e201] [cursor=pointer]:
+                - generic [ref=e202]:
+                  - text: Request Code
+                  - generic [ref=e203]: ↑↓
+              - columnheader "Department" [ref=e204]
+              - columnheader "Patient / Requesting Person" [ref=e205]
+              - columnheader "Priority" [ref=e206]
+              - columnheader "Items" [ref=e207]
+              - columnheader "Total Amount" [ref=e208]
+              - columnheader "Status" [ref=e209]
+              - columnheader "Billing" [ref=e210]
+              - columnheader "Actions" [ref=e211]
+          - rowgroup [ref=e212]:
+            - row "PR-00003 Juan Dela Cruz Routine 1 ₱1,985.25 Pending Pending" [ref=e213]:
+              - cell "PR-00003" [ref=e214]
+              - cell [ref=e215]
+              - cell "Juan Dela Cruz" [ref=e216]
+              - cell "Routine" [ref=e217]:
+                - generic [ref=e218]: Routine
+              - cell "1" [ref=e219]
+              - cell "₱1,985.25" [ref=e220]
+              - cell "Pending" [ref=e221]:
+                - generic [ref=e222]: Pending
+              - cell "Pending" [ref=e223]:
+                - generic [ref=e224]: Pending
+              - cell [ref=e225]:
+                - generic [ref=e226]:
+                  - button "View" [ref=e227]:
+                    - img [ref=e228]
+                  - button "Edit" [ref=e231]:
+                    - img [ref=e232]
+                  - button "Complete All" [ref=e234]:
+                    - img [ref=e235]
+                  - button "Dispense Items" [ref=e237]:
+                    - img [ref=e238]
+                  - button "Cancel Request" [ref=e240]:
+                    - img [ref=e241]
+                  - button "Billing Actions" [ref=e244]:
+                    - img [ref=e245]
+            - row "PR-00002 Juan Dela Cruz Routine 1 ₱397.05 Pending Pending" [ref=e247]:
+              - cell "PR-00002" [ref=e248]
+              - cell [ref=e249]
+              - cell "Juan Dela Cruz" [ref=e250]
+              - cell "Routine" [ref=e251]:
+                - generic [ref=e252]: Routine
+              - cell "1" [ref=e253]
+              - cell "₱397.05" [ref=e254]
+              - cell "Pending" [ref=e255]:
+                - generic [ref=e256]: Pending
+              - cell "Pending" [ref=e257]:
+                - generic [ref=e258]: Pending
+              - cell [ref=e259]:
+                - generic [ref=e260]:
+                  - button "View" [ref=e261]:
+                    - img [ref=e262]
+                  - button "Edit" [ref=e265]:
+                    - img [ref=e266]
+                  - button "Complete All" [ref=e268]:
+                    - img [ref=e269]
+                  - button "Dispense Items" [ref=e271]:
+                    - img [ref=e272]
+                  - button "Cancel Request" [ref=e274]:
+                    - img [ref=e275]
+                  - button "Billing Actions" [ref=e278]:
+                    - img [ref=e279]
+            - row "PR-00001 Emergency Room Carlos M Gonzales Jr. Urgent 2 ₱417.48 Pending Pending" [ref=e281]:
+              - cell "PR-00001" [ref=e282]
+              - cell "Emergency Room" [ref=e283]
+              - cell "Carlos M Gonzales Jr." [ref=e284]
+              - cell "Urgent" [ref=e285]:
+                - generic [ref=e286]: Urgent
+              - cell "2" [ref=e287]
+              - cell "₱417.48" [ref=e288]
+              - cell "Pending" [ref=e289]:
+                - generic [ref=e290]: Pending
+              - cell "Pending" [ref=e291]:
+                - generic [ref=e292]: Pending
+              - cell [ref=e293]:
+                - generic [ref=e294]:
+                  - button "View" [ref=e295]:
+                    - img [ref=e296]
+                  - button "Edit" [ref=e299]:
+                    - img [ref=e300]
+                  - button "Complete All" [ref=e302]:
+                    - img [ref=e303]
+                  - button "Dispense Items" [ref=e305]:
+                    - img [ref=e306]
+                  - button "Cancel Request" [ref=e308]:
+                    - img [ref=e309]
+                  - button "Billing Actions" [ref=e312]:
+                    - img [ref=e313]
+  - contentinfo [ref=e315]:
+    - paragraph [ref=e317]: © 2026 SITHEMR. All rights reserved.

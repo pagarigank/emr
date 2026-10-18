@@ -1,0 +1,264 @@
+- generic [ref=f14e2]:
+  - banner [ref=f14e3]:
+    - generic [ref=f14e4]:
+      - generic [ref=f14e5]:
+        - button [ref=f14e6]
+        - generic [ref=f14e9]:
+          - img "SITHEMR Logo" [ref=f14e10]
+          - heading "SITHEMR" [level=1] [ref=f14e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f14e14]:
+        - generic [ref=f14e15]: D
+        - generic [ref=f14e16]:
+          - generic [ref=f14e17]: Demo Hospital Admin
+          - generic [ref=f14e18]: tenant_admin
+  - generic [ref=f14e21]:
+    - navigation [ref=f14e22]:
+      - generic [ref=f14e23]:
+        - generic [ref=f14e24]:
+          - paragraph [ref=f14e25]: Main
+          - link "Dashboard" [ref=f14e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f14e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=f14e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f14e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f14e38]:
+          - paragraph [ref=f14e39]: Clinical Modules
+          - button "OPD" [ref=f14e41]
+          - button "Emergency Room" [ref=f14e49]
+          - button "Admission & Wards" [ref=f14e57]
+          - link "Nursing" [ref=f14e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f14e68]
+          - button "Delivery" [ref=f14e76]
+          - button "Operating Room" [ref=f14e84]
+          - button "Renal Care" [ref=f14e92]
+        - generic [ref=f14e99]:
+          - paragraph [ref=f14e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f14e102]
+          - button "Radiology" [ref=f14e110]
+          - button "Pharmacy" [ref=f14e119]
+          - button "Procedures" [ref=f14e127]
+          - button "CSR / Supply" [ref=f14e136]
+        - generic [ref=f14e143]:
+          - paragraph [ref=f14e144]: Financial & Claims
+          - button "Billing" [ref=f14e146]
+          - button "PhilHealth" [ref=f14e154]
+          - button "YAKAP" [ref=f14e162]
+          - link "Transactions" [ref=f14e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f14e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f14e175]:
+          - paragraph [ref=f14e176]: Administration
+          - button "Masters" [ref=f14e178]
+          - link "Roles" [ref=f14e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f14e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f14e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f14e198]:
+      - generic [ref=f14e201]:
+        - button "Back to Patient List" [ref=f14e314]
+        - generic [ref=f14e206]:
+          - generic [ref=f14e207]:
+            - generic [ref=f14e212]:
+              - heading "demo3, demo3" [level=2] [ref=f14e317]
+              - generic [ref=f14e318]:
+                - generic [ref=f14e319]: ADM-00001
+                - generic [ref=f14e322]: "20260000001011"
+            - generic [ref=f14e323]:
+              - generic [ref=f14e324]:
+                - paragraph [ref=f14e325]: Admitted
+                - paragraph [ref=f14e326]: Jul 23, 2026 05:12 AM
+              - generic [ref=f14e327]:
+                - paragraph [ref=f14e328]: Room / Ward
+                - paragraph [ref=f14e329]: Ward Room 101Cardiology Ward
+              - button "Transfer Room" [ref=f14e330]
+          - generic [ref=f14e215]:
+            - generic [ref=f14e216]:
+              - paragraph [ref=f14e333]: Admission Type
+              - paragraph [ref=f14e334]: Emergency
+            - generic [ref=f14e335]:
+              - paragraph [ref=f14e336]: Source
+              - paragraph [ref=f14e337]: ER
+            - generic [ref=f14e338]:
+              - paragraph [ref=f14e339]: Attending Physician
+              - paragraph [ref=f14e340]: Dr. Juan Dela Cruz
+            - generic [ref=f14e341]:
+              - paragraph [ref=f14e342]: Admitting Diagnosis
+              - paragraph [ref=f14e343]: sdfsd
+        - navigation [ref=f14e345]:
+          - button [ref=f14e346]
+          - button [ref=f14e350]
+          - button [active] [ref=f14e354]
+          - button [ref=f14e358]
+          - button [ref=f14e362]
+          - button [ref=f14e366]
+        - generic [ref=f14e581]:
+          - generic [ref=f14e582]:
+            - heading "Orders & Interventions" [level=3] [ref=f14e583]
+            - button "Place Order" [ref=f14e584]
+          - generic [ref=f14e587]:
+            - generic [ref=f14e588]:
+              - heading "Laboratory Requests 2" [level=4] [ref=f14e589]:
+                - text: Laboratory Requests
+                - generic [ref=f14e591]: "2"
+              - button "Request Lab Test" [ref=f14e592]
+            - table [ref=f14e596]:
+              - rowgroup [ref=f14e597]:
+                - row [ref=f14e598]:
+                  - 'columnheader "Request #" [ref=f14e599]'
+                  - columnheader "Items" [ref=f14e600]
+                  - columnheader "Priority" [ref=f14e601]
+                  - columnheader "Status" [ref=f14e602]
+                  - columnheader "Billing" [ref=f14e603]
+                  - columnheader "Total" [ref=f14e604]
+                  - columnheader "Date" [ref=f14e605]
+                  - columnheader "Actions" [ref=f14e606]
+              - rowgroup [ref=f14e607]:
+                - row [ref=f14e608]:
+                  - cell "LR-00003" [ref=f14e609]
+                  - cell "Complete Blood Count Cancelled Blood Urea Nitrogen Cancelled" [ref=f14e610]:
+                    - generic [ref=f14e611]:
+                      - generic [ref=f14e612]:
+                        - generic [ref=f14e613]: Complete Blood Count
+                        - generic [ref=f14e614]: Cancelled
+                      - generic [ref=f14e615]:
+                        - generic [ref=f14e616]: Blood Urea Nitrogen
+                        - generic [ref=f14e617]: Cancelled
+                  - cell "Routine" [ref=f14e618]
+                  - cell "Cancelled" [ref=f14e619]
+                  - cell "Pending" [ref=f14e620]
+                  - cell "₱530.00" [ref=f14e621]
+                  - cell "Jul 24, 03:56" [ref=f14e622]
+                  - cell "—" [ref=f14e623]
+                - row [ref=f14e624]:
+                  - cell "LR-00002" [ref=f14e625]
+                  - cell "Activated Partial Thromboplastin Time Completed" [ref=f14e626]:
+                    - generic [ref=f14e628]:
+                      - generic [ref=f14e629]: Activated Partial Thromboplastin Time
+                      - generic [ref=f14e630]: Completed
+                  - cell "Routine" [ref=f14e631]
+                  - cell "Completed" [ref=f14e632]
+                  - cell "Billed" [ref=f14e633]
+                  - cell "₱250.00" [ref=f14e634]
+                  - cell "Jul 23, 05:14" [ref=f14e635]
+                  - cell "—" [ref=f14e636]
+          - generic [ref=f14e637]:
+            - generic [ref=f14e638]:
+              - heading "Pharmacy Requests 2" [level=4] [ref=f14e639]:
+                - text: Pharmacy Requests
+                - generic [ref=f14e641]: "2"
+              - button "Request Medication" [ref=f14e642]
+            - table [ref=f14e646]:
+              - rowgroup [ref=f14e647]:
+                - row [ref=f14e648]:
+                  - 'columnheader "Request #" [ref=f14e649]'
+                  - columnheader "Medications" [ref=f14e650]
+                  - columnheader "Priority" [ref=f14e651]
+                  - columnheader "Status" [ref=f14e652]
+                  - columnheader "Billing" [ref=f14e653]
+                  - columnheader "Total" [ref=f14e654]
+                  - columnheader "Date" [ref=f14e655]
+                  - columnheader "Actions" [ref=f14e656]
+              - rowgroup [ref=f14e657]:
+                - row [ref=f14e658]:
+                  - cell "PR-00003" [ref=f14e659]
+                  - cell "Paracetamol 500mg (x1.00) Cancelled Amoxicillin 500mg (x1.00) Cancelled" [ref=f14e660]:
+                    - generic [ref=f14e661]:
+                      - generic [ref=f14e662]:
+                        - generic [ref=f14e663]: Paracetamol 500mg (x1.00)
+                        - generic [ref=f14e664]: Cancelled
+                      - generic [ref=f14e665]:
+                        - generic [ref=f14e666]: Amoxicillin 500mg (x1.00)
+                        - generic [ref=f14e667]: Cancelled
+                  - cell "Routine" [ref=f14e668]
+                  - cell "Cancelled" [ref=f14e669]
+                  - cell "Pending" [ref=f14e670]
+                  - cell "₱257.10" [ref=f14e671]
+                  - cell "Jul 24, 03:56" [ref=f14e672]
+                  - cell "—" [ref=f14e673]
+                - row [ref=f14e674]:
+                  - cell "PR-00002" [ref=f14e675]
+                  - cell "0.9% NaCl IV 1L (x1.00) Cancelled Amlodipine 5mg (x1.00) Cancelled" [ref=f14e676]:
+                    - generic [ref=f14e677]:
+                      - generic [ref=f14e678]:
+                        - generic [ref=f14e679]: 0.9% NaCl IV 1L (x1.00)
+                        - generic [ref=f14e680]: Cancelled
+                      - generic [ref=f14e681]:
+                        - generic [ref=f14e682]: Amlodipine 5mg (x1.00)
+                        - generic [ref=f14e683]: Cancelled
+                  - cell "Routine" [ref=f14e684]
+                  - cell "Cancelled" [ref=f14e685]
+                  - cell "Pending" [ref=f14e686]
+                  - cell "₱789.47" [ref=f14e687]
+                  - cell "Jul 23, 05:28" [ref=f14e688]
+                  - cell "—" [ref=f14e689]
+          - generic [ref=f14e690]:
+            - generic [ref=f14e691]:
+              - heading "CSR / Supply Requests 2" [level=4] [ref=f14e692]:
+                - text: CSR / Supply Requests
+                - generic [ref=f14e694]: "2"
+              - button "Request Supply" [ref=f14e695]
+            - table [ref=f14e699]:
+              - rowgroup [ref=f14e700]:
+                - row [ref=f14e701]:
+                  - 'columnheader "Request #" [ref=f14e702]'
+                  - columnheader "Items" [ref=f14e703]
+                  - columnheader "Status" [ref=f14e704]
+                  - columnheader "Billing" [ref=f14e705]
+                  - columnheader "Total" [ref=f14e706]
+                  - columnheader "Date" [ref=f14e707]
+                  - columnheader "Actions" [ref=f14e708]
+              - rowgroup [ref=f14e709]:
+                - row [ref=f14e710]:
+                  - cell "CR-00004" [ref=f14e711]
+                  - cell "Disposable Syringe 10cc (x1.00) Cancelled Alcohol Swab (Box/100) (x1.00) Cancelled Gauze Pad 4x4 (Pack/100) (x1.00) Cancelled Surgical Mask (Box/50) (x1.00) Cancelled IV Set with drip chamber (x1.00) Cancelled IV Fluid D5LR 1L (x1.00) Cancelled IV Fluid PNSS 1L (x1.00) Cancelled" [ref=f14e712]:
+                    - generic [ref=f14e713]:
+                      - generic [ref=f14e714]:
+                        - generic [ref=f14e715]: Disposable Syringe 10cc (x1.00)
+                        - generic [ref=f14e716]: Cancelled
+                      - generic [ref=f14e717]:
+                        - generic [ref=f14e718]: Alcohol Swab (Box/100) (x1.00)
+                        - generic [ref=f14e719]: Cancelled
+                      - generic [ref=f14e720]:
+                        - generic [ref=f14e721]: Gauze Pad 4x4 (Pack/100) (x1.00)
+                        - generic [ref=f14e722]: Cancelled
+                      - generic [ref=f14e723]:
+                        - generic [ref=f14e724]: Surgical Mask (Box/50) (x1.00)
+                        - generic [ref=f14e725]: Cancelled
+                      - generic [ref=f14e726]:
+                        - generic [ref=f14e727]: IV Set with drip chamber (x1.00)
+                        - generic [ref=f14e728]: Cancelled
+                      - generic [ref=f14e729]:
+                        - generic [ref=f14e730]: IV Fluid D5LR 1L (x1.00)
+                        - generic [ref=f14e731]: Cancelled
+                      - generic [ref=f14e732]:
+                        - generic [ref=f14e733]: IV Fluid PNSS 1L (x1.00)
+                        - generic [ref=f14e734]: Cancelled
+                  - cell "Cancelled" [ref=f14e735]
+                  - cell "Pending" [ref=f14e736]
+                  - cell "₱502.00" [ref=f14e737]
+                  - cell "Jul 24, 03:44" [ref=f14e738]
+                  - cell "—" [ref=f14e739]
+                - row [ref=f14e740]:
+                  - cell "CR-00003" [ref=f14e741]
+                  - cell "Alcohol Swab (Box/100) (x1.00) Cancelled Betadine Solution 30ml (x1.00) Cancelled" [ref=f14e742]:
+                    - generic [ref=f14e743]:
+                      - generic [ref=f14e744]:
+                        - generic [ref=f14e745]: Alcohol Swab (Box/100) (x1.00)
+                        - generic [ref=f14e746]: Cancelled
+                      - generic [ref=f14e747]:
+                        - generic [ref=f14e748]: Betadine Solution 30ml (x1.00)
+                        - generic [ref=f14e749]: Cancelled
+                  - cell "Cancelled" [ref=f14e750]
+                  - cell "Pending" [ref=f14e751]
+                  - cell "₱140.00" [ref=f14e752]
+                  - cell "Jul 23, 07:21" [ref=f14e753]
+                  - cell "—" [ref=f14e754]
+  - contentinfo [ref=f14e311]:
+    - paragraph [ref=f14e313]: © 2026 SITHEMR. All rights reserved.

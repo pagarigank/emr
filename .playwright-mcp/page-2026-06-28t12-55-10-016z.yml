@@ -1,0 +1,259 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e10]: Internal Server Error
+    - button "Copy as Markdown" [ref=e11] [cursor=pointer]:
+      - img [ref=e12]
+      - generic [ref=e15]: Copy as Markdown
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "ParseError" [level=1] [ref=e20]
+      - generic [ref=e22]: resources\views\livewire\pharmacy\pharmacy-dispensing-crud.blade.php:459
+      - paragraph [ref=e23]: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: LARAVEL
+          - generic [ref=e28]: 12.62.0
+        - generic [ref=e29]:
+          - generic [ref=e30]: PHP
+          - generic [ref=e31]: 8.2.12
+      - generic [ref=e32]:
+        - img [ref=e33]
+        - text: UNHANDLED
+      - generic [ref=e36]: CODE 0
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - img [ref=e40]
+        - text: "500"
+      - generic [ref=e43]:
+        - img [ref=e44]
+        - text: GET
+      - generic [ref=e47]: http://127.0.0.1:8000/pharmacy/dispensing
+      - button [ref=e48] [cursor=pointer]:
+        - img [ref=e49]
+  - generic [ref=e53]:
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - img [ref=e57]
+        - heading "Exception trace" [level=3] [ref=e60]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e63] [cursor=pointer]:
+            - generic [ref=e66]:
+              - code [ref=e70]:
+                - generic [ref=e71]: "App\\Livewire\\Pharmacy\\PharmacyDispensingCrud->Livewire\\Mechanisms\\ExtendBlade\\{closure}()"
+              - generic [ref=e73]: resources\views\livewire\pharmacy\pharmacy-dispensing-crud.blade.php:459
+            - button [ref=e75]:
+              - img [ref=e76]
+          - code [ref=e84]:
+            - generic [ref=e85]: "454"
+            - generic [ref=e86]: 455 <script>
+            - generic [ref=e87]: "456 window.addPharmacyDrug = function() {"
+            - generic [ref=e88]: 457 const sel = document.getElementById('drug-selector');
+            - generic [ref=e89]: 458 if (!sel || !sel.value) return;
+            - generic [ref=e90]: 459 @this.addItem(parseInt(sel.value));
+            - generic [ref=e91]: 460 sel.selectedIndex = 0;
+            - generic [ref=e92]: "461 };"
+            - generic [ref=e93]: 462 </script>
+            - generic [ref=e94]: 463</div>
+            - generic [ref=e95]: "464"
+        - generic [ref=e97] [cursor=pointer]:
+          - img [ref=e98]
+          - generic [ref=e102]: 11 vendor frames
+          - button [ref=e103]:
+            - img [ref=e104]
+        - generic [ref=e109] [cursor=pointer]:
+          - generic [ref=e112]:
+            - code [ref=e116]:
+              - generic [ref=e117]: Livewire\LivewireManager->mount(string, array, string, array)
+            - generic [ref=e119]: resources\views\pages\pharmacy\dispensing.blade.php:1
+          - button [ref=e121]:
+            - img [ref=e122]
+        - generic [ref=e127] [cursor=pointer]:
+          - img [ref=e128]
+          - generic [ref=e132]: 15 vendor frames
+          - button [ref=e133]:
+            - img [ref=e134]
+        - generic [ref=e139] [cursor=pointer]:
+          - generic [ref=e142]:
+            - code [ref=e146]:
+              - generic [ref=e147]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=e149]: app\Http\Middleware\JwtMiddleware.php:88
+          - button [ref=e151]:
+            - img [ref=e152]
+        - generic [ref=e157] [cursor=pointer]:
+          - img [ref=e158]
+          - generic [ref=e162]: 45 vendor frames
+          - button [ref=e163]:
+            - img [ref=e164]
+        - generic [ref=e169] [cursor=pointer]:
+          - generic [ref=e172]:
+            - code [ref=e176]:
+              - generic [ref=e177]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+            - generic [ref=e179]: public\index.php:20
+          - button [ref=e181]:
+            - img [ref=e182]
+        - generic [ref=e187] [cursor=pointer]:
+          - img [ref=e188]
+          - generic [ref=e192]: 1 vendor frame
+          - button [ref=e193]:
+            - img [ref=e194]
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - img [ref=e202]
+          - heading "Queries" [level=3] [ref=e204]
+        - generic [ref=e206]: 1-10 of 10
+      - generic [ref=e207]:
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - img [ref=e211]
+              - generic [ref=e213]: sqlsrv
+            - code [ref=e217]:
+              - generic [ref=e218]: select top 1 * from [users] where [id] = '2' and [history] = 1
+          - generic [ref=e219]: 2.34ms
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - generic [ref=e222]:
+              - img [ref=e223]
+              - generic [ref=e225]: sqlsrv
+            - code [ref=e229]:
+              - generic [ref=e230]: select count(*) as aggregate from [pharmacy_requests] where [tenant_id] = 1 and [history] = 1
+          - generic [ref=e231]: 0.98ms
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - img [ref=e235]
+              - generic [ref=e237]: sqlsrv
+            - code [ref=e241]:
+              - generic [ref=e242]: select top 10 * from [pharmacy_requests] where [tenant_id] = 1 and [history] = 1 order by [created_date] desc
+          - generic [ref=e243]: 0.94ms
+        - generic [ref=e244]:
+          - generic [ref=e245]:
+            - generic [ref=e246]:
+              - img [ref=e247]
+              - generic [ref=e249]: sqlsrv
+            - code [ref=e253]:
+              - generic [ref=e254]: select * from [departments] where [departments].[id] in (2) and [history] = 1
+          - generic [ref=e255]: 0.62ms
+        - generic [ref=e256]:
+          - generic [ref=e257]:
+            - generic [ref=e258]:
+              - img [ref=e259]
+              - generic [ref=e261]: sqlsrv
+            - code [ref=e265]:
+              - generic [ref=e266]: select * from [pharmacy_request_items] where [pharmacy_request_items].[pharmacy_request_id] in (1, 2, 3) and [history] = 1
+          - generic [ref=e267]: 0.73ms
+        - generic [ref=e268]:
+          - generic [ref=e269]:
+            - generic [ref=e270]:
+              - img [ref=e271]
+              - generic [ref=e273]: sqlsrv
+            - code [ref=e277]:
+              - generic [ref=e278]: select * from [er_admissions] where [er_admissions].[id] in (1) and [history] = 1
+          - generic [ref=e279]: 0.62ms
+        - generic [ref=e280]:
+          - generic [ref=e281]:
+            - generic [ref=e282]:
+              - img [ref=e283]
+              - generic [ref=e285]: sqlsrv
+            - code [ref=e289]:
+              - generic [ref=e290]: select * from [patients] where [patients].[id] in (11) and [history] = 1
+          - generic [ref=e291]: 0.56ms
+        - generic [ref=e292]:
+          - generic [ref=e293]:
+            - generic [ref=e294]:
+              - img [ref=e295]
+              - generic [ref=e297]: sqlsrv
+            - code [ref=e301]:
+              - generic [ref=e302]: select [id], [dept_code], [dept_name] from [departments] where [tenant_id] = 1 and [history] = 1 order by [dept_name] asc
+          - generic [ref=e303]: 0.88ms
+        - generic [ref=e304]:
+          - generic [ref=e305]:
+            - generic [ref=e306]:
+              - img [ref=e307]
+              - generic [ref=e309]: sqlsrv
+            - code [ref=e313]:
+              - generic [ref=e314]: select [id], [professional_code], [full_name] from [health_care_professionals] where [tenant_id] = 1 and [history] = 1 order by [full_name] asc
+          - generic [ref=e315]: 0.59ms
+        - generic [ref=e316]:
+          - generic [ref=e317]:
+            - generic [ref=e318]:
+              - img [ref=e319]
+              - generic [ref=e321]: sqlsrv
+            - code [ref=e325]:
+              - generic [ref=e326]: select [id], [drug_code], [generic_name], [brand_name], [drug_strength], [dosage_form], [route] from [drugs] where [history] = 1 order by [generic_name] asc
+          - generic [ref=e327]: 0.79ms
+  - generic [ref=e329]:
+    - generic [ref=e330]:
+      - heading "Headers" [level=2] [ref=e331]
+      - generic [ref=e332]:
+        - generic [ref=e333]:
+          - generic [ref=e334]: host
+          - generic [ref=e336]: 127.0.0.1:8000
+        - generic [ref=e337]:
+          - generic [ref=e338]: connection
+          - generic [ref=e340]: keep-alive
+        - generic [ref=e341]:
+          - generic [ref=e342]: sec-ch-ua
+          - generic [ref=e344]: "\"Google Chrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\""
+        - generic [ref=e345]:
+          - generic [ref=e346]: sec-ch-ua-mobile
+          - generic [ref=e348]: "?0"
+        - generic [ref=e349]:
+          - generic [ref=e350]: sec-ch-ua-platform
+          - generic [ref=e352]: "\"Windows\""
+        - generic [ref=e353]:
+          - generic [ref=e354]: upgrade-insecure-requests
+          - generic [ref=e356]: "1"
+        - generic [ref=e357]:
+          - generic [ref=e358]: user-agent
+          - generic [ref=e360]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+        - generic [ref=e361]:
+          - generic [ref=e362]: accept
+          - generic [ref=e364]: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=e365]:
+          - generic [ref=e366]: sec-fetch-site
+          - generic [ref=e368]: none
+        - generic [ref=e369]:
+          - generic [ref=e370]: sec-fetch-mode
+          - generic [ref=e372]: navigate
+        - generic [ref=e373]:
+          - generic [ref=e374]: sec-fetch-user
+          - generic [ref=e376]: "?1"
+        - generic [ref=e377]:
+          - generic [ref=e378]: sec-fetch-dest
+          - generic [ref=e380]: document
+        - generic [ref=e381]:
+          - generic [ref=e382]: accept-encoding
+          - generic [ref=e384]: gzip, deflate, br, zstd
+        - generic [ref=e385]:
+          - generic [ref=e386]: accept-language
+          - generic [ref=e388]: en-US,en;q=0.9
+        - generic [ref=e389]:
+          - generic [ref=e390]: cookie
+          - generic [ref=e392]: XSRF-TOKEN=eyJpdiI6ImpNNzJaUXdnTW9TL1JuRWpqYTU2bXc9PSIsInZhbHVlIjoiMGRWQ3JvRnErc2IxTWI3dkxQQ204ZEFGQ0tERGJ2UjNKTlZXOEZmTW41SDhVOFZWd1MxWkF2c0lrdW5jOFh2N1piSVFQQVNkdmVsMXdFWEg1K1U0UFlCRFlKRVNkRmZ3dExLeU1MUThQT2ZiMTdsVmR3N0xsbWw3RHNNZS9zVDEiLCJtYWMiOiIyNWM2NDFhMTQ1ZDY2N2RkOGU2NjVlMzI5NGMwZWU2MGU1NzQxZGQ1Y2RjZDQ1MjI4YjFhZWNlNjk3OGFmMWU2IiwidGFnIjoiIn0%3D; laravel-session=eyJpdiI6IjYzRzZvRkJqVkY4eXJKeU5BSFRMOXc9PSIsInZhbHVlIjoiWmFiMDFidSs2MFJWQy9yWmJYWnF4T1JxWHRsZS84TW45L1B6L1FjVzI1UHpkbXZzcGxOWExVNlJoUktxZzZLY2J1U2M2MzF0aXBuNTZDSjcrMFBRZ1RCNnhNZHAxMjhMUnNrN1dvYnp3a2Y1elY5QWRyN3ZqM2RHNlpHRk9FSjMiLCJtYWMiOiI2ZGQxNTE1ZmFkZjZjNzg0NGEyOGE2NzE1NDViZmVlMTExNjc0NDE0ODg5ZWM1NGM5NDEyYjQ5NWIyYzFhMzI0IiwidGFnIjoiIn0%3D
+    - generic [ref=e393]:
+      - heading "Body" [level=2] [ref=e394]
+      - generic [ref=e395]: // No request body
+    - generic [ref=e396]:
+      - heading "Routing" [level=2] [ref=e397]
+      - generic [ref=e398]:
+        - generic [ref=e399]:
+          - generic [ref=e400]: controller
+          - generic [ref=e402]: Closure
+        - generic [ref=e403]:
+          - generic [ref=e404]: route name
+          - generic [ref=e406]: pharmacy.dispensing
+        - generic [ref=e407]:
+          - generic [ref=e408]: middleware
+          - generic [ref=e410]: web
+    - generic [ref=e411]:
+      - heading "Routing parameters" [level=2] [ref=e412]
+      - generic [ref=e413]: // No routing parameters
+  - generic [ref=e416]:
+    - img [ref=e418]
+    - img [ref=e3456]

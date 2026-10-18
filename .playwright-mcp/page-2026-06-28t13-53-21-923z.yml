@@ -1,0 +1,297 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - button "Delivery" [ref=e97]:
+          - generic [ref=e98]:
+            - img [ref=e99]
+            - generic [ref=e101]: Delivery
+          - img [ref=e102]
+        - button "Wards" [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic [ref=e109]: Wards
+          - img [ref=e110]
+        - link "Admission" [ref=e112] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e113]
+          - text: Admission
+        - link "Nursing" [ref=e115] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e116]
+          - text: Nursing
+        - link "Billing" [ref=e118] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e119]
+          - text: Billing
+        - link "Fund Sources" [ref=e121] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e122]
+          - text: Fund Sources
+        - button "OR" [ref=e125]:
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e129]: OR
+          - img [ref=e130]
+        - button "Emergency Room" [ref=e133]:
+          - generic [ref=e134]:
+            - img [ref=e135]
+            - generic [ref=e137]: Emergency Room
+          - img [ref=e138]
+        - button "OPD" [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - generic [ref=e145]: OPD
+          - img [ref=e146]
+        - button "OB" [ref=e149]:
+          - generic [ref=e150]:
+            - img [ref=e151]
+            - generic [ref=e153]: OB
+          - img [ref=e154]
+        - button "PhilHealth" [ref=e157]:
+          - generic [ref=e158]:
+            - img [ref=e159]
+            - generic [ref=e161]: PhilHealth
+          - img [ref=e162]
+        - button "YAKAP" [ref=e165]:
+          - generic [ref=e166]:
+            - img [ref=e167]
+            - generic [ref=e169]: YAKAP
+          - img [ref=e170]
+    - main [ref=e172]:
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - heading "ICU Beds" [level=2] [ref=e177]
+            - paragraph [ref=e178]: Manage ICU bed inventory across wards.
+          - button "Add Bed" [ref=e179]:
+            - img [ref=e180]
+            - text: Add Bed
+        - generic [ref=e182]:
+          - generic [ref=e183]:
+            - generic:
+              - img
+            - textbox "Search code or name…" [ref=e184]
+          - generic [ref=e185]:
+            - generic [ref=e186]: "Rows:"
+            - combobox [ref=e187]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e189]:
+          - rowgroup [ref=e190]:
+            - row "Code ↑ Name ↑↓ Ward Status Actions" [ref=e191]:
+              - columnheader "Code ↑" [ref=e192] [cursor=pointer]:
+                - generic [ref=e193]:
+                  - text: Code
+                  - generic [ref=e194]: ↑
+              - columnheader "Name ↑↓" [ref=e195] [cursor=pointer]:
+                - generic [ref=e196]:
+                  - text: Name
+                  - generic [ref=e197]: ↑↓
+              - columnheader "Ward" [ref=e198]
+              - columnheader "Status" [ref=e199]
+              - columnheader "Actions" [ref=e200]
+          - rowgroup [ref=e201]:
+            - row "CCU-01 Bed CCU-01 Cardiac Care Unit Active" [ref=e202]:
+              - cell "CCU-01" [ref=e203]
+              - cell "Bed CCU-01" [ref=e204]
+              - cell "Cardiac Care Unit" [ref=e205]
+              - cell "Active" [ref=e206]:
+                - generic [ref=e207]: Active
+              - cell [ref=e208]:
+                - generic [ref=e209]:
+                  - button "Edit" [ref=e210]:
+                    - img [ref=e211]
+                  - button "Archive" [ref=e213]:
+                    - img [ref=e214]
+            - row "CCU-02 Bed CCU-02 Cardiac Care Unit Active" [ref=e216]:
+              - cell "CCU-02" [ref=e217]
+              - cell "Bed CCU-02" [ref=e218]
+              - cell "Cardiac Care Unit" [ref=e219]
+              - cell "Active" [ref=e220]:
+                - generic [ref=e221]: Active
+              - cell [ref=e222]:
+                - generic [ref=e223]:
+                  - button "Edit" [ref=e224]:
+                    - img [ref=e225]
+                  - button "Archive" [ref=e227]:
+                    - img [ref=e228]
+            - row "CCU-03 Bed CCU-03 Cardiac Care Unit Active" [ref=e230]:
+              - cell "CCU-03" [ref=e231]
+              - cell "Bed CCU-03" [ref=e232]
+              - cell "Cardiac Care Unit" [ref=e233]
+              - cell "Active" [ref=e234]:
+                - generic [ref=e235]: Active
+              - cell [ref=e236]:
+                - generic [ref=e237]:
+                  - button "Edit" [ref=e238]:
+                    - img [ref=e239]
+                  - button "Archive" [ref=e241]:
+                    - img [ref=e242]
+            - row "CCU-04 Bed CCU-04 Cardiac Care Unit Active" [ref=e244]:
+              - cell "CCU-04" [ref=e245]
+              - cell "Bed CCU-04" [ref=e246]
+              - cell "Cardiac Care Unit" [ref=e247]
+              - cell "Active" [ref=e248]:
+                - generic [ref=e249]: Active
+              - cell [ref=e250]:
+                - generic [ref=e251]:
+                  - button "Edit" [ref=e252]:
+                    - img [ref=e253]
+                  - button "Archive" [ref=e255]:
+                    - img [ref=e256]
+            - row "MICU-01 Bed MICU-01 Medical ICU Active" [ref=e258]:
+              - cell "MICU-01" [ref=e259]
+              - cell "Bed MICU-01" [ref=e260]
+              - cell "Medical ICU" [ref=e261]
+              - cell "Active" [ref=e262]:
+                - generic [ref=e263]: Active
+              - cell [ref=e264]:
+                - generic [ref=e265]:
+                  - button "Edit" [ref=e266]:
+                    - img [ref=e267]
+                  - button "Archive" [ref=e269]:
+                    - img [ref=e270]
+            - row "MICU-02 Bed MICU-02 Medical ICU Active" [ref=e272]:
+              - cell "MICU-02" [ref=e273]
+              - cell "Bed MICU-02" [ref=e274]
+              - cell "Medical ICU" [ref=e275]
+              - cell "Active" [ref=e276]:
+                - generic [ref=e277]: Active
+              - cell [ref=e278]:
+                - generic [ref=e279]:
+                  - button "Edit" [ref=e280]:
+                    - img [ref=e281]
+                  - button "Archive" [ref=e283]:
+                    - img [ref=e284]
+            - row "MICU-03 Bed MICU-03 Medical ICU Active" [ref=e286]:
+              - cell "MICU-03" [ref=e287]
+              - cell "Bed MICU-03" [ref=e288]
+              - cell "Medical ICU" [ref=e289]
+              - cell "Active" [ref=e290]:
+                - generic [ref=e291]: Active
+              - cell [ref=e292]:
+                - generic [ref=e293]:
+                  - button "Edit" [ref=e294]:
+                    - img [ref=e295]
+                  - button "Archive" [ref=e297]:
+                    - img [ref=e298]
+            - row "MICU-04 Bed MICU-04 Medical ICU Active" [ref=e300]:
+              - cell "MICU-04" [ref=e301]
+              - cell "Bed MICU-04" [ref=e302]
+              - cell "Medical ICU" [ref=e303]
+              - cell "Active" [ref=e304]:
+                - generic [ref=e305]: Active
+              - cell [ref=e306]:
+                - generic [ref=e307]:
+                  - button "Edit" [ref=e308]:
+                    - img [ref=e309]
+                  - button "Archive" [ref=e311]:
+                    - img [ref=e312]
+            - row "MICU-05 Bed MICU-05 Medical ICU Active" [ref=e314]:
+              - cell "MICU-05" [ref=e315]
+              - cell "Bed MICU-05" [ref=e316]
+              - cell "Medical ICU" [ref=e317]
+              - cell "Active" [ref=e318]:
+                - generic [ref=e319]: Active
+              - cell [ref=e320]:
+                - generic [ref=e321]:
+                  - button "Edit" [ref=e322]:
+                    - img [ref=e323]
+                  - button "Archive" [ref=e325]:
+                    - img [ref=e326]
+            - row "NICU-01 Bed NICU-01 Neonatal ICU Active" [ref=e328]:
+              - cell "NICU-01" [ref=e329]
+              - cell "Bed NICU-01" [ref=e330]
+              - cell "Neonatal ICU" [ref=e331]
+              - cell "Active" [ref=e332]:
+                - generic [ref=e333]: Active
+              - cell [ref=e334]:
+                - generic [ref=e335]:
+                  - button "Edit" [ref=e336]:
+                    - img [ref=e337]
+                  - button "Archive" [ref=e339]:
+                    - img [ref=e340]
+        - navigation "Pagination Navigation" [ref=e344]:
+          - generic [ref=e345]:
+            - paragraph [ref=e347]: Showing 1 to 10 of 22 results
+            - generic [ref=e349]:
+              - generic "&laquo; Previous" [ref=e351]:
+                - img [ref=e353]
+              - generic [ref=e357]: "1"
+              - button "Go to page 2" [ref=e359]: "2"
+              - button "Go to page 3" [ref=e361]: "3"
+              - button "Next &raquo;" [ref=e363]:
+                - img [ref=e364]
+  - contentinfo [ref=e366]:
+    - paragraph [ref=e368]: © 2026 SITHEMR. All rights reserved.

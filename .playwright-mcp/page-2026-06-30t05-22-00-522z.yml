@@ -1,0 +1,30 @@
+- generic [ref=f4e2]:
+  - generic [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - img "SITHEMR" [ref=f4e5]
+      - heading "SITHEMR" [level=1] [ref=f4e6]
+      - paragraph [ref=f4e7]: Hospital Electronic Medical Records
+    - generic [ref=f4e8]:
+      - heading "Sign in to your account" [level=2] [ref=f4e9]
+      - generic [ref=f4e10]:
+        - generic [ref=f4e11]:
+          - generic [ref=f4e12]: Email Address
+          - generic [ref=f4e13]:
+            - generic:
+              - img
+            - textbox "Email Address" [ref=f4e14]:
+              - /placeholder: admin@sithemr.com
+        - generic [ref=f4e15]:
+          - generic [ref=f4e16]: Password
+          - generic [ref=f4e17]:
+            - generic:
+              - img
+            - textbox "Password" [ref=f4e18]:
+              - /placeholder: ••••••••
+            - button [ref=f4e19]:
+              - img [ref=f4e20]
+        - button "Sign In" [ref=f4e23]:
+          - generic [ref=f4e24]:
+            - img [ref=f4e25]
+            - text: Sign In
+  - paragraph [ref=f4e27]: © 2026 SITHEMR. All rights reserved. | Multi-tenant Healthcare System

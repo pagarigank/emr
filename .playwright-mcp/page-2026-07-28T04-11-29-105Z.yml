@@ -1,0 +1,169 @@
+- generic [ref=f116e2]:
+  - banner [ref=f116e3]:
+    - generic [ref=f116e4]:
+      - generic [ref=f116e5]:
+        - button [ref=f116e6]
+        - generic [ref=f116e9]:
+          - img "SITHEMR Logo" [ref=f116e10]
+          - heading "SITHEMR" [level=1] [ref=f116e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f116e14]:
+        - generic [ref=f116e15]: D
+        - generic [ref=f116e16]:
+          - generic [ref=f116e17]: Demo Hospital Admin
+          - generic [ref=f116e18]: tenant_admin
+  - generic [ref=f116e21]:
+    - navigation [ref=f116e22]:
+      - generic [ref=f116e23]:
+        - generic [ref=f116e24]:
+          - paragraph [ref=f116e25]: Main
+          - link "Dashboard" [ref=f116e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f116e29] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=f116e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f116e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f116e38]:
+          - paragraph [ref=f116e39]: Clinical Modules
+          - button "OPD" [ref=f116e41]
+          - generic [ref=f116e48]:
+            - button "Emergency Room" [ref=f116e49]
+            - generic [ref=f116e56]:
+              - link "Triage Records" [ref=f116e57] [cursor=pointer]:
+                - /url: /er/triage
+              - link "ER Area" [ref=f116e61] [cursor=pointer]:
+                - /url: /er/area
+              - link "Acuity Levels" [ref=f116e66] [cursor=pointer]:
+                - /url: /er/acuity-levels
+              - link "Mobility Statuses" [ref=f116e71] [cursor=pointer]:
+                - /url: /er/mobility-statuses
+              - link "ER Zones" [ref=f116e75] [cursor=pointer]:
+                - /url: /er/zones
+              - link "ER Beds" [ref=f116e80] [cursor=pointer]:
+                - /url: /er/beds
+          - button "Admission & Wards" [ref=f116e86]
+          - link "Nursing" [ref=f116e93] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f116e97]
+          - button "Delivery" [ref=f116e105]
+          - button "Operating Room" [ref=f116e113]
+          - button "Renal Care" [ref=f116e121]
+        - generic [ref=f116e128]:
+          - paragraph [ref=f116e129]: Ancillary & Logistics
+          - button "Laboratory" [ref=f116e131]
+          - button "Radiology" [ref=f116e139]
+          - button "Pharmacy" [ref=f116e148]
+          - button "Procedures" [ref=f116e156]
+          - button "CSR / Supply" [ref=f116e165]
+        - generic [ref=f116e172]:
+          - paragraph [ref=f116e173]: Financial & Claims
+          - button "Billing" [ref=f116e175]
+          - button "PhilHealth" [ref=f116e183]
+          - button "YAKAP" [ref=f116e191]
+          - link "Transactions" [ref=f116e198] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f116e201] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f116e204]:
+          - paragraph [ref=f116e205]: Administration
+          - button "Masters" [ref=f116e207]
+          - link "Roles" [ref=f116e214] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f116e219] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f116e223] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f116e227]:
+      - generic [ref=f116e232]:
+        - generic [ref=f116e330]:
+          - generic [ref=f116e332]:
+            - generic [ref=f116e333]:
+              - heading "ER Treatment Record" [level=2] [ref=f116e334]
+              - paragraph [ref=f116e335]: "Encounter #ERA-20260728-4900"
+            - generic [ref=f116e336]:
+              - generic [ref=f116e337]: Urgent (ESI-3)
+              - generic [ref=f116e338]: Active
+          - generic [ref=f116e339]:
+            - generic [ref=f116e340]:
+              - paragraph [ref=f116e341]: Patient
+              - paragraph [ref=f116e342]: Dela Cruz, Juan
+              - paragraph [ref=f116e343]: 36 yrs old / Male
+            - generic [ref=f116e344]:
+              - paragraph [ref=f116e345]: Bed / Zone
+              - paragraph [ref=f116e346]: Trauma Bed 1
+              - paragraph [ref=f116e347]: Red Zone (Resuscitation)
+            - generic [ref=f116e348]:
+              - paragraph [ref=f116e349]: Attending Physician
+              - paragraph [ref=f116e350]: Dr. Dr. Maria Santos
+            - generic [ref=f116e351]:
+              - paragraph [ref=f116e352]: Arrival / Elapsed
+              - paragraph [ref=f116e353]: Jul 28, 2026 04:08
+              - paragraph [ref=f116e354]: 2 minutes ago
+          - generic [ref=f116e355]:
+            - generic [ref=f116e356]:
+              - paragraph [ref=f116e357]: Temp
+              - paragraph [ref=f116e358]: 37.5°
+            - generic [ref=f116e359]:
+              - paragraph [ref=f116e360]: HR
+              - paragraph [ref=f116e361]: "88"
+            - generic [ref=f116e362]:
+              - paragraph [ref=f116e363]: RR
+              - paragraph [ref=f116e364]: "18"
+            - generic [ref=f116e365]:
+              - paragraph [ref=f116e366]: BP
+              - paragraph [ref=f116e367]: 130/85
+            - generic [ref=f116e368]:
+              - paragraph [ref=f116e369]: SpO2
+              - paragraph [ref=f116e370]: 97.00%
+            - generic [ref=f116e371]:
+              - paragraph [ref=f116e372]: Pain
+              - paragraph [ref=f116e373]: 7/10
+            - generic [ref=f116e374]:
+              - paragraph [ref=f116e375]: LOC
+              - paragraph [ref=f116e376]: Alert
+            - generic [ref=f116e377]:
+              - paragraph [ref=f116e378]: Arrival
+              - paragraph [ref=f116e379]: Walk-in
+          - generic [ref=f116e380]:
+            - paragraph [ref=f116e381]: Initial Diagnosis
+            - paragraph [ref=f116e382]: Acute appendicitis, rule out
+          - generic [ref=f116e385] [cursor=pointer]:
+            - checkbox "OECB (Outpatient Emergency Care Benefit) PhilHealth OECB package — Annex A fixed fee schedule applies" [ref=f116e386]
+            - generic [ref=f116e387]:
+              - text: OECB (Outpatient Emergency Care Benefit)
+              - paragraph [ref=f116e388]: PhilHealth OECB package — Annex A fixed fee schedule applies
+        - navigation "Tabs" [ref=f116e390]:
+          - button "Clinical Notes" [ref=f116e391]
+          - button "Orders & Interventions" [ref=f116e394]
+          - button "Disposition" [active] [ref=f116e397]
+          - button "OR Schedule" [ref=f116e400]
+        - generic [ref=f116e403]:
+          - generic [ref=f116e1135]:
+            - paragraph [ref=f116e1137]:
+              - text: Setting a disposition other than
+              - strong [ref=f116e1140]: "\"Pending\""
+              - text: will mark the ER encounter as
+              - strong [ref=f116e1141]: Completed
+              - text: ", free the assigned bed, and remove from the Active ER Area."
+            - generic [ref=f116e1142]:
+              - generic [ref=f116e1143]:
+                - generic [ref=f116e1144]: Patient Disposition *
+                - combobox [ref=f116e1145]:
+                  - option "Pending (Stay in ER)"
+                  - option "Admitted to Ward" [selected]
+                  - option "Admitted to ICU"
+                  - option "Discharged Home"
+                  - option "Against Medical Advice (AMA)"
+                  - option "Expired"
+              - generic [ref=f116e1146]:
+                - generic [ref=f116e1147]: Discharge Instructions
+                - textbox "Follow-up instructions, medications prescribed, restrictions, return precautions, and follow-up appointment details..." [ref=f116e1148]
+            - button "Confirm Disposition" [ref=f116e1150]
+          - generic [ref=f116e425]:
+            - generic [ref=f116e426]: Changes are auto-saved per section
+            - generic [ref=f116e429]:
+              - button "← Back to List" [ref=f116e430]
+              - button [ref=f116e431]
+  - contentinfo [ref=f116e327]:
+    - paragraph [ref=f116e329]: © 2026 SITHEMR. All rights reserved.

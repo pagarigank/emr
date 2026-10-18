@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-light-blue-50: #f0f9ff;
+    --color-light-blue-100: #e0f2fe;
+    --color-light-blue-200: #bae6fd;
+    --color-light-blue-300: #7dd3fc;
+    --color-light-blue-400: #38bdf8;
+    --color-light-blue-500: #0ea5e9;
+    --color-light-blue-600: #0284c7;
+    --color-light-blue-700: #0369a1;
+    --color-light-blue-800: #075985;
+    --color-light-blue-900: #0c4a6e;
+}
+
+@media print {
+    header,
+    aside,
+    nav,
+    .sidebar,
+    .no-print,
+    [role="navigation"],
+    #sidebar,
+    div[x-data*="sidebarOpen"] > header,
+    div[x-data*="sidebarOpen"] > div > aside {
+        display: none !important;
+    }
+
+    body,
+    main,
+    #main-content,
+    .overflow-y-auto {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+    }
+}

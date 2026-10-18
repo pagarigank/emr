@@ -1,0 +1,1053 @@
+- generic [ref=f20e2]:
+  - banner [ref=f20e3]:
+    - generic [ref=f20e4]:
+      - generic [ref=f20e5]:
+        - button [ref=f20e6]
+        - generic [ref=f20e9]:
+          - img "SITHEMR Logo" [ref=f20e10]
+          - heading "SITHEMR" [level=1] [ref=f20e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f20e14]:
+        - generic [ref=f20e15]: D
+        - generic [ref=f20e16]:
+          - generic [ref=f20e17]: Demo Hospital Admin
+          - generic [ref=f20e18]: tenant_admin
+  - generic [ref=f20e21]:
+    - navigation [ref=f20e22]:
+      - generic [ref=f20e23]:
+        - generic [ref=f20e24]:
+          - paragraph [ref=f20e25]: Main
+          - link "Dashboard" [ref=f20e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f20e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=f20e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f20e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f20e38]:
+          - paragraph [ref=f20e39]: Clinical Modules
+          - button "OPD" [ref=f20e41]
+          - button "Emergency Room" [ref=f20e49]
+          - button "Admission & Wards" [ref=f20e57]
+          - link "Nursing" [ref=f20e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f20e68]
+          - button "Delivery" [ref=f20e76]
+          - button "Operating Room" [ref=f20e84]
+          - button "Renal Care" [ref=f20e92]
+        - generic [ref=f20e99]:
+          - paragraph [ref=f20e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f20e102]
+          - button "Radiology" [ref=f20e110]
+          - button "Pharmacy" [ref=f20e119]
+          - button "Procedures" [ref=f20e127]
+          - button "CSR / Supply" [ref=f20e136]
+        - generic [ref=f20e143]:
+          - paragraph [ref=f20e144]: Financial & Claims
+          - button "Billing" [ref=f20e146]
+          - button "PhilHealth" [ref=f20e154]
+          - button "YAKAP" [ref=f20e162]
+          - link "Transactions" [ref=f20e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f20e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f20e175]:
+          - paragraph [ref=f20e176]: Administration
+          - button "Masters" [ref=f20e178]
+          - link "Roles" [ref=f20e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f20e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f20e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f20e198]:
+      - generic [ref=f20e200]:
+        - generic [ref=f20e201]:
+          - button "Back to Patient List" [ref=f20e314]
+          - generic [ref=f20e206]:
+            - generic [ref=f20e207]:
+              - generic [ref=f20e212]:
+                - heading "demo3, demo3" [level=2] [ref=f20e317]
+                - generic [ref=f20e318]:
+                  - generic [ref=f20e319]: ADM-00001
+                  - generic [ref=f20e322]: "20260000001011"
+              - generic [ref=f20e323]:
+                - generic [ref=f20e324]:
+                  - paragraph [ref=f20e325]: Admitted
+                  - paragraph [ref=f20e326]: Jul 23, 2026 05:12 AM
+                - generic [ref=f20e327]:
+                  - paragraph [ref=f20e328]: Room / Ward
+                  - paragraph [ref=f20e329]: Ward Room 101Cardiology Ward
+                - button "Transfer Room" [ref=f20e330]
+            - generic [ref=f20e215]:
+              - generic [ref=f20e216]:
+                - paragraph [ref=f20e333]: Admission Type
+                - paragraph [ref=f20e334]: Emergency
+              - generic [ref=f20e335]:
+                - paragraph [ref=f20e336]: Source
+                - paragraph [ref=f20e337]: ER
+              - generic [ref=f20e338]:
+                - paragraph [ref=f20e339]: Attending Physician
+                - paragraph [ref=f20e340]: Dr. Juan Dela Cruz
+              - generic [ref=f20e341]:
+                - paragraph [ref=f20e342]: Admitting Diagnosis
+                - paragraph [ref=f20e343]: sdfsd
+          - navigation [ref=f20e345]:
+            - button [ref=f20e346]
+            - button [ref=f20e350]
+            - button [ref=f20e354]
+            - button [ref=f20e358]
+            - button [ref=f20e362]
+            - button [ref=f20e366]
+          - generic [ref=f20e425]:
+            - generic [ref=f20e426]:
+              - heading "Orders & Interventions" [level=3] [ref=f20e427]
+              - button "Place Order" [ref=f20e428]
+            - generic [ref=f20e431]:
+              - generic [ref=f20e432]:
+                - heading "Laboratory Requests 2" [level=4] [ref=f20e433]:
+                  - text: Laboratory Requests
+                  - generic [ref=f20e435]: "2"
+                - button "Request Lab Test" [ref=f20e436]
+              - table [ref=f20e440]:
+                - rowgroup [ref=f20e441]:
+                  - row [ref=f20e442]:
+                    - 'columnheader "Request #" [ref=f20e443]'
+                    - columnheader "Items" [ref=f20e444]
+                    - columnheader "Priority" [ref=f20e445]
+                    - columnheader "Status" [ref=f20e446]
+                    - columnheader "Billing" [ref=f20e447]
+                    - columnheader "Total" [ref=f20e448]
+                    - columnheader "Date" [ref=f20e449]
+                    - columnheader "Actions" [ref=f20e450]
+                - rowgroup [ref=f20e451]:
+                  - row [ref=f20e452]:
+                    - cell "LR-00003" [ref=f20e453]
+                    - cell "Complete Blood Count Cancelled Blood Urea Nitrogen Cancelled" [ref=f20e454]:
+                      - generic [ref=f20e455]:
+                        - generic [ref=f20e456]:
+                          - generic [ref=f20e457]: Complete Blood Count
+                          - generic [ref=f20e458]: Cancelled
+                        - generic [ref=f20e459]:
+                          - generic [ref=f20e460]: Blood Urea Nitrogen
+                          - generic [ref=f20e461]: Cancelled
+                    - cell "Routine" [ref=f20e462]
+                    - cell "Cancelled" [ref=f20e463]
+                    - cell "Pending" [ref=f20e464]
+                    - cell "₱530.00" [ref=f20e465]
+                    - cell "Jul 24, 03:56" [ref=f20e466]
+                    - cell "—" [ref=f20e467]
+                  - row [ref=f20e468]:
+                    - cell "LR-00002" [ref=f20e469]
+                    - cell "Activated Partial Thromboplastin Time Completed" [ref=f20e470]:
+                      - generic [ref=f20e472]:
+                        - generic [ref=f20e473]: Activated Partial Thromboplastin Time
+                        - generic [ref=f20e474]: Completed
+                    - cell "Routine" [ref=f20e475]
+                    - cell "Completed" [ref=f20e476]
+                    - cell "Billed" [ref=f20e477]
+                    - cell "₱250.00" [ref=f20e478]
+                    - cell "Jul 23, 05:14" [ref=f20e479]
+                    - cell "—" [ref=f20e480]
+            - generic [ref=f20e481]:
+              - generic [ref=f20e482]:
+                - heading "Pharmacy Requests 2" [level=4] [ref=f20e483]:
+                  - text: Pharmacy Requests
+                  - generic [ref=f20e485]: "2"
+                - button "Request Medication" [ref=f20e486]
+              - table [ref=f20e490]:
+                - rowgroup [ref=f20e491]:
+                  - row [ref=f20e492]:
+                    - 'columnheader "Request #" [ref=f20e493]'
+                    - columnheader "Medications" [ref=f20e494]
+                    - columnheader "Priority" [ref=f20e495]
+                    - columnheader "Status" [ref=f20e496]
+                    - columnheader "Billing" [ref=f20e497]
+                    - columnheader "Total" [ref=f20e498]
+                    - columnheader "Date" [ref=f20e499]
+                    - columnheader "Actions" [ref=f20e500]
+                - rowgroup [ref=f20e501]:
+                  - row [ref=f20e502]:
+                    - cell "PR-00003" [ref=f20e503]
+                    - cell "Paracetamol 500mg (x1.00) Cancelled Amoxicillin 500mg (x1.00) Cancelled" [ref=f20e504]:
+                      - generic [ref=f20e505]:
+                        - generic [ref=f20e506]:
+                          - generic [ref=f20e507]: Paracetamol 500mg (x1.00)
+                          - generic [ref=f20e508]: Cancelled
+                        - generic [ref=f20e509]:
+                          - generic [ref=f20e510]: Amoxicillin 500mg (x1.00)
+                          - generic [ref=f20e511]: Cancelled
+                    - cell "Routine" [ref=f20e512]
+                    - cell "Cancelled" [ref=f20e513]
+                    - cell "Pending" [ref=f20e514]
+                    - cell "₱257.10" [ref=f20e515]
+                    - cell "Jul 24, 03:56" [ref=f20e516]
+                    - cell "—" [ref=f20e517]
+                  - row [ref=f20e518]:
+                    - cell "PR-00002" [ref=f20e519]
+                    - cell "0.9% NaCl IV 1L (x1.00) Cancelled Amlodipine 5mg (x1.00) Cancelled" [ref=f20e520]:
+                      - generic [ref=f20e521]:
+                        - generic [ref=f20e522]:
+                          - generic [ref=f20e523]: 0.9% NaCl IV 1L (x1.00)
+                          - generic [ref=f20e524]: Cancelled
+                        - generic [ref=f20e525]:
+                          - generic [ref=f20e526]: Amlodipine 5mg (x1.00)
+                          - generic [ref=f20e527]: Cancelled
+                    - cell "Routine" [ref=f20e528]
+                    - cell "Cancelled" [ref=f20e529]
+                    - cell "Pending" [ref=f20e530]
+                    - cell "₱789.47" [ref=f20e531]
+                    - cell "Jul 23, 05:28" [ref=f20e532]
+                    - cell "—" [ref=f20e533]
+            - generic [ref=f20e534]:
+              - generic [ref=f20e535]:
+                - heading "CSR / Supply Requests 2" [level=4] [ref=f20e536]:
+                  - text: CSR / Supply Requests
+                  - generic [ref=f20e538]: "2"
+                - button "Request Supply" [ref=f20e539]
+              - table [ref=f20e543]:
+                - rowgroup [ref=f20e544]:
+                  - row [ref=f20e545]:
+                    - 'columnheader "Request #" [ref=f20e546]'
+                    - columnheader "Items" [ref=f20e547]
+                    - columnheader "Status" [ref=f20e548]
+                    - columnheader "Billing" [ref=f20e549]
+                    - columnheader "Total" [ref=f20e550]
+                    - columnheader "Date" [ref=f20e551]
+                    - columnheader "Actions" [ref=f20e552]
+                - rowgroup [ref=f20e553]:
+                  - row [ref=f20e554]:
+                    - cell "CR-00004" [ref=f20e555]
+                    - cell "Disposable Syringe 10cc (x1.00) Cancelled Alcohol Swab (Box/100) (x1.00) Cancelled Gauze Pad 4x4 (Pack/100) (x1.00) Cancelled Surgical Mask (Box/50) (x1.00) Cancelled IV Set with drip chamber (x1.00) Cancelled IV Fluid D5LR 1L (x1.00) Cancelled IV Fluid PNSS 1L (x1.00) Cancelled" [ref=f20e556]:
+                      - generic [ref=f20e557]:
+                        - generic [ref=f20e558]:
+                          - generic [ref=f20e559]: Disposable Syringe 10cc (x1.00)
+                          - generic [ref=f20e560]: Cancelled
+                        - generic [ref=f20e561]:
+                          - generic [ref=f20e562]: Alcohol Swab (Box/100) (x1.00)
+                          - generic [ref=f20e563]: Cancelled
+                        - generic [ref=f20e564]:
+                          - generic [ref=f20e565]: Gauze Pad 4x4 (Pack/100) (x1.00)
+                          - generic [ref=f20e566]: Cancelled
+                        - generic [ref=f20e567]:
+                          - generic [ref=f20e568]: Surgical Mask (Box/50) (x1.00)
+                          - generic [ref=f20e569]: Cancelled
+                        - generic [ref=f20e570]:
+                          - generic [ref=f20e571]: IV Set with drip chamber (x1.00)
+                          - generic [ref=f20e572]: Cancelled
+                        - generic [ref=f20e573]:
+                          - generic [ref=f20e574]: IV Fluid D5LR 1L (x1.00)
+                          - generic [ref=f20e575]: Cancelled
+                        - generic [ref=f20e576]:
+                          - generic [ref=f20e577]: IV Fluid PNSS 1L (x1.00)
+                          - generic [ref=f20e578]: Cancelled
+                    - cell "Cancelled" [ref=f20e579]
+                    - cell "Pending" [ref=f20e580]
+                    - cell "₱502.00" [ref=f20e581]
+                    - cell "Jul 24, 03:44" [ref=f20e582]
+                    - cell "—" [ref=f20e583]
+                  - row [ref=f20e584]:
+                    - cell "CR-00003" [ref=f20e585]
+                    - cell "Alcohol Swab (Box/100) (x1.00) Cancelled Betadine Solution 30ml (x1.00) Cancelled" [ref=f20e586]:
+                      - generic [ref=f20e587]:
+                        - generic [ref=f20e588]:
+                          - generic [ref=f20e589]: Alcohol Swab (Box/100) (x1.00)
+                          - generic [ref=f20e590]: Cancelled
+                        - generic [ref=f20e591]:
+                          - generic [ref=f20e592]: Betadine Solution 30ml (x1.00)
+                          - generic [ref=f20e593]: Cancelled
+                    - cell "Cancelled" [ref=f20e594]
+                    - cell "Pending" [ref=f20e595]
+                    - cell "₱140.00" [ref=f20e596]
+                    - cell "Jul 23, 07:21" [ref=f20e597]
+                    - cell "—" [ref=f20e598]
+        - generic [ref=f20e601]:
+          - generic [ref=f20e602]:
+            - heading "Place Orders" [level=3] [ref=f20e603]
+            - button [ref=f20e604]
+          - generic [ref=f20e607]:
+            - generic [ref=f20e608]:
+              - generic [ref=f20e609]: Order Type
+              - generic [ref=f20e610]:
+                - button "Lab" [ref=f20e611]
+                - button "Pharmacy" [ref=f20e612]
+                - button "CSR" [ref=f20e613]
+                - button "Radiology" [ref=f20e614]
+                - button "Procedure" [ref=f20e615]
+            - generic [ref=f20e616]:
+              - generic [ref=f20e617]: Priority
+              - combobox [ref=f20e618]:
+                - option "Routine" [selected]
+                - option "Urgent"
+                - option "STAT"
+            - generic [ref=f20e619]:
+              - generic [ref=f20e620]: Select Items
+              - generic [ref=f20e621]:
+                - generic [ref=f20e622]:
+                  - generic [ref=f20e623] [cursor=pointer]:
+                    - checkbox "PNSS-1L — 0.9% NaCl IV (1L) 1 ₱0.00" [ref=f20e796]
+                    - paragraph [ref=f20e626]: PNSS-1L — 0.9% NaCl IV (1L)
+                    - spinbutton "Qty" [ref=f20e797]
+                    - generic [ref=f20e627]: ₱0.00
+                  - generic [ref=f20e798]:
+                    - generic [ref=f20e799]:
+                      - generic [ref=f20e800]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e801]
+                    - generic [ref=f20e802]:
+                      - generic [ref=f20e803]: Route *
+                      - combobox [ref=f20e804]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e628]:
+                  - generic [ref=f20e629] [cursor=pointer]:
+                    - checkbox "AMLO-5 — Amlodipine (5mg) 1 ₱0.00" [checked] [ref=f20e805]
+                    - paragraph [ref=f20e632]: AMLO-5 — Amlodipine (5mg)
+                    - spinbutton "Qty" [ref=f20e806]
+                    - generic [ref=f20e633]: ₱0.00
+                  - generic [ref=f20e807]:
+                    - generic [ref=f20e808]:
+                      - generic [ref=f20e809]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e810]: BID
+                    - generic [ref=f20e811]:
+                      - generic [ref=f20e812]: Route *
+                      - combobox [ref=f20e813]:
+                        - option "— Select —"
+                        - option "PO (Oral)" [selected]
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e634]:
+                  - generic [ref=f20e635] [cursor=pointer]:
+                    - checkbox "AMLO-10 — Amlodipine (10mg) 1 ₱0.00" [ref=f20e814]
+                    - paragraph [ref=f20e638]: AMLO-10 — Amlodipine (10mg)
+                    - spinbutton "Qty" [ref=f20e815]
+                    - generic [ref=f20e639]: ₱0.00
+                  - generic [ref=f20e816]:
+                    - generic [ref=f20e817]:
+                      - generic [ref=f20e818]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e819]
+                    - generic [ref=f20e820]:
+                      - generic [ref=f20e821]: Route *
+                      - combobox [ref=f20e822]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e640]:
+                  - generic [ref=f20e641] [cursor=pointer]:
+                    - checkbox "AMOX-500 — Amoxicillin (500mg) 1 ₱0.00" [ref=f20e823]
+                    - paragraph [ref=f20e644]: AMOX-500 — Amoxicillin (500mg)
+                    - spinbutton "Qty" [ref=f20e824]
+                    - generic [ref=f20e645]: ₱0.00
+                  - generic [ref=f20e825]:
+                    - generic [ref=f20e826]:
+                      - generic [ref=f20e827]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e828]
+                    - generic [ref=f20e829]:
+                      - generic [ref=f20e830]: Route *
+                      - combobox [ref=f20e831]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e646]:
+                  - generic [ref=f20e647] [cursor=pointer]:
+                    - checkbox "DRG-002 — Amoxicillin (500mg) 1 ₱0.00" [ref=f20e832]
+                    - paragraph [ref=f20e650]: DRG-002 — Amoxicillin (500mg)
+                    - spinbutton "Qty" [ref=f20e833]
+                    - generic [ref=f20e651]: ₱0.00
+                  - generic [ref=f20e834]:
+                    - generic [ref=f20e835]:
+                      - generic [ref=f20e836]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e837]
+                    - generic [ref=f20e838]:
+                      - generic [ref=f20e839]: Route *
+                      - combobox [ref=f20e840]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e652]:
+                  - generic [ref=f20e653] [cursor=pointer]:
+                    - checkbox "ATRV-20 — Atorvastatin (20mg) 1 ₱0.00" [ref=f20e841]
+                    - paragraph [ref=f20e656]: ATRV-20 — Atorvastatin (20mg)
+                    - spinbutton "Qty" [ref=f20e842]
+                    - generic [ref=f20e657]: ₱0.00
+                  - generic [ref=f20e843]:
+                    - generic [ref=f20e844]:
+                      - generic [ref=f20e845]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e846]
+                    - generic [ref=f20e847]:
+                      - generic [ref=f20e848]: Route *
+                      - combobox [ref=f20e849]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e658]:
+                  - generic [ref=f20e659] [cursor=pointer]:
+                    - checkbox "AZIT-500 — Azithromycin (500mg) 1 ₱0.00" [ref=f20e850]
+                    - paragraph [ref=f20e662]: AZIT-500 — Azithromycin (500mg)
+                    - spinbutton "Qty" [ref=f20e851]
+                    - generic [ref=f20e663]: ₱0.00
+                  - generic [ref=f20e852]:
+                    - generic [ref=f20e853]:
+                      - generic [ref=f20e854]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e855]
+                    - generic [ref=f20e856]:
+                      - generic [ref=f20e857]: Route *
+                      - combobox [ref=f20e858]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e664]:
+                  - generic [ref=f20e665] [cursor=pointer]:
+                    - checkbox "CEFT-1G — Ceftriaxone (1g) 1 ₱0.00" [ref=f20e859]
+                    - paragraph [ref=f20e668]: CEFT-1G — Ceftriaxone (1g)
+                    - spinbutton "Qty" [ref=f20e860]
+                    - generic [ref=f20e669]: ₱0.00
+                  - generic [ref=f20e861]:
+                    - generic [ref=f20e862]:
+                      - generic [ref=f20e863]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e864]
+                    - generic [ref=f20e865]:
+                      - generic [ref=f20e866]: Route *
+                      - combobox [ref=f20e867]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e670]:
+                  - generic [ref=f20e671] [cursor=pointer]:
+                    - checkbox "DRG-008 — Ceftriaxone (1g) 1 ₱0.00" [ref=f20e868]
+                    - paragraph [ref=f20e674]: DRG-008 — Ceftriaxone (1g)
+                    - spinbutton "Qty" [ref=f20e869]
+                    - generic [ref=f20e675]: ₱0.00
+                  - generic [ref=f20e870]:
+                    - generic [ref=f20e871]:
+                      - generic [ref=f20e872]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e873]
+                    - generic [ref=f20e874]:
+                      - generic [ref=f20e875]: Route *
+                      - combobox [ref=f20e876]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e676]:
+                  - generic [ref=f20e677] [cursor=pointer]:
+                    - checkbox "CIPRO-500 — Ciprofloxacin (500mg) 1 ₱0.00" [ref=f20e877]
+                    - paragraph [ref=f20e680]: CIPRO-500 — Ciprofloxacin (500mg)
+                    - spinbutton "Qty" [ref=f20e878]
+                    - generic [ref=f20e681]: ₱0.00
+                  - generic [ref=f20e879]:
+                    - generic [ref=f20e880]:
+                      - generic [ref=f20e881]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e882]
+                    - generic [ref=f20e883]:
+                      - generic [ref=f20e884]: Route *
+                      - combobox [ref=f20e885]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e682]:
+                  - generic [ref=f20e683] [cursor=pointer]:
+                    - checkbox "D5LR-1L — D5LR IV (1L) 1 ₱0.00" [ref=f20e886]
+                    - paragraph [ref=f20e686]: D5LR-1L — D5LR IV (1L)
+                    - spinbutton "Qty" [ref=f20e887]
+                    - generic [ref=f20e687]: ₱0.00
+                  - generic [ref=f20e888]:
+                    - generic [ref=f20e889]:
+                      - generic [ref=f20e890]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e891]
+                    - generic [ref=f20e892]:
+                      - generic [ref=f20e893]: Route *
+                      - combobox [ref=f20e894]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e688]:
+                  - generic [ref=f20e689] [cursor=pointer]:
+                    - checkbox "DRG-010 — Diazepam (5mg) 1 ₱0.00" [ref=f20e895]
+                    - paragraph [ref=f20e692]: DRG-010 — Diazepam (5mg)
+                    - spinbutton "Qty" [ref=f20e896]
+                    - generic [ref=f20e693]: ₱0.00
+                  - generic [ref=f20e897]:
+                    - generic [ref=f20e898]:
+                      - generic [ref=f20e899]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e900]
+                    - generic [ref=f20e901]:
+                      - generic [ref=f20e902]: Route *
+                      - combobox [ref=f20e903]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e694]:
+                  - generic [ref=f20e695] [cursor=pointer]:
+                    - checkbox "DRG-009 — Epinephrine (1mg/mL) 1 ₱0.00" [ref=f20e904]
+                    - paragraph [ref=f20e698]: DRG-009 — Epinephrine (1mg/mL)
+                    - spinbutton "Qty" [ref=f20e905]
+                    - generic [ref=f20e699]: ₱0.00
+                  - generic [ref=f20e906]:
+                    - generic [ref=f20e907]:
+                      - generic [ref=f20e908]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e909]
+                    - generic [ref=f20e910]:
+                      - generic [ref=f20e911]: Route *
+                      - combobox [ref=f20e912]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e700]:
+                  - generic [ref=f20e701] [cursor=pointer]:
+                    - checkbox "GLIB-5 — Glibenclamide (5mg) 1 ₱0.00" [ref=f20e913]
+                    - paragraph [ref=f20e704]: GLIB-5 — Glibenclamide (5mg)
+                    - spinbutton "Qty" [ref=f20e914]
+                    - generic [ref=f20e705]: ₱0.00
+                  - generic [ref=f20e915]:
+                    - generic [ref=f20e916]:
+                      - generic [ref=f20e917]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e918]
+                    - generic [ref=f20e919]:
+                      - generic [ref=f20e920]: Route *
+                      - combobox [ref=f20e921]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e706]:
+                  - generic [ref=f20e707] [cursor=pointer]:
+                    - checkbox "DRG-003 — Ibuprofen (200mg) 1 ₱0.00" [ref=f20e922]
+                    - paragraph [ref=f20e710]: DRG-003 — Ibuprofen (200mg)
+                    - spinbutton "Qty" [ref=f20e923]
+                    - generic [ref=f20e711]: ₱0.00
+                  - generic [ref=f20e924]:
+                    - generic [ref=f20e925]:
+                      - generic [ref=f20e926]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e927]
+                    - generic [ref=f20e928]:
+                      - generic [ref=f20e929]: Route *
+                      - combobox [ref=f20e930]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e712]:
+                  - generic [ref=f20e713] [cursor=pointer]:
+                    - checkbox "IBU-400 — Ibuprofen (400mg) 1 ₱0.00" [ref=f20e931]
+                    - paragraph [ref=f20e716]: IBU-400 — Ibuprofen (400mg)
+                    - spinbutton "Qty" [ref=f20e932]
+                    - generic [ref=f20e717]: ₱0.00
+                  - generic [ref=f20e933]:
+                    - generic [ref=f20e934]:
+                      - generic [ref=f20e935]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e936]
+                    - generic [ref=f20e937]:
+                      - generic [ref=f20e938]: Route *
+                      - combobox [ref=f20e939]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e718]:
+                  - generic [ref=f20e719] [cursor=pointer]:
+                    - checkbox "INSU-R — Insulin Regular (100IU/mL) 1 ₱0.00" [ref=f20e940]
+                    - paragraph [ref=f20e722]: INSU-R — Insulin Regular (100IU/mL)
+                    - spinbutton "Qty" [ref=f20e941]
+                    - generic [ref=f20e723]: ₱0.00
+                  - generic [ref=f20e942]:
+                    - generic [ref=f20e943]:
+                      - generic [ref=f20e944]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e945]
+                    - generic [ref=f20e946]:
+                      - generic [ref=f20e947]: Route *
+                      - combobox [ref=f20e948]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e724]:
+                  - generic [ref=f20e725] [cursor=pointer]:
+                    - checkbox "DRG-005 — Losartan (50mg) 1 ₱0.00" [ref=f20e949]
+                    - paragraph [ref=f20e728]: DRG-005 — Losartan (50mg)
+                    - spinbutton "Qty" [ref=f20e950]
+                    - generic [ref=f20e729]: ₱0.00
+                  - generic [ref=f20e951]:
+                    - generic [ref=f20e952]:
+                      - generic [ref=f20e953]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e954]
+                    - generic [ref=f20e955]:
+                      - generic [ref=f20e956]: Route *
+                      - combobox [ref=f20e957]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e730]:
+                  - generic [ref=f20e731] [cursor=pointer]:
+                    - checkbox "LOSAR-50 — Losartan Potassium (50mg) 1 ₱0.00" [ref=f20e958]
+                    - paragraph [ref=f20e734]: LOSAR-50 — Losartan Potassium (50mg)
+                    - spinbutton "Qty" [ref=f20e959]
+                    - generic [ref=f20e735]: ₱0.00
+                  - generic [ref=f20e960]:
+                    - generic [ref=f20e961]:
+                      - generic [ref=f20e962]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e963]
+                    - generic [ref=f20e964]:
+                      - generic [ref=f20e965]: Route *
+                      - combobox [ref=f20e966]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e736]:
+                  - generic [ref=f20e737] [cursor=pointer]:
+                    - checkbox "METFO-500 — Metformin (500mg) 1 ₱0.00" [ref=f20e967]
+                    - paragraph [ref=f20e740]: METFO-500 — Metformin (500mg)
+                    - spinbutton "Qty" [ref=f20e968]
+                    - generic [ref=f20e741]: ₱0.00
+                  - generic [ref=f20e969]:
+                    - generic [ref=f20e970]:
+                      - generic [ref=f20e971]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e972]
+                    - generic [ref=f20e973]:
+                      - generic [ref=f20e974]: Route *
+                      - combobox [ref=f20e975]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e742]:
+                  - generic [ref=f20e743] [cursor=pointer]:
+                    - checkbox "DRG-006 — Metformin (500mg) 1 ₱0.00" [ref=f20e976]
+                    - paragraph [ref=f20e746]: DRG-006 — Metformin (500mg)
+                    - spinbutton "Qty" [ref=f20e977]
+                    - generic [ref=f20e747]: ₱0.00
+                  - generic [ref=f20e978]:
+                    - generic [ref=f20e979]:
+                      - generic [ref=f20e980]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e981]
+                    - generic [ref=f20e982]:
+                      - generic [ref=f20e983]: Route *
+                      - combobox [ref=f20e984]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e748]:
+                  - generic [ref=f20e749] [cursor=pointer]:
+                    - checkbox "METO-10 — Metoclopramide (10mg) 1 ₱0.00" [ref=f20e985]
+                    - paragraph [ref=f20e752]: METO-10 — Metoclopramide (10mg)
+                    - spinbutton "Qty" [ref=f20e986]
+                    - generic [ref=f20e753]: ₱0.00
+                  - generic [ref=f20e987]:
+                    - generic [ref=f20e988]:
+                      - generic [ref=f20e989]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e990]
+                    - generic [ref=f20e991]:
+                      - generic [ref=f20e992]: Route *
+                      - combobox [ref=f20e993]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e754]:
+                  - generic [ref=f20e755] [cursor=pointer]:
+                    - checkbox "METOP-50 — Metoprolol Tartrate (50mg) 1 ₱0.00" [ref=f20e994]
+                    - paragraph [ref=f20e758]: METOP-50 — Metoprolol Tartrate (50mg)
+                    - spinbutton "Qty" [ref=f20e995]
+                    - generic [ref=f20e759]: ₱0.00
+                  - generic [ref=f20e996]:
+                    - generic [ref=f20e997]:
+                      - generic [ref=f20e998]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e999]
+                    - generic [ref=f20e1000]:
+                      - generic [ref=f20e1001]: Route *
+                      - combobox [ref=f20e1002]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e760]:
+                  - generic [ref=f20e761] [cursor=pointer]:
+                    - checkbox "METRO-500 — Metronidazole (500mg) 1 ₱0.00" [ref=f20e1003]
+                    - paragraph [ref=f20e764]: METRO-500 — Metronidazole (500mg)
+                    - spinbutton "Qty" [ref=f20e1004]
+                    - generic [ref=f20e765]: ₱0.00
+                  - generic [ref=f20e1005]:
+                    - generic [ref=f20e1006]:
+                      - generic [ref=f20e1007]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1008]
+                    - generic [ref=f20e1009]:
+                      - generic [ref=f20e1010]: Route *
+                      - combobox [ref=f20e1011]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e766]:
+                  - generic [ref=f20e767] [cursor=pointer]:
+                    - checkbox "MONT-10 — Montelukast (10mg) 1 ₱0.00" [ref=f20e1012]
+                    - paragraph [ref=f20e770]: MONT-10 — Montelukast (10mg)
+                    - spinbutton "Qty" [ref=f20e1013]
+                    - generic [ref=f20e771]: ₱0.00
+                  - generic [ref=f20e1014]:
+                    - generic [ref=f20e1015]:
+                      - generic [ref=f20e1016]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1017]
+                    - generic [ref=f20e1018]:
+                      - generic [ref=f20e1019]: Route *
+                      - combobox [ref=f20e1020]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e772]:
+                  - generic [ref=f20e773] [cursor=pointer]:
+                    - checkbox "OMEP-20 — Omeprazole (20mg) 1 ₱0.00" [ref=f20e1021]
+                    - paragraph [ref=f20e776]: OMEP-20 — Omeprazole (20mg)
+                    - spinbutton "Qty" [ref=f20e1022]
+                    - generic [ref=f20e777]: ₱0.00
+                  - generic [ref=f20e1023]:
+                    - generic [ref=f20e1024]:
+                      - generic [ref=f20e1025]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1026]
+                    - generic [ref=f20e1027]:
+                      - generic [ref=f20e1028]: Route *
+                      - combobox [ref=f20e1029]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e778]:
+                  - generic [ref=f20e779] [cursor=pointer]:
+                    - checkbox "DRG-004 — Omeprazole (20mg) 1 ₱0.00" [ref=f20e1030]
+                    - paragraph [ref=f20e782]: DRG-004 — Omeprazole (20mg)
+                    - spinbutton "Qty" [ref=f20e1031]
+                    - generic [ref=f20e783]: ₱0.00
+                  - generic [ref=f20e1032]:
+                    - generic [ref=f20e1033]:
+                      - generic [ref=f20e1034]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1035]
+                    - generic [ref=f20e1036]:
+                      - generic [ref=f20e1037]: Route *
+                      - combobox [ref=f20e1038]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e1039]:
+                  - generic [ref=f20e1040] [cursor=pointer]:
+                    - checkbox "DRG-001 — Paracetamol (500mg) 1 ₱0.00" [ref=f20e1041]
+                    - paragraph [ref=f20e1043]: DRG-001 — Paracetamol (500mg)
+                    - spinbutton "Qty" [ref=f20e1044]
+                    - generic [ref=f20e1045]: ₱0.00
+                  - generic [ref=f20e1046]:
+                    - generic [ref=f20e1047]:
+                      - generic [ref=f20e1048]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1049]
+                    - generic [ref=f20e1050]:
+                      - generic [ref=f20e1051]: Route *
+                      - combobox [ref=f20e1052]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e1053]:
+                  - generic [ref=f20e1054] [cursor=pointer]:
+                    - checkbox "PARA-500 — Paracetamol (500mg) 1 ₱0.00" [ref=f20e1055]
+                    - paragraph [ref=f20e1057]: PARA-500 — Paracetamol (500mg)
+                    - spinbutton "Qty" [ref=f20e1058]
+                    - generic [ref=f20e1059]: ₱0.00
+                  - generic [ref=f20e1060]:
+                    - generic [ref=f20e1061]:
+                      - generic [ref=f20e1062]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1063]
+                    - generic [ref=f20e1064]:
+                      - generic [ref=f20e1065]: Route *
+                      - combobox [ref=f20e1066]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e1067]:
+                  - generic [ref=f20e1068] [cursor=pointer]:
+                    - checkbox "RANI-150 — Ranitidine (150mg) 1 ₱0.00" [ref=f20e1069]
+                    - paragraph [ref=f20e1071]: RANI-150 — Ranitidine (150mg)
+                    - spinbutton "Qty" [ref=f20e1072]
+                    - generic [ref=f20e1073]: ₱0.00
+                  - generic [ref=f20e1074]:
+                    - generic [ref=f20e1075]:
+                      - generic [ref=f20e1076]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1077]
+                    - generic [ref=f20e1078]:
+                      - generic [ref=f20e1079]: Route *
+                      - combobox [ref=f20e1080]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e1081]:
+                  - generic [ref=f20e1082] [cursor=pointer]:
+                    - checkbox "SALB-100 — Salbutamol (100mcg) 1 ₱0.00" [ref=f20e1083]
+                    - paragraph [ref=f20e1085]: SALB-100 — Salbutamol (100mcg)
+                    - spinbutton "Qty" [ref=f20e1086]
+                    - generic [ref=f20e1087]: ₱0.00
+                  - generic [ref=f20e1088]:
+                    - generic [ref=f20e1089]:
+                      - generic [ref=f20e1090]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1091]
+                    - generic [ref=f20e1092]:
+                      - generic [ref=f20e1093]: Route *
+                      - combobox [ref=f20e1094]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e1095]:
+                  - generic [ref=f20e1096] [cursor=pointer]:
+                    - checkbox "DRG-007 — Salbutamol (2mg/5mL) 1 ₱0.00" [ref=f20e1097]
+                    - paragraph [ref=f20e1099]: DRG-007 — Salbutamol (2mg/5mL)
+                    - spinbutton "Qty" [ref=f20e1100]
+                    - generic [ref=f20e1101]: ₱0.00
+                  - generic [ref=f20e1102]:
+                    - generic [ref=f20e1103]:
+                      - generic [ref=f20e1104]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1105]
+                    - generic [ref=f20e1106]:
+                      - generic [ref=f20e1107]: Route *
+                      - combobox [ref=f20e1108]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f20e1109]:
+                  - generic [ref=f20e1110] [cursor=pointer]:
+                    - checkbox "TRAM-50 — Tramadol (50mg) 1 ₱0.00" [ref=f20e1111]
+                    - paragraph [ref=f20e1113]: TRAM-50 — Tramadol (50mg)
+                    - spinbutton "Qty" [ref=f20e1114]
+                    - generic [ref=f20e1115]: ₱0.00
+                  - generic [ref=f20e1116]:
+                    - generic [ref=f20e1117]:
+                      - generic [ref=f20e1118]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f20e1119]
+                    - generic [ref=f20e1120]:
+                      - generic [ref=f20e1121]: Route *
+                      - combobox [ref=f20e1122]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+            - generic [ref=f20e784]:
+              - generic [ref=f20e785]: Notes
+              - textbox "Optional notes for the order..." [ref=f20e786]
+            - button "Add Pharmacy to Order" [ref=f20e1123]
+            - generic [ref=f20e791]:
+              - button "Cancel" [ref=f20e792]
+              - button "Place 0 Order(s)" [disabled] [ref=f20e793]
+  - contentinfo [ref=f20e311]:
+    - paragraph [ref=f20e313]: © 2026 SITHEMR. All rights reserved.

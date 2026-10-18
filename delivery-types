@@ -1,0 +1,484 @@
+- generic [active] [ref=e1]:
+  - dialog [ref=e315]:
+    - iframe [ref=e316]:
+      - generic [ref=f2e2]:
+        - generic [ref=f2e4]:
+          - generic [ref=f2e5]:
+            - img [ref=f2e7]
+            - generic [ref=f2e10]: Internal Server Error
+          - button "Copy as Markdown" [ref=f2e11] [cursor=pointer]:
+            - img [ref=f2e12]
+            - generic [ref=f2e15]: Copy as Markdown
+        - generic [ref=f2e18]:
+          - generic [ref=f2e19]:
+            - heading "Illuminate\\Database\\QueryException" [level=1] [ref=f2e20]
+            - generic [ref=f2e22]: vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+            - paragraph [ref=f2e23]: "SQLSTATE[23000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'updated_by', table 'sithemr.dbo.delivery_types'; column does not allow nulls. INSERT fails. (Connection: sqlsrv, Host: 127.0.0.1, Port: 1433, Database: sithemr, SQL: insert into [delivery_types] ([code], [name], [description], [is_active], [history], [created_by], [created_date]) values (BREECH, Breech Delivery, Vaginal delivery for breech presentation, 1, 1, 2, 2026-06-28 13:33:38.763))"
+          - generic [ref=f2e24]:
+            - generic [ref=f2e25]:
+              - generic [ref=f2e26]:
+                - generic [ref=f2e27]: LARAVEL
+                - generic [ref=f2e28]: 12.62.0
+              - generic [ref=f2e29]:
+                - generic [ref=f2e30]: PHP
+                - generic [ref=f2e31]: 8.2.12
+            - generic [ref=f2e32]:
+              - img [ref=f2e33]
+              - text: UNHANDLED
+            - generic [ref=f2e36]: CODE 23000
+          - generic [ref=f2e38]:
+            - generic [ref=f2e39]:
+              - img [ref=f2e40]
+              - text: "500"
+            - generic [ref=f2e43]:
+              - img [ref=f2e44]
+              - text: POST
+            - generic [ref=f2e47]: http://127.0.0.1:8000/livewire-63f0d02d/update
+            - button [ref=f2e48] [cursor=pointer]:
+              - img [ref=f2e49]
+        - generic [ref=f2e53]:
+          - generic [ref=f2e54]:
+            - generic [ref=f2e55]:
+              - img [ref=f2e57]
+              - heading "Exception trace" [level=3] [ref=f2e60]
+            - generic [ref=f2e61]:
+              - generic [ref=f2e63] [cursor=pointer]:
+                - img [ref=f2e64]
+                - generic [ref=f2e68]: 16 vendor frames
+                - button [ref=f2e69]:
+                  - img [ref=f2e70]
+              - generic [ref=f2e74]:
+                - generic [ref=f2e75] [cursor=pointer]:
+                  - generic [ref=f2e78]:
+                    - code [ref=f2e82]
+                    - generic [ref=f2e85]: app\Livewire\Delivery\DeliveryTypeCrud.php:65
+                  - button [ref=f2e87]:
+                    - img [ref=f2e88]
+                - code [ref=f2e96]:
+                  - generic [ref=f2e97]: 60 DeliveryType::findOrFail($this->editingId)->update(array_merge($data, [
+                  - generic [ref=f2e98]: 61 'updated_by' => $this->currentUserId(), 'updated_date' => now(),
+                  - generic [ref=f2e99]: 62 ]));
+                  - generic [ref=f2e100]: "63 $this->dispatch('toast', type: 'success', message: 'Delivery type updated successfully.');"
+                  - generic [ref=f2e101]: "64 } else {"
+                  - generic [ref=f2e102]: 65 DeliveryType::create(array_merge($data, [
+                  - generic [ref=f2e103]: 66 'history' => 1, 'created_by' => $this->currentUserId(), 'created_date' => now(),
+                  - generic [ref=f2e104]: 67 ]));
+                  - generic [ref=f2e105]: "68 $this->dispatch('toast', type: 'success', message: 'Delivery type created successfully.');"
+                  - generic [ref=f2e106]: "69 }"
+                  - generic [ref=f2e107]: 70 $this->closeModal();
+                  - generic [ref=f2e108]: "71 }"
+                  - generic [ref=f2e109]: "72"
+                  - generic [ref=f2e110]: "73 public function confirmDelete(int $id): void { $this->editingId = $id; $this->showDeleteModal = true; }"
+                  - generic [ref=f2e111]: "74"
+                  - generic [ref=f2e112]: "75 public function delete(): void"
+                  - generic [ref=f2e113]: "76 {"
+                  - generic [ref=f2e114]: "77"
+              - generic [ref=f2e116] [cursor=pointer]:
+                - img [ref=f2e117]
+                - generic [ref=f2e121]: 16 vendor frames
+                - button [ref=f2e122]:
+                  - img [ref=f2e123]
+              - generic [ref=f2e128] [cursor=pointer]:
+                - generic [ref=f2e131]:
+                  - code [ref=f2e135]:
+                    - generic [ref=f2e136]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+                  - generic [ref=f2e138]: app\Http\Middleware\JwtMiddleware.php:88
+                - button [ref=f2e140]:
+                  - img [ref=f2e141]
+              - generic [ref=f2e146] [cursor=pointer]:
+                - img [ref=f2e147]
+                - generic [ref=f2e151]: 43 vendor frames
+                - button [ref=f2e152]:
+                  - img [ref=f2e153]
+              - generic [ref=f2e158] [cursor=pointer]:
+                - generic [ref=f2e161]:
+                  - code [ref=f2e165]:
+                    - generic [ref=f2e166]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+                  - generic [ref=f2e168]: public\index.php:20
+                - button [ref=f2e170]:
+                  - img [ref=f2e171]
+              - generic [ref=f2e176] [cursor=pointer]:
+                - img [ref=f2e177]
+                - generic [ref=f2e181]: 1 vendor frame
+                - button [ref=f2e182]:
+                  - img [ref=f2e183]
+          - generic [ref=f2e187]:
+            - generic [ref=f2e188]:
+              - generic [ref=f2e189]:
+                - img [ref=f2e191]
+                - heading "Queries" [level=3] [ref=f2e193]
+              - generic [ref=f2e195]: 1-2 of 2
+            - generic [ref=f2e196]:
+              - generic [ref=f2e197]:
+                - generic [ref=f2e198]:
+                  - generic [ref=f2e199]:
+                    - img [ref=f2e200]
+                    - generic [ref=f2e202]: sqlsrv
+                  - code [ref=f2e206]:
+                    - generic [ref=f2e207]: select top 1 * from [users] where [id] = '2' and [history] = 1
+                - generic [ref=f2e208]: 1.73ms
+              - generic [ref=f2e209]:
+                - generic [ref=f2e210]:
+                  - generic [ref=f2e211]:
+                    - img [ref=f2e212]
+                    - generic [ref=f2e214]: sqlsrv
+                  - code [ref=f2e218]:
+                    - generic [ref=f2e219]: select count(*) as aggregate from [delivery_types] where [code] = 'BREECH' and [history] = '1'
+                - generic [ref=f2e220]: 2.74ms
+        - generic [ref=f2e222]:
+          - generic [ref=f2e223]:
+            - heading "Headers" [level=2] [ref=f2e224]
+            - generic [ref=f2e225]:
+              - generic [ref=f2e226]:
+                - generic [ref=f2e227]: host
+                - generic [ref=f2e229]: 127.0.0.1:8000
+              - generic [ref=f2e230]:
+                - generic [ref=f2e231]: connection
+                - generic [ref=f2e233]: keep-alive
+              - generic [ref=f2e234]:
+                - generic [ref=f2e235]: content-length
+                - generic [ref=f2e237]: "900"
+              - generic [ref=f2e238]:
+                - generic [ref=f2e239]: sec-ch-ua-platform
+                - generic [ref=f2e241]: "\"Windows\""
+              - generic [ref=f2e242]:
+                - generic [ref=f2e243]: user-agent
+                - generic [ref=f2e245]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+              - generic [ref=f2e246]:
+                - generic [ref=f2e247]: sec-ch-ua
+                - generic [ref=f2e249]: "\"Google Chrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\""
+              - generic [ref=f2e250]:
+                - generic [ref=f2e251]: content-type
+                - generic [ref=f2e253]: application/json
+              - generic [ref=f2e254]:
+                - generic [ref=f2e255]: x-livewire
+                - generic [ref=f2e257]: "1"
+              - generic [ref=f2e258]:
+                - generic [ref=f2e259]: sec-ch-ua-mobile
+                - generic [ref=f2e261]: "?0"
+              - generic [ref=f2e262]:
+                - generic [ref=f2e263]: accept
+                - generic [ref=f2e265]: "*/*"
+              - generic [ref=f2e266]:
+                - generic [ref=f2e267]: origin
+                - generic [ref=f2e269]: http://127.0.0.1:8000
+              - generic [ref=f2e270]:
+                - generic [ref=f2e271]: sec-fetch-site
+                - generic [ref=f2e273]: same-origin
+              - generic [ref=f2e274]:
+                - generic [ref=f2e275]: sec-fetch-mode
+                - generic [ref=f2e277]: cors
+              - generic [ref=f2e278]:
+                - generic [ref=f2e279]: sec-fetch-dest
+                - generic [ref=f2e281]: empty
+              - generic [ref=f2e282]:
+                - generic [ref=f2e283]: referer
+                - generic [ref=f2e285]: http://127.0.0.1:8000/delivery/types
+              - generic [ref=f2e286]:
+                - generic [ref=f2e287]: accept-encoding
+                - generic [ref=f2e289]: gzip, deflate, br, zstd
+              - generic [ref=f2e290]:
+                - generic [ref=f2e291]: accept-language
+                - generic [ref=f2e293]: en-US,en;q=0.9
+              - generic [ref=f2e294]:
+                - generic [ref=f2e295]: cookie
+                - generic [ref=f2e297]: XSRF-TOKEN=eyJpdiI6IkhoL0s4Z00zQ1VmcmZuTXhFSmVQZWc9PSIsInZhbHVlIjoiSE1heXE2TkVDVmJhOTIzZDV6ZSttdk5JQXZBMnpxWW50Q0QzYzZ6WEFPWXhPaytva1pORXRNcmtIbFplTFNXNzN6MytsdVF6QVJGNGhFZ1daY0liQ0ludE1wTkwyREJTSnJCTXJLTXNLcGhkWVNKMVFEV1IzZ1U4VGp6ZlRLUnYiLCJtYWMiOiJhMzE5MmZkMjE5OGYxMzY5OTVkNzM5NGVlMDlmOTJjNjg0ZjMxNWI0MjEwOGM5OWQ5NGNiMWQxOWM4OTEyYjA1IiwidGFnIjoiIn0%3D; laravel-session=eyJpdiI6IkQyQ2NwV3cwc1JpQ0paZmliREFKYkE9PSIsInZhbHVlIjoibUI1aU10WjVtMTN6M25HT0pwLzNhSkhUUzRUTEhaa3hOOFRoTXJFajQvSEdrVzhJSTdWM2RHZ1A2QjB0d1dWM1FDdGFvL2dzclV5TTR5eENJSURnY0RzeWwzU0VZMUhhcXlrS1FLMjFNS2ExOWtRbkt3OS9hMUt4enNOMzlTTWUiLCJtYWMiOiI3ODBmMWFjMDg0ZjFkMDBmZWM3NjlmNDk5ZjBhZjhmZDU0ODYyOTc5ZTE3N2YyNDBmMmYwZDM1MGEwOTFjZTgwIiwidGFnIjoiIn0%3D
+          - generic [ref=f2e298]:
+            - heading "Body" [level=2] [ref=f2e299]
+            - code [ref=f2e304]:
+              - generic [ref=f2e305]: "{"
+              - generic [ref=f2e306]: "\"_token\": \"tvk623YjMKsQq2zpwqSRCN3yd11kiLFUiW0GkISN\","
+              - generic [ref=f2e307]: "\"components\": ["
+              - generic [ref=f2e308]: "{"
+              - generic [ref=f2e309]: "\"snapshot\": \"{\"data\":{\"search\":\"BREECH\",\"sortField\":\"code\",\"sortDirection\":\"asc\",\"perPage\":10,\"showModal\":true,\"showDeleteModal\":false,\"isEditing\":false,\"editingId\":null,\"code\":\"Breech Delivery\",\"name\":\"\",\"description\":\"\",\"is_active\":true,\"paginators\":[{\"page\":1},{\"s\":\"arr\"}]},\"memo\":{\"id\":\"oGrE2X6SvMgt9yiRPC3e\",\"name\":\"delivery.delivery-type-crud\",\"path\":\"delivery/types\",\"method\":\"GET\",\"release\":\"a-a-a\",\"children\":[],\"scripts\":[],\"assets\":[],\"errors\":[],\"locale\":\"en\",\"islands\":[]},\"checksum\":\"42f13e9bedd4b5f3f2ba12cae67f5320dcf582ee1db2e18e55faeee250d763ca\"}\","
+              - generic [ref=f2e310]: "\"updates\": {"
+              - generic [ref=f2e311]: "\"search\": \"\","
+              - generic [ref=f2e312]: "\"code\": \"BREECH\","
+              - generic [ref=f2e313]: "\"name\": \"Breech Delivery\","
+              - generic [ref=f2e314]: "\"description\": \"Vaginal delivery for breech presentation\""
+              - generic [ref=f2e315]: "},"
+              - generic [ref=f2e316]: "\"calls\": ["
+              - generic [ref=f2e317]: "{"
+              - generic [ref=f2e318]: "\"method\": \"save\","
+              - generic [ref=f2e319]: "\"params\": [],"
+              - generic [ref=f2e320]: "\"metadata\": []"
+              - generic [ref=f2e321]: "}"
+              - generic [ref=f2e322]: "]"
+              - generic [ref=f2e323]: "}"
+              - generic [ref=f2e324]: "]"
+              - generic [ref=f2e325]: "}"
+          - generic [ref=f2e326]:
+            - heading "Routing" [level=2] [ref=f2e327]
+            - generic [ref=f2e328]:
+              - generic [ref=f2e329]:
+                - generic [ref=f2e330]: controller
+                - generic [ref=f2e332]: Livewire\Mechanisms\HandleRequests\HandleRequests@handleUpdate
+              - generic [ref=f2e333]:
+                - generic [ref=f2e334]: route name
+                - generic [ref=f2e336]: default-livewire.update
+              - generic [ref=f2e337]:
+                - generic [ref=f2e338]: middleware
+                - generic [ref=f2e340]: web, Livewire\Mechanisms\HandleRequests\RequireLivewireHeaders
+          - generic [ref=f2e341]:
+            - heading "Routing parameters" [level=2] [ref=f2e342]
+            - generic [ref=f2e343]: // No routing parameters
+        - generic [ref=f2e346]:
+          - img [ref=f2e348]
+          - img [ref=f2e3386]
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - button [ref=e6]:
+            - img [ref=e7]
+          - generic [ref=e9]:
+            - img "SITHEMR Logo" [ref=e10]
+            - heading "SITHEMR" [level=1] [ref=e11]
+        - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+          - generic [ref=e15]: D
+          - generic [ref=e16]:
+            - generic [ref=e17]: Demo Hospital Admin
+            - generic [ref=e18]: tenant_admin
+          - img [ref=e19]
+    - generic [ref=e21]:
+      - navigation [ref=e22]:
+        - generic [ref=e23]:
+          - link "Dashboard" [ref=e24] [cursor=pointer]:
+            - /url: /
+            - img [ref=e25]
+            - text: Dashboard
+          - link "Transactions" [ref=e27] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=e28]
+            - text: Transactions
+          - link "Reports" [ref=e30] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=e31]
+            - text: Reports
+          - link "Transfers" [ref=e33] [cursor=pointer]:
+            - /url: /transfers
+            - img [ref=e34]
+            - text: Transfers
+          - button "Masters" [ref=e38]:
+            - generic [ref=e39]:
+              - img [ref=e40]
+              - generic [ref=e42]: Masters
+            - img [ref=e43]
+          - link "Patients" [ref=e45] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=e46]
+            - text: Patients
+          - button "Laboratory" [ref=e49]:
+            - generic [ref=e50]:
+              - img [ref=e51]
+              - generic [ref=e53]: Laboratory
+            - img [ref=e54]
+          - button "CSR / Supply" [ref=e57]:
+            - generic [ref=e58]:
+              - img [ref=e59]
+              - generic [ref=e61]: CSR / Supply
+            - img [ref=e62]
+          - button "Pharmacy" [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e69]: Pharmacy
+            - img [ref=e70]
+          - button "Procedures" [ref=e73]:
+            - generic [ref=e74]:
+              - img [ref=e75]
+              - generic [ref=e77]: Procedures
+            - img [ref=e78]
+          - button "Radiology" [ref=e81]:
+            - generic [ref=e82]:
+              - img [ref=e83]
+              - generic [ref=e85]: Radiology
+            - img [ref=e86]
+          - button "Renal Care" [ref=e89]:
+            - generic [ref=e90]:
+              - img [ref=e91]
+              - generic [ref=e93]: Renal Care
+            - img [ref=e94]
+          - generic [ref=e96]:
+            - button "Delivery" [ref=e97]:
+              - generic [ref=e98]:
+                - img [ref=e99]
+                - generic [ref=e101]: Delivery
+              - img [ref=e102]
+            - generic [ref=e104]:
+              - link "Rooms" [ref=e105] [cursor=pointer]:
+                - /url: /delivery/rooms
+              - link "Schedule" [ref=e106] [cursor=pointer]:
+                - /url: /delivery/schedule
+              - link "Types" [ref=e107] [cursor=pointer]:
+                - /url: /delivery/types
+              - link "Complications" [ref=e108] [cursor=pointer]:
+                - /url: /delivery/complications
+          - button "Wards" [ref=e110]:
+            - generic [ref=e111]:
+              - img [ref=e112]
+              - generic [ref=e114]: Wards
+            - img [ref=e115]
+          - link "Admission" [ref=e117] [cursor=pointer]:
+            - /url: /admission
+            - img [ref=e118]
+            - text: Admission
+          - link "Nursing" [ref=e120] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=e121]
+            - text: Nursing
+          - link "Billing" [ref=e123] [cursor=pointer]:
+            - /url: /billing
+            - img [ref=e124]
+            - text: Billing
+          - link "Fund Sources" [ref=e126] [cursor=pointer]:
+            - /url: /billing/fund-sources
+            - img [ref=e127]
+            - text: Fund Sources
+          - button "OR" [ref=e130]:
+            - generic [ref=e131]:
+              - img [ref=e132]
+              - generic [ref=e134]: OR
+            - img [ref=e135]
+          - button "Emergency Room" [ref=e138]:
+            - generic [ref=e139]:
+              - img [ref=e140]
+              - generic [ref=e142]: Emergency Room
+            - img [ref=e143]
+          - button "OPD" [ref=e146]:
+            - generic [ref=e147]:
+              - img [ref=e148]
+              - generic [ref=e150]: OPD
+            - img [ref=e151]
+          - button "OB" [ref=e154]:
+            - generic [ref=e155]:
+              - img [ref=e156]
+              - generic [ref=e158]: OB
+            - img [ref=e159]
+          - button "PhilHealth" [ref=e162]:
+            - generic [ref=e163]:
+              - img [ref=e164]
+              - generic [ref=e166]: PhilHealth
+            - img [ref=e167]
+          - button "YAKAP" [ref=e170]:
+            - generic [ref=e171]:
+              - img [ref=e172]
+              - generic [ref=e174]: YAKAP
+            - img [ref=e175]
+      - main [ref=e177]:
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - heading "Delivery Types" [level=2] [ref=e182]
+              - paragraph [ref=e183]: Manage childbirth delivery method types.
+            - button "Add Delivery Type" [ref=e184]:
+              - img [ref=e185]
+              - text: Add Delivery Type
+          - generic [ref=e187]:
+            - generic [ref=e188]:
+              - generic:
+                - img
+              - textbox "Search code or name…" [ref=e189]
+            - generic [ref=e190]:
+              - generic [ref=e191]: "Rows:"
+              - combobox [ref=e192]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+          - table [ref=e194]:
+            - rowgroup [ref=e195]:
+              - row "Code ↑ Name ↑↓ Description ↑↓ Status Actions" [ref=e196]:
+                - columnheader "Code ↑" [ref=e197] [cursor=pointer]:
+                  - generic [ref=e198]:
+                    - text: Code
+                    - generic [ref=e199]: ↑
+                - columnheader "Name ↑↓" [ref=e200] [cursor=pointer]:
+                  - generic [ref=e201]:
+                    - text: Name
+                    - generic [ref=e202]: ↑↓
+                - columnheader "Description ↑↓" [ref=e203] [cursor=pointer]:
+                  - generic [ref=e204]:
+                    - text: Description
+                    - generic [ref=e205]: ↑↓
+                - columnheader "Status" [ref=e206]
+                - columnheader "Actions" [ref=e207]
+            - rowgroup [ref=e208]:
+              - row "AVB Assisted Vaginal Birth Vaginal delivery with forceps or vacuum assistance Active" [ref=e317]:
+                - cell "AVB" [ref=e318]
+                - cell "Assisted Vaginal Birth" [ref=e319]
+                - cell "Vaginal delivery with forceps or vacuum assistance" [ref=e320]
+                - cell "Active" [ref=e321]:
+                  - generic [ref=e322]: Active
+                - cell [ref=e323]:
+                  - generic [ref=e324]:
+                    - button "Edit" [ref=e325]
+                    - button "Archive" [ref=e328]
+              - row "C-S_EL Cesarean Section (Elective) Planned surgical delivery through abdominal incision Active" [ref=e331]:
+                - cell "C-S_EL" [ref=e332]
+                - cell "Cesarean Section (Elective)" [ref=e333]
+                - cell "Planned surgical delivery through abdominal incision" [ref=e334]
+                - cell "Active" [ref=e335]:
+                  - generic [ref=e336]: Active
+                - cell [ref=e337]:
+                  - generic [ref=e338]:
+                    - button "Edit" [ref=e339]
+                    - button "Archive" [ref=e342]
+              - row "C-S_EM Cesarean Section (Emergency) Emergency surgical delivery due to maternal/fetal distress Active" [ref=e345]:
+                - cell "C-S_EM" [ref=e346]
+                - cell "Cesarean Section (Emergency)" [ref=e347]
+                - cell "Emergency surgical delivery due to maternal/fetal distress" [ref=e348]
+                - cell "Active" [ref=e349]:
+                  - generic [ref=e350]: Active
+                - cell [ref=e351]:
+                  - generic [ref=e352]:
+                    - button "Edit" [ref=e353]
+                    - button "Archive" [ref=e356]
+              - row "NSVD Normal Spontaneous Vaginal Delivery Full-term vaginal delivery without instrumentation Active" [ref=e359]:
+                - cell "NSVD" [ref=e360]
+                - cell "Normal Spontaneous Vaginal Delivery" [ref=e361]
+                - cell "Full-term vaginal delivery without instrumentation" [ref=e362]
+                - cell "Active" [ref=e363]:
+                  - generic [ref=e364]: Active
+                - cell [ref=e365]:
+                  - generic [ref=e366]:
+                    - button "Edit" [ref=e367]
+                    - button "Archive" [ref=e370]
+              - row "VBAC Vaginal Birth After Cesarean Vaginal delivery after previous cesarean section Active" [ref=e373]:
+                - cell "VBAC" [ref=e374]
+                - cell "Vaginal Birth After Cesarean" [ref=e375]
+                - cell "Vaginal delivery after previous cesarean section" [ref=e376]
+                - cell "Active" [ref=e377]:
+                  - generic [ref=e378]: Active
+                - cell [ref=e379]:
+                  - generic [ref=e380]:
+                    - button "Edit" [ref=e381]
+                    - button "Archive" [ref=e384]
+          - generic [ref=e284]:
+            - generic [ref=e285]:
+              - heading "Add New Delivery Type" [level=3] [ref=e286]
+              - button [ref=e287]:
+                - img [ref=e288]
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - generic [ref=e293]: Code *
+                  - textbox "Code *" [ref=e294]:
+                    - /placeholder: e.g. NSVD
+                    - text: BREECH
+                - generic [ref=e295]:
+                  - generic [ref=e296]: Name *
+                  - textbox "Name *" [ref=e297]:
+                    - /placeholder: e.g. Normal Spontaneous Vaginal Delivery
+                    - text: Breech Delivery
+              - generic [ref=e298]:
+                - generic [ref=e299]: Description
+                - textbox "Description" [ref=e300]:
+                  - /placeholder: Optional description
+                  - text: Vaginal delivery for breech presentation
+              - generic [ref=e301]:
+                - button [ref=e302]
+                - generic [ref=e304]: Active
+              - generic [ref=e305]:
+                - button "Cancel" [ref=e306]
+                - button "Save" [ref=e307]
+    - contentinfo [ref=e279]:
+      - paragraph [ref=e281]: © 2026 SITHEMR. All rights reserved.

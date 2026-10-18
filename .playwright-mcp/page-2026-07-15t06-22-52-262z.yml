@@ -1,0 +1,129 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "S Super Administrator superadmin" [ref=e14]:
+        - generic [ref=e15]: S
+        - generic [ref=e16]:
+          - generic [ref=e17]: Super Administrator
+          - generic [ref=e18]: superadmin
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: Main
+          - link "Dashboard" [ref=e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=e29] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Clinical Modules
+          - button "OPD" [ref=e41]
+          - button "Emergency Room" [ref=e49]
+          - button "Admission & Wards" [ref=e57]
+          - link "Nursing" [ref=e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=e68]
+          - button "Delivery" [ref=e76]
+          - button "Operating Room" [ref=e84]
+          - button "Renal Care" [ref=e92]
+        - generic [ref=e99]:
+          - paragraph [ref=e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=e102]
+          - button "Radiology" [ref=e110]
+          - generic [ref=e118]:
+            - button "Pharmacy" [ref=e119]
+            - generic [ref=e126]:
+              - link "Dispensing" [ref=e127] [cursor=pointer]:
+                - /url: /pharmacy/dispensing
+              - link "Drug Formulary" [ref=e131] [cursor=pointer]:
+                - /url: /pharmacy/drugs
+              - link "Stock Dashboard" [ref=e135] [cursor=pointer]:
+                - /url: /pharmacy/inventory
+              - link "Drug Batches" [ref=e139] [cursor=pointer]:
+                - /url: /pharmacy/drug-batches
+              - link "Purchase Orders" [ref=e143] [cursor=pointer]:
+                - /url: /pharmacy/purchase-orders
+              - link "Stock Adjustments" [ref=e147] [cursor=pointer]:
+                - /url: /pharmacy/stock-adjustments
+              - link "Patient Med Record" [ref=e151] [cursor=pointer]:
+                - /url: /pharmacy/patient-medication-record
+              - link "Reports" [ref=e155] [cursor=pointer]:
+                - /url: /pharmacy/reports
+          - button "Procedures" [ref=e160]
+          - button "CSR / Supply" [ref=e169]
+        - generic [ref=e176]:
+          - paragraph [ref=e177]: Financial & Claims
+          - button "Billing" [ref=e179]
+          - button "PhilHealth" [ref=e187]
+          - button "YAKAP" [ref=e195]
+          - link "Konsulta" [ref=e203] [cursor=pointer]:
+            - /url: /konsulta
+          - link "Transactions" [ref=e207] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=e210] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=e213]:
+          - paragraph [ref=e214]: Administration
+          - button "Masters" [ref=e216]
+          - link "Roles" [ref=e223] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=e228] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=e232] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=e236]:
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - heading "Pharmacy Dispensing" [level=2] [ref=e241]
+            - paragraph [ref=e242]: Create and manage medication requests from all departments.
+          - button "New Request" [ref=e243]
+        - generic [ref=e246]:
+          - textbox "Search request code or person…" [ref=e248]
+          - generic [ref=e249]:
+            - generic [ref=e250]: "Rows:"
+            - combobox [ref=e251]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e253]:
+          - rowgroup [ref=e254]:
+            - row [ref=e255]:
+              - columnheader "Request Code ↑↓" [ref=e256] [cursor=pointer]:
+                - generic [ref=e257]:
+                  - text: Request Code
+                  - generic [ref=e258]: ↑↓
+              - columnheader "Department" [ref=e259]
+              - columnheader "Patient / Requesting Person" [ref=e260]
+              - columnheader "Priority" [ref=e261]
+              - columnheader "Items" [ref=e262]
+              - columnheader "Total Amount" [ref=e263]
+              - columnheader "Status" [ref=e264]
+              - columnheader "Actions" [ref=e265]
+          - rowgroup [ref=e266]:
+            - row [ref=e267]:
+              - cell "PR-00001" [ref=e268]
+              - cell "—" [ref=e269]
+              - cell "Maria Santos" [ref=e270]
+              - cell "Routine" [ref=e271]
+              - cell "0" [ref=e273]
+              - cell "₱468.50" [ref=e274]
+              - cell "Pending" [ref=e275]
+              - cell [ref=e277]:
+                - generic [ref=e278]:
+                  - button "View" [ref=e279]
+                  - button "Edit" [ref=e283]
+                  - button "Complete All" [ref=e286]
+                  - button "Dispense Items" [ref=e289]
+                  - button "Cancel Request" [ref=e292]
+  - contentinfo [ref=e295]:
+    - paragraph [ref=e297]: © 2026 SITHEMR. All rights reserved.

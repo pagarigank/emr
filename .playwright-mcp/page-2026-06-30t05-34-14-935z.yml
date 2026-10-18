@@ -1,0 +1,231 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - button [ref=f1e6]:
+          - img [ref=f1e7]
+        - generic [ref=f1e9]:
+          - img "SITHEMR Logo" [ref=f1e10]
+          - heading "SITHEMR" [level=1] [ref=f1e11]
+      - button "T Tenant Admin User tenant_admin" [ref=f1e14]:
+        - generic [ref=f1e15]: T
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: Tenant Admin User
+          - generic [ref=f1e18]: tenant_admin
+        - img [ref=f1e19]
+  - generic [ref=f1e21]:
+    - navigation [ref=f1e22]:
+      - generic [ref=f1e23]:
+        - generic [ref=f1e24]:
+          - paragraph [ref=f1e25]: Main
+          - link "Dashboard" [ref=f1e26] [cursor=pointer]:
+            - /url: /
+            - img [ref=f1e27]
+            - text: Dashboard
+          - link "Doctors Portal" [ref=f1e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+            - img [ref=f1e30]
+            - text: Doctors Portal
+          - link "Patients" [ref=f1e32] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=f1e33]
+            - text: Patients
+          - link "Medical Records" [ref=f1e35] [cursor=pointer]:
+            - /url: /medical-records
+            - img [ref=f1e36]
+            - text: Medical Records
+        - generic [ref=f1e38]:
+          - paragraph [ref=f1e39]: Clinical Modules
+          - button "OPD" [ref=f1e41]:
+            - generic [ref=f1e42]:
+              - img [ref=f1e43]
+              - generic [ref=f1e45]: OPD
+            - img [ref=f1e46]
+          - button "Emergency Room" [ref=f1e49]:
+            - generic [ref=f1e50]:
+              - img [ref=f1e51]
+              - generic [ref=f1e53]: Emergency Room
+            - img [ref=f1e54]
+          - button "Admission & Wards" [ref=f1e57]:
+            - generic [ref=f1e58]:
+              - img [ref=f1e59]
+              - generic [ref=f1e61]: Admission & Wards
+            - img [ref=f1e62]
+          - link "Nursing" [ref=f1e64] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=f1e65]
+            - text: Nursing
+          - button "Obstetrics (OB)" [ref=f1e68]:
+            - generic [ref=f1e69]:
+              - img [ref=f1e70]
+              - generic [ref=f1e72]: Obstetrics (OB)
+            - img [ref=f1e73]
+          - button "Delivery" [ref=f1e76]:
+            - generic [ref=f1e77]:
+              - img [ref=f1e78]
+              - generic [ref=f1e80]: Delivery
+            - img [ref=f1e81]
+          - button "Operating Room" [ref=f1e84]:
+            - generic [ref=f1e85]:
+              - img [ref=f1e86]
+              - generic [ref=f1e88]: Operating Room
+            - img [ref=f1e89]
+          - button "Renal Care" [ref=f1e92]:
+            - generic [ref=f1e93]:
+              - img [ref=f1e94]
+              - generic [ref=f1e96]: Renal Care
+            - img [ref=f1e97]
+        - generic [ref=f1e99]:
+          - paragraph [ref=f1e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f1e102]:
+            - generic [ref=f1e103]:
+              - img [ref=f1e104]
+              - generic [ref=f1e106]: Laboratory
+            - img [ref=f1e107]
+          - button "Radiology" [ref=f1e110]:
+            - generic [ref=f1e111]:
+              - img [ref=f1e112]
+              - generic [ref=f1e115]: Radiology
+            - img [ref=f1e116]
+          - button "Pharmacy" [ref=f1e119]:
+            - generic [ref=f1e120]:
+              - img [ref=f1e121]
+              - generic [ref=f1e123]: Pharmacy
+            - img [ref=f1e124]
+          - button "Procedures" [ref=f1e127]:
+            - generic [ref=f1e128]:
+              - img [ref=f1e129]
+              - generic [ref=f1e132]: Procedures
+            - img [ref=f1e133]
+          - button "CSR / Supply" [ref=f1e136]:
+            - generic [ref=f1e137]:
+              - img [ref=f1e138]
+              - generic [ref=f1e140]: CSR / Supply
+            - img [ref=f1e141]
+        - generic [ref=f1e143]:
+          - paragraph [ref=f1e144]: Financial & Claims
+          - button "Billing" [ref=f1e146]:
+            - generic [ref=f1e147]:
+              - img [ref=f1e148]
+              - generic [ref=f1e150]: Billing
+            - img [ref=f1e151]
+          - button "PhilHealth" [ref=f1e154]:
+            - generic [ref=f1e155]:
+              - img [ref=f1e156]
+              - generic [ref=f1e158]: PhilHealth
+            - img [ref=f1e159]
+          - button "YAKAP" [ref=f1e162]:
+            - generic [ref=f1e163]:
+              - img [ref=f1e164]
+              - generic [ref=f1e166]: YAKAP
+            - img [ref=f1e167]
+          - link "Transactions" [ref=f1e169] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=f1e170]
+            - text: Transactions
+          - link "Reports" [ref=f1e172] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=f1e173]
+            - text: Reports
+          - link "Reports" [ref=f1e175] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=f1e176]
+            - text: Reports
+        - generic [ref=f1e178]:
+          - paragraph [ref=f1e179]: Administration
+          - button "Masters" [ref=f1e181]:
+            - generic [ref=f1e182]:
+              - img [ref=f1e183]
+              - generic [ref=f1e185]: Masters
+            - img [ref=f1e186]
+          - link "Roles" [ref=f1e188] [cursor=pointer]:
+            - /url: /admin/roles
+            - img [ref=f1e189]
+            - generic [ref=f1e192]: Roles
+          - link "Role Permissions" [ref=f1e193] [cursor=pointer]:
+            - /url: /admin/role-permissions
+            - img [ref=f1e194]
+            - generic [ref=f1e196]: Role Permissions
+          - link "Audit Trail" [ref=f1e197] [cursor=pointer]:
+            - /url: /admin/audit-log
+            - img [ref=f1e198]
+            - generic [ref=f1e200]: Audit Trail
+    - main [ref=f1e201]:
+      - generic [ref=f1e203]:
+        - generic [ref=f1e204]:
+          - generic [ref=f1e205]:
+            - heading "Role Management" [level=2] [ref=f1e206]
+            - paragraph [ref=f1e207]: Create, edit, and manage system roles and their permissions
+          - button "Add Role" [ref=f1e208]:
+            - img [ref=f1e209]
+            - text: Add Role
+        - generic [ref=f1e212]:
+          - generic [ref=f1e213]:
+            - generic [ref=f1e214]: Search
+            - textbox "Role name, display name…" [ref=f1e215]
+          - generic [ref=f1e216]:
+            - generic [ref=f1e217]: Rows
+            - combobox [ref=f1e218]:
+              - option "10"
+              - option "25" [selected]
+              - option "50"
+        - table [ref=f1e220]:
+          - rowgroup [ref=f1e221]:
+            - row "Role Key Display Name Description Type Status Actions" [ref=f1e222]:
+              - columnheader "Role Key" [ref=f1e223] [cursor=pointer]:
+                - generic [ref=f1e225]: Role Key
+              - columnheader "Display Name" [ref=f1e226] [cursor=pointer]:
+                - generic [ref=f1e227]:
+                  - generic [ref=f1e228]: Display Name
+                  - img [ref=f1e229]
+              - columnheader "Description" [ref=f1e231]
+              - columnheader "Type" [ref=f1e232]
+              - columnheader "Status" [ref=f1e233]
+              - columnheader "Actions" [ref=f1e234]
+          - rowgroup [ref=f1e235]:
+            - row "doctor Doctor Linked to a health care professional profile System Active" [ref=f1e236]:
+              - cell "doctor" [ref=f1e237]
+              - cell "Doctor" [ref=f1e238]
+              - cell "Linked to a health care professional profile" [ref=f1e239]
+              - cell "System" [ref=f1e240]:
+                - generic [ref=f1e241]: System
+              - cell "Active" [ref=f1e242]:
+                - generic [ref=f1e243]: Active
+              - cell [ref=f1e244]:
+                - button "Edit" [ref=f1e246]:
+                  - img [ref=f1e247]
+            - row "staff Staff Limited feature access within tenant System Active" [ref=f1e249]:
+              - cell "staff" [ref=f1e250]
+              - cell "Staff" [ref=f1e251]
+              - cell "Limited feature access within tenant" [ref=f1e252]
+              - cell "System" [ref=f1e253]:
+                - generic [ref=f1e254]: System
+              - cell "Active" [ref=f1e255]:
+                - generic [ref=f1e256]: Active
+              - cell [ref=f1e257]:
+                - button "Edit" [ref=f1e259]:
+                  - img [ref=f1e260]
+            - row "superadmin Super Admin Unrestricted access across all tenants System Active" [ref=f1e262]:
+              - cell "superadmin" [ref=f1e263]
+              - cell "Super Admin" [ref=f1e264]
+              - cell "Unrestricted access across all tenants" [ref=f1e265]
+              - cell "System" [ref=f1e266]:
+                - generic [ref=f1e267]: System
+              - cell "Active" [ref=f1e268]:
+                - generic [ref=f1e269]: Active
+              - cell [ref=f1e270]:
+                - button "Edit" [ref=f1e272]:
+                  - img [ref=f1e273]
+            - row "tenant_admin Tenant Admin Full access within their own tenant System Active" [ref=f1e275]:
+              - cell "tenant_admin" [ref=f1e276]
+              - cell "Tenant Admin" [ref=f1e277]
+              - cell "Full access within their own tenant" [ref=f1e278]
+              - cell "System" [ref=f1e279]:
+                - generic [ref=f1e280]: System
+              - cell "Active" [ref=f1e281]:
+                - generic [ref=f1e282]: Active
+              - cell [ref=f1e283]:
+                - button "Edit" [ref=f1e285]:
+                  - img [ref=f1e286]
+  - contentinfo [ref=f1e288]:
+    - paragraph [ref=f1e290]: © 2026 SITHEMR. All rights reserved.

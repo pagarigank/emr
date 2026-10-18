@@ -1,0 +1,233 @@
+- generic [ref=e797]:
+  - banner [ref=e798]:
+    - generic [ref=e799]:
+      - generic [ref=e800]:
+        - button [ref=e801]:
+          - img [ref=e802]
+        - generic [ref=e804]:
+          - img "SITHEMR Logo" [ref=e805]
+          - heading "SITHEMR" [level=1] [ref=e806]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e809]:
+        - generic [ref=e810]: D
+        - generic [ref=e811]:
+          - generic [ref=e812]: Demo Hospital Admin
+          - generic [ref=e813]: tenant_admin
+        - img [ref=e814]
+  - generic [ref=e816]:
+    - navigation [ref=e817]:
+      - generic [ref=e818]:
+        - link "Dashboard" [ref=e819] [cursor=pointer]:
+          - /url: /
+          - img [ref=e820]
+          - text: Dashboard
+        - link "Transactions" [ref=e822] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e823]
+          - text: Transactions
+        - link "Reports" [ref=e825] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e826]
+          - text: Reports
+        - link "Transfers" [ref=e828] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e829]
+          - text: Transfers
+        - button "Masters" [ref=e833]:
+          - generic [ref=e834]:
+            - img [ref=e835]
+            - generic [ref=e837]: Masters
+          - img [ref=e838]
+        - link "Patients" [ref=e840] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e841]
+          - text: Patients
+        - button "Laboratory" [ref=e844]:
+          - generic [ref=e845]:
+            - img [ref=e846]
+            - generic [ref=e848]: Laboratory
+          - img [ref=e849]
+        - button "CSR / Supply" [ref=e852]:
+          - generic [ref=e853]:
+            - img [ref=e854]
+            - generic [ref=e856]: CSR / Supply
+          - img [ref=e857]
+        - button "Pharmacy" [ref=e860]:
+          - generic [ref=e861]:
+            - img [ref=e862]
+            - generic [ref=e864]: Pharmacy
+          - img [ref=e865]
+        - button "Procedures" [ref=e868]:
+          - generic [ref=e869]:
+            - img [ref=e870]
+            - generic [ref=e872]: Procedures
+          - img [ref=e873]
+        - button "Radiology" [ref=e876]:
+          - generic [ref=e877]:
+            - img [ref=e878]
+            - generic [ref=e880]: Radiology
+          - img [ref=e881]
+        - button "Renal Care" [ref=e884]:
+          - generic [ref=e885]:
+            - img [ref=e886]
+            - generic [ref=e888]: Renal Care
+          - img [ref=e889]
+        - button "Delivery" [ref=e892]:
+          - generic [ref=e893]:
+            - img [ref=e894]
+            - generic [ref=e896]: Delivery
+          - img [ref=e897]
+        - button "Wards" [ref=e900]:
+          - generic [ref=e901]:
+            - img [ref=e902]
+            - generic [ref=e904]: Wards
+          - img [ref=e905]
+        - link "Admission" [ref=e907] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e908]
+          - text: Admission
+        - link "Nursing" [ref=e910] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e911]
+          - text: Nursing
+        - link "Billing" [ref=e913] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e914]
+          - text: Billing
+        - link "Fund Sources" [ref=e916] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e917]
+          - text: Fund Sources
+        - button "OR" [ref=e920]:
+          - generic [ref=e921]:
+            - img [ref=e922]
+            - generic [ref=e924]: OR
+          - img [ref=e925]
+        - button "Emergency Room" [ref=e928]:
+          - generic [ref=e929]:
+            - img [ref=e930]
+            - generic [ref=e932]: Emergency Room
+          - img [ref=e933]
+        - button "OPD" [ref=e936]:
+          - generic [ref=e937]:
+            - img [ref=e938]
+            - generic [ref=e940]: OPD
+          - img [ref=e941]
+        - button "OB" [ref=e944]:
+          - generic [ref=e945]:
+            - img [ref=e946]
+            - generic [ref=e948]: OB
+          - img [ref=e949]
+        - button "PhilHealth" [ref=e952]:
+          - generic [ref=e953]:
+            - img [ref=e954]
+            - generic [ref=e956]: PhilHealth
+          - img [ref=e957]
+        - button "YAKAP" [ref=e960]:
+          - generic [ref=e961]:
+            - img [ref=e962]
+            - generic [ref=e964]: YAKAP
+          - img [ref=e965]
+    - main [ref=e967]:
+      - generic [ref=e969]:
+        - generic [ref=e970]:
+          - generic [ref=e971]:
+            - heading "Hospital Transfers" [level=2] [ref=e972]
+            - paragraph [ref=e973]: Track patient transfers to other healthcare facilities.
+          - button "New Transfer" [active] [ref=e974]:
+            - img [ref=e975]
+            - text: New Transfer
+        - generic [ref=e977]:
+          - generic [ref=e979]:
+            - generic:
+              - img
+            - textbox "Search by patient name or code..." [ref=e980]
+          - table [ref=e982]:
+            - rowgroup [ref=e983]:
+              - 'row "Transfer # Patient Destination Date Status Actions" [ref=e984]':
+                - 'columnheader "Transfer #" [ref=e985] [cursor=pointer]'
+                - columnheader "Patient" [ref=e986]
+                - columnheader "Destination" [ref=e987]
+                - columnheader "Date" [ref=e988] [cursor=pointer]
+                - columnheader "Status" [ref=e989]
+                - columnheader "Actions" [ref=e990]
+            - rowgroup [ref=e991]:
+              - row "No transfers found Create a new transfer record to get started." [ref=e992]:
+                - cell "No transfers found Create a new transfer record to get started." [ref=e993]:
+                  - generic [ref=e994]:
+                    - img [ref=e995]
+                    - generic [ref=e997]: No transfers found
+                    - paragraph [ref=e998]: Create a new transfer record to get started.
+        - generic [ref=e1005]:
+          - generic [ref=e1006]:
+            - heading "New Hospital Transfer" [level=3] [ref=e1007]:
+              - img [ref=e1008]
+              - text: New Hospital Transfer
+            - button [ref=e1010]:
+              - img [ref=e1011]
+          - generic [ref=e1013]:
+            - generic [ref=e1014]:
+              - generic [ref=e1015]:
+                - generic [ref=e1016]: Patient *
+                - textbox "Search by name or code..." [ref=e1017]
+              - generic [ref=e1018]:
+                - generic [ref=e1019]: Destination Hospital *
+                - combobox [ref=e1020]:
+                  - option "Select Hospital" [selected]
+                  - option "St. Lukes Medical Center (STLUK)"
+            - generic [ref=e1021]:
+              - generic [ref=e1022]:
+                - generic [ref=e1023]: Source Encounter Type
+                - combobox [ref=e1024]:
+                  - option "None" [selected]
+                  - option "ER Admission"
+                  - option "Ward Admission"
+                  - option "OPD Consultation"
+                  - option "OR Schedule"
+                  - option "OB Consultation"
+                  - option "Dialysis Session"
+                  - option "Delivery Schedule"
+              - generic [ref=e1025]:
+                - generic [ref=e1026]: Source Encounter ID
+                - spinbutton [ref=e1027]
+            - generic [ref=e1028]:
+              - generic [ref=e1029]: Transfer Reason
+              - textbox "Why is the patient being transferred?" [ref=e1030]
+            - generic [ref=e1031]:
+              - generic [ref=e1032]: Transfer Diagnosis
+              - textbox "Primary diagnosis at time of transfer" [ref=e1033]
+            - generic [ref=e1034]:
+              - generic [ref=e1035]:
+                - generic [ref=e1036]: Transferred By
+                - combobox [ref=e1037]:
+                  - option "Select Doctor" [selected]
+                  - option "Dr. Dela Cruz"
+              - generic [ref=e1038]:
+                - generic [ref=e1039]: Transport Mode
+                - combobox [ref=e1040]:
+                  - option "Select Mode" [selected]
+                  - option "Ambulance"
+                  - option "Private Vehicle"
+                  - option "Walk-in"
+                  - option "Air Ambulance"
+                  - option "Other"
+              - generic [ref=e1041]:
+                - generic [ref=e1042]: Status
+                - combobox [ref=e1043]:
+                  - option "Pending" [selected]
+                  - option "In Transit"
+                  - option "Completed"
+                  - option "Cancelled"
+            - generic [ref=e1044]:
+              - generic [ref=e1045]: Accompanying Personnel
+              - textbox "e.g. Nurse Rodriguez, EMT Cruz" [ref=e1046]
+            - generic [ref=e1047]:
+              - generic [ref=e1048]: Condition on Transfer
+              - textbox "Patient's clinical condition at time of transfer (vitals, level of consciousness, etc.)" [ref=e1049]
+            - generic [ref=e1050]:
+              - generic [ref=e1051]: Notes
+              - textbox "Additional notes" [ref=e1052]
+            - generic [ref=e1053]:
+              - button "Cancel" [ref=e1054]
+              - button "Create Transfer" [ref=e1055]
+  - contentinfo [ref=e1000]:
+    - paragraph [ref=e1002]: © 2026 SITHEMR. All rights reserved.

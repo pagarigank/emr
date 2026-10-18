@@ -1,0 +1,135 @@
+- generic [ref=f9e77]:
+  - banner [ref=f9e78]:
+    - generic [ref=f9e79]:
+      - generic [ref=f9e80]:
+        - button [ref=f9e81]
+        - generic [ref=f9e84]:
+          - img "SITHEMR Logo"
+          - heading "SITHEMR" [level=1] [ref=f9e85]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f9e88]:
+        - generic [ref=f9e89]: D
+        - generic [ref=f9e90]:
+          - generic [ref=f9e91]: Demo Hospital Admin
+          - generic [ref=f9e92]: tenant_admin
+  - generic [ref=f9e95]:
+    - navigation [ref=f9e96]:
+      - generic [ref=f9e97]:
+        - generic [ref=f9e98]:
+          - paragraph [ref=f9e99]: Main
+          - link "Dashboard" [ref=f9e100] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f9e103] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=f9e106] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f9e109] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f9e112]:
+          - paragraph [ref=f9e113]: Clinical Modules
+          - button "OPD" [ref=f9e115]
+          - button "Emergency Room" [ref=f9e123]
+          - button "Admission & Wards" [ref=f9e131]
+          - link "Nursing" [ref=f9e138] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f9e142]
+          - button "Delivery" [ref=f9e150]
+          - button "Operating Room" [ref=f9e158]
+          - button "Renal Care" [ref=f9e166]
+        - generic [ref=f9e173]:
+          - paragraph [ref=f9e174]: Ancillary & Logistics
+          - button "Laboratory" [ref=f9e176]
+          - button "Radiology" [ref=f9e184]
+          - button "Pharmacy" [ref=f9e193]
+          - button "Procedures" [ref=f9e201]
+          - button "CSR / Supply" [ref=f9e210]
+        - generic [ref=f9e217]:
+          - paragraph [ref=f9e218]: Financial & Claims
+          - button "Billing" [ref=f9e220]
+          - button "PhilHealth" [ref=f9e228]
+          - button "YAKAP" [ref=f9e236]
+          - link "Transactions" [ref=f9e243] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f9e246] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f9e249]:
+          - paragraph [ref=f9e250]: Administration
+          - button "Masters" [ref=f9e252]
+          - link "Roles" [ref=f9e259] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f9e264] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f9e268] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f9e272]:
+      - generic [ref=f9e274]:
+        - generic [ref=f9e275]:
+          - generic [ref=f9e276]:
+            - heading "Command Center" [level=1] [ref=f9e277]
+            - paragraph [ref=f9e278]: Live overview of hospital operations and financials.
+          - generic [ref=f9e279]: July 11, 2026 06:04 PM
+        - generic [ref=f9e282]:
+          - heading "Live Patient Census" [level=2] [ref=f9e283]
+          - generic [ref=f9e284]:
+            - generic [ref=f9e289]:
+              - paragraph [ref=f9e290]: Total Registered
+              - paragraph [ref=f9e291]: "10"
+              - paragraph [ref=f9e292]: All-time patient database
+            - generic [ref=f9e299]:
+              - paragraph [ref=f9e300]: Active ER
+              - paragraph [ref=f9e301]: "1"
+              - paragraph [ref=f9e302]: Pending disposition
+            - generic [ref=f9e309]:
+              - paragraph [ref=f9e310]: Active Admissions
+              - paragraph [ref=f9e311]: "0"
+              - paragraph [ref=f9e312]: Currently in Wards/ICU
+            - generic [ref=f9e319]:
+              - paragraph [ref=f9e320]: Today's OPD
+              - paragraph [ref=f9e321]: "0"
+              - paragraph [ref=f9e322]: Consultations created today
+        - generic [ref=f9e325]:
+          - heading "Financial Snapshot" [level=2] [ref=f9e326]
+          - generic [ref=f9e327]:
+            - generic [ref=f9e328]:
+              - heading "Billed Today" [level=3] [ref=f9e330]
+              - paragraph [ref=f9e334]: ₱280.00
+            - generic [ref=f9e337]:
+              - heading "Collected Today" [level=3] [ref=f9e339]
+              - paragraph [ref=f9e343]: ₱0.00
+            - generic [ref=f9e346]:
+              - heading "Total Outstanding" [level=3] [ref=f9e348]
+              - paragraph [ref=f9e352]: ₱280.00
+        - generic [ref=f9e355]:
+          - heading "PhilHealth E-Claims Tracker" [level=2] [ref=f9e356]
+          - generic [ref=f9e357]:
+            - generic [ref=f9e358]:
+              - generic [ref=f9e363]:
+                - heading "E-Claims Monthly Performance" [level=3] [ref=f9e364]
+                - paragraph [ref=f9e365]: Tracking metrics for July 2026
+              - generic [ref=f9e366]:
+                - generic [ref=f9e367]:
+                  - paragraph [ref=f9e368]: Approval Rate
+                  - paragraph [ref=f9e369]: 0%
+                - generic [ref=f9e370]:
+                  - paragraph [ref=f9e371]: Collection Rate
+                  - paragraph [ref=f9e372]: 0%
+            - generic [ref=f9e373]:
+              - generic [ref=f9e374]:
+                - paragraph [ref=f9e375]: Total
+                - paragraph [ref=f9e376]: "0"
+              - generic [ref=f9e377]:
+                - paragraph [ref=f9e378]: For Submission
+                - paragraph [ref=f9e379]: "0"
+              - generic [ref=f9e380]:
+                - paragraph [ref=f9e381]: Submitted/Ack'd
+                - paragraph [ref=f9e382]: "0"
+              - generic [ref=f9e383]:
+                - paragraph [ref=f9e384]: Paid
+                - paragraph [ref=f9e385]: "0"
+              - generic [ref=f9e386]:
+                - paragraph [ref=f9e387]: Denied
+                - paragraph [ref=f9e388]: "0"
+              - generic [ref=f9e389]:
+                - paragraph [ref=f9e390]: This Month
+                - paragraph [ref=f9e391]: ₱0
+  - contentinfo [ref=f9e392]:
+    - paragraph [ref=f9e394]: © 2026 SITHEMR. All rights reserved.

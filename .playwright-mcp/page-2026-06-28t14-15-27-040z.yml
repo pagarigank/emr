@@ -1,0 +1,275 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - button [ref=e6]:
+            - img [ref=e7]
+          - generic [ref=e9]:
+            - img "SITHEMR Logo" [ref=e10]
+            - heading "SITHEMR" [level=1] [ref=e11]
+        - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+          - generic [ref=e15]: D
+          - generic [ref=e16]:
+            - generic [ref=e17]: Demo Hospital Admin
+            - generic [ref=e18]: tenant_admin
+          - img [ref=e19]
+    - generic [ref=e21]:
+      - navigation [ref=e22]:
+        - generic [ref=e23]:
+          - link "Dashboard" [ref=e24] [cursor=pointer]:
+            - /url: /
+            - img [ref=e25]
+            - text: Dashboard
+          - link "Transactions" [ref=e27] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=e28]
+            - text: Transactions
+          - link "Reports" [ref=e30] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=e31]
+            - text: Reports
+          - link "Transfers" [ref=e33] [cursor=pointer]:
+            - /url: /transfers
+            - img [ref=e34]
+            - text: Transfers
+          - button "Masters" [ref=e38]:
+            - generic [ref=e39]:
+              - img [ref=e40]
+              - generic [ref=e42]: Masters
+            - img [ref=e43]
+          - link "Patients" [ref=e45] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=e46]
+            - text: Patients
+          - button "Laboratory" [ref=e49]:
+            - generic [ref=e50]:
+              - img [ref=e51]
+              - generic [ref=e53]: Laboratory
+            - img [ref=e54]
+          - button "CSR / Supply" [ref=e57]:
+            - generic [ref=e58]:
+              - img [ref=e59]
+              - generic [ref=e61]: CSR / Supply
+            - img [ref=e62]
+          - button "Pharmacy" [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e69]: Pharmacy
+            - img [ref=e70]
+          - button "Procedures" [ref=e73]:
+            - generic [ref=e74]:
+              - img [ref=e75]
+              - generic [ref=e77]: Procedures
+            - img [ref=e78]
+          - button "Radiology" [ref=e81]:
+            - generic [ref=e82]:
+              - img [ref=e83]
+              - generic [ref=e85]: Radiology
+            - img [ref=e86]
+          - button "Renal Care" [ref=e89]:
+            - generic [ref=e90]:
+              - img [ref=e91]
+              - generic [ref=e93]: Renal Care
+            - img [ref=e94]
+          - button "Delivery" [ref=e97]:
+            - generic [ref=e98]:
+              - img [ref=e99]
+              - generic [ref=e101]: Delivery
+            - img [ref=e102]
+          - button "Wards" [ref=e105]:
+            - generic [ref=e106]:
+              - img [ref=e107]
+              - generic [ref=e109]: Wards
+            - img [ref=e110]
+          - link "Admission" [ref=e112] [cursor=pointer]:
+            - /url: /admission
+            - img [ref=e113]
+            - text: Admission
+          - link "Nursing" [ref=e115] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=e116]
+            - text: Nursing
+          - link "Billing" [ref=e118] [cursor=pointer]:
+            - /url: /billing
+            - img [ref=e119]
+            - text: Billing
+          - link "Fund Sources" [ref=e121] [cursor=pointer]:
+            - /url: /billing/fund-sources
+            - img [ref=e122]
+            - text: Fund Sources
+          - button "OR" [ref=e125]:
+            - generic [ref=e126]:
+              - img [ref=e127]
+              - generic [ref=e129]: OR
+            - img [ref=e130]
+          - button "Emergency Room" [ref=e133]:
+            - generic [ref=e134]:
+              - img [ref=e135]
+              - generic [ref=e137]: Emergency Room
+            - img [ref=e138]
+          - button "OPD" [ref=e141]:
+            - generic [ref=e142]:
+              - img [ref=e143]
+              - generic [ref=e145]: OPD
+            - img [ref=e146]
+          - button "OB" [ref=e149]:
+            - generic [ref=e150]:
+              - img [ref=e151]
+              - generic [ref=e153]: OB
+            - img [ref=e154]
+          - generic [ref=e156]:
+            - button "PhilHealth" [ref=e157]:
+              - generic [ref=e158]:
+                - img [ref=e159]
+                - generic [ref=e161]: PhilHealth
+              - img [ref=e162]
+            - generic [ref=e164]:
+              - link "ICD-10 Codes" [ref=e165] [cursor=pointer]:
+                - /url: /philhealth/icd10-codes
+              - link "RVS Codes" [ref=e166] [cursor=pointer]:
+                - /url: /philhealth/rvs-codes
+              - link "Case Rates" [ref=e167] [cursor=pointer]:
+                - /url: /philhealth/case-rates
+              - link "HC Professionals" [ref=e168] [cursor=pointer]:
+                - /url: /philhealth/hc-professionals
+              - link "Members" [ref=e169] [cursor=pointer]:
+                - /url: /philhealth/members
+              - link "E-Claims" [ref=e170] [cursor=pointer]:
+                - /url: /philhealth/claims
+              - link "Batches" [ref=e171] [cursor=pointer]:
+                - /url: /philhealth/batches
+              - link "Reports" [ref=e172] [cursor=pointer]:
+                - /url: /philhealth/reports
+          - button "YAKAP" [ref=e174]:
+            - generic [ref=e175]:
+              - img [ref=e176]
+              - generic [ref=e178]: YAKAP
+            - img [ref=e179]
+      - main [ref=e181]:
+        - generic [ref=e183]:
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - heading "PhilHealth Member Management" [level=2] [ref=e186]
+              - paragraph [ref=e187]: Manage PhilHealth member records for claims filing (CF1).
+            - button "Add Member" [ref=e188]:
+              - img [ref=e189]
+              - text: Add Member
+          - generic [ref=e191]:
+            - generic [ref=e192]:
+              - generic:
+                - img
+              - textbox "Search PIN or name…" [ref=e193]
+            - generic [ref=e194]:
+              - generic [ref=e195]: "Rows:"
+              - combobox [ref=e196]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+          - table [ref=e198]:
+            - rowgroup [ref=e199]:
+              - row "PIN ↑ Last Name ↑↓ First Name ↑↓ Type ↑↓ Status Actions" [ref=e200]:
+                - columnheader "PIN ↑" [ref=e201] [cursor=pointer]:
+                  - generic [ref=e202]:
+                    - text: PIN
+                    - generic [ref=e203]: ↑
+                - columnheader "Last Name ↑↓" [ref=e204] [cursor=pointer]:
+                  - generic [ref=e205]:
+                    - text: Last Name
+                    - generic [ref=e206]: ↑↓
+                - columnheader "First Name ↑↓" [ref=e207] [cursor=pointer]:
+                  - generic [ref=e208]:
+                    - text: First Name
+                    - generic [ref=e209]: ↑↓
+                - columnheader "Type ↑↓" [ref=e210] [cursor=pointer]:
+                  - generic [ref=e211]:
+                    - text: Type
+                    - generic [ref=e212]: ↑↓
+                - columnheader "Status" [ref=e213]
+                - columnheader "Actions" [ref=e214]
+            - rowgroup [ref=e215]:
+              - row "10-3550189-8 Penduko Pedro Employed Active" [ref=e216]:
+                - cell "10-3550189-8" [ref=e217]
+                - cell "Penduko" [ref=e218]
+                - cell "Pedro" [ref=e219]
+                - cell "Employed" [ref=e220]
+                - cell "Active" [ref=e221]:
+                  - generic [ref=e222]: Active
+                - cell [ref=e223]:
+                  - generic [ref=e224]:
+                    - button "Edit" [ref=e225]:
+                      - img [ref=e226]
+                    - button "Archive" [ref=e228]:
+                      - img [ref=e229]
+              - row "10-5617191-7 Santos Maria Employed Active" [ref=e231]:
+                - cell "10-5617191-7" [ref=e232]
+                - cell "Santos" [ref=e233]
+                - cell "Maria" [ref=e234]
+                - cell "Employed" [ref=e235]
+                - cell "Active" [ref=e236]:
+                  - generic [ref=e237]: Active
+                - cell [ref=e238]:
+                  - generic [ref=e239]:
+                    - button "Edit" [ref=e240]:
+                      - img [ref=e241]
+                    - button "Archive" [ref=e243]:
+                      - img [ref=e244]
+              - row "10-6763383-9 Dela Cruz Juan Employed Active" [ref=e246]:
+                - cell "10-6763383-9" [ref=e247]
+                - cell "Dela Cruz" [ref=e248]
+                - cell "Juan" [ref=e249]
+                - cell "Employed" [ref=e250]
+                - cell "Active" [ref=e251]:
+                  - generic [ref=e252]: Active
+                - cell [ref=e253]:
+                  - generic [ref=e254]:
+                    - button "Edit" [ref=e255]:
+                      - img [ref=e256]
+                    - button "Archive" [ref=e258]:
+                      - img [ref=e259]
+              - row "10-6892781-1 Rivera Leonor Employed Active" [ref=e261]:
+                - cell "10-6892781-1" [ref=e262]
+                - cell "Rivera" [ref=e263]
+                - cell "Leonor" [ref=e264]
+                - cell "Employed" [ref=e265]
+                - cell "Active" [ref=e266]:
+                  - generic [ref=e267]: Active
+                - cell [ref=e268]:
+                  - generic [ref=e269]:
+                    - button "Edit" [ref=e270]:
+                      - img [ref=e271]
+                    - button "Archive" [ref=e273]:
+                      - img [ref=e274]
+              - row "10-8395196-3 Bonifacio Andres Employed Active" [ref=e276]:
+                - cell "10-8395196-3" [ref=e277]
+                - cell "Bonifacio" [ref=e278]
+                - cell "Andres" [ref=e279]
+                - cell "Employed" [ref=e280]
+                - cell "Active" [ref=e281]:
+                  - generic [ref=e282]: Active
+                - cell [ref=e283]:
+                  - generic [ref=e284]:
+                    - button "Edit" [ref=e285]:
+                      - img [ref=e286]
+                    - button "Archive" [ref=e288]:
+                      - img [ref=e289]
+              - row "12-3456789-0 Luna Juan Employed Active" [ref=e346]:
+                - cell "12-3456789-0" [ref=e347]
+                - cell "Luna" [ref=e348]
+                - cell "Juan" [ref=e349]
+                - cell "Employed" [ref=e350]
+                - cell "Active" [ref=e351]:
+                  - generic [ref=e352]: Active
+                - cell [ref=e353]:
+                  - generic [ref=e354]:
+                    - button "Edit" [ref=e355]:
+                      - img [ref=e356]
+                    - button "Archive" [ref=e358]:
+                      - img [ref=e359]
+    - contentinfo [ref=e291]:
+      - paragraph [ref=e293]: © 2026 SITHEMR. All rights reserved.
+  - generic [ref=e361]:
+    - img [ref=e362]
+    - generic [ref=e364]: PhilHealth member created successfully.
+    - button [ref=e365]:
+      - img [ref=e366]

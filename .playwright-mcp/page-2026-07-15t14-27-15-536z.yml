@@ -1,0 +1,115 @@
+- generic [ref=f3e2]:
+  - banner [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - generic [ref=f3e5]:
+        - button [ref=f3e6]
+        - generic [ref=f3e9]:
+          - img "SITHEMR Logo" [ref=f3e10]
+          - heading "SITHEMR" [level=1] [ref=f3e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f3e14]:
+        - generic [ref=f3e15]: D
+        - generic [ref=f3e16]:
+          - generic [ref=f3e17]: Demo Hospital Admin
+          - generic [ref=f3e18]: tenant_admin
+  - generic [ref=f3e21]:
+    - navigation [ref=f3e22]:
+      - generic [ref=f3e23]:
+        - generic [ref=f3e24]:
+          - paragraph [ref=f3e25]: Main
+          - link "Dashboard" [ref=f3e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f3e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=f3e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f3e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f3e38]:
+          - paragraph [ref=f3e39]: Clinical Modules
+          - button "OPD" [ref=f3e41]
+          - button "Emergency Room" [ref=f3e49]
+          - button "Admission & Wards" [ref=f3e57]
+          - link "Nursing" [ref=f3e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f3e68]
+          - button "Delivery" [ref=f3e76]
+          - button "Operating Room" [ref=f3e84]
+          - generic [ref=f3e91]:
+            - button "Renal Care" [ref=f3e92]
+            - generic [ref=f3e99]:
+              - link "Dialysis Sessions" [ref=f3e100] [cursor=pointer]:
+                - /url: /renal-care/dialysis-sessions
+              - link "Dialysis Types" [ref=f3e104] [cursor=pointer]:
+                - /url: /renal-care/dialysis-types
+        - generic [ref=f3e108]:
+          - paragraph [ref=f3e109]: Ancillary & Logistics
+          - button "Laboratory" [ref=f3e111]
+          - button "Radiology" [ref=f3e119]
+          - button "Pharmacy" [ref=f3e128]
+          - button "Procedures" [ref=f3e136]
+          - button "CSR / Supply" [ref=f3e145]
+        - generic [ref=f3e152]:
+          - paragraph [ref=f3e153]: Financial & Claims
+          - button "Billing" [ref=f3e155]
+          - button "PhilHealth" [ref=f3e163]
+          - button "YAKAP" [ref=f3e171]
+          - link "Transactions" [ref=f3e178] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f3e181] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f3e184]:
+          - paragraph [ref=f3e185]: Administration
+          - button "Masters" [ref=f3e187]
+          - link "Roles" [ref=f3e194] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f3e199] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f3e203] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f3e207]:
+      - generic [ref=f3e209]:
+        - generic [ref=f3e210]:
+          - generic [ref=f3e211]:
+            - heading "Dialysis Sessions" [level=2] [ref=f3e212]
+            - paragraph [ref=f3e213]: Record and manage dialysis treatment sessions.
+          - button "Add Session" [ref=f3e214]
+        - generic [ref=f3e217]:
+          - textbox "Search code, patient, or access type…" [ref=f3e219]
+          - generic [ref=f3e220]:
+            - generic [ref=f3e221]: "Rows:"
+            - combobox [ref=f3e222]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=f3e224]:
+          - rowgroup [ref=f3e225]:
+            - row [ref=f3e226]:
+              - columnheader "Code ↑" [ref=f3e227] [cursor=pointer]:
+                - generic [ref=f3e228]:
+                  - text: Code
+                  - generic [ref=f3e229]: ↑
+              - columnheader "Date ↑↓" [ref=f3e230] [cursor=pointer]:
+                - generic [ref=f3e231]:
+                  - text: Date
+                  - generic [ref=f3e232]: ↑↓
+              - columnheader "Patient" [ref=f3e233]
+              - columnheader "Type" [ref=f3e234]
+              - columnheader "Pre/Post Wt" [ref=f3e235]
+              - columnheader "Status" [ref=f3e236]
+              - columnheader "Actions" [ref=f3e237]
+          - rowgroup [ref=f3e238]:
+            - row [ref=f3e239]:
+              - cell "DS-00001" [ref=f3e240]
+              - cell "2026-07-11" [ref=f3e241]
+              - cell "Aguinaldo, Emilio" [ref=f3e242]
+              - cell "Automated Peritoneal Dialysis" [ref=f3e243]
+              - cell "23.00 / 23.00 kg" [ref=f3e244]
+              - cell "Scheduled" [ref=f3e245]
+              - cell [ref=f3e247]:
+                - generic [ref=f3e248]:
+                  - button "Treatment" [ref=f3e249]
+                  - button "Edit" [ref=f3e252]
+                  - button "Dispo" [ref=f3e255]
+                  - button "Archive" [ref=f3e258]
+  - contentinfo [ref=f3e261]:
+    - paragraph [ref=f3e263]: © 2026 SITHEMR. All rights reserved.

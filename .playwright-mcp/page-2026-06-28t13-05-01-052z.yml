@@ -1,0 +1,193 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e10]: Internal Server Error
+    - button "Copy as Markdown" [ref=e11] [cursor=pointer]:
+      - img [ref=e12]
+      - generic [ref=e15]: Copy as Markdown
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "Illuminate\\Database\\QueryException" [level=1] [ref=e20]
+      - generic [ref=e22]: vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+      - paragraph [ref=e23]: "SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ambiguous column name 'history'. (Connection: sqlsrv, Host: 127.0.0.1, Port: 1433, Database: sithemr, SQL: select count(*) as aggregate from [reference_ranges] inner join [lab_tests] on [lab_tests].[id] = [reference_ranges].[lab_test_id] where [history] = 1)"
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: LARAVEL
+          - generic [ref=e28]: 12.62.0
+        - generic [ref=e29]:
+          - generic [ref=e30]: PHP
+          - generic [ref=e31]: 8.2.12
+      - generic [ref=e32]:
+        - img [ref=e33]
+        - text: UNHANDLED
+      - generic [ref=e36]: CODE 42000
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - img [ref=e40]
+        - text: "500"
+      - generic [ref=e43]:
+        - img [ref=e44]
+        - text: GET
+      - generic [ref=e47]: http://127.0.0.1:8000/lab/reference-ranges
+      - button [ref=e48] [cursor=pointer]:
+        - img [ref=e49]
+  - generic [ref=e53]:
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - img [ref=e57]
+        - heading "Exception trace" [level=3] [ref=e60]
+      - generic [ref=e61]:
+        - generic [ref=e63] [cursor=pointer]:
+          - img [ref=e64]
+          - generic [ref=e68]: 10 vendor frames
+          - button [ref=e69]:
+            - img [ref=e70]
+        - generic [ref=e74]:
+          - generic [ref=e75] [cursor=pointer]:
+            - generic [ref=e78]:
+              - code [ref=e82]:
+                - generic [ref=e83]: Illuminate\Database\Eloquent\Builder->paginate(integer)
+              - generic [ref=e85]: app\Livewire\Lab\ReferenceRangeCrud.php:116
+            - button [ref=e87]:
+              - img [ref=e88]
+          - code [ref=e96]:
+            - generic [ref=e97]: 111 $q->where(fn ($inner) =>
+            - generic [ref=e98]: 112 $inner->where('lab_tests.name', 'like', '%' . $this->search . '%')
+            - generic [ref=e99]: 113 )
+            - generic [ref=e100]: 114 )
+            - generic [ref=e101]: 115 ->orderBy($this->sortField, $this->sortDirection)
+            - generic [ref=e102]: 116 ->paginate($this->perPage);
+            - generic [ref=e103]: "117"
+            - generic [ref=e104]: 118 $labTests = LabTest::orderBy('name')->get();
+            - generic [ref=e105]: "119"
+            - generic [ref=e106]: 120 return view('livewire.lab.reference-range-crud', compact('items', 'labTests'));
+            - generic [ref=e107]: "121 }"
+            - generic [ref=e108]: "122}"
+            - generic [ref=e109]: "123"
+        - generic [ref=e111] [cursor=pointer]:
+          - img [ref=e112]
+          - generic [ref=e116]: 9 vendor frames
+          - button [ref=e117]:
+            - img [ref=e118]
+        - generic [ref=e123] [cursor=pointer]:
+          - generic [ref=e126]:
+            - code [ref=e130]:
+              - generic [ref=e131]: Livewire\LivewireManager->mount(string, array, string, array)
+            - generic [ref=e133]: resources\views\pages\lab\reference-ranges.blade.php:1
+          - button [ref=e135]:
+            - img [ref=e136]
+        - generic [ref=e141] [cursor=pointer]:
+          - img [ref=e142]
+          - generic [ref=e146]: 15 vendor frames
+          - button [ref=e147]:
+            - img [ref=e148]
+        - generic [ref=e153] [cursor=pointer]:
+          - generic [ref=e156]:
+            - code [ref=e160]:
+              - generic [ref=e161]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=e163]: app\Http\Middleware\JwtMiddleware.php:88
+          - button [ref=e165]:
+            - img [ref=e166]
+        - generic [ref=e171] [cursor=pointer]:
+          - img [ref=e172]
+          - generic [ref=e176]: 45 vendor frames
+          - button [ref=e177]:
+            - img [ref=e178]
+        - generic [ref=e183] [cursor=pointer]:
+          - generic [ref=e186]:
+            - code [ref=e190]:
+              - generic [ref=e191]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+            - generic [ref=e193]: public\index.php:20
+          - button [ref=e195]:
+            - img [ref=e196]
+        - generic [ref=e201] [cursor=pointer]:
+          - img [ref=e202]
+          - generic [ref=e206]: 1 vendor frame
+          - button [ref=e207]:
+            - img [ref=e208]
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - img [ref=e216]
+          - heading "Queries" [level=3] [ref=e218]
+        - generic [ref=e220]: 1-1 of 1
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - generic [ref=e224]:
+            - img [ref=e225]
+            - generic [ref=e227]: sqlsrv
+          - code [ref=e231]:
+            - generic [ref=e232]: select top 1 * from [users] where [id] = '2' and [history] = 1
+        - generic [ref=e233]: 2.27ms
+  - generic [ref=e235]:
+    - generic [ref=e236]:
+      - heading "Headers" [level=2] [ref=e237]
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]: host
+          - generic [ref=e242]: 127.0.0.1:8000
+        - generic [ref=e243]:
+          - generic [ref=e244]: connection
+          - generic [ref=e246]: keep-alive
+        - generic [ref=e247]:
+          - generic [ref=e248]: sec-ch-ua
+          - generic [ref=e250]: "\"Google Chrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\""
+        - generic [ref=e251]:
+          - generic [ref=e252]: sec-ch-ua-mobile
+          - generic [ref=e254]: "?0"
+        - generic [ref=e255]:
+          - generic [ref=e256]: sec-ch-ua-platform
+          - generic [ref=e258]: "\"Windows\""
+        - generic [ref=e259]:
+          - generic [ref=e260]: upgrade-insecure-requests
+          - generic [ref=e262]: "1"
+        - generic [ref=e263]:
+          - generic [ref=e264]: user-agent
+          - generic [ref=e266]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+        - generic [ref=e267]:
+          - generic [ref=e268]: accept
+          - generic [ref=e270]: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=e271]:
+          - generic [ref=e272]: sec-fetch-site
+          - generic [ref=e274]: none
+        - generic [ref=e275]:
+          - generic [ref=e276]: sec-fetch-mode
+          - generic [ref=e278]: navigate
+        - generic [ref=e279]:
+          - generic [ref=e280]: sec-fetch-user
+          - generic [ref=e282]: "?1"
+        - generic [ref=e283]:
+          - generic [ref=e284]: sec-fetch-dest
+          - generic [ref=e286]: document
+        - generic [ref=e287]:
+          - generic [ref=e288]: accept-encoding
+          - generic [ref=e290]: gzip, deflate, br, zstd
+        - generic [ref=e291]:
+          - generic [ref=e292]: accept-language
+          - generic [ref=e294]: en-US,en;q=0.9
+        - generic [ref=e295]:
+          - generic [ref=e296]: cookie
+          - generic [ref=e298]: XSRF-TOKEN=eyJpdiI6ImhZYnpkbndRV3J4ODdJRTh3bnRkbHc9PSIsInZhbHVlIjoiR2l3TE5wVmg0ampLQmZuK0JBemxTYzV4czlqMGVxMnEydkQwYUhmalVtUlVSU2p0MktEeGhjVEVDQU1nUzJ3U3FtYU9pemhmVXhQZk85T3VLVmRrRWtENkJqTzdwSjh2bnhQeU9WQzFXNW9zRlA5V0liMC9kakVZNko4RTFiKzgiLCJtYWMiOiJmY2Y0ZmIzNzc3ZTkwMWQ2OWIwMjBmM2ZmNmExOGU0ZTNkNmVmNmJkMjRlNTZlOTdlZGFjMzc3MGUxNTEzYzkyIiwidGFnIjoiIn0%3D; laravel-session=eyJpdiI6IkE5UmxaMEhvbFhBNFNJNDZHZmZXdWc9PSIsInZhbHVlIjoiS1N5VnY4RElxSTVqamdSOTJCalVqYXk4QXhuMExZU2tUY28vQW5WdFpHWGpab0h5UERERkI3V2JUcGsyRTduZW1UR296bW1lbUd3YXlQRmVGTlYyak5mVytla1J1ck9ucTlJbE9rbXZoTDZOaFFMSXpqelNaTHNQRk96dk9iNnQiLCJtYWMiOiIwMmEwYjZiMTcxMmQwOGRkNzRjMTMzNmZlZWFiODBlYWU5NjY4NGU5YzRhYmM1NGQxMGY4OTllZmQyZGRkMGQ4IiwidGFnIjoiIn0%3D
+    - generic [ref=e299]:
+      - heading "Body" [level=2] [ref=e300]
+      - generic [ref=e301]: // No request body
+    - generic [ref=e302]:
+      - heading "Routing" [level=2] [ref=e303]
+      - generic [ref=e304]:
+        - generic [ref=e305]:
+          - generic [ref=e306]: controller
+          - generic [ref=e308]: Closure
+        - generic [ref=e309]:
+          - generic [ref=e310]: route name
+          - generic [ref=e312]: lab.reference-ranges
+        - generic [ref=e313]:
+          - generic [ref=e314]: middleware
+          - generic [ref=e316]: web
+    - generic [ref=e317]:
+      - heading "Routing parameters" [level=2] [ref=e318]
+      - generic [ref=e319]: // No routing parameters
+  - generic [ref=e322]:
+    - img [ref=e324]
+    - img [ref=e3362]

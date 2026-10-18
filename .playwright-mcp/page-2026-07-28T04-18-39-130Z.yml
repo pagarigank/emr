@@ -1,0 +1,160 @@
+- generic [ref=f119e2]:
+  - banner [ref=f119e3]:
+    - generic [ref=f119e4]:
+      - generic [ref=f119e5]:
+        - button [ref=f119e6]
+        - generic [ref=f119e9]:
+          - img "SITHEMR Logo" [ref=f119e10]
+          - heading "SITHEMR" [level=1] [ref=f119e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f119e14]:
+        - generic [ref=f119e15]: D
+        - generic [ref=f119e16]:
+          - generic [ref=f119e17]: Demo Hospital Admin
+          - generic [ref=f119e18]: tenant_admin
+  - generic [ref=f119e21]:
+    - navigation [ref=f119e22]:
+      - generic [ref=f119e23]:
+        - generic [ref=f119e24]:
+          - paragraph [ref=f119e25]: Main
+          - link "Dashboard" [ref=f119e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f119e29] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=f119e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f119e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f119e38]:
+          - paragraph [ref=f119e39]: Clinical Modules
+          - button "OPD" [ref=f119e41]
+          - button "Emergency Room" [ref=f119e49]
+          - button "Admission & Wards" [ref=f119e57]
+          - link "Nursing" [ref=f119e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f119e68]
+          - button "Delivery" [ref=f119e76]
+          - button "Operating Room" [ref=f119e84]
+          - button "Renal Care" [ref=f119e92]
+        - generic [ref=f119e99]:
+          - paragraph [ref=f119e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f119e102]
+          - button "Radiology" [ref=f119e110]
+          - button "Pharmacy" [ref=f119e119]
+          - button "Procedures" [ref=f119e127]
+          - button "CSR / Supply" [ref=f119e136]
+        - generic [ref=f119e143]:
+          - paragraph [ref=f119e144]: Financial & Claims
+          - generic [ref=f119e145]:
+            - button "Billing" [ref=f119e146]
+            - generic [ref=f119e153]:
+              - link "Invoices" [ref=f119e154] [cursor=pointer]:
+                - /url: /billing
+              - link "Fund Sources" [ref=f119e158] [cursor=pointer]:
+                - /url: /billing/fund-sources
+              - link "Insurance Providers" [ref=f119e162] [cursor=pointer]:
+                - /url: /billing/insurance-providers
+          - button "PhilHealth" [ref=f119e167]
+          - button "YAKAP" [ref=f119e175]
+          - link "Transactions" [ref=f119e182] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f119e185] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f119e188]:
+          - paragraph [ref=f119e189]: Administration
+          - button "Masters" [ref=f119e191]
+          - link "Roles" [ref=f119e198] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f119e203] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f119e207] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f119e211]:
+      - generic [ref=f119e213]:
+        - generic [ref=f119e215]:
+          - heading "Billing & Invoices" [level=2] [ref=f119e216]
+          - paragraph [ref=f119e217]: Manage patient invoices, service charges, and payments.
+        - generic [ref=f119e218]:
+          - generic [ref=f119e224]:
+            - paragraph [ref=f119e225]: Unbilled Services
+            - paragraph [ref=f119e226]: ₱16,268.50
+          - generic [ref=f119e232]:
+            - paragraph [ref=f119e233]: Outstanding Balance
+            - paragraph [ref=f119e234]: ₱4,293.50
+          - generic [ref=f119e240]:
+            - paragraph [ref=f119e241]: Total Collected
+            - paragraph [ref=f119e242]: ₱510.00
+        - navigation [ref=f119e244]:
+          - button [ref=f119e245]
+          - button [ref=f119e249]
+          - button [ref=f119e253]
+        - generic [ref=f119e257]:
+          - textbox "Search patient name or code…" [ref=f119e260]
+          - table [ref=f119e263]:
+            - rowgroup [ref=f119e264]:
+              - row [ref=f119e265]:
+                - columnheader "Patient" [ref=f119e266]
+                - columnheader "Total Charges" [ref=f119e267]
+                - columnheader "Total Payments" [ref=f119e268]
+                - columnheader "Balance" [ref=f119e269]
+                - columnheader "Entries" [ref=f119e270]
+                - columnheader "Last Activity" [ref=f119e271]
+                - columnheader "Actions" [ref=f119e272]
+            - rowgroup [ref=f119e273]:
+              - row [ref=f119e392]:
+                - cell "Dela Cruz, Juan 20260000001012" [ref=f119e275]:
+                  - generic [ref=f119e276]: Dela Cruz, Juan
+                  - generic [ref=f119e277]: "20260000001012"
+                - cell "₱1,500.00" [ref=f119e393]
+                - cell "₱0.00" [ref=f119e279]
+                - cell "₱1,500.00" [ref=f119e394]
+                - cell "1" [ref=f119e395]
+                - cell "Jul 28, 2026" [ref=f119e396]
+                - cell [ref=f119e283]:
+                  - generic [ref=f119e284]:
+                    - button "Ledger" [ref=f119e285]
+                    - button "Pay" [ref=f119e288]
+                    - button "Charge" [ref=f119e291]
+              - row [ref=f119e294]:
+                - cell "Mabini, Apolinario 20260000001010" [ref=f119e295]:
+                  - generic [ref=f119e296]: Mabini, Apolinario
+                  - generic [ref=f119e297]: "20260000001010"
+                - cell "₱640.00" [ref=f119e298]
+                - cell "₱0.00" [ref=f119e299]
+                - cell "₱640.00" [ref=f119e300]
+                - cell "2" [ref=f119e301]
+                - cell "Jul 15, 2026" [ref=f119e302]
+                - cell [ref=f119e303]:
+                  - generic [ref=f119e304]:
+                    - button "Ledger" [ref=f119e305]
+                    - button "Pay" [ref=f119e308]
+                    - button "Charge" [ref=f119e311]
+              - row [ref=f119e314]:
+                - cell "Santos, Maria 20260000001002" [ref=f119e315]:
+                  - generic [ref=f119e316]: Santos, Maria
+                  - generic [ref=f119e317]: "20260000001002"
+                - cell "₱2,413.50" [ref=f119e318]
+                - cell "₱992.70" [ref=f119e319]
+                - cell "₱1,420.80" [ref=f119e320]
+                - cell "7" [ref=f119e321]
+                - cell "Jul 17, 2026" [ref=f119e322]
+                - cell [ref=f119e323]:
+                  - generic [ref=f119e324]:
+                    - button "Ledger" [ref=f119e325]
+                    - button "Pay" [ref=f119e328]
+                    - button "Charge" [ref=f119e331]
+              - row [ref=f119e334]:
+                - cell "demo3, demo3 20260000001011" [ref=f119e335]:
+                  - generic [ref=f119e336]: demo3, demo3
+                  - generic [ref=f119e337]: "20260000001011"
+                - cell "₱250.00" [ref=f119e338]
+                - cell "₱0.00" [ref=f119e339]
+                - cell "₱250.00" [ref=f119e340]
+                - cell "1" [ref=f119e341]
+                - cell "Jul 23, 2026" [ref=f119e342]
+                - cell [ref=f119e343]:
+                  - generic [ref=f119e344]:
+                    - button "Ledger" [ref=f119e345]
+                    - button "Pay" [ref=f119e348]
+                    - button "Charge" [ref=f119e351]
+  - contentinfo [ref=f119e354]:
+    - paragraph [ref=f119e356]: © 2026 SITHEMR. All rights reserved.

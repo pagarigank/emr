@@ -1,0 +1,214 @@
+- generic [active] [ref=e516]:
+  - generic [ref=e517]:
+    - banner [ref=e518]:
+      - generic [ref=e519]:
+        - generic [ref=e520]:
+          - button [ref=e521]:
+            - img [ref=e522]
+          - generic [ref=e524]:
+            - img "SITHEMR Logo" [ref=e525]
+            - heading "SITHEMR" [level=1] [ref=e526]
+        - button "D Demo Hospital Admin tenant_admin" [ref=e529]:
+          - generic [ref=e530]: D
+          - generic [ref=e531]:
+            - generic [ref=e532]: Demo Hospital Admin
+            - generic [ref=e533]: tenant_admin
+          - img [ref=e534]
+    - generic [ref=e536]:
+      - navigation [ref=e537]:
+        - generic [ref=e538]:
+          - link "Dashboard" [ref=e539] [cursor=pointer]:
+            - /url: /
+            - img [ref=e540]
+            - text: Dashboard
+          - link "Transactions" [ref=e542] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=e543]
+            - text: Transactions
+          - link "Reports" [ref=e545] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=e546]
+            - text: Reports
+          - link "Transfers" [ref=e548] [cursor=pointer]:
+            - /url: /transfers
+            - img [ref=e549]
+            - text: Transfers
+          - generic [ref=e552]:
+            - button "Masters" [ref=e553]:
+              - generic [ref=e554]:
+                - img [ref=e555]
+                - generic [ref=e557]: Masters
+              - img [ref=e558]
+            - generic [ref=e560]:
+              - link "Company" [ref=e561] [cursor=pointer]:
+                - /url: /masters/company
+              - link "Department" [ref=e562] [cursor=pointer]:
+                - /url: /masters/department
+              - link "Doctors / HC Professionals" [ref=e563] [cursor=pointer]:
+                - /url: /philhealth/hc-professionals
+              - link "Users" [ref=e564] [cursor=pointer]:
+                - /url: /masters/users
+              - link "Country" [ref=e565] [cursor=pointer]:
+                - /url: /masters/country
+              - link "Region" [ref=e566] [cursor=pointer]:
+                - /url: /masters/region
+              - link "Province/State" [ref=e567] [cursor=pointer]:
+                - /url: /masters/province
+              - link "City/Municipality" [ref=e568] [cursor=pointer]:
+                - /url: /masters/city
+              - link "Barangay" [ref=e569] [cursor=pointer]:
+                - /url: /masters/barangay
+              - link "Religion" [ref=e570] [cursor=pointer]:
+                - /url: /masters/religion
+              - link "Gender" [ref=e571] [cursor=pointer]:
+                - /url: /masters/gender
+              - link "Civil Status" [ref=e572] [cursor=pointer]:
+                - /url: /masters/civil-status
+              - link "Nationality" [ref=e573] [cursor=pointer]:
+                - /url: /masters/nationality
+              - link "Occupation" [ref=e574] [cursor=pointer]:
+                - /url: /masters/occupation
+              - link "Blood Type" [ref=e575] [cursor=pointer]:
+                - /url: /masters/blood-type
+              - link "Relationship" [ref=e576] [cursor=pointer]:
+                - /url: /masters/relationship
+              - link "Hospital" [ref=e577] [cursor=pointer]:
+                - /url: /masters/hospital
+          - link "Patients" [ref=e578] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=e579]
+            - text: Patients
+          - button "Laboratory" [ref=e582]:
+            - generic [ref=e583]:
+              - img [ref=e584]
+              - generic [ref=e586]: Laboratory
+            - img [ref=e587]
+          - button "CSR / Supply" [ref=e590]:
+            - generic [ref=e591]:
+              - img [ref=e592]
+              - generic [ref=e594]: CSR / Supply
+            - img [ref=e595]
+          - button "Pharmacy" [ref=e598]:
+            - generic [ref=e599]:
+              - img [ref=e600]
+              - generic [ref=e602]: Pharmacy
+            - img [ref=e603]
+          - button "Procedures" [ref=e606]:
+            - generic [ref=e607]:
+              - img [ref=e608]
+              - generic [ref=e610]: Procedures
+            - img [ref=e611]
+          - button "Radiology" [ref=e614]:
+            - generic [ref=e615]:
+              - img [ref=e616]
+              - generic [ref=e618]: Radiology
+            - img [ref=e619]
+          - button "Renal Care" [ref=e622]:
+            - generic [ref=e623]:
+              - img [ref=e624]
+              - generic [ref=e626]: Renal Care
+            - img [ref=e627]
+          - button "Delivery" [ref=e630]:
+            - generic [ref=e631]:
+              - img [ref=e632]
+              - generic [ref=e634]: Delivery
+            - img [ref=e635]
+          - button "Wards" [ref=e638]:
+            - generic [ref=e639]:
+              - img [ref=e640]
+              - generic [ref=e642]: Wards
+            - img [ref=e643]
+          - link "Admission" [ref=e645] [cursor=pointer]:
+            - /url: /admission
+            - img [ref=e646]
+            - text: Admission
+          - link "Nursing" [ref=e648] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=e649]
+            - text: Nursing
+          - link "Billing" [ref=e651] [cursor=pointer]:
+            - /url: /billing
+            - img [ref=e652]
+            - text: Billing
+          - link "Fund Sources" [ref=e654] [cursor=pointer]:
+            - /url: /billing/fund-sources
+            - img [ref=e655]
+            - text: Fund Sources
+          - button "OR" [ref=e658]:
+            - generic [ref=e659]:
+              - img [ref=e660]
+              - generic [ref=e662]: OR
+            - img [ref=e663]
+          - button "Emergency Room" [ref=e666]:
+            - generic [ref=e667]:
+              - img [ref=e668]
+              - generic [ref=e670]: Emergency Room
+            - img [ref=e671]
+          - button "OPD" [ref=e674]:
+            - generic [ref=e675]:
+              - img [ref=e676]
+              - generic [ref=e678]: OPD
+            - img [ref=e679]
+          - button "OB" [ref=e682]:
+            - generic [ref=e683]:
+              - img [ref=e684]
+              - generic [ref=e686]: OB
+            - img [ref=e687]
+          - button "PhilHealth" [ref=e690]:
+            - generic [ref=e691]:
+              - img [ref=e692]
+              - generic [ref=e694]: PhilHealth
+            - img [ref=e695]
+          - button "YAKAP" [ref=e698]:
+            - generic [ref=e699]:
+              - img [ref=e700]
+              - generic [ref=e702]: YAKAP
+            - img [ref=e703]
+      - main [ref=e705]:
+        - generic [ref=e707]:
+          - generic [ref=e708]:
+            - generic [ref=e709]:
+              - heading "Hospitals" [level=2] [ref=e710]
+              - paragraph [ref=e711]: Manage referral hospitals for patient transfers.
+            - button "Add Hospital" [ref=e712]:
+              - img [ref=e713]
+              - text: Add Hospital
+          - generic [ref=e715]:
+            - generic [ref=e717]:
+              - generic:
+                - img
+              - textbox "Search hospitals..." [ref=e718]: STLUK
+            - table [ref=e720]:
+              - rowgroup [ref=e721]:
+                - row "Code ↑ Name ↑↓ Type Contact Status Actions" [ref=e722]:
+                  - columnheader "Code ↑" [ref=e723] [cursor=pointer]:
+                    - text: Code
+                    - generic [ref=e724]: ↑
+                  - columnheader "Name ↑↓" [ref=e725] [cursor=pointer]:
+                    - text: Name
+                    - generic [ref=e726]: ↑↓
+                  - columnheader "Type" [ref=e727]
+                  - columnheader "Contact" [ref=e728]
+                  - columnheader "Status" [ref=e729]
+                  - columnheader "Actions" [ref=e730]
+              - rowgroup [ref=e731]:
+                - row "STLUK St. Lukes Medical Center Tertiary Quezon City Active" [ref=e774]:
+                  - cell "STLUK" [ref=e775]
+                  - cell "St. Lukes Medical Center" [ref=e776]
+                  - cell "Tertiary" [ref=e777]
+                  - cell "Quezon City" [ref=e778]
+                  - cell "Active" [ref=e779]:
+                    - generic [ref=e780]: Active
+                  - cell [ref=e781]:
+                    - generic [ref=e782]:
+                      - button "Edit" [ref=e783]:
+                        - img [ref=e784]
+                      - button "Archive" [ref=e786]:
+                        - img [ref=e787]
+    - contentinfo [ref=e740]:
+      - paragraph [ref=e742]: © 2026 SITHEMR. All rights reserved.
+  - generic [ref=e789]:
+    - img [ref=e790]
+    - generic [ref=e792]: Hospital created successfully.
+    - button [ref=e793]:
+      - img [ref=e794]

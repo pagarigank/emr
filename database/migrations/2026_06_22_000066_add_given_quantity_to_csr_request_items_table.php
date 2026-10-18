@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('csr_request_items', function (Blueprint $table) {
+            $table->decimal('given_quantity', 12, 2)->default(0)->after('quantity')
+                ->comment('Cumulative quantity actually dispensed/given; 0 = none given yet');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('csr_request_items', function (Blueprint $table) {
+            $table->dropColumn('given_quantity');
+        });
+    }
+};

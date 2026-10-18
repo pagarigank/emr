@@ -1,0 +1,420 @@
+- generic [active] [ref=f111e1]:
+  - dialog [ref=f111e392]:
+    - iframe [ref=f111e393]:
+      - generic [ref=f112e2]:
+        - generic [ref=f112e4]:
+          - generic [ref=f112e5]: Internal Server Error
+          - button "Copy as Markdown" [ref=f112e11] [cursor=pointer]
+        - generic [ref=f112e18]:
+          - generic [ref=f112e19]:
+            - heading "Illuminate\\Database\\QueryException" [level=1] [ref=f112e20]
+            - generic [ref=f112e21]: vendor\laravel\framework\src\illuminate\database\connection.php:838
+            - paragraph [ref=f112e23]: "SQLSTATE[23000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'tenant_id', table 'sithemr.dbo.patients'; column does not allow nulls. INSERT fails. (Connection: sqlsrv, Host: 127.0.0.1, Port: 1433, Database: sithemr, SQL: insert into [patients] ([patient_code], [last_name], [first_name], [middle_name], [date_of_birth], [gender_id], [is_philhealth_member], [created_by], [created_date], [updated_by], [updated_date]) values (20260000001012, Dela Cruz, Juan, , 1990-05-15 00:00:00.000, 1, 0, 2, 2026-07-28 03:59:57.699, 2, 2026-07-28 03:59:57.699))"
+          - generic [ref=f112e24]:
+            - generic [ref=f112e25]:
+              - generic [ref=f112e26]:
+                - generic [ref=f112e27]: LARAVEL
+                - generic [ref=f112e28]: 12.62.0
+              - generic [ref=f112e29]:
+                - generic [ref=f112e30]: PHP
+                - generic [ref=f112e31]: 8.2.12
+            - generic [ref=f112e32]: UNHANDLED
+            - generic [ref=f112e36]: CODE 23000
+          - generic [ref=f112e38]:
+            - generic [ref=f112e39]: "500"
+            - generic [ref=f112e43]: POST
+            - generic [ref=f112e47]: http://localhost:8000/livewire-63f0d02d/update
+            - button [ref=f112e48] [cursor=pointer]
+        - generic [ref=f112e53]:
+          - generic [ref=f112e54]:
+            - heading "Exception trace" [level=3] [ref=f112e60]
+            - generic [ref=f112e61]:
+              - generic [ref=f112e63] [cursor=pointer]:
+                - generic [ref=f112e68]: 16 vendor frames
+                - button [ref=f112e69]
+              - generic [ref=f112e74]:
+                - generic [ref=f112e75] [cursor=pointer]:
+                  - generic [ref=f112e78]:
+                    - code [ref=f112e82]:
+                      - generic [ref=f112e83]: Illuminate\Database\Eloquent\Model::__callStatic(string, array)
+                    - generic [ref=f112e84]: app\livewire\er\ertriagerecordcrud.php:198
+                  - button [ref=f112e87]
+                - code [ref=f112e96]:
+                  - generic [ref=f112e97]: "193"
+                  - generic [ref=f112e98]: "194 if ($this->is_new_patient && !$this->isEditing) {"
+                  - generic [ref=f112e99]: 195 // Register New Patient
+                  - generic [ref=f112e100]: 196 $code = $this->generatePatientCode();
+                  - generic [ref=f112e101]: "197"
+                  - generic [ref=f112e102]: 198 $newPatient = Patient::create([
+                  - generic [ref=f112e103]: 199 'tenant_id' => $this->currentTenantId(),
+                  - generic [ref=f112e104]: 200 'patient_code' => $code,
+                  - generic [ref=f112e105]: 201 'last_name' => $this->patient_last_name,
+                  - generic [ref=f112e106]: 202 'first_name' => $this->patient_first_name,
+                  - generic [ref=f112e107]: 203 'middle_name' => $this->patient_middle_name,
+                  - generic [ref=f112e108]: 204 'date_of_birth' => $this->patient_dob,
+                  - generic [ref=f112e109]: 205 'gender_id' => $this->patient_gender_id,
+                  - generic [ref=f112e110]: 206 'is_philhealth_member' => $this->is_philhealth_member,
+                  - generic [ref=f112e111]: 207 'philhealth_pin' => null, // PIN filled later from eClaims module
+                  - generic [ref=f112e112]: 208 'history' => 1,
+                  - generic [ref=f112e113]: 209 'created_by' => $this->currentUserId(),
+                  - generic [ref=f112e114]: "210"
+              - generic [ref=f112e116] [cursor=pointer]:
+                - generic [ref=f112e121]: 16 vendor frames
+                - button [ref=f112e122]
+              - generic [ref=f112e128] [cursor=pointer]:
+                - generic [ref=f112e131]:
+                  - code [ref=f112e135]:
+                    - generic [ref=f112e136]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+                  - generic [ref=f112e137]: app\http\middleware\SecurityHeaders.php:13
+                - button [ref=f112e140]
+              - generic [ref=f112e146] [cursor=pointer]:
+                - generic [ref=f112e151]: 1 vendor frame
+                - button [ref=f112e152]
+              - generic [ref=f112e158] [cursor=pointer]:
+                - generic [ref=f112e161]:
+                  - code [ref=f112e165]:
+                    - generic [ref=f112e166]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+                  - generic [ref=f112e167]: app\http\middleware\jwtmiddleware.php:91
+                - button [ref=f112e170]
+              - generic [ref=f112e176] [cursor=pointer]:
+                - generic [ref=f112e181]: 43 vendor frames
+                - button [ref=f112e182]
+              - generic [ref=f112e188] [cursor=pointer]:
+                - generic [ref=f112e191]:
+                  - code [ref=f112e195]:
+                    - generic [ref=f112e196]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+                  - generic [ref=f112e197]: public\index.php:20
+                - button [ref=f112e200]
+              - generic [ref=f112e206] [cursor=pointer]:
+                - generic [ref=f112e211]: 1 vendor frame
+                - button [ref=f112e212]
+          - generic [ref=f112e217]:
+            - generic [ref=f112e218]:
+              - heading "Queries" [level=3] [ref=f112e223]
+              - generic [ref=f112e224]: 1-5 of 5
+            - generic [ref=f112e226]:
+              - generic [ref=f112e227]:
+                - generic [ref=f112e228]:
+                  - generic [ref=f112e229]: sqlsrv
+                  - code [ref=f112e236]:
+                    - generic [ref=f112e237]: select top 1 * from [users] where [id] = '2' and [history] = 1
+                - generic [ref=f112e238]: 10.04ms
+              - generic [ref=f112e239]:
+                - generic [ref=f112e240]:
+                  - generic [ref=f112e241]: sqlsrv
+                  - code [ref=f112e248]:
+                    - generic [ref=f112e249]: select count(*) as aggregate from [er_acuity_levels] where [id] = 3
+                - generic [ref=f112e250]: 1.38ms
+              - generic [ref=f112e251]:
+                - generic [ref=f112e252]:
+                  - generic [ref=f112e253]: sqlsrv
+                  - code [ref=f112e260]:
+                    - generic [ref=f112e261]: select count(*) as aggregate from [er_mobility_statuses] where [id] = 1
+                - generic [ref=f112e262]: 0.79ms
+              - generic [ref=f112e263]:
+                - generic [ref=f112e264]:
+                  - generic [ref=f112e265]: sqlsrv
+                  - code [ref=f112e272]:
+                    - generic [ref=f112e273]: select count(*) as aggregate from [genders] where [id] = 1
+                - generic [ref=f112e274]: 0.42ms
+              - generic [ref=f112e275]:
+                - generic [ref=f112e276]:
+                  - generic [ref=f112e277]: sqlsrv
+                  - code [ref=f112e284]:
+                    - generic [ref=f112e285]: select top 1 * from [patients] where [tenant_id] = 1 and [patient_code] like '2026%' and [tenant_id] = '1' order by [id] desc
+                - generic [ref=f112e286]: 4.16ms
+        - generic [ref=f112e288]:
+          - generic [ref=f112e289]:
+            - heading "Headers" [level=2] [ref=f112e290]
+            - generic [ref=f112e291]:
+              - generic [ref=f112e292]:
+                - generic [ref=f112e293]: host
+                - generic [ref=f112e295]: localhost:8000
+              - generic [ref=f112e296]:
+                - generic [ref=f112e297]: connection
+                - generic [ref=f112e299]: keep-alive
+              - generic [ref=f112e300]:
+                - generic [ref=f112e301]: content-length
+                - generic [ref=f112e303]: "1882"
+              - generic [ref=f112e304]:
+                - generic [ref=f112e305]: sec-ch-ua-platform
+                - generic [ref=f112e307]: "\"Windows\""
+              - generic [ref=f112e308]:
+                - generic [ref=f112e309]: user-agent
+                - generic [ref=f112e311]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+              - generic [ref=f112e312]:
+                - generic [ref=f112e313]: sec-ch-ua
+                - generic [ref=f112e315]: "\"Not;A=Brand\";v=\"8\", \"Chromium\";v=\"150\", \"Google Chrome\";v=\"150\""
+              - generic [ref=f112e316]:
+                - generic [ref=f112e317]: content-type
+                - generic [ref=f112e319]: application/json
+              - generic [ref=f112e320]:
+                - generic [ref=f112e321]: x-livewire
+                - generic [ref=f112e323]: "1"
+              - generic [ref=f112e324]:
+                - generic [ref=f112e325]: sec-ch-ua-mobile
+                - generic [ref=f112e327]: "?0"
+              - generic [ref=f112e328]:
+                - generic [ref=f112e329]: accept
+                - generic [ref=f112e331]: "*/*"
+              - generic [ref=f112e332]:
+                - generic [ref=f112e333]: origin
+                - generic [ref=f112e335]: http://localhost:8000
+              - generic [ref=f112e336]:
+                - generic [ref=f112e337]: sec-fetch-site
+                - generic [ref=f112e339]: same-origin
+              - generic [ref=f112e340]:
+                - generic [ref=f112e341]: sec-fetch-mode
+                - generic [ref=f112e343]: cors
+              - generic [ref=f112e344]:
+                - generic [ref=f112e345]: sec-fetch-dest
+                - generic [ref=f112e347]: empty
+              - generic [ref=f112e348]:
+                - generic [ref=f112e349]: referer
+                - generic [ref=f112e351]: http://localhost:8000/er/triage
+              - generic [ref=f112e352]:
+                - generic [ref=f112e353]: accept-encoding
+                - generic [ref=f112e355]: gzip, deflate, br, zstd
+              - generic [ref=f112e356]:
+                - generic [ref=f112e357]: accept-language
+                - generic [ref=f112e359]: en-US,en;q=0.9
+              - generic [ref=f112e360]:
+                - generic [ref=f112e361]: cookie
+                - generic [ref=f112e363]: XSRF-TOKEN=eyJpdiI6IllNdjVZcUNtL0dBbDB3MU5rbWVSc0E9PSIsInZhbHVlIjoiQlN0NUZPSnB3R0FPbHVjR2thU29vM0I0WkM2LzlHQTlGRFJVUnVxQXZ6MkxvQmRCT21mVnZYdHhUS3JEZHEyZFVHU1J0QjIxS2ZycWpUVEI2VU5FUFF0dDdmK0FtUU5ac0ZJaHNMdEltM3VsOG8rMzhINUIrR1lMRm9yS2E4NkYiLCJtYWMiOiI1YWZiYWE0OWU4YzVlZGJmZDQ5ZjBkZWExNzlmN2JlNGE3ZmJkMDliNGZlMjgwOTMzNTVlMTY1ZTBiMjhmNWVjIiwidGFnIjoiIn0%3D; sithemr-session=eyJpdiI6ImVuUWJRVDd2ZFhINGVEbkxpdVhGVHc9PSIsInZhbHVlIjoiTFg1MXkwRkZmbEovS3NhQ2dYUWFkYUtBS0ZteGd2NGdTYlVwOS9FYW5kbkpZRURyUXkweXRSUFFyTUg1S0FxQ25DNmlZeUVDV25kM0Jac2tESFJlY1BxL1pwT3JXT2FPUmlxV3FWcXlPbmRQd29ZU01IcDIvU2t0cnFNenhpMlAiLCJtYWMiOiJhNjE4ODE2NmU2YzI1NTIzMDU0ZjkwYWExZWNiZTI1MzQ5NTVmNTc3YWJhNTZjY2Q5NWQwMTY1N2ZjNGU2MjQ4IiwidGFnIjoiIn0%3D
+          - generic [ref=f112e364]:
+            - heading "Body" [level=2] [ref=f112e365]
+            - code [ref=f112e370]:
+              - generic [ref=f112e371]: "{"
+              - generic [ref=f112e372]: "\"_token\": \"3TBnjtYoQxOafQeTmDTpiS8v0wGDcNa1mog71Coh\","
+              - generic [ref=f112e373]: "\"components\": ["
+              - generic [ref=f112e374]: "{"
+              - generic [ref=f112e375]: "\"snapshot\": \"{\"data\":{\"search\":\"\",\"sortField\":\"triage_datetime\",\"sortDirection\":\"desc\",\"perPage\":10,\"showModal\":true,\"showDeleteModal\":false,\"showTransferModal\":false,\"isEditing\":false,\"editingId\":null,\"transfer_er_bed_id\":null,\"transfer_attending_physician_id\":null,\"transfer_arrival_mode\":\"Walk-in\",\"transfer_initial_diagnosis\":\"\",\"is_new_patient\":true,\"patient_last_name\":\"Dela Cruz\",\"patient_first_name\":\"Juan\",\"patient_middle_name\":\"\",\"patient_dob\":\"1990-05-15\",\"patient_gender_id\":1,\"patient_philhealth_pin\":\"\",\"is_philhealth_member\":false,\"patient_id\":null,\"er_acuity_level_id\":null,\"er_mobility_status_id\":null,\"triage_datetime\":\"2026-07-28T03:57\",\"chief_complaint\":\"\",\"vital_temperature\":null,\"vital_heart_rate\":null,\"vital_respiratory_rate\":null,\"vital_bp_systolic\":null,\"vital_bp_diastolic\":null,\"vital_o2_saturation\":null,\"vital_pain_score\":null,\"level_of_consciousness\":null,\"allergies\":\"\",\"notes\":\"\",\"is_active\":true,\"patientSearch\":\"\",\"paginators\":[{\"page\":1},{\"s\":\"arr\"}]},\"memo\":{\"id\":\"NLn8Z4n6JBZAqgL7oHW0\",\"name\":\"er.er-triage-record-crud\",\"path\":\"er/triage\",\"method\":\"GET\",\"release\":\"a-a-a\",\"children\":[],\"scripts\":[],\"assets\":[],\"errors\":[],\"locale\":\"en\",\"islands\":[]},\"checksum\":\"1826fc3926c10c83841a74a22d3e2ad218de342b60804a093fb57b347b3ff8cb\"}\","
+              - generic [ref=f112e376]: "\"updates\": {"
+              - generic [ref=f112e377]: "\"er_acuity_level_id\": \"3\","
+              - generic [ref=f112e378]: "\"er_mobility_status_id\": \"1\","
+              - generic [ref=f112e379]: "\"chief_complaint\": \"Severe abdominal pain, nausea\","
+              - generic [ref=f112e380]: "\"vital_temperature\": \"37.5\","
+              - generic [ref=f112e381]: "\"vital_heart_rate\": \"88\","
+              - generic [ref=f112e382]: "\"vital_respiratory_rate\": \"18\","
+              - generic [ref=f112e383]: "\"vital_bp_systolic\": \"130\","
+              - generic [ref=f112e384]: "\"vital_bp_diastolic\": \"85\","
+              - generic [ref=f112e385]: "\"vital_o2_saturation\": \"97\","
+              - generic [ref=f112e386]: "\"vital_pain_score\": \"7\","
+              - generic [ref=f112e387]: "\"level_of_consciousness\": \"Alert\""
+              - generic [ref=f112e388]: "},"
+              - generic [ref=f112e389]: "\"calls\": ["
+              - generic [ref=f112e390]: "{"
+              - generic [ref=f112e391]: "\"method\": \"save\","
+              - generic [ref=f112e392]: "\"params\": [],"
+              - generic [ref=f112e393]: "\"metadata\": []"
+              - generic [ref=f112e394]: "}"
+              - generic [ref=f112e395]: "]"
+              - generic [ref=f112e396]: "}"
+              - generic [ref=f112e397]: "]"
+              - generic [ref=f112e398]: "}"
+          - generic [ref=f112e399]:
+            - heading "Routing" [level=2] [ref=f112e400]
+            - generic [ref=f112e401]:
+              - generic [ref=f112e402]:
+                - generic [ref=f112e403]: controller
+                - generic [ref=f112e405]: Livewire\Mechanisms\HandleRequests\HandleRequests@handleUpdate
+              - generic [ref=f112e406]:
+                - generic [ref=f112e407]: route name
+                - generic [ref=f112e409]: default-livewire.update
+              - generic [ref=f112e410]:
+                - generic [ref=f112e411]: middleware
+                - generic [ref=f112e413]: web, Livewire\Mechanisms\HandleRequests\RequireLivewireHeaders
+          - generic [ref=f112e414]:
+            - heading "Routing parameters" [level=2] [ref=f112e415]
+            - generic [ref=f112e416]: // No routing parameters
+  - generic [ref=f111e2]:
+    - banner [ref=f111e3]:
+      - generic [ref=f111e4]:
+        - generic [ref=f111e5]:
+          - button [ref=f111e6]
+          - generic [ref=f111e9]:
+            - img "SITHEMR Logo" [ref=f111e10]
+            - heading "SITHEMR" [level=1] [ref=f111e11]
+        - button "D Demo Hospital Admin tenant_admin" [ref=f111e14]:
+          - generic [ref=f111e15]: D
+          - generic [ref=f111e16]:
+            - generic [ref=f111e17]: Demo Hospital Admin
+            - generic [ref=f111e18]: tenant_admin
+    - generic [ref=f111e21]:
+      - navigation [ref=f111e22]:
+        - generic [ref=f111e23]:
+          - generic [ref=f111e24]:
+            - paragraph [ref=f111e25]: Main
+            - link "Dashboard" [ref=f111e26] [cursor=pointer]:
+              - /url: /
+            - link "Doctors Portal" [ref=f111e29] [cursor=pointer]:
+              - /url: http://localhost:8000/doctors/dashboard
+            - link "Patients" [ref=f111e32] [cursor=pointer]:
+              - /url: /patients
+            - link "Medical Records" [ref=f111e35] [cursor=pointer]:
+              - /url: /medical-records
+          - generic [ref=f111e38]:
+            - paragraph [ref=f111e39]: Clinical Modules
+            - button "OPD" [ref=f111e41]
+            - generic [ref=f111e48]:
+              - button "Emergency Room" [ref=f111e49]
+              - generic [ref=f111e56]:
+                - link "Triage Records" [ref=f111e57] [cursor=pointer]:
+                  - /url: /er/triage
+                - link "ER Area" [ref=f111e61] [cursor=pointer]:
+                  - /url: /er/area
+                - link "Acuity Levels" [ref=f111e66] [cursor=pointer]:
+                  - /url: /er/acuity-levels
+                - link "Mobility Statuses" [ref=f111e71] [cursor=pointer]:
+                  - /url: /er/mobility-statuses
+                - link "ER Zones" [ref=f111e75] [cursor=pointer]:
+                  - /url: /er/zones
+                - link "ER Beds" [ref=f111e80] [cursor=pointer]:
+                  - /url: /er/beds
+            - button "Admission & Wards" [ref=f111e86]
+            - link "Nursing" [ref=f111e93] [cursor=pointer]:
+              - /url: /nursing
+            - button "Obstetrics (OB)" [ref=f111e97]
+            - button "Delivery" [ref=f111e105]
+            - button "Operating Room" [ref=f111e113]
+            - button "Renal Care" [ref=f111e121]
+          - generic [ref=f111e128]:
+            - paragraph [ref=f111e129]: Ancillary & Logistics
+            - button "Laboratory" [ref=f111e131]
+            - button "Radiology" [ref=f111e139]
+            - button "Pharmacy" [ref=f111e148]
+            - button "Procedures" [ref=f111e156]
+            - button "CSR / Supply" [ref=f111e165]
+          - generic [ref=f111e172]:
+            - paragraph [ref=f111e173]: Financial & Claims
+            - button "Billing" [ref=f111e175]
+            - button "PhilHealth" [ref=f111e183]
+            - button "YAKAP" [ref=f111e191]
+            - link "Transactions" [ref=f111e198] [cursor=pointer]:
+              - /url: /transactions
+            - link "Reports" [ref=f111e201] [cursor=pointer]:
+              - /url: /reports
+          - generic [ref=f111e204]:
+            - paragraph [ref=f111e205]: Administration
+            - button "Masters" [ref=f111e207]
+            - link "Roles" [ref=f111e214] [cursor=pointer]:
+              - /url: /admin/roles
+            - link "Role Permissions" [ref=f111e219] [cursor=pointer]:
+              - /url: /admin/role-permissions
+            - link "Audit Trail" [ref=f111e223] [cursor=pointer]:
+              - /url: /admin/audit-log
+      - main [ref=f111e227]:
+        - generic [ref=f111e229]:
+          - generic [ref=f111e230]:
+            - generic [ref=f111e231]:
+              - heading "ER Triage Records" [level=2] [ref=f111e232]
+              - paragraph [ref=f111e233]: Manage emergency triage data and acuity levels.
+            - button "New Triage Record" [ref=f111e234]
+          - generic [ref=f111e237]:
+            - textbox "Search patient or complaint…" [ref=f111e239]
+            - generic [ref=f111e240]:
+              - generic [ref=f111e241]: "Rows:"
+              - combobox [ref=f111e242]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+          - table [ref=f111e244]:
+            - rowgroup [ref=f111e245]:
+              - row [ref=f111e246]:
+                - columnheader "Datetime ↓" [ref=f111e247] [cursor=pointer]
+                - columnheader "Patient" [ref=f111e248]
+                - columnheader "Chief Complaint" [ref=f111e249]
+                - columnheader "Acuity (ESI)" [ref=f111e250]
+                - columnheader "Actions" [ref=f111e251]
+            - rowgroup [ref=f111e252]:
+              - row [ref=f111e253]:
+                - cell "Jul 12, 2026 02:19 PM" [ref=f111e254]
+                - cell "20260000001003 - Penduko, Pedro" [ref=f111e255]
+                - cell "asdfadf" [ref=f111e256]
+                - cell [ref=f111e257]
+                - cell [ref=f111e260]:
+                  - generic [ref=f111e261]:
+                    - button "Transfer to ER" [ref=f111e262]
+                    - button "Edit" [ref=f111e265]
+                    - button "Archive" [ref=f111e268]
+          - generic [ref=f111e276]:
+            - generic [ref=f111e277]:
+              - heading "New Triage Record" [level=3] [ref=f111e278]
+              - button [ref=f111e279]
+            - generic [ref=f111e286]:
+              - generic [ref=f111e287]:
+                - generic [ref=f111e288]: Patient Info
+                - generic [ref=f111e293]:
+                  - generic [ref=f111e294]: "2"
+                  - generic [ref=f111e295]: Assessment
+              - generic [ref=f111e338]:
+                - generic [ref=f111e340]:
+                  - generic [ref=f111e341]: Triage Datetime *
+                  - textbox [ref=f111e342]: 2026-07-28T03:57
+                - generic [ref=f111e343]:
+                  - generic [ref=f111e344]: Chief Complaint *
+                  - textbox "Why is the patient here?" [ref=f111e345]: Severe abdominal pain, nausea
+                - generic [ref=f111e346]:
+                  - generic [ref=f111e347]:
+                    - generic [ref=f111e348]: Acuity Level (ESI) *
+                    - combobox [ref=f111e349]:
+                      - option "-- Select Acuity --"
+                      - option "ESI-1 - Resuscitation"
+                      - option "ESI-2 - Emergent"
+                      - option "ESI-3 - Urgent" [selected]
+                      - option "ESI-4 - Less Urgent"
+                      - option "ESI-5 - Non-Urgent"
+                  - generic [ref=f111e350]:
+                    - generic [ref=f111e351]: Mobility Status / Arrival
+                    - combobox [ref=f111e352]:
+                      - option "-- Select Mobility --"
+                      - option "Ambulatory" [selected]
+                      - option "Carried In"
+                      - option "Stretcher"
+                      - option "Wheelchair"
+                - generic [ref=f111e353]:
+                  - heading "Vital Signs" [level=4] [ref=f111e354]
+                  - generic [ref=f111e357]:
+                    - generic [ref=f111e358]:
+                      - generic [ref=f111e359]: Temp (°C)
+                      - spinbutton [ref=f111e360]: "37.5"
+                    - generic [ref=f111e361]:
+                      - generic [ref=f111e362]: HR (bpm)
+                      - spinbutton [ref=f111e363]: "88"
+                    - generic [ref=f111e364]:
+                      - generic [ref=f111e365]: RR (cpm)
+                      - spinbutton [ref=f111e366]: "18"
+                    - generic [ref=f111e367]:
+                      - generic [ref=f111e368]: SpO2 (%)
+                      - spinbutton [ref=f111e369]: "97"
+                    - generic [ref=f111e370]:
+                      - generic [ref=f111e371]: BP Systolic
+                      - spinbutton [ref=f111e372]: "130"
+                    - generic [ref=f111e373]:
+                      - generic [ref=f111e374]: BP Diastolic
+                      - spinbutton [ref=f111e375]: "85"
+                    - generic [ref=f111e376]:
+                      - generic [ref=f111e377]: Pain (0-10)
+                      - spinbutton [ref=f111e378]: "7"
+                    - generic [ref=f111e379]:
+                      - generic [ref=f111e380]: LOC
+                      - combobox [ref=f111e381]:
+                        - option "-- Select --"
+                        - option "Alert" [selected]
+                        - option "Voice (Responsive to)"
+                        - option "Pain (Responsive to)"
+                        - option "Unresponsive"
+                - generic [ref=f111e382]:
+                  - generic [ref=f111e383]:
+                    - generic [ref=f111e384]: Allergies
+                    - textbox [ref=f111e385]
+                  - generic [ref=f111e386]:
+                    - generic [ref=f111e387]: Notes
+                    - textbox [ref=f111e388]
+            - generic [ref=f111e310]:
+              - button "Cancel" [ref=f111e311]
+              - generic [ref=f111e312]:
+                - button "Back" [ref=f111e389]
+                - button "Save Triage" [ref=f111e390]
+    - contentinfo [ref=f111e271]:
+      - paragraph [ref=f111e273]: © 2026 SITHEMR. All rights reserved.

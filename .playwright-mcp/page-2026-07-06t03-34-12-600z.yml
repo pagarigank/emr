@@ -1,0 +1,239 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - button [ref=f1e6]:
+          - img [ref=f1e7]
+        - generic [ref=f1e9]:
+          - img "SITHEMR Logo" [ref=f1e10]
+          - heading "SITHEMR" [level=1] [ref=f1e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f1e14]:
+        - generic [ref=f1e15]: D
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: Demo Hospital Admin
+          - generic [ref=f1e18]: tenant_admin
+        - img [ref=f1e19]
+  - generic [ref=f1e21]:
+    - navigation [ref=f1e22]:
+      - generic [ref=f1e23]:
+        - generic [ref=f1e24]:
+          - paragraph [ref=f1e25]: Main
+          - link "Dashboard" [ref=f1e26] [cursor=pointer]:
+            - /url: /
+            - img [ref=f1e27]
+            - text: Dashboard
+          - link "Doctors Portal" [ref=f1e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+            - img [ref=f1e30]
+            - text: Doctors Portal
+          - link "Patients" [ref=f1e32] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=f1e33]
+            - text: Patients
+          - link "Medical Records" [ref=f1e35] [cursor=pointer]:
+            - /url: /medical-records
+            - img [ref=f1e36]
+            - text: Medical Records
+        - generic [ref=f1e38]:
+          - paragraph [ref=f1e39]: Clinical Modules
+          - button "OPD" [ref=f1e41]:
+            - generic [ref=f1e42]:
+              - img [ref=f1e43]
+              - generic [ref=f1e45]: OPD
+            - img [ref=f1e46]
+          - generic [ref=f1e48]:
+            - button "Emergency Room" [ref=f1e49]:
+              - generic [ref=f1e50]:
+                - img [ref=f1e51]
+                - generic [ref=f1e53]: Emergency Room
+              - img [ref=f1e54]
+            - generic [ref=f1e56]:
+              - link "Triage Records" [ref=f1e57] [cursor=pointer]:
+                - /url: /er/triage
+                - img [ref=f1e58]
+                - generic [ref=f1e60]: Triage Records
+              - link "ER Area" [ref=f1e61] [cursor=pointer]:
+                - /url: /er/area
+                - img [ref=f1e62]
+                - generic [ref=f1e65]: ER Area
+              - link "Acuity Levels" [ref=f1e66] [cursor=pointer]:
+                - /url: /er/acuity-levels
+                - img [ref=f1e67]
+                - generic [ref=f1e70]: Acuity Levels
+              - link "Mobility Statuses" [ref=f1e71] [cursor=pointer]:
+                - /url: /er/mobility-statuses
+                - img [ref=f1e72]
+                - generic [ref=f1e74]: Mobility Statuses
+              - link "ER Zones" [ref=f1e75] [cursor=pointer]:
+                - /url: /er/zones
+                - img [ref=f1e76]
+                - generic [ref=f1e79]: ER Zones
+              - link "ER Beds" [ref=f1e80] [cursor=pointer]:
+                - /url: /er/beds
+                - img [ref=f1e81]
+                - generic [ref=f1e84]: ER Beds
+          - button "Admission & Wards" [ref=f1e86]:
+            - generic [ref=f1e87]:
+              - img [ref=f1e88]
+              - generic [ref=f1e90]: Admission & Wards
+            - img [ref=f1e91]
+          - link "Nursing" [ref=f1e93] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=f1e94]
+            - text: Nursing
+          - button "Obstetrics (OB)" [ref=f1e97]:
+            - generic [ref=f1e98]:
+              - img [ref=f1e99]
+              - generic [ref=f1e101]: Obstetrics (OB)
+            - img [ref=f1e102]
+          - button "Delivery" [ref=f1e105]:
+            - generic [ref=f1e106]:
+              - img [ref=f1e107]
+              - generic [ref=f1e109]: Delivery
+            - img [ref=f1e110]
+          - button "Operating Room" [ref=f1e113]:
+            - generic [ref=f1e114]:
+              - img [ref=f1e115]
+              - generic [ref=f1e117]: Operating Room
+            - img [ref=f1e118]
+          - button "Renal Care" [ref=f1e121]:
+            - generic [ref=f1e122]:
+              - img [ref=f1e123]
+              - generic [ref=f1e125]: Renal Care
+            - img [ref=f1e126]
+        - generic [ref=f1e128]:
+          - paragraph [ref=f1e129]: Ancillary & Logistics
+          - button "Laboratory" [ref=f1e131]:
+            - generic [ref=f1e132]:
+              - img [ref=f1e133]
+              - generic [ref=f1e135]: Laboratory
+            - img [ref=f1e136]
+          - button "Radiology" [ref=f1e139]:
+            - generic [ref=f1e140]:
+              - img [ref=f1e141]
+              - generic [ref=f1e144]: Radiology
+            - img [ref=f1e145]
+          - button "Pharmacy" [ref=f1e148]:
+            - generic [ref=f1e149]:
+              - img [ref=f1e150]
+              - generic [ref=f1e152]: Pharmacy
+            - img [ref=f1e153]
+          - button "Procedures" [ref=f1e156]:
+            - generic [ref=f1e157]:
+              - img [ref=f1e158]
+              - generic [ref=f1e161]: Procedures
+            - img [ref=f1e162]
+          - button "CSR / Supply" [ref=f1e165]:
+            - generic [ref=f1e166]:
+              - img [ref=f1e167]
+              - generic [ref=f1e169]: CSR / Supply
+            - img [ref=f1e170]
+        - generic [ref=f1e172]:
+          - paragraph [ref=f1e173]: Financial & Claims
+          - button "Billing" [ref=f1e175]:
+            - generic [ref=f1e176]:
+              - img [ref=f1e177]
+              - generic [ref=f1e179]: Billing
+            - img [ref=f1e180]
+          - button "PhilHealth" [ref=f1e183]:
+            - generic [ref=f1e184]:
+              - img [ref=f1e185]
+              - generic [ref=f1e187]: PhilHealth
+            - img [ref=f1e188]
+          - button "YAKAP" [ref=f1e191]:
+            - generic [ref=f1e192]:
+              - img [ref=f1e193]
+              - generic [ref=f1e195]: YAKAP
+            - img [ref=f1e196]
+          - link "Konsulta" [ref=f1e199] [cursor=pointer]:
+            - /url: /konsulta
+            - img [ref=f1e200]
+            - generic [ref=f1e202]: Konsulta
+          - link "Transactions" [ref=f1e203] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=f1e204]
+            - text: Transactions
+          - link "Reports" [ref=f1e206] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=f1e207]
+            - text: Reports
+        - generic [ref=f1e209]:
+          - paragraph [ref=f1e210]: Administration
+          - button "Masters" [ref=f1e212]:
+            - generic [ref=f1e213]:
+              - img [ref=f1e214]
+              - generic [ref=f1e216]: Masters
+            - img [ref=f1e217]
+          - link "Roles" [ref=f1e219] [cursor=pointer]:
+            - /url: /admin/roles
+            - img [ref=f1e220]
+            - generic [ref=f1e223]: Roles
+          - link "Role Permissions" [ref=f1e224] [cursor=pointer]:
+            - /url: /admin/role-permissions
+            - img [ref=f1e225]
+            - generic [ref=f1e227]: Role Permissions
+          - link "Audit Trail" [ref=f1e228] [cursor=pointer]:
+            - /url: /admin/audit-log
+            - img [ref=f1e229]
+            - generic [ref=f1e231]: Audit Trail
+    - main [ref=f1e232]:
+      - generic [ref=f1e236]:
+        - generic [ref=f1e237]:
+          - heading "Emergency Room Area" [level=2] [ref=f1e238]
+          - generic [ref=f1e239]:
+            - button "Active" [ref=f1e240]:
+              - img [ref=f1e241]
+              - text: Active
+            - button "Completed" [ref=f1e243]:
+              - img [ref=f1e244]
+              - text: Completed
+        - generic [ref=f1e246]:
+          - generic [ref=f1e247]:
+            - 'textbox "Search patients by name or encounter #..." [ref=f1e248]'
+            - generic [ref=f1e249]:
+              - generic [ref=f1e250]: "Rows:"
+              - combobox [ref=f1e251]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+          - table [ref=f1e252]:
+            - rowgroup [ref=f1e253]:
+              - 'row "Acuity Encounter # ↑↓ Patient Name ↓ Bed / Zone Physician Arrival Time Actions" [ref=f1e254]':
+                - columnheader "Acuity" [ref=f1e255]
+                - 'columnheader "Encounter # ↑↓" [ref=f1e256] [cursor=pointer]':
+                  - generic [ref=f1e257]:
+                    - text: "Encounter #"
+                    - generic [ref=f1e258]: ↑↓
+                - columnheader "Patient Name ↓" [ref=f1e259] [cursor=pointer]:
+                  - generic [ref=f1e260]:
+                    - text: Patient Name
+                    - generic [ref=f1e261]: ↓
+                - columnheader "Bed / Zone" [ref=f1e262]
+                - columnheader "Physician" [ref=f1e263]
+                - columnheader "Arrival Time" [ref=f1e264]
+                - columnheader "Actions" [ref=f1e265]
+            - rowgroup [ref=f1e266]:
+              - row "ESI-1 ERA-20260702-8453 Santos, Maria 33y Consultation Chair 1 Green Zone (Less Urgent) Dr. Dr. Juan Dela Cruz 00:15 Jul 02 Treatment Dispo" [ref=f1e267]:
+                - cell "ESI-1" [ref=f1e268]:
+                  - generic [ref=f1e269]: ESI-1
+                - cell "ERA-20260702-8453" [ref=f1e270]
+                - cell "Santos, Maria 33y" [ref=f1e271]:
+                  - generic [ref=f1e272]: Santos, Maria
+                  - generic [ref=f1e273]: 33y
+                - cell "Consultation Chair 1 Green Zone (Less Urgent)" [ref=f1e274]:
+                  - generic [ref=f1e275]: Consultation Chair 1
+                  - text: Green Zone (Less Urgent)
+                - cell "Dr. Dr. Juan Dela Cruz" [ref=f1e276]
+                - cell "00:15 Jul 02" [ref=f1e277]:
+                  - generic [ref=f1e278]: 00:15
+                  - generic [ref=f1e279]: Jul 02
+                - cell "Treatment Dispo" [ref=f1e280]:
+                  - generic [ref=f1e281]:
+                    - button "Treatment" [ref=f1e282]:
+                      - img [ref=f1e283]
+                      - text: Treatment
+                    - button "Dispo" [ref=f1e285]:
+                      - img [ref=f1e286]
+                      - text: Dispo
+  - contentinfo [ref=f1e289]:
+    - paragraph [ref=f1e291]: © 2026 SITHEMR. All rights reserved.

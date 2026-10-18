@@ -1,0 +1,164 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - generic [ref=e96]:
+          - button "Delivery" [ref=e97]:
+            - generic [ref=e98]
+            - img [ref=e102]
+          - generic [ref=e104]:
+            - link "Rooms" [ref=e105] [cursor=pointer]:
+              - /url: /delivery/rooms
+            - link "Schedule" [ref=e106] [cursor=pointer]:
+              - /url: /delivery/schedule
+            - link "Types" [ref=e107] [cursor=pointer]:
+              - /url: /delivery/types
+            - link "Complications" [ref=e108] [cursor=pointer]:
+              - /url: /delivery/complications
+        - button "Wards" [ref=e110]:
+          - generic [ref=e111]:
+            - img [ref=e112]
+            - generic [ref=e114]: Wards
+          - img [ref=e115]
+        - link "Admission" [ref=e117] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e118]
+          - text: Admission
+        - link "Nursing" [ref=e120] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e121]
+          - text: Nursing
+        - link "Billing" [ref=e123] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e124]
+          - text: Billing
+        - link "Fund Sources" [ref=e126] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e127]
+          - text: Fund Sources
+        - button "OR" [ref=e130]:
+          - generic [ref=e131]:
+            - img [ref=e132]
+            - generic [ref=e134]: OR
+          - img [ref=e135]
+        - button "Emergency Room" [ref=e138]:
+          - generic [ref=e139]:
+            - img [ref=e140]
+            - generic [ref=e142]: Emergency Room
+          - img [ref=e143]
+        - button "OPD" [ref=e146]:
+          - generic [ref=e147]:
+            - img [ref=e148]
+            - generic [ref=e150]: OPD
+          - img [ref=e151]
+        - button "OB" [ref=e154]:
+          - generic [ref=e155]:
+            - img [ref=e156]
+            - generic [ref=e158]: OB
+          - img [ref=e159]
+        - button "PhilHealth" [ref=e162]:
+          - generic [ref=e163]:
+            - img [ref=e164]
+            - generic [ref=e166]: PhilHealth
+          - img [ref=e167]
+        - button "YAKAP" [ref=e170]:
+          - generic [ref=e171]:
+            - img [ref=e172]
+            - generic [ref=e174]: YAKAP
+          - img [ref=e175]
+    - main [ref=e177]:
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - heading "Delivery Types" [level=2] [ref=e182]
+            - paragraph [ref=e183]: Manage childbirth delivery method types.
+          - button "Add Delivery Type" [ref=e184]:
+            - img [ref=e185]
+            - text: Add Delivery Type
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic
+            - textbox "Search code or name…" [ref=e189]
+          - generic [ref=e190]:
+            - generic [ref=e191]: "Rows:"
+            - combobox [ref=e192]
+        - table [ref=e194]:
+          - rowgroup [ref=e195]:
+            - row "Code ↑ Name ↑↓ Description ↑↓ Status Actions" [ref=e196]
+          - rowgroup [ref=e208]:
+            - row "AVB Assisted Vaginal Birth Vaginal delivery with forceps or vacuum assistance Active" [ref=e209]
+            - row "C-S_EL Cesarean Section (Elective) Planned surgical delivery through abdominal incision Active" [ref=e223]
+            - row "C-S_EM Cesarean Section (Emergency) Emergency surgical delivery due to maternal/fetal distress Active" [ref=e237]
+            - row "NSVD Normal Spontaneous Vaginal Delivery Full-term vaginal delivery without instrumentation Active" [ref=e251]
+            - row "VBAC Vaginal Birth After Cesarean Vaginal delivery after previous cesarean section Active" [ref=e265]
+  - contentinfo [ref=e279]:
+    - paragraph [ref=e281]: © 2026 SITHEMR. All rights reserved.

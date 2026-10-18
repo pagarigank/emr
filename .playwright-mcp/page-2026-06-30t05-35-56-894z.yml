@@ -1,0 +1,210 @@
+- generic [ref=f1e2]:
+  - generic [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - img [ref=f1e7]
+      - generic [ref=f1e10]: Internal Server Error
+    - button "Copy as Markdown" [ref=f1e11] [cursor=pointer]:
+      - img [ref=f1e12]
+      - generic [ref=f1e15]: Copy as Markdown
+  - generic [ref=f1e18]:
+    - generic [ref=f1e19]:
+      - heading "Illuminate\\Database\\QueryException" [level=1] [ref=f1e20]
+      - generic [ref=f1e22]: vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+      - paragraph [ref=f1e23]: "SQLSTATE[42S02]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'patients'. (Connection: sqlsrv, Host: 127.0.0.1, Port: 1433, Database: sithemr, SQL: select count(*) as aggregate from [patients] where [history] = 1)"
+    - generic [ref=f1e24]:
+      - generic [ref=f1e25]:
+        - generic [ref=f1e26]:
+          - generic [ref=f1e27]: LARAVEL
+          - generic [ref=f1e28]: 12.62.0
+        - generic [ref=f1e29]:
+          - generic [ref=f1e30]: PHP
+          - generic [ref=f1e31]: 8.2.12
+      - generic [ref=f1e32]:
+        - img [ref=f1e33]
+        - text: UNHANDLED
+      - generic [ref=f1e36]: CODE 42S02
+    - generic [ref=f1e38]:
+      - generic [ref=f1e39]:
+        - img [ref=f1e40]
+        - text: "500"
+      - generic [ref=f1e43]:
+        - img [ref=f1e44]
+        - text: GET
+      - generic [ref=f1e47]: http://127.0.0.1:8000
+      - button [ref=f1e48] [cursor=pointer]:
+        - img [ref=f1e49]
+  - generic [ref=f1e53]:
+    - generic [ref=f1e54]:
+      - generic [ref=f1e55]:
+        - img [ref=f1e57]
+        - heading "Exception trace" [level=3] [ref=f1e60]
+      - generic [ref=f1e61]:
+        - generic [ref=f1e63] [cursor=pointer]:
+          - img [ref=f1e64]
+          - generic [ref=f1e68]: 13 vendor frames
+          - button [ref=f1e69]:
+            - img [ref=f1e70]
+        - generic [ref=f1e74]:
+          - generic [ref=f1e75] [cursor=pointer]:
+            - generic [ref=f1e78]:
+              - code [ref=f1e82]:
+                - generic [ref=f1e83]: Illuminate\Database\Eloquent\Model::__callStatic(string, array)
+              - generic [ref=f1e85]: storage\framework\views\livewire\classes\53ec3018.php:43
+            - button [ref=f1e87]:
+              - img [ref=f1e88]
+          - code [ref=f1e96]:
+            - generic [ref=f1e97]: 38 public function mount()
+            - generic [ref=f1e98]: "39 {"
+            - generic [ref=f1e99]: 40 $today = Carbon::today();
+            - generic [ref=f1e100]: "41"
+            - generic [ref=f1e101]: 42 // 1. Hospital Overview
+            - generic [ref=f1e102]: 43 $this->totalPatients = Patient::count();
+            - generic [ref=f1e103]: 44 $this->activeEr = ErAdmission::where('disposition', 'Pending')->count();
+            - generic [ref=f1e104]: 45 $this->activeAdmissions = Admission::whereIn('status', ['Admitted'])->count();
+            - generic [ref=f1e105]: 46 $this->todayOpd = OpdConsultation::whereDate('created_date', $today)->count();
+            - generic [ref=f1e106]: "47"
+            - generic [ref=f1e107]: 48 // 2. Financial Snapshot
+            - generic [ref=f1e108]: 49 $this->todayBilled = (float) BillingInvoice::whereDate('created_date', $today)->sum('total_amount');
+            - generic [ref=f1e109]: 50 $this->todayCollected = (float) BillingPayment::whereDate('payment_date', $today)->sum('amount');
+            - generic [ref=f1e110]: 51 $this->totalOutstanding = (float) BillingInvoice::whereIn('status', ['Unpaid', 'Partial'])->sum('balance');
+            - generic [ref=f1e111]: "52"
+            - generic [ref=f1e112]: 53 // 3. PhilHealth Claims
+            - generic [ref=f1e113]: 54 $q = PhilhealthClaim::query();
+            - generic [ref=f1e114]: "55"
+        - generic [ref=f1e116] [cursor=pointer]:
+          - img [ref=f1e117]
+          - generic [ref=f1e121]: 13 vendor frames
+          - button [ref=f1e122]:
+            - img [ref=f1e123]
+        - generic [ref=f1e128] [cursor=pointer]:
+          - generic [ref=f1e131]:
+            - code [ref=f1e135]:
+              - generic [ref=f1e136]: Livewire\LivewireManager->mount(string, array, string, array)
+            - generic [ref=f1e138]: resources\views\pages\dashboard.blade.php:1
+          - button [ref=f1e140]:
+            - img [ref=f1e141]
+        - generic [ref=f1e146] [cursor=pointer]:
+          - img [ref=f1e147]
+          - generic [ref=f1e151]: 15 vendor frames
+          - button [ref=f1e152]:
+            - img [ref=f1e153]
+        - generic [ref=f1e158] [cursor=pointer]:
+          - generic [ref=f1e161]:
+            - code [ref=f1e165]:
+              - generic [ref=f1e166]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f1e168]: app\Http\Middleware\CheckPermission.php:29
+          - button [ref=f1e170]:
+            - img [ref=f1e171]
+        - generic [ref=f1e176] [cursor=pointer]:
+          - img [ref=f1e177]
+          - generic [ref=f1e181]: 1 vendor frame
+          - button [ref=f1e182]:
+            - img [ref=f1e183]
+        - generic [ref=f1e188] [cursor=pointer]:
+          - generic [ref=f1e191]:
+            - code [ref=f1e195]:
+              - generic [ref=f1e196]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f1e198]: app\Http\Middleware\JwtMiddleware.php:91
+          - button [ref=f1e200]:
+            - img [ref=f1e201]
+        - generic [ref=f1e206] [cursor=pointer]:
+          - img [ref=f1e207]
+          - generic [ref=f1e211]: 45 vendor frames
+          - button [ref=f1e212]:
+            - img [ref=f1e213]
+        - generic [ref=f1e218] [cursor=pointer]:
+          - generic [ref=f1e221]:
+            - code [ref=f1e225]:
+              - generic [ref=f1e226]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+            - generic [ref=f1e228]: public\index.php:20
+          - button [ref=f1e230]:
+            - img [ref=f1e231]
+        - generic [ref=f1e236] [cursor=pointer]:
+          - img [ref=f1e237]
+          - generic [ref=f1e241]: 1 vendor frame
+          - button [ref=f1e242]:
+            - img [ref=f1e243]
+    - generic [ref=f1e247]:
+      - generic [ref=f1e248]:
+        - generic [ref=f1e249]:
+          - img [ref=f1e251]
+          - heading "Queries" [level=3] [ref=f1e253]
+        - generic [ref=f1e255]: 1-1 of 1
+      - generic [ref=f1e257]:
+        - generic [ref=f1e258]:
+          - generic [ref=f1e259]:
+            - img [ref=f1e260]
+            - generic [ref=f1e262]: sqlsrv
+          - code [ref=f1e266]:
+            - generic [ref=f1e267]: select top 1 * from [users] where [id] = '4' and [history] = 1
+        - generic [ref=f1e268]: 1.73ms
+  - generic [ref=f1e270]:
+    - generic [ref=f1e271]:
+      - heading "Headers" [level=2] [ref=f1e272]
+      - generic [ref=f1e273]:
+        - generic [ref=f1e274]:
+          - generic [ref=f1e275]: host
+          - generic [ref=f1e277]: 127.0.0.1:8000
+        - generic [ref=f1e278]:
+          - generic [ref=f1e279]: connection
+          - generic [ref=f1e281]: keep-alive
+        - generic [ref=f1e282]:
+          - generic [ref=f1e283]: upgrade-insecure-requests
+          - generic [ref=f1e285]: "1"
+        - generic [ref=f1e286]:
+          - generic [ref=f1e287]: user-agent
+          - generic [ref=f1e289]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+        - generic [ref=f1e290]:
+          - generic [ref=f1e291]: accept
+          - generic [ref=f1e293]: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=f1e294]:
+          - generic [ref=f1e295]: sec-fetch-site
+          - generic [ref=f1e297]: none
+        - generic [ref=f1e298]:
+          - generic [ref=f1e299]: sec-fetch-mode
+          - generic [ref=f1e301]: navigate
+        - generic [ref=f1e302]:
+          - generic [ref=f1e303]: sec-fetch-user
+          - generic [ref=f1e305]: "?1"
+        - generic [ref=f1e306]:
+          - generic [ref=f1e307]: sec-fetch-dest
+          - generic [ref=f1e309]: document
+        - generic [ref=f1e310]:
+          - generic [ref=f1e311]: sec-ch-ua
+          - generic [ref=f1e313]: "\"Google Chrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\""
+        - generic [ref=f1e314]:
+          - generic [ref=f1e315]: sec-ch-ua-mobile
+          - generic [ref=f1e317]: "?0"
+        - generic [ref=f1e318]:
+          - generic [ref=f1e319]: sec-ch-ua-platform
+          - generic [ref=f1e321]: "\"Windows\""
+        - generic [ref=f1e322]:
+          - generic [ref=f1e323]: accept-encoding
+          - generic [ref=f1e325]: gzip, deflate, br, zstd
+        - generic [ref=f1e326]:
+          - generic [ref=f1e327]: accept-language
+          - generic [ref=f1e329]: en-US,en;q=0.9
+        - generic [ref=f1e330]:
+          - generic [ref=f1e331]: cookie
+          - generic [ref=f1e333]: XSRF-TOKEN=eyJpdiI6IjBGdm5DWnlITDY2TVIxQ2dyeXJXdkE9PSIsInZhbHVlIjoiVm1BRTdBRGlIRVZUUVNyck9McHBMSFY2T3JDWVhkTnM0Zkk5dlZGdTFtdTFwRS9NRkRBS2lRK3VDbzFhVHREd3J6eGZBOUhxdGxVK2kyV3BpeGZ4M2lHZUM0dmNNKzRVQmFuSWszQS9mZ0lybHR1ZmpXd2NSYnAydnYyOEY2c1YiLCJtYWMiOiIyYzU4OGZkNTAyMDM4YjNiYjJjNDc2MzA1NGRjOTg5YTYyOWU5OTlhMjg4ZDNlN2VmNTc2MjZiOTFjODE0YTgyIiwidGFnIjoiIn0%3D; laravel-session=eyJpdiI6IjdmT21iUGFMZEhXWFlnSHdVU1pZZUE9PSIsInZhbHVlIjoiblJNWlFzdlRrOW90QXJTK1RqZVJCUUZDNEhWdzFOcndDWjJwOGtMaUl0Y2NkbjdMQzVYK093N3JBbnFUQUxaZ3VnRDU3dW94SFVLb3FtZ1RBTlB5eUN5T0pBbWJ5dlROdFFaL3VXcERielowOGJPWnNmQ1VvNks0SW9Mem93dHciLCJtYWMiOiJiMTFkZTU2NDM4ZGYwZjJmMjZkOThkYzg2YzEzYjU4NjY1ZDVkZWNkOThlMDRiYWMwYzczNzE3NDM0Y2MwYzJkIiwidGFnIjoiIn0%3D
+    - generic [ref=f1e334]:
+      - heading "Body" [level=2] [ref=f1e335]
+      - generic [ref=f1e336]: // No request body
+    - generic [ref=f1e337]:
+      - heading "Routing" [level=2] [ref=f1e338]
+      - generic [ref=f1e339]:
+        - generic [ref=f1e340]:
+          - generic [ref=f1e341]: controller
+          - generic [ref=f1e343]: Closure
+        - generic [ref=f1e344]:
+          - generic [ref=f1e345]: route name
+          - generic [ref=f1e347]: dashboard
+        - generic [ref=f1e348]:
+          - generic [ref=f1e349]: middleware
+          - generic [ref=f1e351]: web, permission:dashboard.view
+    - generic [ref=f1e352]:
+      - heading "Routing parameters" [level=2] [ref=f1e353]
+      - generic [ref=f1e354]: // No routing parameters
+  - generic [ref=f1e357]:
+    - img [ref=f1e359]
+    - img [ref=f1e3397]

@@ -1,0 +1,223 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - button [ref=f1e6]
+        - generic [ref=f1e9]:
+          - img "SITHEMR Logo" [ref=f1e10]
+          - heading "SITHEMR" [level=1] [ref=f1e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f1e14]:
+        - generic [ref=f1e15]: D
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: Demo Hospital Admin
+          - generic [ref=f1e18]: tenant_admin
+  - generic [ref=f1e21]:
+    - navigation [ref=f1e22]:
+      - generic [ref=f1e23]:
+        - generic [ref=f1e24]:
+          - paragraph [ref=f1e25]: Main
+          - link "Dashboard" [ref=f1e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f1e29] [cursor=pointer]:
+            - /url: http://localhost:8000/doctors/dashboard
+          - link "Patients" [ref=f1e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f1e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f1e38]:
+          - paragraph [ref=f1e39]: Clinical Modules
+          - button "OPD" [ref=f1e41]
+          - button "Emergency Room" [ref=f1e49]
+          - button "Admission & Wards" [ref=f1e57]
+          - link "Nursing" [ref=f1e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f1e68]
+          - button "Delivery" [ref=f1e76]
+          - button "Operating Room" [ref=f1e84]
+          - button "Renal Care" [ref=f1e92]
+        - generic [ref=f1e99]:
+          - paragraph [ref=f1e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f1e102]
+          - button "Radiology" [ref=f1e110]
+          - button "Pharmacy" [ref=f1e119]
+          - button "Procedures" [ref=f1e127]
+          - button "CSR / Supply" [ref=f1e136]
+        - generic [ref=f1e143]:
+          - paragraph [ref=f1e144]: Financial & Claims
+          - button "Billing" [ref=f1e146]
+          - button "PhilHealth" [ref=f1e154]
+          - button "YAKAP" [ref=f1e162]
+          - link "Transactions" [ref=f1e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f1e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f1e175]:
+          - paragraph [ref=f1e176]: Administration
+          - button "Masters" [ref=f1e178]
+          - link "Roles" [ref=f1e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f1e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f1e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f1e198]:
+      - generic [ref=f1e200]:
+        - generic [ref=f1e201]:
+          - generic [ref=f1e202]:
+            - heading "Patient Registration" [level=2] [ref=f1e203]
+            - paragraph [ref=f1e204]: Manage patient demographic records.
+          - button "Register Patient" [ref=f1e205]
+        - generic [ref=f1e208]:
+          - textbox "Search code, name, or contact…" [ref=f1e210]
+          - generic [ref=f1e211]:
+            - generic [ref=f1e212]: "Rows:"
+            - combobox [ref=f1e213]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=f1e215]:
+          - rowgroup [ref=f1e216]:
+            - row [ref=f1e217]:
+              - columnheader "Patient Code ↑" [ref=f1e218] [cursor=pointer]:
+                - generic [ref=f1e219]:
+                  - text: Patient Code
+                  - generic [ref=f1e220]: ↑
+              - columnheader "Last Name ↑↓" [ref=f1e221] [cursor=pointer]:
+                - generic [ref=f1e222]:
+                  - text: Last Name
+                  - generic [ref=f1e223]: ↑↓
+              - columnheader "First Name ↑↓" [ref=f1e224] [cursor=pointer]:
+                - generic [ref=f1e225]:
+                  - text: First Name
+                  - generic [ref=f1e226]: ↑↓
+              - columnheader "Date of Birth ↑↓" [ref=f1e227] [cursor=pointer]:
+                - generic [ref=f1e228]:
+                  - text: Date of Birth
+                  - generic [ref=f1e229]: ↑↓
+              - columnheader "Contact No ↑↓" [ref=f1e230] [cursor=pointer]:
+                - generic [ref=f1e231]:
+                  - text: Contact No
+                  - generic [ref=f1e232]: ↑↓
+              - columnheader "Status" [ref=f1e233]
+              - columnheader "Actions" [ref=f1e234]
+          - rowgroup [ref=f1e235]:
+            - row [ref=f1e236]:
+              - cell "20260000001001" [ref=f1e237]
+              - cell "Dela Cruz" [ref=f1e238]
+              - cell "Juan" [ref=f1e239]
+              - cell "May 15, 1980" [ref=f1e240]
+              - cell "—" [ref=f1e241]
+              - cell "Active" [ref=f1e242]
+              - cell [ref=f1e244]:
+                - generic [ref=f1e245]:
+                  - button "Edit" [ref=f1e246]
+                  - button "Archive" [ref=f1e249]
+            - row [ref=f1e252]:
+              - cell "20260000001002" [ref=f1e253]
+              - cell "Santos" [ref=f1e254]
+              - cell "Maria" [ref=f1e255]
+              - cell "Aug 22, 1992" [ref=f1e256]
+              - cell "—" [ref=f1e257]
+              - cell "Active" [ref=f1e258]
+              - cell [ref=f1e260]:
+                - generic [ref=f1e261]:
+                  - button "Edit" [ref=f1e262]
+                  - button "Archive" [ref=f1e265]
+            - row [ref=f1e268]:
+              - cell "20260000001003" [ref=f1e269]
+              - cell "Penduko" [ref=f1e270]
+              - cell "Pedro" [ref=f1e271]
+              - cell "Nov 03, 1975" [ref=f1e272]
+              - cell "—" [ref=f1e273]
+              - cell "Active" [ref=f1e274]
+              - cell [ref=f1e276]:
+                - generic [ref=f1e277]:
+                  - button "Edit" [ref=f1e278]
+                  - button "Archive" [ref=f1e281]
+            - row [ref=f1e284]:
+              - cell "20260000001004" [ref=f1e285]
+              - cell "Rivera" [ref=f1e286]
+              - cell "Leonor" [ref=f1e287]
+              - cell "Feb 14, 1988" [ref=f1e288]
+              - cell "—" [ref=f1e289]
+              - cell "Active" [ref=f1e290]
+              - cell [ref=f1e292]:
+                - generic [ref=f1e293]:
+                  - button "Edit" [ref=f1e294]
+                  - button "Archive" [ref=f1e297]
+            - row [ref=f1e300]:
+              - cell "20260000001005" [ref=f1e301]
+              - cell "Bonifacio" [ref=f1e302]
+              - cell "Andres" [ref=f1e303]
+              - cell "Dec 30, 1995" [ref=f1e304]
+              - cell "—" [ref=f1e305]
+              - cell "Active" [ref=f1e306]
+              - cell [ref=f1e308]:
+                - generic [ref=f1e309]:
+                  - button "Edit" [ref=f1e310]
+                  - button "Archive" [ref=f1e313]
+            - row [ref=f1e316]:
+              - cell "20260000001006" [ref=f1e317]
+              - cell "Rizal" [ref=f1e318]
+              - cell "Jose" [ref=f1e319]
+              - cell "Jun 19, 1990" [ref=f1e320]
+              - cell "—" [ref=f1e321]
+              - cell "Active" [ref=f1e322]
+              - cell [ref=f1e324]:
+                - generic [ref=f1e325]:
+                  - button "Edit" [ref=f1e326]
+                  - button "Archive" [ref=f1e329]
+            - row [ref=f1e332]:
+              - cell "20260000001007" [ref=f1e333]
+              - cell "Silang" [ref=f1e334]
+              - cell "Gabriela" [ref=f1e335]
+              - cell "Mar 08, 1998" [ref=f1e336]
+              - cell "—" [ref=f1e337]
+              - cell "Active" [ref=f1e338]
+              - cell [ref=f1e340]:
+                - generic [ref=f1e341]:
+                  - button "Edit" [ref=f1e342]
+                  - button "Archive" [ref=f1e345]
+            - row [ref=f1e348]:
+              - cell "20260000001008" [ref=f1e349]
+              - cell "Aguinaldo" [ref=f1e350]
+              - cell "Emilio" [ref=f1e351]
+              - cell "Apr 22, 1985" [ref=f1e352]
+              - cell "—" [ref=f1e353]
+              - cell "Active" [ref=f1e354]
+              - cell [ref=f1e356]:
+                - generic [ref=f1e357]:
+                  - button "Edit" [ref=f1e358]
+                  - button "Archive" [ref=f1e361]
+            - row [ref=f1e364]:
+              - cell "20260000001009" [ref=f1e365]
+              - cell "Aquino" [ref=f1e366]
+              - cell "Melchora" [ref=f1e367]
+              - cell "Jan 06, 1970" [ref=f1e368]
+              - cell "—" [ref=f1e369]
+              - cell "Active" [ref=f1e370]
+              - cell [ref=f1e372]:
+                - generic [ref=f1e373]:
+                  - button "Edit" [ref=f1e374]
+                  - button "Archive" [ref=f1e377]
+            - row [ref=f1e380]:
+              - cell "20260000001010" [ref=f1e381]
+              - cell "Mabini" [ref=f1e382]
+              - cell "Apolinario" [ref=f1e383]
+              - cell "Jul 23, 1982" [ref=f1e384]
+              - cell "—" [ref=f1e385]
+              - cell "Active" [ref=f1e386]
+              - cell [ref=f1e388]:
+                - generic [ref=f1e389]:
+                  - button "Edit" [ref=f1e390]
+                  - button "Archive" [ref=f1e393]
+        - navigation "Pagination Navigation" [ref=f1e398]:
+          - generic [ref=f1e399]:
+            - paragraph [ref=f1e401]: Showing 1 to 10 of 11 results
+            - generic [ref=f1e403]:
+              - generic "&laquo; Previous" [ref=f1e405]
+              - generic [ref=f1e409]: "1"
+              - button "Go to page 2" [ref=f1e413]: "2"
+              - button "Next &raquo;" [ref=f1e415]
+  - contentinfo [ref=f1e418]:
+    - paragraph [ref=f1e420]: © 2026 SITHEMR. All rights reserved.

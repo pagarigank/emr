@@ -1,0 +1,210 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - button "Delivery" [ref=e97]:
+          - generic [ref=e98]:
+            - img [ref=e99]
+            - generic [ref=e101]: Delivery
+          - img [ref=e102]
+        - button "Wards" [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic [ref=e109]: Wards
+          - img [ref=e110]
+        - link "Admission" [ref=e112] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e113]
+          - text: Admission
+        - link "Nursing" [ref=e115] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e116]
+          - text: Nursing
+        - link "Billing" [ref=e118] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e119]
+          - text: Billing
+        - link "Fund Sources" [ref=e121] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e122]
+          - text: Fund Sources
+        - button "OR" [ref=e125]:
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e129]: OR
+          - img [ref=e130]
+        - button "Emergency Room" [ref=e133]:
+          - generic [ref=e134]:
+            - img [ref=e135]
+            - generic [ref=e137]: Emergency Room
+          - img [ref=e138]
+        - button "OPD" [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - generic [ref=e145]: OPD
+          - img [ref=e146]
+        - button "OB" [ref=e149]:
+          - generic [ref=e150]:
+            - img [ref=e151]
+            - generic [ref=e153]: OB
+          - img [ref=e154]
+        - button "PhilHealth" [ref=e157]:
+          - generic [ref=e158]:
+            - img [ref=e159]
+            - generic [ref=e161]: PhilHealth
+          - img [ref=e162]
+        - button "YAKAP" [ref=e165]:
+          - generic [ref=e166]:
+            - img [ref=e167]
+            - generic [ref=e169]: YAKAP
+          - img [ref=e170]
+    - main [ref=e172]:
+      - generic [ref=e175]:
+        - generic [ref=e177]:
+          - heading "In-Patient Nursing" [level=2] [ref=e178]
+          - paragraph [ref=e179]: Manage admitted patients, vitals, care notes, and discharges.
+        - generic [ref=e180]:
+          - generic [ref=e182]:
+            - img [ref=e184]
+            - generic [ref=e186]:
+              - paragraph [ref=e187]: Admitted
+              - paragraph [ref=e188]: "1"
+          - generic [ref=e190]:
+            - img [ref=e192]
+            - generic [ref=e194]:
+              - paragraph [ref=e195]: Occupied Beds
+              - paragraph [ref=e196]: "1"
+          - generic [ref=e198]:
+            - img [ref=e200]
+            - generic [ref=e202]:
+              - paragraph [ref=e203]: Due for Vitals
+              - paragraph [ref=e204]: "1"
+          - generic [ref=e206]:
+            - img [ref=e208]
+            - generic [ref=e210]:
+              - paragraph [ref=e211]: Pending Orders
+              - paragraph [ref=e212]: "0"
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - heading "Patients Due for Vitals (no vitals in last 8 hours)" [level=3] [ref=e215]:
+              - img [ref=e216]
+              - text: Patients Due for Vitals (no vitals in last 8 hours)
+            - generic [ref=e218]: 1 patients
+          - generic [ref=e220] [cursor=pointer]:
+            - generic [ref=e221]:
+              - generic [ref=e222]: G
+              - generic [ref=e223]:
+                - paragraph [ref=e224]: Gonzales, Carlos
+                - paragraph [ref=e225]: — · ADM-00001
+            - img [ref=e226]
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - generic:
+              - img
+            - textbox "Search by patient name, admission code, or diagnosis…" [ref=e230]
+          - generic [ref=e231]:
+            - generic [ref=e232] [cursor=pointer]:
+              - checkbox "Show discharged" [ref=e233]
+              - generic [ref=e234]: Show discharged
+            - generic [ref=e235]:
+              - generic [ref=e236]: "Rows:"
+              - combobox [ref=e237]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+        - table [ref=e239]:
+          - rowgroup [ref=e240]:
+            - 'row "Admission # ↑↓ Patient Ward / Room Physician Admission Date Status Actions" [ref=e241]':
+              - 'columnheader "Admission # ↑↓" [ref=e242] [cursor=pointer]':
+                - generic [ref=e243]: "Admission # ↑↓"
+              - columnheader "Patient" [ref=e244]
+              - columnheader "Ward / Room" [ref=e245]
+              - columnheader "Physician" [ref=e246]
+              - columnheader "Admission Date" [ref=e247]
+              - columnheader "Status" [ref=e248]
+              - columnheader "Actions" [ref=e249]
+          - rowgroup [ref=e250]:
+            - row "ADM-00001 Gonzales, Carlos 20260000001011 — Dr. Dela Cruz Jun 28, 2026 01:25 PM Admitted" [ref=e251]:
+              - cell "ADM-00001" [ref=e252]
+              - cell "Gonzales, Carlos 20260000001011" [ref=e253]:
+                - text: Gonzales, Carlos
+                - text: "20260000001011"
+              - cell "—" [ref=e254]
+              - cell "Dr. Dela Cruz" [ref=e255]
+              - cell "Jun 28, 2026 01:25 PM" [ref=e256]
+              - cell "Admitted" [ref=e257]:
+                - generic [ref=e258]: Admitted
+              - cell [ref=e259]:
+                - button "Manage Patient" [ref=e261]:
+                  - img [ref=e262]
+  - contentinfo [ref=e265]:
+    - paragraph [ref=e267]: © 2026 SITHEMR. All rights reserved.

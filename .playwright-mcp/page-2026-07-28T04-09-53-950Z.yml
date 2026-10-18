@@ -1,0 +1,844 @@
+- generic [active] [ref=f116e1]:
+  - generic [ref=f116e2]:
+    - banner [ref=f116e3]:
+      - generic [ref=f116e4]:
+        - generic [ref=f116e5]:
+          - button [ref=f116e6]
+          - generic [ref=f116e9]:
+            - img "SITHEMR Logo" [ref=f116e10]
+            - heading "SITHEMR" [level=1] [ref=f116e11]
+        - button "D Demo Hospital Admin tenant_admin" [ref=f116e14]:
+          - generic [ref=f116e15]: D
+          - generic [ref=f116e16]:
+            - generic [ref=f116e17]: Demo Hospital Admin
+            - generic [ref=f116e18]: tenant_admin
+    - generic [ref=f116e21]:
+      - navigation [ref=f116e22]:
+        - generic [ref=f116e23]:
+          - generic [ref=f116e24]:
+            - paragraph [ref=f116e25]: Main
+            - link "Dashboard" [ref=f116e26] [cursor=pointer]:
+              - /url: /
+            - link "Doctors Portal" [ref=f116e29] [cursor=pointer]:
+              - /url: http://localhost:8000/doctors/dashboard
+            - link "Patients" [ref=f116e32] [cursor=pointer]:
+              - /url: /patients
+            - link "Medical Records" [ref=f116e35] [cursor=pointer]:
+              - /url: /medical-records
+          - generic [ref=f116e38]:
+            - paragraph [ref=f116e39]: Clinical Modules
+            - button "OPD" [ref=f116e41]
+            - generic [ref=f116e48]:
+              - button "Emergency Room" [ref=f116e49]
+              - generic [ref=f116e56]:
+                - link "Triage Records" [ref=f116e57] [cursor=pointer]:
+                  - /url: /er/triage
+                - link "ER Area" [ref=f116e61] [cursor=pointer]:
+                  - /url: /er/area
+                - link "Acuity Levels" [ref=f116e66] [cursor=pointer]:
+                  - /url: /er/acuity-levels
+                - link "Mobility Statuses" [ref=f116e71] [cursor=pointer]:
+                  - /url: /er/mobility-statuses
+                - link "ER Zones" [ref=f116e75] [cursor=pointer]:
+                  - /url: /er/zones
+                - link "ER Beds" [ref=f116e80] [cursor=pointer]:
+                  - /url: /er/beds
+            - button "Admission & Wards" [ref=f116e86]
+            - link "Nursing" [ref=f116e93] [cursor=pointer]:
+              - /url: /nursing
+            - button "Obstetrics (OB)" [ref=f116e97]
+            - button "Delivery" [ref=f116e105]
+            - button "Operating Room" [ref=f116e113]
+            - button "Renal Care" [ref=f116e121]
+          - generic [ref=f116e128]:
+            - paragraph [ref=f116e129]: Ancillary & Logistics
+            - button "Laboratory" [ref=f116e131]
+            - button "Radiology" [ref=f116e139]
+            - button "Pharmacy" [ref=f116e148]
+            - button "Procedures" [ref=f116e156]
+            - button "CSR / Supply" [ref=f116e165]
+          - generic [ref=f116e172]:
+            - paragraph [ref=f116e173]: Financial & Claims
+            - button "Billing" [ref=f116e175]
+            - button "PhilHealth" [ref=f116e183]
+            - button "YAKAP" [ref=f116e191]
+            - link "Transactions" [ref=f116e198] [cursor=pointer]:
+              - /url: /transactions
+            - link "Reports" [ref=f116e201] [cursor=pointer]:
+              - /url: /reports
+          - generic [ref=f116e204]:
+            - paragraph [ref=f116e205]: Administration
+            - button "Masters" [ref=f116e207]
+            - link "Roles" [ref=f116e214] [cursor=pointer]:
+              - /url: /admin/roles
+            - link "Role Permissions" [ref=f116e219] [cursor=pointer]:
+              - /url: /admin/role-permissions
+            - link "Audit Trail" [ref=f116e223] [cursor=pointer]:
+              - /url: /admin/audit-log
+      - main [ref=f116e227]:
+        - generic [ref=f116e231]:
+          - generic [ref=f116e232]:
+            - generic [ref=f116e330]:
+              - generic [ref=f116e332]:
+                - generic [ref=f116e333]:
+                  - heading "ER Treatment Record" [level=2] [ref=f116e334]
+                  - paragraph [ref=f116e335]: "Encounter #ERA-20260728-4900"
+                - generic [ref=f116e336]:
+                  - generic [ref=f116e337]: Urgent (ESI-3)
+                  - generic [ref=f116e338]: Active
+              - generic [ref=f116e339]:
+                - generic [ref=f116e340]:
+                  - paragraph [ref=f116e341]: Patient
+                  - paragraph [ref=f116e342]: Dela Cruz, Juan
+                  - paragraph [ref=f116e343]: 36 yrs old / Male
+                - generic [ref=f116e344]:
+                  - paragraph [ref=f116e345]: Bed / Zone
+                  - paragraph [ref=f116e346]: Trauma Bed 1
+                  - paragraph [ref=f116e347]: Red Zone (Resuscitation)
+                - generic [ref=f116e348]:
+                  - paragraph [ref=f116e349]: Attending Physician
+                  - paragraph [ref=f116e350]: Dr. Dr. Maria Santos
+                - generic [ref=f116e351]:
+                  - paragraph [ref=f116e352]: Arrival / Elapsed
+                  - paragraph [ref=f116e353]: Jul 28, 2026 04:08
+                  - paragraph [ref=f116e354]: 1 minute ago
+              - generic [ref=f116e355]:
+                - generic [ref=f116e356]:
+                  - paragraph [ref=f116e357]: Temp
+                  - paragraph [ref=f116e358]: 37.5°
+                - generic [ref=f116e359]:
+                  - paragraph [ref=f116e360]: HR
+                  - paragraph [ref=f116e361]: "88"
+                - generic [ref=f116e362]:
+                  - paragraph [ref=f116e363]: RR
+                  - paragraph [ref=f116e364]: "18"
+                - generic [ref=f116e365]:
+                  - paragraph [ref=f116e366]: BP
+                  - paragraph [ref=f116e367]: 130/85
+                - generic [ref=f116e368]:
+                  - paragraph [ref=f116e369]: SpO2
+                  - paragraph [ref=f116e370]: 97.00%
+                - generic [ref=f116e371]:
+                  - paragraph [ref=f116e372]: Pain
+                  - paragraph [ref=f116e373]: 7/10
+                - generic [ref=f116e374]:
+                  - paragraph [ref=f116e375]: LOC
+                  - paragraph [ref=f116e376]: Alert
+                - generic [ref=f116e377]:
+                  - paragraph [ref=f116e378]: Arrival
+                  - paragraph [ref=f116e379]: Walk-in
+              - generic [ref=f116e380]:
+                - paragraph [ref=f116e381]: Initial Diagnosis
+                - paragraph [ref=f116e382]: Acute appendicitis, rule out
+              - generic [ref=f116e385] [cursor=pointer]:
+                - checkbox "OECB (Outpatient Emergency Care Benefit) PhilHealth OECB package — Annex A fixed fee schedule applies" [ref=f116e386]
+                - generic [ref=f116e387]:
+                  - text: OECB (Outpatient Emergency Care Benefit)
+                  - paragraph [ref=f116e388]: PhilHealth OECB package — Annex A fixed fee schedule applies
+            - navigation "Tabs" [ref=f116e390]:
+              - button "Clinical Notes" [ref=f116e391]
+              - button "Orders & Interventions" [ref=f116e394]
+              - button "Disposition" [ref=f116e397]
+              - button "OR Schedule" [ref=f116e400]
+            - generic [ref=f116e403]:
+              - generic [ref=f116e435]:
+                - generic [ref=f116e436]:
+                  - heading "Orders Summary (Medications, IV Fluids, Consults, etc.)" [level=3] [ref=f116e437]
+                  - 'textbox "e.g. Medications: - Morphine 4mg IV push for pain - Ondansetron 4mg IV for nausea IV Fluids: - Normal Saline 1L bolus @ 500mL/hr Procedures: - Laceration repair, left forearm (4-0 Nylon, 5 sutures) Consults: - Cardiology consult called 14:30, Dr. Santos responding..." [ref=f116e440]':
+                    - /placeholder: "e.g.\nMedications:\n- Morphine 4mg IV push for pain\n- Ondansetron 4mg IV for nausea\n\nIV Fluids:\n- Normal Saline 1L bolus @ 500mL/hr\n\nProcedures:\n- Laceration repair, left forearm (4-0 Nylon, 5 sutures)\n\nConsults:\n- Cardiology consult called 14:30, Dr. Santos responding..."
+                - generic [ref=f116e441]:
+                  - generic [ref=f116e442]:
+                    - heading "Laboratory Orders 1" [level=3] [ref=f116e721]:
+                      - text: Laboratory Orders
+                      - generic [ref=f116e446]: "1"
+                    - button "Request Lab Test" [ref=f116e447]
+                  - table [ref=f116e451]:
+                    - rowgroup [ref=f116e452]:
+                      - row [ref=f116e453]:
+                        - 'columnheader "Request #" [ref=f116e454]'
+                        - columnheader "Items" [ref=f116e455]
+                        - columnheader "Priority" [ref=f116e456]
+                        - columnheader "Status" [ref=f116e457]
+                        - columnheader "Billing" [ref=f116e458]
+                        - columnheader "Total" [ref=f116e459]
+                        - columnheader "Date" [ref=f116e460]
+                        - columnheader "Actions" [ref=f116e461]
+                    - rowgroup [ref=f116e462]:
+                      - row [ref=f116e722]:
+                        - cell "LR-00006" [ref=f116e723]
+                        - cell "Complete Blood Count Pending ⋮ Urinalysis Pending ⋮" [ref=f116e724]:
+                          - generic [ref=f116e725]:
+                            - generic [ref=f116e726]:
+                              - generic [ref=f116e727]: Complete Blood Count
+                              - generic [ref=f116e728]: Pending
+                              - button "⋮" [ref=f116e730]
+                            - generic [ref=f116e731]:
+                              - generic [ref=f116e732]: Urinalysis
+                              - generic [ref=f116e733]: Pending
+                              - button "⋮" [ref=f116e735]
+                        - cell "Urgent" [ref=f116e736]
+                        - cell "Pending" [ref=f116e737]
+                        - cell "Pending" [ref=f116e738]
+                        - cell "₱470.00" [ref=f116e739]
+                        - cell "Jul 28, 04:09" [ref=f116e740]
+                        - cell [ref=f116e741]:
+                          - button "Cancel" [ref=f116e742]
+                - generic [ref=f116e465]:
+                  - generic [ref=f116e466]:
+                    - heading "Supply Orders (CSR) 0" [level=3] [ref=f116e467]:
+                      - text: Supply Orders (CSR)
+                      - generic [ref=f116e470]: "0"
+                    - button "Request Supply" [ref=f116e471]
+                  - table [ref=f116e475]:
+                    - rowgroup [ref=f116e476]:
+                      - row [ref=f116e477]:
+                        - 'columnheader "Request #" [ref=f116e478]'
+                        - columnheader "Items" [ref=f116e479]
+                        - columnheader "Status" [ref=f116e480]
+                        - columnheader "Billing" [ref=f116e481]
+                        - columnheader "Total" [ref=f116e482]
+                        - columnheader "Date" [ref=f116e483]
+                        - columnheader "Actions" [ref=f116e484]
+                    - rowgroup [ref=f116e485]:
+                      - row [ref=f116e486]:
+                        - cell "No supply orders placed yet." [ref=f116e487]
+                - generic [ref=f116e488]:
+                  - generic [ref=f116e489]:
+                    - heading "Radiology Orders 0" [level=3] [ref=f116e490]:
+                      - text: Radiology Orders
+                      - generic [ref=f116e493]: "0"
+                    - button "Request Exam" [ref=f116e494]
+                  - table [ref=f116e498]:
+                    - rowgroup [ref=f116e499]:
+                      - row [ref=f116e500]:
+                        - 'columnheader "Request #" [ref=f116e501]'
+                        - columnheader "Exams" [ref=f116e502]
+                        - columnheader "Status" [ref=f116e503]
+                        - columnheader "Billing" [ref=f116e504]
+                        - columnheader "Total" [ref=f116e505]
+                        - columnheader "Date" [ref=f116e506]
+                        - columnheader "Actions" [ref=f116e507]
+                    - rowgroup [ref=f116e508]:
+                      - row [ref=f116e509]:
+                        - cell "No radiology orders placed yet." [ref=f116e510]
+                - generic [ref=f116e511]:
+                  - generic [ref=f116e512]:
+                    - heading "Pharmacy Orders 0" [level=3] [ref=f116e513]:
+                      - text: Pharmacy Orders
+                      - generic [ref=f116e516]: "0"
+                    - button "Request Medication" [ref=f116e517]
+                  - table [ref=f116e521]:
+                    - rowgroup [ref=f116e522]:
+                      - row [ref=f116e523]:
+                        - 'columnheader "Request #" [ref=f116e524]'
+                        - columnheader "Medications" [ref=f116e525]
+                        - columnheader "Priority" [ref=f116e526]
+                        - columnheader "Status" [ref=f116e527]
+                        - columnheader "Billing" [ref=f116e528]
+                        - columnheader "Total" [ref=f116e529]
+                        - columnheader "Date" [ref=f116e530]
+                        - columnheader "Actions" [ref=f116e531]
+                    - rowgroup [ref=f116e532]:
+                      - row [ref=f116e533]:
+                        - cell "No pharmacy orders placed yet." [ref=f116e534]
+                - generic [ref=f116e535]:
+                  - generic [ref=f116e536]:
+                    - heading "Procedure Orders 0" [level=3] [ref=f116e537]:
+                      - text: Procedure Orders
+                      - generic [ref=f116e540]: "0"
+                    - button "Request Procedure" [ref=f116e541]
+                  - table [ref=f116e545]:
+                    - rowgroup [ref=f116e546]:
+                      - row [ref=f116e547]:
+                        - 'columnheader "Request #" [ref=f116e548]'
+                        - columnheader "Procedures" [ref=f116e549]
+                        - columnheader "Status" [ref=f116e550]
+                        - columnheader "Billing" [ref=f116e551]
+                        - columnheader "Total" [ref=f116e552]
+                        - columnheader "Date" [ref=f116e553]
+                        - columnheader "Actions" [ref=f116e554]
+                    - rowgroup [ref=f116e555]:
+                      - row [ref=f116e556]:
+                        - cell "No procedure orders placed yet." [ref=f116e557]
+              - generic [ref=f116e425]:
+                - generic [ref=f116e426]: Changes are auto-saved per section
+                - generic [ref=f116e429]:
+                  - button "← Back to List" [ref=f116e430]
+                  - button [ref=f116e431]
+          - generic [ref=f116e752]:
+            - generic [ref=f116e753]:
+              - heading "Order Medications" [level=3] [ref=f116e754]
+              - button [ref=f116e755]
+            - generic [ref=f116e758]:
+              - paragraph [ref=f116e759]: Select drugs to order. Set quantity for each item.
+              - generic [ref=f116e760]:
+                - generic [ref=f116e761]:
+                  - generic [ref=f116e762]: Priority
+                  - combobox [ref=f116e763]:
+                    - option "Routine"
+                    - option "Urgent" [selected]
+                    - option "STAT"
+                - generic [ref=f116e764]:
+                  - generic [ref=f116e765]: Notes (optional)
+                  - textbox "e.g. IV route, stat..." [ref=f116e766]
+              - generic [ref=f116e767]:
+                - generic [ref=f116e768]:
+                  - generic [ref=f116e769]:
+                    - checkbox [ref=f116e770]
+                    - generic [ref=f116e771]:
+                      - paragraph [ref=f116e772]: 0.9% NaCl IV 1L (PNSS)
+                      - paragraph [ref=f116e773]: PNSS-1L | Solution
+                    - spinbutton "Qty" [ref=f116e774]
+                  - generic [ref=f116e775]:
+                    - generic [ref=f116e776]:
+                      - generic [ref=f116e777]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e778]
+                    - generic [ref=f116e779]:
+                      - generic [ref=f116e780]: Route *
+                      - combobox [ref=f116e781]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e782]:
+                  - generic [ref=f116e783]:
+                    - checkbox [ref=f116e784]
+                    - generic [ref=f116e785]:
+                      - paragraph [ref=f116e786]: Amlodipine 5mg (Norvasc)
+                      - paragraph [ref=f116e787]: AMLO-5 | Tablet
+                    - spinbutton "Qty" [ref=f116e788]
+                  - generic [ref=f116e789]:
+                    - generic [ref=f116e790]:
+                      - generic [ref=f116e791]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e792]
+                    - generic [ref=f116e793]:
+                      - generic [ref=f116e794]: Route *
+                      - combobox [ref=f116e795]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e796]:
+                  - generic [ref=f116e797]:
+                    - checkbox [ref=f116e798]
+                    - generic [ref=f116e799]:
+                      - paragraph [ref=f116e800]: Amlodipine 10mg (Norvasc)
+                      - paragraph [ref=f116e801]: AMLO-10 | Tablet
+                    - spinbutton "Qty" [ref=f116e802]
+                  - generic [ref=f116e803]:
+                    - generic [ref=f116e804]:
+                      - generic [ref=f116e805]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e806]
+                    - generic [ref=f116e807]:
+                      - generic [ref=f116e808]: Route *
+                      - combobox [ref=f116e809]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e810]:
+                  - generic [ref=f116e811]:
+                    - checkbox [ref=f116e812]
+                    - generic [ref=f116e813]:
+                      - paragraph [ref=f116e814]: Amoxicillin 500mg (Amoxil)
+                      - paragraph [ref=f116e815]: AMOX-500 | Capsule
+                    - spinbutton "Qty" [ref=f116e816]
+                  - generic [ref=f116e817]:
+                    - generic [ref=f116e818]:
+                      - generic [ref=f116e819]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e820]
+                    - generic [ref=f116e821]:
+                      - generic [ref=f116e822]: Route *
+                      - combobox [ref=f116e823]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e824]:
+                  - generic [ref=f116e825]:
+                    - checkbox [ref=f116e826]
+                    - generic [ref=f116e827]:
+                      - paragraph [ref=f116e828]: Atorvastatin 20mg (Lipitor)
+                      - paragraph [ref=f116e829]: ATRV-20 | Tablet
+                    - spinbutton "Qty" [ref=f116e830]
+                  - generic [ref=f116e831]:
+                    - generic [ref=f116e832]:
+                      - generic [ref=f116e833]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e834]
+                    - generic [ref=f116e835]:
+                      - generic [ref=f116e836]: Route *
+                      - combobox [ref=f116e837]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e838]:
+                  - generic [ref=f116e839]:
+                    - checkbox [ref=f116e840]
+                    - generic [ref=f116e841]:
+                      - paragraph [ref=f116e842]: Azithromycin 500mg (Zithromax)
+                      - paragraph [ref=f116e843]: AZIT-500 | Tablet
+                    - spinbutton "Qty" [ref=f116e844]
+                  - generic [ref=f116e845]:
+                    - generic [ref=f116e846]:
+                      - generic [ref=f116e847]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e848]
+                    - generic [ref=f116e849]:
+                      - generic [ref=f116e850]: Route *
+                      - combobox [ref=f116e851]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e852]:
+                  - generic [ref=f116e853]:
+                    - checkbox [ref=f116e854]
+                    - generic [ref=f116e855]:
+                      - paragraph [ref=f116e856]: Ceftriaxone 1g (Rocephin)
+                      - paragraph [ref=f116e857]: CEFT-1G | Injection
+                    - spinbutton "Qty" [ref=f116e858]
+                  - generic [ref=f116e859]:
+                    - generic [ref=f116e860]:
+                      - generic [ref=f116e861]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e862]
+                    - generic [ref=f116e863]:
+                      - generic [ref=f116e864]: Route *
+                      - combobox [ref=f116e865]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e866]:
+                  - generic [ref=f116e867]:
+                    - checkbox [ref=f116e868]
+                    - generic [ref=f116e869]:
+                      - paragraph [ref=f116e870]: Ciprofloxacin 500mg (Cipro)
+                      - paragraph [ref=f116e871]: CIPRO-500 | Tablet
+                    - spinbutton "Qty" [ref=f116e872]
+                  - generic [ref=f116e873]:
+                    - generic [ref=f116e874]:
+                      - generic [ref=f116e875]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e876]
+                    - generic [ref=f116e877]:
+                      - generic [ref=f116e878]: Route *
+                      - combobox [ref=f116e879]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e880]:
+                  - generic [ref=f116e881]:
+                    - checkbox [ref=f116e882]
+                    - generic [ref=f116e883]:
+                      - paragraph [ref=f116e884]: D5LR IV 1L (D5LR)
+                      - paragraph [ref=f116e885]: D5LR-1L | Solution
+                    - spinbutton "Qty" [ref=f116e886]
+                  - generic [ref=f116e887]:
+                    - generic [ref=f116e888]:
+                      - generic [ref=f116e889]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e890]
+                    - generic [ref=f116e891]:
+                      - generic [ref=f116e892]: Route *
+                      - combobox [ref=f116e893]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e894]:
+                  - generic [ref=f116e895]:
+                    - checkbox [ref=f116e896]
+                    - generic [ref=f116e897]:
+                      - paragraph [ref=f116e898]: Glibenclamide 5mg (Daonil)
+                      - paragraph [ref=f116e899]: GLIB-5 | Tablet
+                    - spinbutton "Qty" [ref=f116e900]
+                  - generic [ref=f116e901]:
+                    - generic [ref=f116e902]:
+                      - generic [ref=f116e903]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e904]
+                    - generic [ref=f116e905]:
+                      - generic [ref=f116e906]: Route *
+                      - combobox [ref=f116e907]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e908]:
+                  - generic [ref=f116e909]:
+                    - checkbox [ref=f116e910]
+                    - generic [ref=f116e911]:
+                      - paragraph [ref=f116e912]: Ibuprofen 400mg (Advil)
+                      - paragraph [ref=f116e913]: IBU-400 | Tablet
+                    - spinbutton "Qty" [ref=f116e914]
+                  - generic [ref=f116e915]:
+                    - generic [ref=f116e916]:
+                      - generic [ref=f116e917]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e918]
+                    - generic [ref=f116e919]:
+                      - generic [ref=f116e920]: Route *
+                      - combobox [ref=f116e921]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e922]:
+                  - generic [ref=f116e923]:
+                    - checkbox [ref=f116e924]
+                    - generic [ref=f116e925]:
+                      - paragraph [ref=f116e926]: Insulin Regular 100IU/mL (Humulin R)
+                      - paragraph [ref=f116e927]: INSU-R | Injection
+                    - spinbutton "Qty" [ref=f116e928]
+                  - generic [ref=f116e929]:
+                    - generic [ref=f116e930]:
+                      - generic [ref=f116e931]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e932]
+                    - generic [ref=f116e933]:
+                      - generic [ref=f116e934]: Route *
+                      - combobox [ref=f116e935]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e936]:
+                  - generic [ref=f116e937]:
+                    - checkbox [ref=f116e938]
+                    - generic [ref=f116e939]:
+                      - paragraph [ref=f116e940]: Losartan Potassium 50mg (Cozaar)
+                      - paragraph [ref=f116e941]: LOSAR-50 | Tablet
+                    - spinbutton "Qty" [ref=f116e942]
+                  - generic [ref=f116e943]:
+                    - generic [ref=f116e944]:
+                      - generic [ref=f116e945]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e946]
+                    - generic [ref=f116e947]:
+                      - generic [ref=f116e948]: Route *
+                      - combobox [ref=f116e949]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e950]:
+                  - generic [ref=f116e951]:
+                    - checkbox [ref=f116e952]
+                    - generic [ref=f116e953]:
+                      - paragraph [ref=f116e954]: Metformin 500mg (Glucophage)
+                      - paragraph [ref=f116e955]: METFO-500 | Tablet
+                    - spinbutton "Qty" [ref=f116e956]
+                  - generic [ref=f116e957]:
+                    - generic [ref=f116e958]:
+                      - generic [ref=f116e959]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e960]
+                    - generic [ref=f116e961]:
+                      - generic [ref=f116e962]: Route *
+                      - combobox [ref=f116e963]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e964]:
+                  - generic [ref=f116e965]:
+                    - checkbox [ref=f116e966]
+                    - generic [ref=f116e967]:
+                      - paragraph [ref=f116e968]: Metoclopramide 10mg (Maxolon)
+                      - paragraph [ref=f116e969]: METO-10 | Tablet
+                    - spinbutton "Qty" [ref=f116e970]
+                  - generic [ref=f116e971]:
+                    - generic [ref=f116e972]:
+                      - generic [ref=f116e973]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e974]
+                    - generic [ref=f116e975]:
+                      - generic [ref=f116e976]: Route *
+                      - combobox [ref=f116e977]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e978]:
+                  - generic [ref=f116e979]:
+                    - checkbox [ref=f116e980]
+                    - generic [ref=f116e981]:
+                      - paragraph [ref=f116e982]: Metoprolol Tartrate 50mg (Lopressor)
+                      - paragraph [ref=f116e983]: METOP-50 | Tablet
+                    - spinbutton "Qty" [ref=f116e984]
+                  - generic [ref=f116e985]:
+                    - generic [ref=f116e986]:
+                      - generic [ref=f116e987]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e988]
+                    - generic [ref=f116e989]:
+                      - generic [ref=f116e990]: Route *
+                      - combobox [ref=f116e991]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e992]:
+                  - generic [ref=f116e993]:
+                    - checkbox [ref=f116e994]
+                    - generic [ref=f116e995]:
+                      - paragraph [ref=f116e996]: Metronidazole 500mg (Flagyl)
+                      - paragraph [ref=f116e997]: METRO-500 | Tablet
+                    - spinbutton "Qty" [ref=f116e998]
+                  - generic [ref=f116e999]:
+                    - generic [ref=f116e1000]:
+                      - generic [ref=f116e1001]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e1002]
+                    - generic [ref=f116e1003]:
+                      - generic [ref=f116e1004]: Route *
+                      - combobox [ref=f116e1005]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e1006]:
+                  - generic [ref=f116e1007]:
+                    - checkbox [ref=f116e1008]
+                    - generic [ref=f116e1009]:
+                      - paragraph [ref=f116e1010]: Montelukast 10mg (Singulair)
+                      - paragraph [ref=f116e1011]: MONT-10 | Tablet
+                    - spinbutton "Qty" [ref=f116e1012]
+                  - generic [ref=f116e1013]:
+                    - generic [ref=f116e1014]:
+                      - generic [ref=f116e1015]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e1016]
+                    - generic [ref=f116e1017]:
+                      - generic [ref=f116e1018]: Route *
+                      - combobox [ref=f116e1019]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e1020]:
+                  - generic [ref=f116e1021]:
+                    - checkbox [ref=f116e1022]
+                    - generic [ref=f116e1023]:
+                      - paragraph [ref=f116e1024]: Omeprazole 20mg (Losec)
+                      - paragraph [ref=f116e1025]: OMEP-20 | Capsule
+                    - spinbutton "Qty" [ref=f116e1026]
+                  - generic [ref=f116e1027]:
+                    - generic [ref=f116e1028]:
+                      - generic [ref=f116e1029]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e1030]
+                    - generic [ref=f116e1031]:
+                      - generic [ref=f116e1032]: Route *
+                      - combobox [ref=f116e1033]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e1034]:
+                  - generic [ref=f116e1035]:
+                    - checkbox [ref=f116e1036]
+                    - generic [ref=f116e1037]:
+                      - paragraph [ref=f116e1038]: Paracetamol 500mg (Biogesic)
+                      - paragraph [ref=f116e1039]: PARA-500 | Tablet
+                    - spinbutton "Qty" [ref=f116e1040]
+                  - generic [ref=f116e1041]:
+                    - generic [ref=f116e1042]:
+                      - generic [ref=f116e1043]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e1044]
+                    - generic [ref=f116e1045]:
+                      - generic [ref=f116e1046]: Route *
+                      - combobox [ref=f116e1047]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e1048]:
+                  - generic [ref=f116e1049]:
+                    - checkbox [ref=f116e1050]
+                    - generic [ref=f116e1051]:
+                      - paragraph [ref=f116e1052]: Ranitidine 150mg (Zantac)
+                      - paragraph [ref=f116e1053]: RANI-150 | Tablet
+                    - spinbutton "Qty" [ref=f116e1054]
+                  - generic [ref=f116e1055]:
+                    - generic [ref=f116e1056]:
+                      - generic [ref=f116e1057]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e1058]
+                    - generic [ref=f116e1059]:
+                      - generic [ref=f116e1060]: Route *
+                      - combobox [ref=f116e1061]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e1062]:
+                  - generic [ref=f116e1063]:
+                    - checkbox [ref=f116e1064]
+                    - generic [ref=f116e1065]:
+                      - paragraph [ref=f116e1066]: Salbutamol 100mcg (Ventolin)
+                      - paragraph [ref=f116e1067]: SALB-100 | Inhaler
+                    - spinbutton "Qty" [ref=f116e1068]
+                  - generic [ref=f116e1069]:
+                    - generic [ref=f116e1070]:
+                      - generic [ref=f116e1071]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e1072]
+                    - generic [ref=f116e1073]:
+                      - generic [ref=f116e1074]: Route *
+                      - combobox [ref=f116e1075]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+                - generic [ref=f116e1076]:
+                  - generic [ref=f116e1077]:
+                    - checkbox [ref=f116e1078]
+                    - generic [ref=f116e1079]:
+                      - paragraph [ref=f116e1080]: Tramadol 50mg (Ultram)
+                      - paragraph [ref=f116e1081]: TRAM-50 | Capsule
+                    - spinbutton "Qty" [ref=f116e1082]
+                  - generic [ref=f116e1083]:
+                    - generic [ref=f116e1084]:
+                      - generic [ref=f116e1085]: Frequency *
+                      - textbox "e.g. BID, TID, q8h, PRN" [ref=f116e1086]
+                    - generic [ref=f116e1087]:
+                      - generic [ref=f116e1088]: Route *
+                      - combobox [ref=f116e1089]:
+                        - option "— Select —" [selected]
+                        - option "PO (Oral)"
+                        - option "IV (Intravenous)"
+                        - option "IM (Intramuscular)"
+                        - option "SC (Subcutaneous)"
+                        - option "SL (Sublingual)"
+                        - option "TOP (Topical)"
+                        - option "PR (Rectal)"
+                        - option "INH (Inhalation)"
+                        - option "NEB (Nebulization)"
+              - generic [ref=f116e1090]:
+                - button "Cancel" [ref=f116e1091]
+                - button "Place Pharmacy Order" [ref=f116e1092]
+    - contentinfo [ref=f116e327]:
+      - paragraph [ref=f116e329]: © 2026 SITHEMR. All rights reserved.
+  - generic [ref=f116e1093]:
+    - generic [ref=f116e1096]: Treatment record updated.
+    - button [ref=f116e1097]

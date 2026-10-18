@@ -1,0 +1,198 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - generic [ref=e80]:
+          - button "Radiology" [ref=e81]:
+            - generic [ref=e82]:
+              - img [ref=e83]
+              - generic [ref=e85]: Radiology
+            - img [ref=e86]
+          - generic [ref=e88]:
+            - link "Modalities" [ref=e89] [cursor=pointer]:
+              - /url: /radiology/modalities
+            - link "Body Parts" [ref=e90] [cursor=pointer]:
+              - /url: /radiology/body-parts
+            - link "Exam Types" [ref=e91] [cursor=pointer]:
+              - /url: /radiology/exam-types
+            - link "Dispensing" [ref=e92] [cursor=pointer]:
+              - /url: /radiology/dispensing
+        - button "Renal Care" [ref=e94]:
+          - generic [ref=e95]:
+            - img [ref=e96]
+            - generic [ref=e98]: Renal Care
+          - img [ref=e99]
+        - button "Delivery" [ref=e102]:
+          - generic [ref=e103]:
+            - img [ref=e104]
+            - generic [ref=e106]: Delivery
+          - img [ref=e107]
+        - button "Wards" [ref=e110]:
+          - generic [ref=e111]:
+            - img [ref=e112]
+            - generic [ref=e114]: Wards
+          - img [ref=e115]
+        - link "Admission" [ref=e117] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e118]
+          - text: Admission
+        - link "Nursing" [ref=e120] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e121]
+          - text: Nursing
+        - link "Billing" [ref=e123] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e124]
+          - text: Billing
+        - link "Fund Sources" [ref=e126] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e127]
+          - text: Fund Sources
+        - button "OR" [ref=e130]:
+          - generic [ref=e131]:
+            - img [ref=e132]
+            - generic [ref=e134]: OR
+          - img [ref=e135]
+        - button "Emergency Room" [ref=e138]:
+          - generic [ref=e139]:
+            - img [ref=e140]
+            - generic [ref=e142]: Emergency Room
+          - img [ref=e143]
+        - button "OPD" [ref=e146]:
+          - generic [ref=e147]:
+            - img [ref=e148]
+            - generic [ref=e150]: OPD
+          - img [ref=e151]
+        - button "OB" [ref=e154]:
+          - generic [ref=e155]:
+            - img [ref=e156]
+            - generic [ref=e158]: OB
+          - img [ref=e159]
+        - button "PhilHealth" [ref=e162]:
+          - generic [ref=e163]:
+            - img [ref=e164]
+            - generic [ref=e166]: PhilHealth
+          - img [ref=e167]
+        - button "YAKAP" [ref=e170]:
+          - generic [ref=e171]:
+            - img [ref=e172]
+            - generic [ref=e174]: YAKAP
+          - img [ref=e175]
+    - main [ref=e177]:
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - heading "Radiology Dispensing" [level=2] [ref=e182]
+            - paragraph [ref=e183]: Create and manage radiology exam requests from all departments.
+          - button "New Radiology Request" [ref=e184]:
+            - img [ref=e185]
+            - text: New Radiology Request
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic:
+              - img
+            - textbox "Search request code, person, or department…" [ref=e189]
+          - generic [ref=e190]:
+            - generic [ref=e191]: "Rows:"
+            - combobox [ref=e192]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e194]:
+          - rowgroup [ref=e195]:
+            - row "Request Code ↑↓ Department Patient / Requested By Exams Total Amount Status Billing Actions" [ref=e196]:
+              - columnheader "Request Code ↑↓" [ref=e197] [cursor=pointer]:
+                - generic [ref=e198]:
+                  - text: Request Code
+                  - generic [ref=e199]: ↑↓
+              - columnheader "Department" [ref=e200]
+              - columnheader "Patient / Requested By" [ref=e201]
+              - columnheader "Exams" [ref=e202]
+              - columnheader "Total Amount" [ref=e203]
+              - columnheader "Status" [ref=e204]
+              - columnheader "Billing" [ref=e205]
+              - columnheader "Actions" [ref=e206]
+          - rowgroup [ref=e207]:
+            - row "RR-00001 Emergency Room Carlos M Gonzales Jr. 1 ₱2,500.00 Pending Pending" [ref=e208]:
+              - cell "RR-00001" [ref=e209]
+              - cell "Emergency Room" [ref=e210]
+              - cell "Carlos M Gonzales Jr." [ref=e211]
+              - cell "1" [ref=e212]
+              - cell "₱2,500.00" [ref=e213]
+              - cell "Pending" [ref=e214]:
+                - generic [ref=e215]: Pending
+              - cell "Pending" [ref=e216]:
+                - generic [ref=e217]: Pending
+              - cell [ref=e218]:
+                - generic [ref=e219]:
+                  - button "View" [ref=e220]:
+                    - img [ref=e221]
+                  - button "Edit" [ref=e224]:
+                    - img [ref=e225]
+                  - button "Cancel Request" [ref=e227]:
+                    - img [ref=e228]
+                  - button "Complete All" [ref=e230]:
+                    - img [ref=e231]
+                  - button "Billing Actions" [ref=e234]:
+                    - img [ref=e235]
+  - contentinfo [ref=e237]:
+    - paragraph [ref=e239]: © 2026 SITHEMR. All rights reserved.

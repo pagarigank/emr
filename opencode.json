@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai",
+  "mcp": {
+    "codebase-memory": {
+      "enabled": true,
+      "type": "local",
+      "command": ["npx", "-y", "@memories.sh/cli", "serve"]
+    },
+    "screenshot-capture": {
+      "enabled": true,
+      "type": "local",
+      "command": ["npx", "-y", "mcp-screenshot-server"]
+    }
+  }
+}

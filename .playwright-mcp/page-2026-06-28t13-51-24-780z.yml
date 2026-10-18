@@ -1,0 +1,197 @@
+- generic [ref=e235]:
+  - banner [ref=e236]:
+    - generic [ref=e237]:
+      - generic [ref=e238]:
+        - button [ref=e239]:
+          - img [ref=e240]
+        - generic [ref=e242]:
+          - img "SITHEMR Logo" [ref=e243]
+          - heading "SITHEMR" [level=1] [ref=e244]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e247]:
+        - generic [ref=e248]: D
+        - generic [ref=e249]:
+          - generic [ref=e250]: Demo Hospital Admin
+          - generic [ref=e251]: tenant_admin
+        - img [ref=e252]
+  - generic [ref=e254]:
+    - navigation [ref=e255]:
+      - generic [ref=e256]:
+        - link "Dashboard" [ref=e257] [cursor=pointer]:
+          - /url: /
+          - img [ref=e258]
+          - text: Dashboard
+        - link "Transactions" [ref=e260] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e261]
+          - text: Transactions
+        - link "Reports" [ref=e263] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e264]
+          - text: Reports
+        - link "Transfers" [ref=e266] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e267]
+          - text: Transfers
+        - generic [ref=e270]:
+          - button "Masters" [active] [ref=e271]:
+            - generic [ref=e272]:
+              - img [ref=e273]
+              - generic [ref=e275]: Masters
+            - img [ref=e276]
+          - generic [ref=e498]:
+            - link "Company" [ref=e499] [cursor=pointer]:
+              - /url: /masters/company
+            - link "Department" [ref=e500] [cursor=pointer]:
+              - /url: /masters/department
+            - link "Doctors / HC Professionals" [ref=e501] [cursor=pointer]:
+              - /url: /philhealth/hc-professionals
+            - link "Users" [ref=e502] [cursor=pointer]:
+              - /url: /masters/users
+            - link "Country" [ref=e503] [cursor=pointer]:
+              - /url: /masters/country
+            - link "Region" [ref=e504] [cursor=pointer]:
+              - /url: /masters/region
+            - link "Province/State" [ref=e505] [cursor=pointer]:
+              - /url: /masters/province
+            - link "City/Municipality" [ref=e506] [cursor=pointer]:
+              - /url: /masters/city
+            - link "Barangay" [ref=e507] [cursor=pointer]:
+              - /url: /masters/barangay
+            - link "Religion" [ref=e508] [cursor=pointer]:
+              - /url: /masters/religion
+            - link "Gender" [ref=e509] [cursor=pointer]:
+              - /url: /masters/gender
+            - link "Civil Status" [ref=e510] [cursor=pointer]:
+              - /url: /masters/civil-status
+            - link "Nationality" [ref=e511] [cursor=pointer]:
+              - /url: /masters/nationality
+            - link "Occupation" [ref=e512] [cursor=pointer]:
+              - /url: /masters/occupation
+            - link "Blood Type" [ref=e513] [cursor=pointer]:
+              - /url: /masters/blood-type
+            - link "Relationship" [ref=e514] [cursor=pointer]:
+              - /url: /masters/relationship
+            - link "Hospital" [ref=e515] [cursor=pointer]:
+              - /url: /masters/hospital
+        - link "Patients" [ref=e278] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e279]
+          - text: Patients
+        - button "Laboratory" [ref=e282]:
+          - generic [ref=e283]:
+            - img [ref=e284]
+            - generic [ref=e286]: Laboratory
+          - img [ref=e287]
+        - button "CSR / Supply" [ref=e290]:
+          - generic [ref=e291]:
+            - img [ref=e292]
+            - generic [ref=e294]: CSR / Supply
+          - img [ref=e295]
+        - button "Pharmacy" [ref=e298]:
+          - generic [ref=e299]:
+            - img [ref=e300]
+            - generic [ref=e302]: Pharmacy
+          - img [ref=e303]
+        - button "Procedures" [ref=e306]:
+          - generic [ref=e307]:
+            - img [ref=e308]
+            - generic [ref=e310]: Procedures
+          - img [ref=e311]
+        - button "Radiology" [ref=e314]:
+          - generic [ref=e315]:
+            - img [ref=e316]
+            - generic [ref=e318]: Radiology
+          - img [ref=e319]
+        - button "Renal Care" [ref=e322]:
+          - generic [ref=e323]:
+            - img [ref=e324]
+            - generic [ref=e326]: Renal Care
+          - img [ref=e327]
+        - button "Delivery" [ref=e330]:
+          - generic [ref=e331]:
+            - img [ref=e332]
+            - generic [ref=e334]: Delivery
+          - img [ref=e335]
+        - button "Wards" [ref=e338]:
+          - generic [ref=e339]:
+            - img [ref=e340]
+            - generic [ref=e342]: Wards
+          - img [ref=e343]
+        - link "Admission" [ref=e345] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e346]
+          - text: Admission
+        - link "Nursing" [ref=e348] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e349]
+          - text: Nursing
+        - link "Billing" [ref=e351] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e352]
+          - text: Billing
+        - link "Fund Sources" [ref=e354] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e355]
+          - text: Fund Sources
+        - button "OR" [ref=e358]:
+          - generic [ref=e359]:
+            - img [ref=e360]
+            - generic [ref=e362]: OR
+          - img [ref=e363]
+        - button "Emergency Room" [ref=e366]:
+          - generic [ref=e367]:
+            - img [ref=e368]
+            - generic [ref=e370]: Emergency Room
+          - img [ref=e371]
+        - button "OPD" [ref=e374]:
+          - generic [ref=e375]:
+            - img [ref=e376]
+            - generic [ref=e378]: OPD
+          - img [ref=e379]
+        - button "OB" [ref=e382]:
+          - generic [ref=e383]:
+            - img [ref=e384]
+            - generic [ref=e386]: OB
+          - img [ref=e387]
+        - button "PhilHealth" [ref=e390]:
+          - generic [ref=e391]:
+            - img [ref=e392]
+            - generic [ref=e394]: PhilHealth
+          - img [ref=e395]
+        - button "YAKAP" [ref=e398]:
+          - generic [ref=e399]:
+            - img [ref=e400]
+            - generic [ref=e402]: YAKAP
+          - img [ref=e403]
+    - main [ref=e405]:
+      - generic [ref=e407]:
+        - generic [ref=e408]:
+          - generic [ref=e409]:
+            - heading "Hospital Transfers" [level=2] [ref=e410]
+            - paragraph [ref=e411]: Track patient transfers to other healthcare facilities.
+          - button "New Transfer" [ref=e412]:
+            - img [ref=e413]
+            - text: New Transfer
+        - generic [ref=e415]:
+          - generic [ref=e417]:
+            - generic:
+              - img
+            - textbox "Search by patient name or code..." [ref=e418]
+          - table [ref=e420]:
+            - rowgroup [ref=e421]:
+              - 'row "Transfer # Patient Destination Date Status Actions" [ref=e422]':
+                - 'columnheader "Transfer #" [ref=e423] [cursor=pointer]'
+                - columnheader "Patient" [ref=e424]
+                - columnheader "Destination" [ref=e425]
+                - columnheader "Date" [ref=e426] [cursor=pointer]
+                - columnheader "Status" [ref=e427]
+                - columnheader "Actions" [ref=e428]
+            - rowgroup [ref=e429]:
+              - row "No transfers found Create a new transfer record to get started." [ref=e430]:
+                - cell "No transfers found Create a new transfer record to get started." [ref=e431]:
+                  - generic [ref=e432]:
+                    - img [ref=e433]
+                    - generic [ref=e435]: No transfers found
+                    - paragraph [ref=e436]: Create a new transfer record to get started.
+  - contentinfo [ref=e438]:
+    - paragraph [ref=e440]: © 2026 SITHEMR. All rights reserved.

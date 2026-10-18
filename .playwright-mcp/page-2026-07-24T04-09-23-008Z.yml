@@ -1,0 +1,147 @@
+- generic [ref=f21e2]:
+  - banner [ref=f21e3]:
+    - generic [ref=f21e4]:
+      - generic [ref=f21e5]:
+        - button [ref=f21e6]
+        - generic [ref=f21e9]:
+          - img "SITHEMR Logo" [ref=f21e10]
+          - heading "SITHEMR" [level=1] [ref=f21e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f21e14]:
+        - generic [ref=f21e15]: D
+        - generic [ref=f21e16]:
+          - generic [ref=f21e17]: Demo Hospital Admin
+          - generic [ref=f21e18]: tenant_admin
+  - generic [ref=f21e21]:
+    - navigation [ref=f21e22]:
+      - generic [ref=f21e23]:
+        - generic [ref=f21e24]:
+          - paragraph [ref=f21e25]: Main
+          - link "Dashboard" [ref=f21e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f21e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=f21e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f21e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f21e38]:
+          - paragraph [ref=f21e39]: Clinical Modules
+          - button "OPD" [ref=f21e41]
+          - button "Emergency Room" [ref=f21e49]
+          - button "Admission & Wards" [ref=f21e57]
+          - link "Nursing" [ref=f21e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f21e68]
+          - button "Delivery" [ref=f21e76]
+          - button "Operating Room" [ref=f21e84]
+          - button "Renal Care" [ref=f21e92]
+        - generic [ref=f21e99]:
+          - paragraph [ref=f21e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f21e102]
+          - button "Radiology" [ref=f21e110]
+          - button "Pharmacy" [ref=f21e119]
+          - button "Procedures" [ref=f21e127]
+          - button "CSR / Supply" [ref=f21e136]
+        - generic [ref=f21e143]:
+          - paragraph [ref=f21e144]: Financial & Claims
+          - button "Billing" [ref=f21e146]
+          - button "PhilHealth" [ref=f21e154]
+          - button "YAKAP" [ref=f21e162]
+          - link "Transactions" [ref=f21e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f21e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f21e175]:
+          - paragraph [ref=f21e176]: Administration
+          - button "Masters" [ref=f21e178]
+          - link "Roles" [ref=f21e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f21e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f21e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f21e198]:
+      - generic [ref=f21e201]:
+        - button "Back to Patient List" [ref=f21e314]
+        - generic [ref=f21e206]:
+          - generic [ref=f21e207]:
+            - generic [ref=f21e212]:
+              - heading "demo3, demo3" [level=2] [ref=f21e317]
+              - generic [ref=f21e318]:
+                - generic [ref=f21e319]: ADM-00001
+                - generic [ref=f21e322]: "20260000001011"
+            - generic [ref=f21e323]:
+              - generic [ref=f21e324]:
+                - paragraph [ref=f21e325]: Admitted
+                - paragraph [ref=f21e326]: Jul 23, 2026 05:12 AM
+              - generic [ref=f21e327]:
+                - paragraph [ref=f21e328]: Room / Ward
+                - paragraph [ref=f21e329]: Ward Room 101Cardiology Ward
+              - button "Transfer Room" [ref=f21e330]
+          - generic [ref=f21e215]:
+            - generic [ref=f21e216]:
+              - paragraph [ref=f21e333]: Admission Type
+              - paragraph [ref=f21e334]: Emergency
+            - generic [ref=f21e335]:
+              - paragraph [ref=f21e336]: Source
+              - paragraph [ref=f21e337]: ER
+            - generic [ref=f21e338]:
+              - paragraph [ref=f21e339]: Attending Physician
+              - paragraph [ref=f21e340]: Dr. Juan Dela Cruz
+            - generic [ref=f21e341]:
+              - paragraph [ref=f21e342]: Admitting Diagnosis
+              - paragraph [ref=f21e343]: sdfsd
+        - navigation [ref=f21e345]:
+          - button [ref=f21e346]
+          - button [ref=f21e350]
+          - button [ref=f21e354]
+          - button [ref=f21e358]
+          - button [ref=f21e362]
+          - button [ref=f21e366]
+        - generic [ref=f21e370]:
+          - heading "Vital Signs History" [level=3] [ref=f21e371]
+          - button "Record Vitals" [ref=f21e372]
+        - table [ref=f21e375]:
+          - rowgroup [ref=f21e376]:
+            - row [ref=f21e377]:
+              - columnheader "Date/Time" [ref=f21e378]
+              - columnheader "Temp (°C)" [ref=f21e379]
+              - columnheader "HR (bpm)" [ref=f21e380]
+              - columnheader "RR (/min)" [ref=f21e381]
+              - columnheader "BP (mmHg)" [ref=f21e382]
+              - columnheader "SpO₂ (%)" [ref=f21e383]
+              - columnheader "Pain" [ref=f21e384]
+              - columnheader "LOC" [ref=f21e385]
+              - columnheader "BS (mg/dL)" [ref=f21e386]
+              - columnheader "Actions" [ref=f21e387]
+          - rowgroup [ref=f21e388]:
+            - row [ref=f21e389]:
+              - cell "Jul 23, 05:20 AM" [ref=f21e390]
+              - cell "—" [ref=f21e391]
+              - cell "—" [ref=f21e392]
+              - cell "—" [ref=f21e393]
+              - cell "—" [ref=f21e394]
+              - cell "—" [ref=f21e395]
+              - cell "—" [ref=f21e396]
+              - cell "Alert" [ref=f21e397]
+              - cell "—" [ref=f21e398]
+              - cell [ref=f21e399]:
+                - generic [ref=f21e400]:
+                  - button "Edit" [ref=f21e401]
+                  - button "Delete" [ref=f21e404]
+            - row [ref=f21e407]:
+              - cell "Jul 23, 05:13 AM" [ref=f21e408]
+              - cell "33.0" [ref=f21e409]
+              - cell "72" [ref=f21e410]
+              - cell "16" [ref=f21e411]
+              - cell "120/80" [ref=f21e412]
+              - cell "98.00" [ref=f21e413]
+              - cell "1" [ref=f21e414]
+              - cell "Alert" [ref=f21e415]
+              - cell "100.00" [ref=f21e416]
+              - cell [ref=f21e417]:
+                - generic [ref=f21e418]:
+                  - button "Edit" [ref=f21e419]
+                  - button "Delete" [ref=f21e422]
+  - contentinfo [ref=f21e311]:
+    - paragraph [ref=f21e313]: © 2026 SITHEMR. All rights reserved.

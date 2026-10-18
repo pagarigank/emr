@@ -1,0 +1,43 @@
+- generic [ref=f3e2]:
+  - generic [ref=f3e4]:
+    - generic [ref=f3e5]: SITHEMR
+    - generic [ref=f3e10]:
+      - generic [ref=f3e11]:
+        - generic [ref=f3e12]: Healthcare Management Platform
+        - heading "Smart Clinical Management" [level=1] [ref=f3e14]
+        - paragraph [ref=f3e15]: A unified electronic medical records platform built for Philippine hospitals — streamlining patient care, PhilHealth compliance, and clinical workflows.
+      - generic [ref=f3e16]:
+        - generic [ref=f3e17]: PhilHealth eClaims & OECB Ready
+        - generic [ref=f3e22]: Full In-Patient & ER Workflow
+        - generic [ref=f3e27]: Real-Time Billing & Analytics
+    - generic [ref=f3e32]:
+      - generic [ref=f3e33]:
+        - generic [ref=f3e34]: 15+
+        - generic [ref=f3e35]: Clinical Modules
+      - generic [ref=f3e36]:
+        - generic [ref=f3e37]: CF1–5
+        - generic [ref=f3e38]: PhilHealth Forms
+      - generic [ref=f3e39]:
+        - generic [ref=f3e40]: OECB
+        - generic [ref=f3e41]: Annex A&B Ready
+  - generic [ref=f3e44]:
+    - generic [ref=f3e45]:
+      - generic [ref=f3e46]:
+        - heading "Welcome back" [level=2] [ref=f3e50]
+        - paragraph [ref=f3e51]: Sign in to access your clinical dashboard
+      - generic [ref=f3e52]:
+        - generic [ref=f3e53]:
+          - generic [ref=f3e54]: Email Address
+          - textbox "Email Address" [ref=f3e56]:
+            - /placeholder: you@sithemr.com
+            - text: admin@demohospital.com
+        - generic [ref=f3e57]:
+          - generic [ref=f3e58]: Password
+          - generic [ref=f3e59]:
+            - textbox "Password" [ref=f3e60]:
+              - /placeholder: ••••••••••
+              - text: Admin@1234
+            - button [ref=f3e61]
+        - button [ref=f3e66]
+      - generic [ref=f3e71]: 256-bit encrypted · Secure session · Multi-tenant isolated
+    - paragraph [ref=f3e75]: © 2026 SITHEMR · Hospital Electronic Medical Records

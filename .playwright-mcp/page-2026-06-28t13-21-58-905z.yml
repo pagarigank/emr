@@ -1,0 +1,194 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - generic [ref=e88]:
+          - button "Renal Care" [ref=e89]:
+            - generic [ref=e90]:
+              - img [ref=e91]
+              - generic [ref=e93]: Renal Care
+            - img [ref=e94]
+          - generic [ref=e96]:
+            - link "Dialysis Types" [ref=e97] [cursor=pointer]:
+              - /url: /renal-care/dialysis-types
+            - link "Dialysis Sessions" [ref=e98] [cursor=pointer]:
+              - /url: /renal-care/dialysis-sessions
+        - button "Delivery" [ref=e100]:
+          - generic [ref=e101]:
+            - img [ref=e102]
+            - generic [ref=e104]: Delivery
+          - img [ref=e105]
+        - button "Wards" [ref=e108]:
+          - generic [ref=e109]:
+            - img [ref=e110]
+            - generic [ref=e112]: Wards
+          - img [ref=e113]
+        - link "Admission" [ref=e115] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e116]
+          - text: Admission
+        - link "Nursing" [ref=e118] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e119]
+          - text: Nursing
+        - link "Billing" [ref=e121] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e122]
+          - text: Billing
+        - link "Fund Sources" [ref=e124] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e125]
+          - text: Fund Sources
+        - button "OR" [ref=e128]:
+          - generic [ref=e129]:
+            - img [ref=e130]
+            - generic [ref=e132]: OR
+          - img [ref=e133]
+        - button "Emergency Room" [ref=e136]:
+          - generic [ref=e137]:
+            - img [ref=e138]
+            - generic [ref=e140]: Emergency Room
+          - img [ref=e141]
+        - button "OPD" [ref=e144]:
+          - generic [ref=e145]:
+            - img [ref=e146]
+            - generic [ref=e148]: OPD
+          - img [ref=e149]
+        - button "OB" [ref=e152]:
+          - generic [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e156]: OB
+          - img [ref=e157]
+        - button "PhilHealth" [ref=e160]:
+          - generic [ref=e161]:
+            - img [ref=e162]
+            - generic [ref=e164]: PhilHealth
+          - img [ref=e165]
+        - button "YAKAP" [ref=e168]:
+          - generic [ref=e169]:
+            - img [ref=e170]
+            - generic [ref=e172]: YAKAP
+          - img [ref=e173]
+    - main [ref=e175]:
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - generic [ref=e179]:
+            - heading "Dialysis Sessions" [level=2] [ref=e180]
+            - paragraph [ref=e181]: Record and manage dialysis treatment sessions.
+          - button "Add Session" [active] [ref=e182]:
+            - img [ref=e183]
+            - text: Add Session
+        - generic [ref=e185]:
+          - generic [ref=e186]:
+            - generic:
+              - img
+            - textbox "Search code, patient, or access type…" [ref=e187]
+          - generic [ref=e188]:
+            - generic [ref=e189]: "Rows:"
+            - combobox [ref=e190]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e192]:
+          - rowgroup [ref=e193]:
+            - row "Code ↑ Date ↑↓ Patient Type Pre/Post Wt Status Actions" [ref=e194]:
+              - columnheader "Code ↑" [ref=e195] [cursor=pointer]:
+                - generic [ref=e196]:
+                  - text: Code
+                  - generic [ref=e197]: ↑
+              - columnheader "Date ↑↓" [ref=e198] [cursor=pointer]:
+                - generic [ref=e199]:
+                  - text: Date
+                  - generic [ref=e200]: ↑↓
+              - columnheader "Patient" [ref=e201]
+              - columnheader "Type" [ref=e202]
+              - columnheader "Pre/Post Wt" [ref=e203]
+              - columnheader "Status" [ref=e204]
+              - columnheader "Actions" [ref=e205]
+          - rowgroup [ref=e206]:
+            - row "DS-00001 2026-06-28 Dela Cruz, Juan 70.50 / 67.20 kg Scheduled Treatment Dispo" [ref=e279]:
+              - cell "DS-00001" [ref=e280]
+              - cell "2026-06-28" [ref=e281]
+              - cell "Dela Cruz, Juan" [ref=e282]
+              - cell [ref=e283]
+              - cell "70.50 / 67.20 kg" [ref=e284]
+              - cell "Scheduled" [ref=e285]:
+                - generic [ref=e286]: Scheduled
+              - cell "Treatment Dispo" [ref=e287]:
+                - generic [ref=e288]:
+                  - button "Treatment" [ref=e289]:
+                    - img [ref=e290]
+                    - text: Treatment
+                  - button "Edit" [ref=e292]:
+                    - img [ref=e293]
+                  - button "Dispo" [ref=e295]:
+                    - img [ref=e296]
+                    - text: Dispo
+                  - button "Archive" [ref=e298]:
+                    - img [ref=e299]
+  - contentinfo [ref=e214]:
+    - paragraph [ref=e216]: © 2026 SITHEMR. All rights reserved.

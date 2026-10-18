@@ -1,0 +1,352 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - generic [ref=e96]:
+          - button "Delivery" [ref=e97]:
+            - generic [ref=e98]:
+              - img [ref=e99]
+              - generic [ref=e101]: Delivery
+            - img [ref=e102]
+          - generic [ref=e104]:
+            - link "Rooms" [ref=e105] [cursor=pointer]:
+              - /url: /delivery/rooms
+            - link "Schedule" [ref=e106] [cursor=pointer]:
+              - /url: /delivery/schedule
+            - link "Types" [ref=e107] [cursor=pointer]:
+              - /url: /delivery/types
+            - link "Complications" [ref=e108] [cursor=pointer]:
+              - /url: /delivery/complications
+        - button "Wards" [ref=e110]:
+          - generic [ref=e111]:
+            - img [ref=e112]
+            - generic [ref=e114]: Wards
+          - img [ref=e115]
+        - link "Admission" [ref=e117] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e118]
+          - text: Admission
+        - link "Nursing" [ref=e120] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e121]
+          - text: Nursing
+        - link "Billing" [ref=e123] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e124]
+          - text: Billing
+        - link "Fund Sources" [ref=e126] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e127]
+          - text: Fund Sources
+        - button "OR" [ref=e130]:
+          - generic [ref=e131]:
+            - img [ref=e132]
+            - generic [ref=e134]: OR
+          - img [ref=e135]
+        - button "Emergency Room" [ref=e138]:
+          - generic [ref=e139]:
+            - img [ref=e140]
+            - generic [ref=e142]: Emergency Room
+          - img [ref=e143]
+        - button "OPD" [ref=e146]:
+          - generic [ref=e147]:
+            - img [ref=e148]
+            - generic [ref=e150]: OPD
+          - img [ref=e151]
+        - button "OB" [ref=e154]:
+          - generic [ref=e155]:
+            - img [ref=e156]
+            - generic [ref=e158]: OB
+          - img [ref=e159]
+        - button "PhilHealth" [ref=e162]:
+          - generic [ref=e163]:
+            - img [ref=e164]
+            - generic [ref=e166]: PhilHealth
+          - img [ref=e167]
+        - button "YAKAP" [ref=e170]:
+          - generic [ref=e171]:
+            - img [ref=e172]
+            - generic [ref=e174]: YAKAP
+          - img [ref=e175]
+    - main [ref=e177]:
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - heading "DR Schedule" [level=2] [ref=e182]
+            - paragraph [ref=e183]: Manage delivery schedules, room assignments, and deliveries.
+          - button "Add Schedule" [active] [ref=e184]:
+            - img [ref=e185]
+            - text: Add Schedule
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic:
+              - img
+            - textbox "Search schedule code, patient, or delivery type…" [ref=e189]
+          - generic [ref=e190]:
+            - generic [ref=e191]: "Rows:"
+            - combobox [ref=e192]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e194]:
+          - rowgroup [ref=e195]:
+            - row "Schedule Code ↑↓ Scheduled Date ↓ Status ↑↓ DR Room Patient Delivery Type Attending Time Actions" [ref=e196]:
+              - columnheader "Schedule Code ↑↓" [ref=e197] [cursor=pointer]:
+                - generic [ref=e198]:
+                  - text: Schedule Code
+                  - generic [ref=e199]: ↑↓
+              - columnheader "Scheduled Date ↓" [ref=e200] [cursor=pointer]:
+                - generic [ref=e201]:
+                  - text: Scheduled Date
+                  - generic [ref=e202]: ↓
+              - columnheader "Status ↑↓" [ref=e203] [cursor=pointer]:
+                - generic [ref=e204]:
+                  - text: Status
+                  - generic [ref=e205]: ↑↓
+              - columnheader "DR Room" [ref=e206]
+              - columnheader "Patient" [ref=e207]
+              - columnheader "Delivery Type" [ref=e208]
+              - columnheader "Attending" [ref=e209]
+              - columnheader "Time" [ref=e210]
+              - columnheader "Actions" [ref=e211]
+          - rowgroup [ref=e212]:
+            - row "DRS-00002 Jun 27, 2026 Completed Delivery Room 2 Dela Cruz, Juan Treatment Dispo" [ref=e213]:
+              - cell "DRS-00002" [ref=e214]
+              - cell "Jun 27, 2026" [ref=e215]
+              - cell "Completed" [ref=e216]:
+                - generic [ref=e217]: Completed
+              - cell "Delivery Room 2" [ref=e218]
+              - cell "Dela Cruz, Juan" [ref=e219]
+              - cell [ref=e220]
+              - cell [ref=e221]
+              - cell [ref=e222]
+              - cell "Treatment Dispo" [ref=e223]:
+                - generic [ref=e224]:
+                  - button "Treatment" [ref=e225]:
+                    - img [ref=e226]
+                    - text: Treatment
+                  - button "Edit" [ref=e228]:
+                    - img [ref=e229]
+                  - button "Dispo" [ref=e231]:
+                    - img [ref=e232]
+                    - text: Dispo
+                  - button "Archive" [ref=e234]:
+                    - img [ref=e235]
+            - row "DRS-00001 Jun 27, 2026 Scheduled Main Delivery Room Dela Cruz, Juan Vaginal Delivery Dr. Dela Cruz 09:00 AM - 10:30 AM Treatment Dispo" [ref=e237]:
+              - cell "DRS-00001" [ref=e238]
+              - cell "Jun 27, 2026" [ref=e239]
+              - cell "Scheduled" [ref=e240]:
+                - generic [ref=e241]: Scheduled
+              - cell "Main Delivery Room" [ref=e242]
+              - cell "Dela Cruz, Juan" [ref=e243]
+              - cell "Vaginal Delivery" [ref=e244]
+              - cell "Dr. Dela Cruz" [ref=e245]
+              - cell "09:00 AM - 10:30 AM" [ref=e246]
+              - cell "Treatment Dispo" [ref=e247]:
+                - generic [ref=e248]:
+                  - button "Treatment" [ref=e249]:
+                    - img [ref=e250]
+                    - text: Treatment
+                  - button "Edit" [ref=e252]:
+                    - img [ref=e253]
+                  - button "Dispo" [ref=e255]:
+                    - img [ref=e256]
+                    - text: Dispo
+                  - button "Archive" [ref=e258]:
+                    - img [ref=e259]
+        - generic [ref=e266]:
+          - generic [ref=e267]:
+            - heading "Add New Schedule" [level=3] [ref=e268]
+            - button [ref=e269]:
+              - img [ref=e270]
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - generic [ref=e274]:
+                - generic [ref=e275]: Schedule Code *
+                - textbox "Schedule Code *" [ref=e276]: DRS-00003
+              - generic [ref=e277]:
+                - generic [ref=e278]: Scheduled Date *
+                - textbox "Scheduled Date *" [ref=e279]: 2026-06-28
+              - generic [ref=e280]:
+                - generic [ref=e281]: DR Room *
+                - combobox "DR Room *" [ref=e282]:
+                  - option "-- Select DR Room --" [selected]
+                  - option "[DR-02] Delivery Room 2"
+                  - option "[DR-01] Main Delivery Room"
+            - generic [ref=e283]:
+              - generic [ref=e284]: Patient *
+              - textbox "Search by name or patient code..." [ref=e286]
+            - generic [ref=e287]:
+              - generic [ref=e288]:
+                - generic [ref=e289]: Start Time
+                - textbox "Start Time" [ref=e290]
+              - generic [ref=e291]:
+                - generic [ref=e292]: End Time
+                - textbox "End Time" [ref=e293]
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - generic [ref=e296]: Delivery Type
+                - combobox "Delivery Type" [ref=e297]:
+                  - option "-- Select --" [selected]
+                  - option "Vaginal Delivery"
+                  - option "Assisted Vaginal Delivery"
+                  - option "Vacuum Extraction"
+                  - option "Forceps Delivery"
+                  - option "Breech Delivery"
+                  - option "Cesarean Section"
+                  - option "Elective C-Section"
+                  - option "Emergency C-Section"
+                  - option "Twin Delivery"
+                  - option "Multiple Delivery"
+                  - option "Induction of Labor"
+                  - option "Other"
+              - generic [ref=e298]:
+                - generic [ref=e299]: Status *
+                - combobox "Status *" [ref=e300]:
+                  - option "Scheduled" [selected]
+                  - option "In Progress"
+                  - option "Completed"
+                  - option "Cancelled"
+            - generic [ref=e301]:
+              - generic [ref=e302]: Delivery Description
+              - textbox "Delivery Description" [ref=e303]:
+                - /placeholder: Describe the delivery plan
+            - generic [ref=e304]:
+              - generic [ref=e305]:
+                - generic [ref=e306]: Attending Physician
+                - combobox "Attending Physician" [ref=e307]:
+                  - option "-- Select --" [selected]
+                  - option "Dr. Dela Cruz"
+              - generic [ref=e308]:
+                - generic [ref=e309]: Pediatrician
+                - combobox "Pediatrician" [ref=e310]:
+                  - option "-- Select --" [selected]
+                  - option "Dr. Dela Cruz"
+            - generic [ref=e311]:
+              - generic [ref=e312]:
+                - generic [ref=e313]: Anesthesiologist
+                - combobox "Anesthesiologist" [ref=e314]:
+                  - option "-- Select --" [selected]
+                  - option "Dr. Dela Cruz"
+              - generic [ref=e315]:
+                - generic [ref=e316]: Midwife
+                - combobox "Midwife" [ref=e317]:
+                  - option "-- Select --" [selected]
+                  - option "Dr. Dela Cruz"
+            - generic [ref=e318]:
+              - heading "OB History" [level=4] [ref=e319]
+              - generic [ref=e320]:
+                - generic [ref=e321]:
+                  - generic [ref=e322]: Gravida
+                  - spinbutton "Gravida" [ref=e323]
+                - generic [ref=e324]:
+                  - generic [ref=e325]: Para
+                  - spinbutton "Para" [ref=e326]
+                - generic [ref=e327]:
+                  - generic [ref=e328]: Full Term
+                  - spinbutton "Full Term" [ref=e329]
+                - generic [ref=e330]:
+                  - generic [ref=e331]: Preterm
+                  - spinbutton "Preterm" [ref=e332]
+              - generic [ref=e333]:
+                - generic [ref=e334]:
+                  - generic [ref=e335]: Abortion
+                  - spinbutton "Abortion" [ref=e336]
+                - generic [ref=e337]:
+                  - generic [ref=e338]: Living Children
+                  - spinbutton "Living Children" [ref=e339]
+                - generic [ref=e340]:
+                  - generic [ref=e341]: Gestational Age
+                  - textbox "Gestational Age" [ref=e342]:
+                    - /placeholder: e.g. 38 weeks
+              - generic [ref=e343]:
+                - generic [ref=e344]:
+                  - generic [ref=e345]: LMP Date
+                  - textbox "LMP Date" [ref=e346]
+                - generic [ref=e347]:
+                  - generic [ref=e348]: EDC Date
+                  - textbox "EDC Date" [ref=e349]
+            - generic [ref=e350]:
+              - generic [ref=e351]:
+                - generic [ref=e352]: Pre-Op Notes
+                - textbox "Pre-Op Notes" [ref=e353]
+              - generic [ref=e354]:
+                - generic [ref=e355]: Intra-Op Notes
+                - textbox "Intra-Op Notes" [ref=e356]
+              - generic [ref=e357]:
+                - generic [ref=e358]: Post-Op Notes
+                - textbox "Post-Op Notes" [ref=e359]
+            - generic [ref=e360]:
+              - button "Cancel" [ref=e361]
+              - button "Save" [ref=e362]
+  - contentinfo [ref=e261]:
+    - paragraph [ref=e263]: © 2026 SITHEMR. All rights reserved.

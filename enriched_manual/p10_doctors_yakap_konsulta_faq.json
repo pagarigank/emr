@@ -1,0 +1,359 @@
+[
+    {"type":"heading","text":"15. Doctors Module","level":1},
+    {"type":"paragraph","text":"Route prefix: /doctors. The doctors module gives healthcare professionals (HCPs) a personalized view of their schedule, appointments, and patient charts. It has 3 distinct components sharing the doctors layout (x-layouts.doctors): doctors dashboard, doctors schedule management, and doctor patient chart view."},
+    {"type":"heading","text":"15.1 Doctors Dashboard","level":2},
+    {"type":"paragraph","text":"Route: doctors.dashboard (permission: doctors.dashboard, Livewire component: App\\Livewire\\Doctors\\DashboardCrud, layout: x-layouts.doctors). The doctor's home screen showing today's workload and quick actions."},
+    {"type":"bullet_list","items":[
+      "Today's scheduled appointments: list of the doctor's own appointments for today (filtered to the doctor's health_care_professional_id). Shows patient name, appointment time, status (Scheduled/In Progress/Completed/Cancelled).",
+      "Pending consultations: OPD consultations assigned to this doctor that are pending or in progress and need attention.",
+      "Pending orders to review: lab/pharmacy/CSR/radiology/procedure orders requested by this doctor that are awaiting action or results.",
+      "Today's admissions: ER admissions and inpatient admissions assigned to this doctor.",
+      "Quick stats: total appointments today, pending reviews, pending orders.",
+      "Quick navigation: links to patient chart, schedule, admission list."
+    ]},
+    {"type":"heading","text":"15.2 Appointment Schedule Management","level":2},
+    {"type":"paragraph","text":"Route: doctors.schedule (permission: doctors.schedule, Livewire component: App\\Livewire\\Doctors\\AppointmentScheduleCrud, layout: x-layouts.doctors). This is the doctor's schedule management interface - where they view, edit, reschedule, mark in-progress, mark done, and cancel appointments. SEE ALSO public appointment booking (section 5) - that's the patient-facing booking page; this is the doctor-facing management page."},
+    {"type":"heading","text":"15.2.1 AppointmentScheduleCrud Component (Full Code Reference)","level":3},
+    {"type":"bullet_list","items":[
+      "search (string) - Search appointments by patient name or appointment code.",
+      "statusFilter (string) - Filter by status: empty = all, 'Scheduled', 'In Progress', 'Completed', 'Cancelled'.",
+      "dateFilter (string) - Filter by specific date (Y-m-d). Empty = current/today context.",
+      "doctorFilter (?string) - Filter by specific doctor (HCP ID). For non-admin doctors, this is implicitly locked to their own ID.",
+      "perPage (int = 10) - Appointments per page.",
+      "showModal (bool) - Whether the edit modal is open.",
+      "editingId (?int) - The appointment ID being edited.",
+      "edit_date (?string) - The new date (Y-m-d) for rescheduling.",
+      "edit_start_time (?string) - The new start time (H:i) for rescheduling.",
+      "edit_notes (string) - Updated appointment notes.",
+      "edit_status (string = 'Scheduled') - Updated status (Scheduled, In Progress, Completed, Cancelled).",
+      "availableSlots (array) - Computed available slots for the selected doctor+date (populated by loadAvailableSlots())."
+    ]},
+    {"type":"heading","text":"15.2.2 Current Tenant and User Helpers","level":3},
+    {"type":"bullet_list","items":[
+      "currentTenantId(): request()->attributes->get('tenant_id') ?? 1.",
+      "currentUserId(): request()->attributes->get('jwt_user')?->id ?? 1.",
+      "isAdmin(): in_array(auth()->user()?->role, ['superadmin', 'tenant_admin']). Used to determine if the doctor can see ALL doctors' appointments (admin) or only their own (non-admin)."
+    ]},
+    {"type":"heading","text":"15.2.3 Data Loading (mount/query properties)","level":3},
+    {"type":"bullet_list","items":[
+      "mount(): Sets initial values. If no dateFilter, defaults to today. Loads appointments based on filters.",
+      "query filter logic (applied per-page with pagination): If doctorFilter is set, include appointments for that doctor. If dateFilter is set, include appointments for that date. If statusFilter is set, include appointments with that status. Otherwise show all by default.",
+      "Appointment model: DoctorAppointment::with(['department', 'doctor']) - eager loads department and doctor (HealthCareProfessional) relations.",
+      "Doctor relation: health_care_professional - the HealthCareProfessional model representing the doctor. Links to the doctor's full_name, professional_type, specialization.",
+      "Department relation: department - the Department model. Links to dept_name."
+    ]},
+    {"type":"heading","text":"15.2.4 Appointment Model (DoctorAppointment) - Complete Fields","level":3},
+    {"type":"bullet_list","items":[
+      "id - Primary key.",
+      "tenant_id - FK to hospitals.id.",
+      "appointment_code - Code: 'APT-' + 5-digit sequence (e.g. APT-00001, APT-00002). Generated by AppointmentBooking::book() via generateCode($tid). Format: 'APT-' . str_pad($num, 5, '0', STR_PAD_LEFT). The patient-facing reference code.",
+      "department_id - FK to departments.id. The department where the appointment belongs.",
+      "health_care_professional_id - FK to health_care_professionals.id. The doctor assigned to this appointment.",
+      "appointment_date - Date (Y-m-d). The appointment date.",
+      "start_time - String (H:i). Appointment start time.",
+      "end_time - String (H:i). Appointment end time. Computed from start_time + slot_minutes (30 min default from config).",
+      "patient_name - String. Patient's full name (from public booking form). Max 150 chars.",
+      "patient_phone - String (nullable). Patient's phone. Max 30 chars.",
+      "patient_email - String (nullable). Patient's email. Max 150 chars.",
+      "reason - String (nullable). Reason for visit / chief complaint. Max 5000 chars.",
+      "status - String: 'Scheduled', 'In Progress', 'Completed', 'Cancelled'. Default: 'Scheduled'.",
+      "notes - Text (nullable). Doctor's notes on the appointment.",
+      "is_active - Boolean, default true.",
+      "history - Soft delete flag (1=active).",
+      "created_by - Nullable (null for public bookings - no authenticated user).",
+      "created_date - DateTime. When the appointment was created.",
+      "updated_by - Nullable.",
+      "updated_date - DateTime (nullable).",
+      "Uniqueness constraint: unique:doctor_appointments,health_care_professional_id,appointment_date,start_time,NULL,id,tenant_id,{tid},history,1. The combination of doctor+date+start_time must be unique (prevents double-booking the same slot for the same doctor).",
+      "Config: slot_minutes (default 30), working_start (08:00), working_end (17:00) from config/appointment.php."
+    ]},
+    {"type":"heading","text":"15.2.5 Loading Available Slots (loadAvailableSlots)","level":3},
+    {"type":"paragraph","text":"Used when editing/rescheduling an appointment. Computes which time slots are still available for the selected doctor on the selected date:"},
+    {"type":"numbered_list","items":[
+      "Resets availableSlots to empty array.",
+      "Returns if no editingId or no edit_date.",
+      "Loads the appointment being edited.",
+      "Parses edit_date to date string.",
+      "Gets slot_minutes, working_start, working_end from config.",
+      "Queries EXISTING appointments for the same doctor on the same date: DoctorAppointment::withoutGlobalScopes()->where('tenant_id', $tid)->where('health_care_professional_id', $doctor->id)->where('appointment_date', $date)->where('history', 1)->get(['start_time', 'end_time']). Note: history=1 filter is manually added.",
+      "Maps existing appointments to ['start' => start_time, 'end' => end_time] pairs (as Carbon instances).",
+      "Iterates from working_start to working_end in slot_minutes increments:",
+      "  - Creates Carbon slot start and end (addMinutes).",
+      "  - Checks overlap: for each existing appointment, if slot_start < existing_end AND slot_end > existing_start, the slot overlaps and is skipped.",
+      "  - Checks past: if the appointment_date is today AND slot_start < now(), skip (past slot).",
+      "  - If no overlap and not past: add slot to availableSlots with start (H:i), end (H:i), and label (formatted time with AM/PM).",
+      "The available slots are rendered as clickable time buttons in the edit modal."
+    ]},
+    {"type":"heading","text":"15.2.6 Edit Modal and Actions","level":3},
+    {"type":"heading","text":"5.2.6.1 openEdit (load appointment for editing)","level":4},
+    {"type":"bullet_list","items":[
+      "Loads the appointment with department and doctor relations.",
+      "Populates edit_date (from appointment_date), edit_start_time (from start_time), edit_notes (from notes), edit_status (from status).",
+      "Sets editingId, showModal=true.",
+      "Calls loadAvailableSlots() to populate available time slots for rescheduling."
+    ]},
+    {"type":"heading","text":"5.2.6.2 updatedEditDate - cascade reset","level":4},
+    {"type":"bullet_list","items":[
+      "When edit_date changes: resets edit_start_time to null (clears the old time), calls loadAvailableSlots() to fetch fresh slots for the new date.",
+      "This is the cascade: changing the date clears the time and reloads available slots."
+    ]},
+    {"type":"heading","text":"5.2.6.3 selectSlot - pick a time","level":4},
+    {"type":"bullet_list","items":[
+      "Sets edit_start_time to the selected slot string (H:i format).",
+      "The user clicks a time button in the modal, and this sets the new start time."
+    ]},
+    {"type":"heading","text":"5.2.6.4 Save / Update Actions","level":4},
+    {"type":"bullet_list","items":[
+      "Save changes (reschedule + notes): Updates the appointment with edit_date (new appointment_date), edit_start_time (new start_time), edit_notes (new notes), and computed end_time (Carbon::parse(edit_date . ' ' . edit_start_time)->addMinutes(slotMinutes)->format('H:i')). Uses updated_by = currentUserId(), updated_date = now().",
+      "Mark In Progress: sets status = 'In Progress', updated_by/updated_date.",
+      "Mark Done (Completed): sets status = 'Completed', updated_by/updated_date.",
+      "Cancel: sets status = 'Cancelled', updated_by/updated_date. Cancelled appointments are excluded from public booking slot availability (where('status', '!=', 'Cancelled') in AppointmentBooking::loadAvailableSlots()).",
+      "On any status change: closes modal, flashes success message, refreshes the page data (contact() dispatch or reload).",
+      "Validation: required checks on edit_date (if rescheduling), valid date format, valid time slot selected."
+    ]},
+    {"type":"heading","text":"15.3 Managing Appointments (Doctor Actions)","level":2},
+    {"type":"bullet_list","items":[
+      "View appointment: see patient name, department, doctor, date, time, reason, notes, status.",
+      "Edit/Reschedule: change the date and/or time. The available slots are computed in real-time. The doctor can only pick from currently-available slots (not double-book).",
+      "Edit notes: add/update doctor notes on the appointment (e.g. special instructions, patient condition notes).",
+      "Mark In Progress: when the doctor starts seeing the patient.",
+      "Mark Completed: when the consultation is finished.",
+      "Cancel: cancel the appointment (patient won't be seen). The public booking slot becomes available again.",
+      "Non-admin doctors (non-admin role): see only their own appointments (filtered by their health_care_professional_id). Cannot see or edit other doctors' appointments.",
+      "Admin doctors (superadmin/tenant_admin): see ALL doctors' appointments, can edit any doctor's schedule."
+    ]},
+    {"type":"heading","text":"15.4 Conflict Detection","level":2},
+    {"type":"bullet_list","items":[
+      "Database-level uniqueness constraint: unique:doctor_appointments, health_care_professional_id, appointment_date, start_time for the active tenant. This prevents inserting a duplicate slot at the DB level.",
+      "Application-level check (AppointmentBooking::book()): before inserting, queries for overlapping appointments with lockForUpdate() (pessimistic locking). This prevents race conditions between two simultaneous booking requests.",
+      "Public booking conflict: if a conflict is detected, the booking fails with error 'Sorry, this slot was just taken. Please pick another time.' and the available slots are refreshed.",
+      "Schedule management conflict: when editing an appointment's date/time, loadAvailableSlots() shows only non-overlapping slots. The doctor cannot pick a time that's already taken by another appointment for the same doctor."
+    ]},
+    {"type":"heading","text":"15.5 Patient Chart (Doctor View)","level":2},
+    {"type":"paragraph","text":"Route: doctors.patient ({type}, {id}, permission: doctors.chart). The doctor's view of a specific patient's chart. Shows the complete clinical history for the patient from the doctor's perspective: demographics, all OPD consultations with SOAP notes, all ER admissions, all inpatient admissions, all lab results, all radiology reports, all pharmacy dispensing history, all CSR issued items, all procedure records, all billing invoices, PhilHealth membership and claims, and the current encounter summary. The 'type' parameter may indicate the encounter type to highlight (e.g. opd, er, admission)."},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"16. OB, Delivery, and Specialty Care","level":1},
+    {"type":"heading","text":"16.1 OB (Obstetrics) Module","level":2},
+    {"type":"paragraph","text":"Route prefix: /ob. Manages obstetric services: visit types, fetal presentations, contraceptive methods, and OB consultations (ObConsultationCrud Livewire)."},
+    {"type":"heading","text":"16.1.1 OB Master Data","level":3},
+    {"type":"bullet_list","items":[
+      "OB > Visit Types (ob.visit-types) - OB visit classifications: First Prenatal Visit, Prenatal Follow-up, Postpartum Visit, Postnatal Check, Newborn Check, etc. Fields: id, name, code, description, is_active, tenant_id, history, audit columns.",
+      "OB > Fetal Presentations (ob.fetal-presentations) - Fetal presentation types: Cephalic (Vertex), Breech (Frank, Complete, Footling), transverse/oblique, etc. Used in OB consultations. Fields: id, name, code, description, is_active, tenant_id.",
+      "OB > Contraceptive Methods (ob.contraceptive-methods) - Contraceptive methods: Condoms, Oral Contraceptives (Combined, Progestin-only), IUD (Copper, Hormonal), Injectables (Depo-Provera), Implants (Implanon/Nexplanon), Diaphragm, Fertility Awareness Methods, Permanent (Tubal Ligation, Vasectomy), etc. Fields: id, name, code, description, is_active, tenant_id."
+    ]},
+    {"type":"heading","text":"16.1.2 OB Consultations (ObConsultationCrud)","level":3},
+    {"type":"paragraph","text":"Route: ob.consultations (permission: ob.view, Livewire: ObConsultationCrud). OB consultation records for prenatal, postnatal, and gynecological visits. Similar pattern to OPD consultations but OB-specific fields. The consultation includes OB assessment: gestational age (weeks), estimated due date (EDD), fetal presentation, fetal heart rate, fundic height, blood pressure, weight, urine protein/ glucose, fetal movement, obstetric history, and plan. The OB consultation links to a patient and can generate orders (lab, pharmacy, etc.)."},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"16.2 Delivery Module","level":2},
+    {"type":"paragraph","text":"Route prefix: /delivery. Manages delivery/obstetric delivery services: delivery types, complications, rooms, and schedule."},
+    {"type":"heading","text":"16.2.1 Delivery Master Data","level":3},
+    {"type":"bullet_list","items":[
+      "Delivery > Types (delivery.types) - Delivery types: Normal Vaginal Delivery (NVD), Cesarean Section (CS), Assisted Vaginal Delivery (Forceps / Vacuum Extraction), VBAC (Vaginal Birth After Cesarean), etc. Fields: id, name, code, description, is_active, tenant_id, history, audit columns.",
+      "Delivery > Complications (delivery.complications) - Delivery complications: Postpartum Hemorrhage (PPH), Retained Placenta, Cervical/Laceration, Perineal Laceration (1st/2nd/3rd/4th degree), Amniotic Fluid Embolism, Shoulder Dystocia, Preterm Labor, Preeclampsia/Eclampsia, Uterine Rupture, etc. Fields: id, name, code, description, is_active, tenant_id.",
+      "Delivery > Rooms (delivery.rooms) - Delivery rooms/labor rooms. Fields: id, room_number, floor, status (Available/Occupied/Booked), is_active, tenant_id.",
+      "Delivery > Schedule (delivery.schedule) - Delivery schedule: planned/emergency deliveries with patient, attending obstetrician, anesthesiologist, delivery type, scheduled date/time, status, notes."
+    ]},
+    {"type":"heading","text":"16.2.2 Delivery Records","level":3},
+    {"type":"paragraph","text":"Delivery records (linked to admissions/patients) capture the full delivery event: delivery type, complications (multiple), attending physician (obstetrician), anesthesiologist, anesthesia type, delivery date/time, Apgar scores (if newborn), estimated blood loss, placenta delivery (complete/incomplete/retained), perineal status, lacerations/repairs, newborn details (sex, weight, length, APGAR), mother's post-delivery condition, and plan. Delivery records can link to the admission record for inpatient postpartum care."},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"16.3 Renal Care (Dialysis) Module","level":2},
+    {"type":"paragraph","text":"Route prefix: /renal-care (permission: renal.view). Manages renal/dialysis care services for patients with kidney failure requiring hemodialysis or other renal therapies."},
+    {"type":"heading","text":"16.3.1 Renal Care Master Data","level":3},
+    {"type":"bullet_list","items":[
+      "Renal Care > Dialysis Types (renal-care.dialysis-types) - Dialysis modalities: Hemodialysis (HD), Peritoneal Dialysis (PD) - Continuous Ambulatory Peritoneal Dialysis (CAPD), Automated Peritoneal Dialysis (APD), Continuous Cycling Peritoneal Dialysis (CCPD), etc. Fields: id, name, code, description, is_active.",
+      "Renal Care > Dialysis Sessions (renal-care.dialysis-sessions) - Individual dialysis treatment sessions. Links patient to the dialysis type, session date/time, duration, dialyzer used, dialysate composition, blood flow rate, dialysate flow rate, ultrafiltration volume, pre-dialysis and post-dialysis vitals (weight, BP, HR), complications during session, medications administered during session (e.g. heparin, erythropoietin), and session notes. Each session is a record of one dialysis treatment."
+    ]},
+    {"type":"heading","text":"16.3.2 Dialysis Session Workflow","level":3},
+    {"type":"numbered_list","items":[
+      "Patient with renal failure is registered in the system with their diagnosis and dialysis prescription.",
+      "A dialysis session is scheduled/created: link patient, select dialysis type (Hemodialysis, CAPD, etc.), set session date/time, duration.",
+      "Pre-dialysis assessment: weight, blood pressure, heart rate, pre-dialysis laboratory values (if available: BUN, Creatinine, electrolytes, hemoglobin, etc.), access site assessment (AV fistula, catheter, graft).",
+      "During session: dialyzer type, dialysate composition (Na, K, Ca, HCO3, glucose), blood flow rate (Qb), dialysate flow rate (Qd), ultrafiltration goal/volume removed, heparin dose, vital signs monitoring (periodic BP, HR).",
+      "Post-dialysis: post-weight, post-BP, total ultrafiltration achieved, complications (hypotension, cramping, nausea, etc.), session notes.",
+      "Dialysis sessions can be linked to billing (dialysis service charge) and PhilHealth claims (renal care case rate / Z-benefit if applicable).",
+      "Dialysis schedule is managed to track recurring sessions (e.g. patient on HD 3x/week). The schedule shows upcoming and past sessions."
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"17. Nursing, YAKAP, and Konsulta","level":1},
+    {"type":"heading","text":"17.1 Nursing Module","level":2},
+    {"type":"paragraph","text":"Route: /nursing (permission: nursing.view, Livewire component: NursingCrud). The nursing dashboard provides a nursing workflow view - accessible to nurses to manage their nursing tasks, patient observations, vitals, and nursing notes. The NursingCrud Livewire (source: app/Livewire/Nursing/NursingCrud.php) serves as the nursing workflow interface."},
+    {"type":"bullet_list","items":[
+      "Nursing dashboard: overview of patients needing nursing attention, pending vitals to enter, scheduled medications, nursing tasks, and ward/ICU patient summaries.",
+      "Nursing notes: nurses can document nursing assessments, observations, and care activities.",
+      "Vitals entry: nurses enter patient vitals (BP, HR, temp, RR, weight, height, O2 sat) - this is the same vitals entry from OPD consultations (openVitals/saveVitals in OpdConsultationCrud) accessible through the nursing workflow.",
+      "The nursing module integrates with OPD, ER, and inpatient workflows - nurses document care across all patient settings.",
+      "Nursing view is role-based: nurses see patients in their assigned units/wards."
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"17.2 YAKAP (PhilHealth Primary Care) Module","level":2},
+    {"type":"paragraph","text":"Route prefix: /yakap (permission: yakap.view or yakap.manage). YAKAP is the PhilHealth Primary Care program module. It manages primary care empanelment and services for PhilHealth Konsulta beneficiaries. The YAKAP module has 4 main sub-pages: dashboard, empanelments, FPE records, screenings, and capitation."},
+    {"type":"heading","text":"17.2.1 YAKAP Dashboard (yakap.dashboard)","level":3},
+    {"type":"paragraph","text":"Route: yakap.dashboard (permission: yakap.view, Livewire: YakapDashboard). The YAKAP dashboard shows the primary care program overview: total enrolled/empaneled patients, services delivered this period, capitation summary, active empanelments, and upcoming screenings."},
+    {"type":"heading","text":"17.2.2 YAKAP Empanelments (yakap.empanelments)","level":3},
+    {"type":"paragraph","text":"Route: yakap.empanelments (permission: yakap.manage, Livewire: YakapEmpanelmentsCrud). Manages YAKAP patient empanelment - registering patients into the PhilHealth Konsulta/primary care program. Empanelment is the enrollment of a patient into the primary care program, linking them to a primary care provider (health_care_professional) and their primary care clinic."},
+    {"type":"bullet_list","items":[
+      "Empanelment fields: id, tenant_id, patient_id (FK to patients.id), empanelment_no (e.g. 'YAP-00001'), philhealth_member_id (FK to philhealth_members.id - the patient must have active PhilHealth membership), primary_care_provider_id (FK to health_care_professionals.id - the assigned primary care doctor/nurse), primary_care_clinic_id (FK - the clinic providing primary care), empanelment_date, status (Active, Inactive, Expired, Suspended), remarks, created_by, created_date, updated_by, updated_date, history.",
+      "Empanelment process: patient must have an active PhilHealth membership, be assigned to a primary care provider, and be registered at a primary care clinic.",
+      "The empanelment record is what enables the patient to access YAKAP/PhilHealth Konsulta primary care services and capitation payments to the provider."
+    ]},
+    {"type":"heading","text":"17.2.3 YAKAP FPE Records (fpe-records)","level":3},
+    {"type":"paragraph","text":"Route: yakap.fpe-records (permission: yakap.manage, Livewire: YakapFpeCrud). FPE = Family Planning Education/Enumeration records. Tracks family planning education and services provided to YAKAP empaneled patients. Records: patient, date of FPE session, family planning method discussed/provided (links to OB contraceptive methods master), method adopted (if applicable), provider, and notes. FPE is part of the comprehensive primary care package under PhilHealth Konsulta."},
+    {"type":"heading","text":"17.2.4 YAKAP Screenings (screenings)","level":3},
+    {"type":"paragraph","text":"Route: yakap.screenings (permission: yakap.manage, Livewire: YakapScreeningsCrud). YAKAP health screenings - primary care health screening records for empaneled patients. Screenings include: blood pressure screening, blood sugar screening (FBS/random), BMI screening, visual acuity screening, hearing screening, etc. Each screening record has: patient, screening type, screening date, result (numeric or categorical), reference range/interpretation, provider, and follow-up recommendation if needed. Screenings are part of the preventive primary care services under YAKAP."},
+    {"type":"heading","text":"17.2.5 YAKAP Capitation (capitation)","level":3},
+    {"type":"paragraph","text":"Route: yakap.capitation (permission: yakap.manage, Livewire: YakapCapitationCrud). Manages capitation payments - the fixed per-patient per-period payment to primary care providers under PhilHealth Konsulta. Capitation tracks: empaneled patient count, period (monthly/quarterly), capitation rate per patient, total capitation amount, payments made, and outstanding capitation. Used for the financial reconciliation of the YAKAP/PhilHealth Konsulta program - providers are paid a fixed amount per empaneled patient regardless of services consumed (with service limits)."},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"17.3 Konsulta (Primary Care) Module","level":2},
+    {"type":"paragraph","text":"Route: konsulta/ (permission: konsulta.view, Livewire component: App\\Livewire\\Konsulta\\KonsultaCrud). The Konsulta module manages PhilHealth Konsulta primary care consultations. Konsulta is the PhilHealth program for primary care access - consultations, screenings, and basic services at accredited primary care facilities."},
+    {"type":"bullet_list","items":[
+      "KonsultaCrud Livewire: manages primary care consultation records. Similar pattern to OPD/OB consultations but for primary care/Konsulta context.",
+      "Consultation includes: patient, attending primary care provider (HCP), consultation date, consultation type (general primary care, follow-up, screening, etc.), chief complaint, assessment, plan, and linked services (lab screening tests, FPE, etc.).",
+      "Konsulta consultations link to the patient's YAKAP empanelment record (if the patient is empaneled).",
+      "Services delivered under Konsulta are billable to PhilHealth under the Konsulta benefit package.",
+      "Konsulta integrates with the PhilHealth module for claims generation under the Konsulta claim type."
+    ]},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"18. Procedures, Delivery, and Other Modules","level":1},
+    {"type":"heading","text":"18.1 Procedures Module (detail)","level":2},
+    {"type":"paragraph","text":"Route prefix: /procedures (see also section 11.3 for the health sciences view). The procedures module has 2 sub-pages: categories and procedures CRUD, plus a procedures dispensing page."},
+    {"type":"bullet_list","items":[
+      "procedures.categories (permission: procedure.manage) - Master data: procedure categories (Surgical, Medical, Diagnostic, Therapeutic, Obstetric, Anesthesia, Endoscopy, Cardiac Catheterization, Hemodialysis, etc.). CRUD list view.",
+      "procedures.procedures (permission: procedure.manage) - Procedure catalog CRUD: name, code, category_id, description, standard_charge. List view with search and pagination.",
+      "procedures.dispensing (permission: procedure.dispense) - Procedures dispensing: the list of procedure requests that have been ordered and are awaiting performance/dispensing. The pharmacist/nurse/technician performs the procedure and marks it as dispensed (is_dispensed=true)."
+    ]},
+    {"type":"heading","text":"18.2 Delivery Rooms and Schedule (detail)","level":2},
+    {"type":"bullet_list","items":[
+      "delivery.rooms (permission: delivery.view) - Delivery rooms: room_number, floor, status (Available/Occupied/Booked). Room management for delivery/labor rooms.",
+      "delivery.schedule (permission: delivery.view) - Delivery schedule: planned and emergency deliveries with patient, attending physicians, delivery type, date/time, status, notes. The OR-like schedule for deliveries."
+    ]},
+    {"type":"heading","text":"18.3 Transfers (transfers/)","level":2},
+    {"type":"paragraph","text":"Route: transfers/ (permission: admission.view, Livewire: HospitalTransferCrud). Manages hospital transfers - patients transferred between facilities or within the hospital (e.g. ER to inpatient ward, ward to ICU, hospital to another hospital)."},
+    {"type":"bullet_list","items":[
+      "Transfer record: patient, from_location (ward/room/ICU/ER), to_location, transfer_date, transfer_type (inter-facility, intra-facility), transferring_physician, receiving_physician (if inter-facility), transfer_mode (ambulance, wheelchair, stretcher, walking), transfer_notes, is_active, history.",
+      "Transfers track patient movement for continuity of care and bed management.",
+      "When a patient is transferred, the old location's bed/room status is updated and the new location's bed/room status is set to occupied."
+    ]},
+    {"type":"heading","text":"18.4 Reports Hub (/reports)","level":2},
+    {"type":"paragraph","text":"Route: /reports (permission: reports.view). Central reports hub providing access to all system reports. Reports are generated via DomPDF and/or PHPSpreadsheet (Excel). Report categories include: patient reports (demographics, active patients), clinical reports (OPD volume, ER volume, admission reports, consultation types), laboratory reports (test volume, results summary), radiology reports (exam volume, modality usage), pharmacy reports (drug dispensing, inventory), billing reports (invoices, payments, aging, revenue), PhilHealth reports (claims, reimbursement), and operational reports (bed occupancy, utilization)."},
+    {"type":"heading","text":"18.5 Settings (/settings)","level":2},
+    {"type":"paragraph","text":"Route: /settings (permission: admin.settings). System settings and user profile management. The settings page includes: user profile (view/edit own profile), password change (current password + new password + confirm), system configuration options (if any), and possibly tenant-level settings. Only accessible by users with admin.settings permission (typically admin/superadmin)."},
+    {"type":"page_break"},
+
+    {"type":"heading","text":"19. Frequently Asked Questions (FAQ)","level":1},
+    {"type":"paragraph","text":"This section covers the most frequently encountered situations and questions from HMR end users. Each question references the actual screens and workflows in the application. The answers are written for the end user - practical, step-by-step guidance."},
+
+    {"type":"heading","text":"A. Getting Started and Login","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I log in to the system? - Go to /login (or click Login). Enter your email address and password. The default admin for DEMO hospital is admin@demohospital.com / Admin@12345. After successful login, you are redirected to /dashboard. If you get 'too many attempts', wait 1 minute (login is rate-limited to 10 attempts per minute).",
+      "Q: I forgot my password. What do I do? - Contact your hospital administrator or IT helpdesk. The system does not have a self-service password reset in this version. The admin can reset your password or create a new user account for you.",
+      "Q: What browsers does the system support? - Chrome, Edge, and Firefox on desktop. The system uses Tailwind CSS v4 and Livewire 4, which work best in modern browsers. Use the latest version of your browser.",
+      "Q: The system redirected me back to login. Why? - Your JWT session expired or you were logged out. The JWT token is stored in an HTTP-only cookie. Log back in to resume. Any unsaved form data may be lost - save your work frequently.",
+      "Q: I see a '403 Forbidden' error when accessing a page. What does it mean? - You do not have the required permission for that page. Permissions are assigned to your role by the admin. Contact your administrator to request access to the specific module. See section 3.4 for the full permission list.",
+      "Q: How do I log out? - Click 'Logout' in the navigation menu. Your session is cleared and you return to the login page."
+    ]},
+
+    {"type":"heading","text":"B. Patient Registration","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I register a new patient? - Go to Patients (/patients). Click 'Create New Patient'. Fill in the patient's information. The patient_code is auto-generated (e.g. 202600000001). At minimum, you need last_name and first_name. The address uses a cascading dropdown: Country -> Region -> Province -> City -> Barangay. If the dropdowns are empty, the master data for that geographic level has not been created yet by the admin.",
+      "Q: What is a patient_code and how is it generated? - It is a unique patient identifier in the format YYYY + 10-digit number (e.g. 202600000001). It is auto-generated when you create a patient. The year prefix resets each calendar year. The number increments sequentially. You can override it during creation if needed, but it must be unique.",
+      "Q: I selected a Country but the Region dropdown is empty. Why? - The Region master data has not been created for your hospital (tenant). The admin needs to create the regions (and provinces, cities, barangays) under Masters. The system cascades the dropdowns based on what master data exists.",
+      "Q: How do I link a patient to PhilHealth? - In the patient registration form, check the 'Is PhilHealth Member' box. This reveals the PhilHealth Member dropdown. Select the patient's existing PhilHealth membership record. If the membership does not exist yet, create it first under PhilHealth > Members.",
+      "Q: Can I edit a patient's record after creation? - Yes. Go to Patients, find the patient, click Edit. All fields are editable (except patient_code which is generally not changed). Changes are logged in the audit trail with your user ID and timestamp.",
+      "Q: How do I search for a patient? - On the Patients page, use the search box. It searches by patient_code, last_name, first_name, middle_name, contact_no, and PhilHealth member ID. Results are paginated (10 per page by default). You can also sort by clicking column headers.",
+      "Q: What happens when I delete a patient? - The patient is soft-deleted (history = 0). They are hidden from normal views. The record is retained in the database. The patient's clinical history (consultations, admissions, orders) is also retained. To permanently remove data is not possible - the system never physically deletes records."
+    ]},
+
+    {"type":"heading","text":"C. OPD Consultations","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I start an OPD consultation? - Go to OPD > Consultations. Click 'Create New OPD Consultation'. Search for the patient (by name, patient code, PhilHealth number) - minimum 3 characters to trigger the search. Select the patient. Fill in: OPD Clinic, Attending Physician, Consultation Type, Visit Type (and optionally Referral Source). Click Save. The consultation is created with status 'Pending'. Then the SOAP form opens for clinical documentation.",
+      "Q: What are the OPD master data items I need to set up first? - Before OPD consultations can be created, you need: OPD Clinics (which clinic the patient visits), Consultation Types (type of consultation), Visit Types (new/follow-up/referral), Referral Sources (where the patient came from), Services (clinical services offered), and Complaints (common chief complaints for quick selection). All are under OPD in the Masters side menu. Create these first, then consultations can be created.",
+      "Q: What is SOAP and how do I document it? - SOAP = Subjective (history of present illness + chief complaint), Objective (physical exam findings, vitals), Assessment (diagnosis), Plan (treatment plan). After creating the consultation, fill in: chief_complaint, vitals (BP systolic/diastolic, HR, temp, RR, weight, height, O2 saturation), history_of_present_illness, physical_exam_findings, assessment, treatment_plan, orders_summary, disposition, next_follow_up_date. The SOAP documentation can be done in stages - you don't need to complete it all at once. Save as you go.",
+      "Q: How do I enter vitals? - From the OPD consultations list, click 'Enter Vitals' on a consultation. The vitals modal opens. Enter: BP systolic, BP diastolic, heart rate, temperature, respiratory rate, weight, height, O2 saturation, and chief_complaint. Click Save. The vitals are saved and the consultation status advances to 'In Progress' (if it was 'Pending'). This is typically done by nursing staff.",
+      "Q: How do I place an order (lab, pharmacy, CSR, radiology, procedure) from an OPD consultation? - From the OPD consultation, click 'Place Order' and select the order type (Lab, Pharmacy, CSR, Radiology, Procedure). In the order modal, select the items (tests, drugs, supplies, exam types, procedures). For pharmacy orders, you can set per-drug frequency (BID, TID, etc.) and route (PO, IV, IM, etc.). Set priority (Routine, Urgent, Stat) and add notes. Click Save. The order is created with a request code (LR- for lab, PR- for pharmacy, CR- for CSR, Rad- for radiology, Proc- for procedure) and appears in the respective module for processing.",
+      "Q: What request codes are generated and what do they mean? - Lab requests: LR-00001 format (Lab Request). Pharmacy requests: PR-00001 format (Pharmacy Request). CSR/Supply requests: CR-00001 format (Clinical Service Request). Radiology requests: Rad-00001 format (Radiology Request). Procedure requests: Proc-00001 format (Procedure Request). OPD consultations: OPD-00001 format. ER admissions: ER#<id> format. These codes are generated automatically when the record is created.",
+      "Q: Can I place multiple orders for the same consultation? - Yes. You can place separate lab, pharmacy, CSR, radiology, and procedure orders from the same consultation. Each order is a separate request with its own request code. The consultation's orders_summary field can be used to summarize all orders placed.",
+      "Q: How do I close/complet an OPD consultation? - In the SOAP form, set the disposition (Discharged, Admitted, Referred, Follow-up, etc.) and optionally the next_follow_up_date. Click Save. Setting the disposition changes the status to 'Completed'. The consultation is now closed."
+    ]},
+
+    {"type":"heading","text":"D. Emergency Room","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I admit a patient to the ER? - Go to ER > Triage. Create a triage record: select patient, acuity level (severity), mobility status, triage notes. Then go to ER > Admission (or create directly from triage) to create the ER admission. Assign an ER bed (the bed status changes to 'Occupied'), set attending physician, initial diagnosis, mode of arrival, and other fields. The admission_code is ER#<id> (e.g. ER#1).",
+      "Q: What is triage and why is it important? - Triage is the initial assessment of a patient's severity when they arrive at the ER. The triage record captures: acuity level (Level 1-5, from most to least severe), mobility status (ambulatory, wheelchair, stretcher, etc.), and triage notes. Triage helps prioritize patient care. The triage record is created first, then the ER admission is created.",
+      "Q: How does ER bed management work? - ER beds are managed under ER > Beds. Each bed has a status: Available, Occupied, Occupied-Isolation, Maintenance. When you assign a bed to an ER admission, the bed status changes to 'Occupied'. When you edit the admission and change the bed (or discharge the patient), the old bed's status is automatically set back to 'Available'. This keeps bed status accurate in real-time.",
+      "Q: What is OECB and how do I use it? - OECB (Outpatient Emergency Case Billing) is the Philippine emergency billing system. To use it: on the ER admission treatment form, toggle 'Is OECB' to enable OECB billing. Click 'Add OECB Entry' to add a core presentation (e.g. 'Abdominal Pain'). When you type the core presentation name, the system auto-fetches the OECB package code and fixed fee from the OECB Fee Schedule master. You can add multiple OECB entries. On save, the OECB entries are stored with the admission. The EECL PDF (see below) includes all OECB entries.",
+      "Q: What is the EECL PDF and how do I generate it? - The EECL (Emergency Encounter Closure List) is an official emergency encounter document. When the ER admission has is_oecb=true, you can generate the EECL PDF from: ER > Admission > select admission > EECL PDF button (route: er.admission.eeclpdf). The PDF includes: patient info, PhilHealth member details (if linked), attending physician, OECB entries (core presentation, package code, fixed fee), triage record, ER bed/zone, admission datetime, initial diagnosis, disposition. Download and print for PhilHealth/emergency billing.",
+      "Q: How do I discharge an ER patient? - On the ER admission treatment form, set the disposition to 'Discharged'. Add discharge instructions. Click Save. The admission status changes to 'Discharged'. If the patient was assigned an ER bed, the bed status is automatically set back to 'Available'. The patient can then be billed (billing module) and/or have PhilHealth claims filed."
+    ]},
+
+    {"type":"heading","text":"E. Inpatient, ICU, Ward, and OR","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I admit a patient as an inpatient? - Go to Admission (/admission). Click 'Create New Admission'. Select patient, admitting diagnosis, attending physician, admission type, and assign a ward room or ICU bed (the room/bed status changes to occupied). Set admission date. The admission_code is ADM#<id>. The patient is now an inpatient.",
+      "Q: How does the ward room assignment work? - Ward rooms are under Ward > Rooms. Each room belongs to a ward and a room type (which determines the bed count and rate). When you assign a room to an admission, the available bed count decreases. When the patient is discharged, the bed is freed and the count increases. Room transfers (moving a patient to a different room) are tracked in the AdmissionRoomHistory for audit.",
+      "Q: How does ICU bed management work? - ICU beds are under ICU > Beds. Each ICU bed belongs to an ICU ward (Medical ICU, Surgical ICU, Cardiac ICU, etc.). ICU beds are assigned to critical care patients. When assigned, the bed status becomes 'Occupied'. When freed (discharge/transfer), status returns to 'Available'.",
+      "Q: What is MICU and how is it different from ICU? - MICU (Medical Intensive Care Unit) is the non-surgical critical care unit. MICU tracks patients admitted to medical critical care with specific assessment parameters: vitals, laboratory values (ABG, electrolytes, CBC), severity scores (APACHE II, SOFA, Glasgow Coma Scale), ventilator settings (if applicable), fluid balance, urine output. MICU assessment parameters are captured periodically (every shift or every 4-6 hours). ICU is the broader intensive care unit including surgical ICU. MICU is for medical (non-surgical) critical care specifically.",
+      "Q: How do I schedule an OR procedure? - Go to OR > Schedule. Create an OR schedule entry: select patient, OR room, procedure type and description, surgeon (attending physician), anesthesiologist, scheduled date/time, pre-op notes. The OR schedule manages operating theatre utilization. During the procedure, intra-op notes and post-op notes are captured. The OR schedule links to the admission record and can be linked to procedure orders."
+    ]},
+
+    {"type":"heading","text":"F. Laboratory, Radiology, Pharmacy, and CSR","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I view lab results for a patient? - Go to Lab > Results. Find the lab request by patient name, request code (LR-XXXXX), or doctor. Click into the request to see all lab items with their results. Results can be: not yet entered (Pending), entered (In Progress/Results Ready), or verified (Verified). The lab technologist enters results on each item.",
+      "Q: How do I enter a lab result? - In Lab > Results, open a lab request. For each lab item: enter the lab_result (text - e.g. '4.5', 'Negative', 'Gram Positive Cocci in Clusters'), and if parametric, the lab_result_number (numeric value). The result_interpretation is auto-computed based on the test's normal ranges (Within Normal Limits, Above Reference Range, Below Reference Range, Critical-High, Critical-Low). Check 'is_reviewed' if a supervisor has reviewed it. When all items have results, advance status to 'Results Ready'. When verified by pathologist, status becomes 'Verified'.",
+      "Q: How do I print a lab result report? - From Lab > Results, open the lab request. Click 'Print Results' (route: lab.results.print). A PDF is generated showing the request header (patient, request code, ordering doctor, priority, date, specimen info), and the results table (test name, result, reference range, interpretation, reviewed status). Download and print.",
+      "Q: How do I order a radiology exam? - From an OPD/ER/inpatient encounter, place a radiology order (see C.6 above). The order creates a RadiologyRequest with code Rad-XXXXX. In Radiology > Results, the rad tech sees the pending request. They schedule/perform the exam (set technologist_id, exam_datetime, advance status to 'Completed'). The radiologist then enters findings and impression, marks is_reviewed=true, and the report is finalized (status 'Reported').",
+      "Q: How do I print a radiology report? - From Radiology > Results, open the radiology request. Click 'Print Results' (route: radiology.results.print). The PDF shows the exam header (request code, patient, clinical indication, exam type, modality, body part, exam date), the radiologist's findings narrative, the impression/conclusion, and the reporting details (reported by, date).",
+      "Q: How do I dispense medication from the pharmacy? - Go to Pharmacy > Dispensing. Find the pending PharmacyRequest (PR-XXXXX). For each item: select the batch to dispense from (batch_id), verify expiry date, enter the dispensed_quantity (may be less than ordered for partial dispense). When all items are dispensed, status becomes 'Dispensed'. If only some items, status becomes 'Partially Dispensed'. The batch quantities are decremented. The patient's PMR is updated.",
+      "Q: What is the PMR and how do I view it? - PMR (Patient Medication Record) is the patient's complete medication history across all encounters. Go to Pharmacy > Patient Medication Record. Select the patient. The PMR shows all medications prescribed and dispensed: drug name, generic name, form, strength, route, frequency, quantity, duration, start/end dates, prescribing doctor, dispensing status. Use it for medication reconciliation.",
+      "Q: How do I adjust pharmacy inventory? - Go to Pharmacy > Stock Adjustments. Click 'Create New Adjustment'. Select the drug and batch (or aggregate), select adjustment type (Stock In, Stock Out, Damage/Loss, Return to Vendor, Correction, Physical Count Adjustment, Expiration Write-off), enter quantities before/after, reason, notes. Click Save. The inventory is updated.",
+      "Q: How do I issue medical supplies (CSR dispensing)? - Go to Supply > Dispensing. Find the pending CsrRequest (CR-XXXXX). For each item: select quantity to dispense from the stock location, enter notes. When all items dispensed, status becomes 'Dispensed'. The stock location inventory is decremented. Print the CSR request form if needed."
+    ]},
+
+    {"type":"heading","text":"G. Billing and Payments","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I create an invoice for a patient? - Go to Billing (/billing). The BillingCrud shows tabs for Dashboard, Create Invoice, Patient Account, Payments. To create an invoice: select the patient (search by name/code/PhilHealth). The system shows unbilled services (lab/pharmacy/CSR/radiology/procedure orders with charges, plus any staged manual charges). Select which services to include. Optionally add manual charges. Set invoice date, due date, payment terms. Apply discount if needed (percentage or fixed). Click 'Save Invoice'. The invoice is created with code INV-XXXXX. Line items are created for each billed service.",
+      "Q: How does the discount work? - Discounts can be applied at two levels: (1) At invoice creation (service-level discount): percentage or fixed discount on the selected services total. (2) After invoice creation (invoice-level discount): percentage or fixed discount on the entire invoice total. For percentage: discount_amount = round(total * percentage / 100, 2). For fixed: discount_amount = min(fixed_amount, total) - cannot exceed the total. The discount reduces the total_amount. The balance is total - paid_amount. If balance <= 0, status becomes 'Paid'.",
+      "Q: How do I record a payment? - In Billing, go to the Payments tab. Select patient. Select which invoice(s) to apply payment to (can be multiple). Enter payment amount, payment method (Cash, Check, Credit Card, PhilHealth, HMO/Insurance, Bank Transfer), reference number (check number, transaction ref), payment_by name. Click 'Save Payment'. A BillingPayment is created with code PAY-XXXXX. The invoice(s) paid_amount and balance are updated. If payment exceeds invoice balance, the overpaid amount remains as credit on the patient account. A payment receipt PDF can be generated.",
+      "Q: How do I print an invoice? - From Billing, find the invoice (INV-XXXXX). Click 'Print Invoice' (route: billing.invoice.print). The PDF shows: invoice header (code, patient, bill_date, due_date, status), billing line items (description, qty, unit_price, total, source reference), subtotal services, discount (type, value, amount), total amount, paid amount, balance, payment terms, remarks. Download and print.",
+      "Q: How do I print a payment receipt? - From Billing, find the payment (PAY-XXXXX). Click 'Print Receipt' (route: billing.payment-receipt). The PDF shows: receipt header (receipt_no, patient, payment_date, amount, method, reference_no), payment allocation (which invoices), remaining balance, received by, payment notes.",
+      "Q: How do I print a patient statement of account? - From Billing, select the patient. Click 'Print Statement' (route: billing.statement). The PDF shows: patient name/address, statement period, all invoices (code, bill_date, due_date, total, paid, balance), all payments (code, date, amount, method), running balance. This is the patient's complete account statement."
+    ]},
+
+    {"type":"heading","text":"H. PhilHealth Claims","level":2},
+    {"type":"numbered_list","items":[
+      "Q: What PhilHealth master data do I need to set up? - Before filing PhilHealth claims, set up: ICD10 Codes (diagnosis codes - WHO classification), RVS Codes (Relative Value Scale - PhilHealth fee schedule codes for services), Case Rates (fixed-rate packages for specific conditions), HC Professionals (healthcare professional registry for PhilHealth - PRC license number, PhilHealth provider ID), PhilHealth Members (membership records linking patients to PhilHealth). All under PhilHealth in the Masters/Admin menu.",
+      "Q: How do I link a patient to PhilHealth? - Two steps: (1) Create the PhilHealth Member record under PhilHealth > Members (if not already created). Enter the patient's PhilHealth membership details: membership number, name, DOB, sex, address, membership type, status. (2) In Patient Registration, check 'Is PhilHealth Member' and select the PhilHealth member record from the dropdown. The patient's philhealth_member_id FK is now linked to the membership record.",
+      "Q: How do I file a PhilHealth claim? - Go to PhilHealth > Claims. Click 'Create New Claim'. Select PhilHealth member (or search patient to link membership). Set claim_type (Outpatient, Inpatient, Emergency, Maternity, Case Rate/Z-Benefit, Konsulta, HMO Referral). Link to the encounter (admission_id for inpatient, opd_consultation_id for outpatient). Set service_date. Enter primary diagnosis (ICD10 code). Add claim services/line items (service_type, description, quantity, RVS code if applicable, unit_rate, total_amount). For case rate claims, select the case_rate_code. Review, then submit. Status becomes 'Submitted'.",
+      "Q: What are the PhilHealth claim forms and how do I print them? - The PhilHealth module generates 6 official claim form PDFs: (1) E-SOAP PDF - the electronic summary of accounts and payments (complete claim summary). (2) CF1 PDF - Claim Form 1 (patient demographics, facility, diagnoses, admitting physician). (3) CF2 PDF - Claim Form 2 (service line items with RVS codes, quantities, rates, amounts, PhilHealth allowed, patient share). (4) CF3 PDF - Claim Form 3 (medications/pharmaceuticals administered). (5) CF4 PDF - Claim Form 4 (laboratory tests performed). (6) CF5 PDF - Claim Form 5 (radiology/imaging procedures). (7) EECL PDF - Emergency Encounter Closure List (for emergency admissions). Generate each from the claim page. These are the official PhilHealth submission documents.",
+      "Q: What is a PhilHealth batch and how do I use it? - A batch groups multiple claims together for submission. From PhilHealth > Batches, create a batch, add claims to it. The batch has a batch_code (e.g. BATCH-2026-09), description, total claims count, total amount, submission date, and PhilHealth batch reference. Batches are useful for organizing claims by submission period (weekly/monthly). Submit the batch to PhilHealth."
+    ]},
+
+    {"type":"heading","text":"I. Medical Certificates","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I generate a medical certificate? - Go to Medical Records (/medical-records). Select the certificate type (MC, Certificate of Disability, Fit to Work, Death Certificate, Birth Certificate/Delivery Note, etc.). Select the patient and the relevant encounter (OPD consultation, ER admission, admission, delivery record). Fill in certificate-specific fields. Click Generate. The PDF is created via DomPDF and downloaded. The certificate includes: patient demographics, clinical information from the encounter (diagnosis, findings), certificate-specific statements, physician signature block, date.",
+      "Q: What certificates are available? - Medical Certificate (MC - fitness status), Certificate of Employment (COE), Certificate of Disability (COD - for PWD ID, government benefits), Nil per os/Special Orders (NPO, activity, diet, positioning orders), Letter of Request/Referral Letter, Fit to Work/Fit to Fly/Fit to Travel Certificate, Encashment/Reimbursement Certificate (HMO/insurance), Birth Certificate/Delivery Note (for delivery patients), Death Certificate (for expired patients)."
+    ]},
+
+    {"type":"heading","text":"J. Doctors and Appointments","level":2},
+    {"type":"numbered_list","items":[
+      "Q: How do I view my schedule as a doctor? - Go to Doctors > Dashboard (doctors.dashboard). The dashboard shows today's scheduled appointments (filtered to your health_care_professional_id), pending consultations, pending orders to review, today's admissions, and quick stats. The dashboard is your home screen.",
+      "Q: How do I manage my appointments? - Go to Doctors > Schedule (doctors.schedule). The schedule shows your appointments with filters: search by patient name/appointment code, filter by status (Scheduled/In Progress/Completed/Cancelled), filter by date. For each appointment: click Edit to reschedule (change date/time - available slots are computed in real-time), edit notes, Mark In Progress (when you start seeing the patient), Mark Completed (when done), Cancel (if cancelled). Non-admin doctors see only their own appointments. Admin doctors see all.",
+      "Q: What happens if I try to reschedule to a time that's already taken? - The system computes available slots in real-time when you edit the date (loadAvailableSlots). Only non-overlapping, future slots are shown as clickable buttons. You cannot select a time that's already booked by another appointment for the same doctor. The database also has a uniqueness constraint (doctor + date + start_time) that prevents double-booking at the DB level.",
+      "Q: How do I view a patient's chart? - Click 'View Chart' on a patient (from Patients list, or from an appointment). The patient chart shows the patient's complete clinical history: demographics, all OPD consultations with SOAP notes, ER admissions, inpatient admissions, lab results, radiology reports, pharmacy dispensing history, CSR items, procedure records, billing invoices/payments, PhilHealth membership/claims, and all certificates. The chart is the single comprehensive view of the patient's medical record."
+    ]},
+
+    {"type":"heading","text":"K. Technical and Troubleshooting","level":2},
+    {"type":"numbered_list","items":[
+      "Q: The server is not responding. What do I do? - The application runs on PHP 8.2.12 with XAMPP. Make sure XAMPP Apache and SQL Server services are running. The database is at 127.0.0.1:1433 (DB: sithemr, User: root, Pass: P@ssw0rd). If the server process died, restart it with 'php artisan serve --port=8000' from the project directory (E:\\sithemr). The application URL is http://localhost:8000.",
+      "Q: I see a 'page expired' or 'csrf token mismatch' error. What does it mean? - This happens when your session expired or the page was open for too long. Refresh the page and try again. If you were in the middle of a form, unsaved data is lost. Save frequently.",
+      "Q: A dropdown is empty or has no options. What should I check? - Cascading dropdowns (country->region->province->city->barangay, or patient->philhealth member) depend on master data being created. If the dropdown is empty, the master data for that level has not been created yet. For example: if Region dropdown is empty, no regions have been created under Masters > Region. The admin needs to create the master data first. Also check that you are logged in as the correct hospital's user (multi-tenancy - data is per hospital).",
+      "Q: I don't see a menu item I expect. Why? - Menu items are hidden based on your permissions. If you don't have the required permission for a page, it is not shown in the menu. Contact your admin to have the permission added to your role (Admin > Roles > Role Permissions).",
+      "Q: How do I report a bug or issue? - Document: the page URL, what you were trying to do, what happened (error message, wrong behavior), your user/role, and the date/time. Submit to the IT helpdesk or the development team. For urgent issues affecting patient care, use the hospital's emergency IT contact."
+    ]},
+    {"type":"page_break"}
+  ]

@@ -1,0 +1,201 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - button "Delivery" [ref=e97]:
+          - generic [ref=e98]:
+            - img [ref=e99]
+            - generic [ref=e101]: Delivery
+          - img [ref=e102]
+        - button "Wards" [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic [ref=e109]: Wards
+          - img [ref=e110]
+        - link "Admission" [ref=e112] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e113]
+          - text: Admission
+        - link "Nursing" [ref=e115] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e116]
+          - text: Nursing
+        - link "Billing" [ref=e118] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e119]
+          - text: Billing
+        - link "Fund Sources" [ref=e121] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e122]
+          - text: Fund Sources
+        - generic [ref=e124]:
+          - button "OR" [ref=e125]:
+            - generic [ref=e126]:
+              - img [ref=e127]
+              - generic [ref=e129]: OR
+            - img [ref=e130]
+          - generic [ref=e132]:
+            - link "OR Rooms" [ref=e133] [cursor=pointer]:
+              - /url: /or/rooms
+            - link "OR Schedule" [ref=e134] [cursor=pointer]:
+              - /url: /or/schedule
+        - button "Emergency Room" [ref=e136]:
+          - generic [ref=e137]:
+            - img [ref=e138]
+            - generic [ref=e140]: Emergency Room
+          - img [ref=e141]
+        - button "OPD" [ref=e144]:
+          - generic [ref=e145]:
+            - img [ref=e146]
+            - generic [ref=e148]: OPD
+          - img [ref=e149]
+        - button "OB" [ref=e152]:
+          - generic [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e156]: OB
+          - img [ref=e157]
+        - button "PhilHealth" [ref=e160]:
+          - generic [ref=e161]:
+            - img [ref=e162]
+            - generic [ref=e164]: PhilHealth
+          - img [ref=e165]
+        - button "YAKAP" [ref=e168]:
+          - generic [ref=e169]:
+            - img [ref=e170]
+            - generic [ref=e172]: YAKAP
+          - img [ref=e173]
+    - main [ref=e175]:
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - heading "OR Schedule" [level=2] [ref=e182]
+            - paragraph [ref=e183]: Manage surgical schedules, room assignments, and procedures.
+          - button "Add Schedule" [ref=e184]:
+            - img [ref=e185]
+            - text: Add Schedule
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic:
+              - img
+            - textbox "Search schedule code, patient, or procedure…" [ref=e189]
+          - generic [ref=e190]:
+            - generic [ref=e191]: "Rows:"
+            - combobox [ref=e192]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e194]:
+          - rowgroup [ref=e195]:
+            - row "Schedule Code ↑↓ Scheduled Date ↓ Status ↑↓ OR Room Patient Procedure Surgeon Time Actions" [ref=e196]:
+              - columnheader "Schedule Code ↑↓" [ref=e197] [cursor=pointer]:
+                - generic [ref=e198]:
+                  - text: Schedule Code
+                  - generic [ref=e199]: ↑↓
+              - columnheader "Scheduled Date ↓" [ref=e200] [cursor=pointer]:
+                - generic [ref=e201]:
+                  - text: Scheduled Date
+                  - generic [ref=e202]: ↓
+              - columnheader "Status ↑↓" [ref=e203] [cursor=pointer]:
+                - generic [ref=e204]:
+                  - text: Status
+                  - generic [ref=e205]: ↑↓
+              - columnheader "OR Room" [ref=e206]
+              - columnheader "Patient" [ref=e207]
+              - columnheader "Procedure" [ref=e208]
+              - columnheader "Surgeon" [ref=e209]
+              - columnheader "Time" [ref=e210]
+              - columnheader "Actions" [ref=e211]
+          - rowgroup [ref=e212]:
+            - row "ORS-00001 Jun 27, 2026 Scheduled OR-1 Gonzales, Carlos Appendectomy Dr. Dela Cruz Treatment Dispo" [ref=e213]:
+              - cell "ORS-00001" [ref=e214]
+              - cell "Jun 27, 2026" [ref=e215]
+              - cell "Scheduled" [ref=e216]:
+                - generic [ref=e217]: Scheduled
+              - cell "OR-1" [ref=e218]
+              - cell "Gonzales, Carlos" [ref=e219]
+              - cell "Appendectomy" [ref=e220]
+              - cell "Dr. Dela Cruz" [ref=e221]
+              - cell [ref=e222]
+              - cell "Treatment Dispo" [ref=e223]:
+                - generic [ref=e224]:
+                  - button "Treatment" [ref=e225]:
+                    - img [ref=e226]
+                    - text: Treatment
+                  - button "Edit" [ref=e228]:
+                    - img [ref=e229]
+                  - button "Dispo" [ref=e231]:
+                    - img [ref=e232]
+                    - text: Dispo
+                  - button "Archive" [ref=e234]:
+                    - img [ref=e235]
+  - contentinfo [ref=e237]:
+    - paragraph [ref=e239]: © 2026 SITHEMR. All rights reserved.

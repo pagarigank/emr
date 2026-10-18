@@ -1,0 +1,360 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - button [ref=e6]:
+            - img [ref=e7]
+          - generic [ref=e9]:
+            - img "SITHEMR Logo" [ref=e10]
+            - heading "SITHEMR" [level=1] [ref=e11]
+        - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+          - generic [ref=e15]: D
+          - generic [ref=e16]:
+            - generic [ref=e17]: Demo Hospital Admin
+            - generic [ref=e18]: tenant_admin
+          - img [ref=e19]
+    - generic [ref=e21]:
+      - navigation [ref=e22]:
+        - generic [ref=e23]:
+          - link "Dashboard" [ref=e24] [cursor=pointer]:
+            - /url: /
+            - img [ref=e25]
+            - text: Dashboard
+          - link "Transactions" [ref=e27] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=e28]
+            - text: Transactions
+          - link "Reports" [ref=e30] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=e31]
+            - text: Reports
+          - link "Transfers" [ref=e33] [cursor=pointer]:
+            - /url: /transfers
+            - img [ref=e34]
+            - text: Transfers
+          - button "Masters" [ref=e38]:
+            - generic [ref=e39]:
+              - img [ref=e40]
+              - generic [ref=e42]: Masters
+            - img [ref=e43]
+          - link "Patients" [ref=e45] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=e46]
+            - text: Patients
+          - button "Laboratory" [ref=e49]:
+            - generic [ref=e50]:
+              - img [ref=e51]
+              - generic [ref=e53]: Laboratory
+            - img [ref=e54]
+          - button "CSR / Supply" [ref=e57]:
+            - generic [ref=e58]:
+              - img [ref=e59]
+              - generic [ref=e61]: CSR / Supply
+            - img [ref=e62]
+          - button "Pharmacy" [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e69]: Pharmacy
+            - img [ref=e70]
+          - button "Procedures" [ref=e73]:
+            - generic [ref=e74]:
+              - img [ref=e75]
+              - generic [ref=e77]: Procedures
+            - img [ref=e78]
+          - button "Radiology" [ref=e81]:
+            - generic [ref=e82]:
+              - img [ref=e83]
+              - generic [ref=e85]: Radiology
+            - img [ref=e86]
+          - button "Renal Care" [ref=e89]:
+            - generic [ref=e90]:
+              - img [ref=e91]
+              - generic [ref=e93]: Renal Care
+            - img [ref=e94]
+          - button "Delivery" [ref=e97]:
+            - generic [ref=e98]:
+              - img [ref=e99]
+              - generic [ref=e101]: Delivery
+            - img [ref=e102]
+          - button "Wards" [ref=e105]:
+            - generic [ref=e106]:
+              - img [ref=e107]
+              - generic [ref=e109]: Wards
+            - img [ref=e110]
+          - link "Admission" [ref=e112] [cursor=pointer]:
+            - /url: /admission
+            - img [ref=e113]
+            - text: Admission
+          - link "Nursing" [ref=e115] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=e116]
+            - text: Nursing
+          - link "Billing" [ref=e118] [cursor=pointer]:
+            - /url: /billing
+            - img [ref=e119]
+            - text: Billing
+          - link "Fund Sources" [ref=e121] [cursor=pointer]:
+            - /url: /billing/fund-sources
+            - img [ref=e122]
+            - text: Fund Sources
+          - button "OR" [ref=e125]:
+            - generic [ref=e126]:
+              - img [ref=e127]
+              - generic [ref=e129]: OR
+            - img [ref=e130]
+          - button "Emergency Room" [ref=e133]:
+            - generic [ref=e134]:
+              - img [ref=e135]
+              - generic [ref=e137]: Emergency Room
+            - img [ref=e138]
+          - button "OPD" [ref=e141]:
+            - generic [ref=e142]:
+              - img [ref=e143]
+              - generic [ref=e145]: OPD
+            - img [ref=e146]
+          - generic [ref=e148]:
+            - button "OB" [ref=e149]:
+              - generic [ref=e150]:
+                - img [ref=e151]
+                - generic [ref=e153]: OB
+              - img [ref=e154]
+            - generic [ref=e156]:
+              - link "Visit Types" [ref=e157] [cursor=pointer]:
+                - /url: /ob/visit-types
+              - link "Fetal Presentations" [ref=e158] [cursor=pointer]:
+                - /url: /ob/fetal-presentations
+              - link "Contraceptive Methods" [ref=e159] [cursor=pointer]:
+                - /url: /ob/contraceptive-methods
+              - link "Consultations" [ref=e160] [cursor=pointer]:
+                - /url: /ob/consultations
+          - button "PhilHealth" [ref=e162]:
+            - generic [ref=e163]:
+              - img [ref=e164]
+              - generic [ref=e166]: PhilHealth
+            - img [ref=e167]
+          - button "YAKAP" [ref=e170]:
+            - generic [ref=e171]:
+              - img [ref=e172]
+              - generic [ref=e174]: YAKAP
+            - img [ref=e175]
+      - main [ref=e177]:
+        - generic [ref=e180]:
+          - generic [ref=e697]:
+            - generic [ref=e699]:
+              - generic [ref=e700]:
+                - heading "OB/GYN Consultation" [level=2] [ref=e701]
+                - paragraph [ref=e702]: "#OBC-00001"
+              - generic [ref=e703]: Active
+            - generic [ref=e704]:
+              - generic [ref=e705]:
+                - paragraph [ref=e706]: Patient
+                - paragraph [ref=e707]: Dela Cruz, Juan
+              - generic [ref=e708]:
+                - paragraph [ref=e709]: Attending
+                - paragraph [ref=e710]: Dr. Dr. Dela Cruz
+              - generic [ref=e711]:
+                - paragraph [ref=e712]: Visit Type
+                - paragraph [ref=e713]: Prenatal Visit
+              - generic [ref=e714]:
+                - paragraph [ref=e715]: Created
+                - paragraph [ref=e716]: Jun 27, 2026 16:04
+            - generic [ref=e717]:
+              - generic [ref=e718]:
+                - paragraph [ref=e719]: Gest Age
+                - paragraph [ref=e720]: 28 weeks
+              - generic [ref=e721]:
+                - paragraph [ref=e722]: Gravida
+                - paragraph [ref=e723]: "2"
+              - generic [ref=e724]:
+                - paragraph [ref=e725]: Para
+                - paragraph [ref=e726]: "1"
+              - generic [ref=e727]:
+                - paragraph [ref=e728]: Full Term
+                - paragraph [ref=e729]: "1"
+              - generic [ref=e730]:
+                - paragraph [ref=e731]: Preterm
+                - paragraph [ref=e732]: "0"
+              - generic [ref=e733]:
+                - paragraph [ref=e734]: Abortion
+                - paragraph [ref=e735]: "0"
+              - generic [ref=e736]:
+                - paragraph [ref=e737]: Living
+                - paragraph [ref=e738]: "1"
+              - generic [ref=e739]:
+                - paragraph [ref=e740]: LMP
+                - paragraph [ref=e741]: —
+          - navigation "Tabs" [ref=e742]:
+            - button "Clinical Notes" [ref=e743]:
+              - img [ref=e744]
+              - text: Clinical Notes
+            - button "Orders & Interventions" [ref=e746]:
+              - img [ref=e747]
+              - text: Orders & Interventions
+            - button "OR Schedule" [ref=e749]:
+              - img [ref=e750]
+              - text: OR Schedule
+            - button "Disposition" [ref=e752]:
+              - img [ref=e753]
+              - text: Disposition
+          - generic [ref=e755]:
+            - generic [ref=e828]:
+              - generic [ref=e829]:
+                - heading "Orders Summary" [level=3] [ref=e830]:
+                  - img [ref=e831]
+                  - text: Orders Summary
+                - textbox "Medications, IV fluids, consults..." [ref=e833]
+              - generic [ref=e834]:
+                - generic [ref=e835]:
+                  - heading "Laboratory Orders 1" [level=3] [ref=e1113]:
+                    - img [ref=e837]
+                    - text: Laboratory Orders
+                    - generic [ref=e839]: "1"
+                  - button "Request Lab Test" [ref=e840]:
+                    - img [ref=e841]
+                    - text: Request Lab Test
+                - table [ref=e844]:
+                  - rowgroup [ref=e845]:
+                    - 'row "Request # Items Priority Status Billing Total Date Actions" [ref=e846]':
+                      - 'columnheader "Request #" [ref=e847]'
+                      - columnheader "Items" [ref=e848]
+                      - columnheader "Priority" [ref=e849]
+                      - columnheader "Status" [ref=e850]
+                      - columnheader "Billing" [ref=e851]
+                      - columnheader "Total" [ref=e852]
+                      - columnheader "Date" [ref=e853]
+                      - columnheader "Actions" [ref=e854]
+                  - rowgroup [ref=e855]:
+                    - row "LR-00003 Complete Blood Count Pending Hemoglobin Pending Routine Pending Pending ₱0.00 Jun 27, 16:12 Cancel" [ref=e1114]:
+                      - cell "LR-00003" [ref=e1115]
+                      - cell "Complete Blood Count Pending Hemoglobin Pending" [ref=e1116]:
+                        - generic [ref=e1117]:
+                          - generic [ref=e1118]:
+                            - generic [ref=e1119]: Complete Blood Count
+                            - generic [ref=e1120]: Pending
+                          - generic [ref=e1121]:
+                            - generic [ref=e1122]: Hemoglobin
+                            - generic [ref=e1123]: Pending
+                      - cell "Routine" [ref=e1124]
+                      - cell "Pending" [ref=e1125]
+                      - cell "Pending" [ref=e1126]
+                      - cell "₱0.00" [ref=e1127]
+                      - cell "Jun 27, 16:12" [ref=e1128]
+                      - cell "Cancel" [ref=e1129]:
+                        - button "Cancel" [ref=e1130]
+              - generic [ref=e858]:
+                - generic [ref=e859]:
+                  - heading "Supply Orders (CSR) 1" [level=3] [ref=e1293]:
+                    - img [ref=e861]
+                    - text: Supply Orders (CSR)
+                    - generic [ref=e863]: "1"
+                  - button "Request Supply" [ref=e864]:
+                    - img [ref=e865]
+                    - text: Request Supply
+                - table [ref=e868]:
+                  - rowgroup [ref=e869]:
+                    - 'row "Request # Items Status Billing Total Date Actions" [ref=e870]':
+                      - 'columnheader "Request #" [ref=e871]'
+                      - columnheader "Items" [ref=e872]
+                      - columnheader "Status" [ref=e873]
+                      - columnheader "Billing" [ref=e874]
+                      - columnheader "Total" [ref=e875]
+                      - columnheader "Date" [ref=e876]
+                      - columnheader "Actions" [ref=e877]
+                  - rowgroup [ref=e878]:
+                    - row "CR-00002 Alcohol Swab (Box/100) (x2.00) Pending Pending Pending ₱90.00 Jun 27, 16:12 Cancel" [ref=e1294]:
+                      - cell "CR-00002" [ref=e1295]
+                      - cell "Alcohol Swab (Box/100) (x2.00) Pending" [ref=e1296]:
+                        - generic [ref=e1298]:
+                          - generic [ref=e1299]: Alcohol Swab (Box/100) (x2.00)
+                          - generic [ref=e1300]: Pending
+                      - cell "Pending" [ref=e1301]
+                      - cell "Pending" [ref=e1302]
+                      - cell "₱90.00" [ref=e1303]
+                      - cell "Jun 27, 16:12" [ref=e1304]
+                      - cell "Cancel" [ref=e1305]:
+                        - button "Cancel" [ref=e1306]
+              - generic [ref=e881]:
+                - generic [ref=e882]:
+                  - heading "Radiology Orders 0" [level=3] [ref=e883]:
+                    - img [ref=e884]
+                    - text: Radiology Orders
+                    - generic [ref=e886]: "0"
+                  - button "Request Exam" [ref=e887]:
+                    - img [ref=e888]
+                    - text: Request Exam
+                - table [ref=e891]:
+                  - rowgroup [ref=e892]:
+                    - 'row "Request # Exams Status Billing Total Date Actions" [ref=e893]':
+                      - 'columnheader "Request #" [ref=e894]'
+                      - columnheader "Exams" [ref=e895]
+                      - columnheader "Status" [ref=e896]
+                      - columnheader "Billing" [ref=e897]
+                      - columnheader "Total" [ref=e898]
+                      - columnheader "Date" [ref=e899]
+                      - columnheader "Actions" [ref=e900]
+                  - rowgroup [ref=e901]:
+                    - row "No radiology orders placed yet." [ref=e902]:
+                      - cell "No radiology orders placed yet." [ref=e903]
+              - generic [ref=e904]:
+                - generic [ref=e905]:
+                  - heading "Pharmacy Orders 0" [level=3] [ref=e906]:
+                    - img [ref=e907]
+                    - text: Pharmacy Orders
+                    - generic [ref=e909]: "0"
+                  - button "Request Medication" [ref=e910]:
+                    - img [ref=e911]
+                    - text: Request Medication
+                - table [ref=e914]:
+                  - rowgroup [ref=e915]:
+                    - 'row "Request # Medications Priority Status Billing Total Date Actions" [ref=e916]':
+                      - 'columnheader "Request #" [ref=e917]'
+                      - columnheader "Medications" [ref=e918]
+                      - columnheader "Priority" [ref=e919]
+                      - columnheader "Status" [ref=e920]
+                      - columnheader "Billing" [ref=e921]
+                      - columnheader "Total" [ref=e922]
+                      - columnheader "Date" [ref=e923]
+                      - columnheader "Actions" [ref=e924]
+                  - rowgroup [ref=e925]:
+                    - row "No pharmacy orders placed yet." [ref=e926]:
+                      - cell "No pharmacy orders placed yet." [ref=e927]
+              - generic [ref=e928]:
+                - generic [ref=e929]:
+                  - heading "Procedure Orders 0" [level=3] [ref=e930]:
+                    - img [ref=e931]
+                    - text: Procedure Orders
+                    - generic [ref=e933]: "0"
+                  - button "Request Procedure" [ref=e934]:
+                    - img [ref=e935]
+                    - text: Request Procedure
+                - table [ref=e938]:
+                  - rowgroup [ref=e939]:
+                    - 'row "Request # Procedures Status Billing Total Date Actions" [ref=e940]':
+                      - 'columnheader "Request #" [ref=e941]'
+                      - columnheader "Procedures" [ref=e942]
+                      - columnheader "Status" [ref=e943]
+                      - columnheader "Billing" [ref=e944]
+                      - columnheader "Total" [ref=e945]
+                      - columnheader "Date" [ref=e946]
+                      - columnheader "Actions" [ref=e947]
+                  - rowgroup [ref=e948]:
+                    - row "No procedure orders placed yet." [ref=e949]:
+                      - cell "No procedure orders placed yet." [ref=e950]
+            - generic [ref=e818]:
+              - generic [ref=e819]:
+                - img [ref=e820]
+                - text: Changes are auto-saved per section
+              - generic [ref=e822]:
+                - button "← Back to List" [ref=e823]
+                - button "Save Consultation" [ref=e824]:
+                  - generic [ref=e825]:
+                    - img [ref=e826]
+                    - text: Save Consultation
+    - contentinfo [ref=e227]:
+      - paragraph [ref=e229]: © 2026 SITHEMR. All rights reserved.
+  - generic [ref=e1307]:
+    - img [ref=e1308]
+    - generic [ref=e1310]: Supply request CR-00002 created.
+    - button [ref=e1311]:
+      - img [ref=e1312]

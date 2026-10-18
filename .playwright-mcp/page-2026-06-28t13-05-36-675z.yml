@@ -1,0 +1,32 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "Hospitals" [level=2] [ref=e5]
+      - paragraph [ref=e6]: Manage referral hospitals for patient transfers.
+    - button "Add Hospital" [ref=e7]:
+      - img [ref=e8]
+      - text: Add Hospital
+  - generic [ref=e10]:
+    - generic [ref=e12]:
+      - img [ref=e14]
+      - textbox "Search hospitals..." [ref=e16]
+    - table [ref=e18]:
+      - rowgroup [ref=e19]:
+        - row "Code ↑ Name ↑↓ Type Contact Status Actions" [ref=e20]:
+          - columnheader "Code ↑" [ref=e21]:
+            - text: Code
+            - generic [ref=e22]: ↑
+          - columnheader "Name ↑↓" [ref=e23]:
+            - text: Name
+            - generic [ref=e24]: ↑↓
+          - columnheader "Type" [ref=e25]
+          - columnheader "Contact" [ref=e26]
+          - columnheader "Status" [ref=e27]
+          - columnheader "Actions" [ref=e28]
+      - rowgroup [ref=e29]:
+        - row "No hospitals found Add a hospital to get started." [ref=e30]:
+          - cell "No hospitals found Add a hospital to get started." [ref=e31]:
+            - generic [ref=e32]:
+              - img [ref=e33]
+              - text: No hospitals found
+              - paragraph [ref=e35]: Add a hospital to get started.

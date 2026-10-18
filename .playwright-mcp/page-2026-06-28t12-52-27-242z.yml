@@ -1,0 +1,425 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - generic [ref=e64]:
+          - button "Pharmacy" [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e69]: Pharmacy
+            - img [ref=e70]
+          - generic [ref=e72]:
+            - link "Drug Formulary" [ref=e73] [cursor=pointer]:
+              - /url: /pharmacy/drugs
+            - link "Drug Batches" [ref=e74] [cursor=pointer]:
+              - /url: /pharmacy/drug-batches
+            - link "Stock Dashboard" [ref=e75] [cursor=pointer]:
+              - /url: /pharmacy/inventory
+            - link "Dispensing" [ref=e76] [cursor=pointer]:
+              - /url: /pharmacy/dispensing
+            - link "Purchase Orders" [ref=e77] [cursor=pointer]:
+              - /url: /pharmacy/purchase-orders
+            - link "Stock Adjustments" [ref=e78] [cursor=pointer]:
+              - /url: /pharmacy/stock-adjustments
+            - link "Patient Med Record" [ref=e79] [cursor=pointer]:
+              - /url: /pharmacy/patient-medication-record
+            - link "Reports" [ref=e80] [cursor=pointer]:
+              - /url: /pharmacy/reports
+        - button "Procedures" [ref=e82]:
+          - generic [ref=e83]:
+            - img [ref=e84]
+            - generic [ref=e86]: Procedures
+          - img [ref=e87]
+        - button "Radiology" [ref=e90]:
+          - generic [ref=e91]:
+            - img [ref=e92]
+            - generic [ref=e94]: Radiology
+          - img [ref=e95]
+        - button "Renal Care" [ref=e98]:
+          - generic [ref=e99]:
+            - img [ref=e100]
+            - generic [ref=e102]: Renal Care
+          - img [ref=e103]
+        - button "Delivery" [ref=e106]:
+          - generic [ref=e107]:
+            - img [ref=e108]
+            - generic [ref=e110]: Delivery
+          - img [ref=e111]
+        - button "Wards" [ref=e114]:
+          - generic [ref=e115]:
+            - img [ref=e116]
+            - generic [ref=e118]: Wards
+          - img [ref=e119]
+        - link "Admission" [ref=e121] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e122]
+          - text: Admission
+        - link "Nursing" [ref=e124] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e125]
+          - text: Nursing
+        - link "Billing" [ref=e127] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e128]
+          - text: Billing
+        - link "Fund Sources" [ref=e130] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e131]
+          - text: Fund Sources
+        - button "OR" [ref=e134]:
+          - generic [ref=e135]:
+            - img [ref=e136]
+            - generic [ref=e138]: OR
+          - img [ref=e139]
+        - button "Emergency Room" [ref=e142]:
+          - generic [ref=e143]:
+            - img [ref=e144]
+            - generic [ref=e146]: Emergency Room
+          - img [ref=e147]
+        - button "OPD" [ref=e150]:
+          - generic [ref=e151]:
+            - img [ref=e152]
+            - generic [ref=e154]: OPD
+          - img [ref=e155]
+        - button "OB" [ref=e158]:
+          - generic [ref=e159]:
+            - img [ref=e160]
+            - generic [ref=e162]: OB
+          - img [ref=e163]
+        - button "PhilHealth" [ref=e166]:
+          - generic [ref=e167]:
+            - img [ref=e168]
+            - generic [ref=e170]: PhilHealth
+          - img [ref=e171]
+        - button "YAKAP" [ref=e174]:
+          - generic [ref=e175]:
+            - img [ref=e176]
+            - generic [ref=e178]: YAKAP
+          - img [ref=e179]
+    - main [ref=e181]:
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - heading "Drug Formulary" [level=2] [ref=e186]
+            - paragraph [ref=e187]: Manage medication master list
+          - button "Add Drug" [ref=e188]:
+            - img [ref=e189]
+            - text: Add Drug
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - img [ref=e193]
+            - textbox "Search code, name, class, strength…" [ref=e195]
+          - generic [ref=e196]:
+            - generic [ref=e197]: "Rows:"
+            - combobox [ref=e198]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e200]:
+          - rowgroup [ref=e201]:
+            - row "Drug Code Generic Name Brand Name Strength Dosage Form Class Schedule Stock Unit Cost Status Actions" [ref=e202]:
+              - columnheader "Drug Code" [ref=e203] [cursor=pointer]:
+                - generic [ref=e204]:
+                  - text: Drug Code
+                  - img [ref=e205]
+              - columnheader "Generic Name" [ref=e207] [cursor=pointer]:
+                - generic [ref=e208]:
+                  - text: Generic Name
+                  - img [ref=e209]
+              - columnheader "Brand Name" [ref=e211] [cursor=pointer]:
+                - generic [ref=e212]:
+                  - text: Brand Name
+                  - img [ref=e213]
+              - columnheader "Strength" [ref=e215] [cursor=pointer]:
+                - generic [ref=e216]:
+                  - text: Strength
+                  - img [ref=e217]
+              - columnheader "Dosage Form" [ref=e219] [cursor=pointer]:
+                - generic [ref=e220]:
+                  - text: Dosage Form
+                  - img [ref=e221]
+              - columnheader "Class" [ref=e223] [cursor=pointer]:
+                - generic [ref=e224]:
+                  - text: Class
+                  - img [ref=e225]
+              - columnheader "Schedule" [ref=e227] [cursor=pointer]:
+                - generic [ref=e228]:
+                  - text: Schedule
+                  - img [ref=e229]
+              - columnheader "Stock" [ref=e231]
+              - columnheader "Unit Cost" [ref=e232]
+              - columnheader "Status" [ref=e233]
+              - columnheader "Actions" [ref=e234]
+          - rowgroup [ref=e235]:
+            - row "AMLO-10 Amlodipine Norvasc 10mg Tablet Antihypertensive Non-Rx 665 $223.10 Active" [ref=e236]:
+              - cell "AMLO-10" [ref=e237]
+              - cell "Amlodipine" [ref=e238]
+              - cell "Norvasc" [ref=e239]
+              - cell "10mg" [ref=e240]
+              - cell "Tablet" [ref=e241]
+              - cell "Antihypertensive" [ref=e242]
+              - cell "Non-Rx" [ref=e243]:
+                - generic [ref=e244]: Non-Rx
+              - cell "665" [ref=e245]
+              - cell "$223.10" [ref=e246]
+              - cell "Active" [ref=e247]:
+                - generic [ref=e248]: Active
+              - cell [ref=e249]:
+                - generic [ref=e250]:
+                  - button "View Details" [ref=e251]:
+                    - img [ref=e252]
+                  - button "Edit" [ref=e255]:
+                    - img [ref=e256]
+                  - button "Archive" [ref=e258]:
+                    - img [ref=e259]
+            - row "AMLO-5 Amlodipine Norvasc 5mg Tablet Antihypertensive Non-Rx 580 $279.77 Active" [ref=e261]:
+              - cell "AMLO-5" [ref=e262]
+              - cell "Amlodipine" [ref=e263]
+              - cell "Norvasc" [ref=e264]
+              - cell "5mg" [ref=e265]
+              - cell "Tablet" [ref=e266]
+              - cell "Antihypertensive" [ref=e267]
+              - cell "Non-Rx" [ref=e268]:
+                - generic [ref=e269]: Non-Rx
+              - cell "580" [ref=e270]
+              - cell "$279.77" [ref=e271]
+              - cell "Active" [ref=e272]:
+                - generic [ref=e273]: Active
+              - cell [ref=e274]:
+                - generic [ref=e275]:
+                  - button "View Details" [ref=e276]:
+                    - img [ref=e277]
+                  - button "Edit" [ref=e280]:
+                    - img [ref=e281]
+                  - button "Archive" [ref=e283]:
+                    - img [ref=e284]
+            - row "AMOX-500 Amoxicillin Amoxil 500mg Capsule Penicillin Antibiotic Rx 772 $240.76 Active" [ref=e286]:
+              - cell "AMOX-500" [ref=e287]
+              - cell "Amoxicillin" [ref=e288]
+              - cell "Amoxil" [ref=e289]
+              - cell "500mg" [ref=e290]
+              - cell "Capsule" [ref=e291]
+              - cell "Penicillin Antibiotic" [ref=e292]
+              - cell "Rx" [ref=e293]:
+                - generic [ref=e294]: Rx
+              - cell "772" [ref=e295]
+              - cell "$240.76" [ref=e296]
+              - cell "Active" [ref=e297]:
+                - generic [ref=e298]: Active
+              - cell [ref=e299]:
+                - generic [ref=e300]:
+                  - button "View Details" [ref=e301]:
+                    - img [ref=e302]
+                  - button "Edit" [ref=e305]:
+                    - img [ref=e306]
+                  - button "Archive" [ref=e308]:
+                    - img [ref=e309]
+            - row "ATRV-20 Atorvastatin Lipitor 20mg Tablet Statin Rx 512 $209.80 Active" [ref=e311]:
+              - cell "ATRV-20" [ref=e312]
+              - cell "Atorvastatin" [ref=e313]
+              - cell "Lipitor" [ref=e314]
+              - cell "20mg" [ref=e315]
+              - cell "Tablet" [ref=e316]
+              - cell "Statin" [ref=e317]
+              - cell "Rx" [ref=e318]:
+                - generic [ref=e319]: Rx
+              - cell "512" [ref=e320]
+              - cell "$209.80" [ref=e321]
+              - cell "Active" [ref=e322]:
+                - generic [ref=e323]: Active
+              - cell [ref=e324]:
+                - generic [ref=e325]:
+                  - button "View Details" [ref=e326]:
+                    - img [ref=e327]
+                  - button "Edit" [ref=e330]:
+                    - img [ref=e331]
+                  - button "Archive" [ref=e333]:
+                    - img [ref=e334]
+            - row "AZIT-500 Azithromycin Zithromax 500mg Tablet Macrolide Antibiotic Rx 724 $156.97 Active" [ref=e336]:
+              - cell "AZIT-500" [ref=e337]
+              - cell "Azithromycin" [ref=e338]
+              - cell "Zithromax" [ref=e339]
+              - cell "500mg" [ref=e340]
+              - cell "Tablet" [ref=e341]
+              - cell "Macrolide Antibiotic" [ref=e342]
+              - cell "Rx" [ref=e343]:
+                - generic [ref=e344]: Rx
+              - cell "724" [ref=e345]
+              - cell "$156.97" [ref=e346]
+              - cell "Active" [ref=e347]:
+                - generic [ref=e348]: Active
+              - cell [ref=e349]:
+                - generic [ref=e350]:
+                  - button "View Details" [ref=e351]:
+                    - img [ref=e352]
+                  - button "Edit" [ref=e355]:
+                    - img [ref=e356]
+                  - button "Archive" [ref=e358]:
+                    - img [ref=e359]
+            - row "CEFT-1G Ceftriaxone Rocephin 1g Injection Cephalosporin Antibiotic Rx 622 $242.27 Active" [ref=e361]:
+              - cell "CEFT-1G" [ref=e362]
+              - cell "Ceftriaxone" [ref=e363]
+              - cell "Rocephin" [ref=e364]
+              - cell "1g" [ref=e365]
+              - cell "Injection" [ref=e366]
+              - cell "Cephalosporin Antibiotic" [ref=e367]
+              - cell "Rx" [ref=e368]:
+                - generic [ref=e369]: Rx
+              - cell "622" [ref=e370]
+              - cell "$242.27" [ref=e371]
+              - cell "Active" [ref=e372]:
+                - generic [ref=e373]: Active
+              - cell [ref=e374]:
+                - generic [ref=e375]:
+                  - button "View Details" [ref=e376]:
+                    - img [ref=e377]
+                  - button "Edit" [ref=e380]:
+                    - img [ref=e381]
+                  - button "Archive" [ref=e383]:
+                    - img [ref=e384]
+            - row "CIPRO-500 Ciprofloxacin Cipro 500mg Tablet Fluoroquinolone Rx 704 $221.60 Active" [ref=e386]:
+              - cell "CIPRO-500" [ref=e387]
+              - cell "Ciprofloxacin" [ref=e388]
+              - cell "Cipro" [ref=e389]
+              - cell "500mg" [ref=e390]
+              - cell "Tablet" [ref=e391]
+              - cell "Fluoroquinolone" [ref=e392]
+              - cell "Rx" [ref=e393]:
+                - generic [ref=e394]: Rx
+              - cell "704" [ref=e395]
+              - cell "$221.60" [ref=e396]
+              - cell "Active" [ref=e397]:
+                - generic [ref=e398]: Active
+              - cell [ref=e399]:
+                - generic [ref=e400]:
+                  - button "View Details" [ref=e401]:
+                    - img [ref=e402]
+                  - button "Edit" [ref=e405]:
+                    - img [ref=e406]
+                  - button "Archive" [ref=e408]:
+                    - img [ref=e409]
+            - row "D5LR-1L D5LR IV D5LR 1L Solution IV Fluid Non-Rx 536 $172.13 Active" [ref=e411]:
+              - cell "D5LR-1L" [ref=e412]
+              - cell "D5LR IV" [ref=e413]
+              - cell "D5LR" [ref=e414]
+              - cell "1L" [ref=e415]
+              - cell "Solution" [ref=e416]
+              - cell "IV Fluid" [ref=e417]
+              - cell "Non-Rx" [ref=e418]:
+                - generic [ref=e419]: Non-Rx
+              - cell "536" [ref=e420]
+              - cell "$172.13" [ref=e421]
+              - cell "Active" [ref=e422]:
+                - generic [ref=e423]: Active
+              - cell [ref=e424]:
+                - generic [ref=e425]:
+                  - button "View Details" [ref=e426]:
+                    - img [ref=e427]
+                  - button "Edit" [ref=e430]:
+                    - img [ref=e431]
+                  - button "Archive" [ref=e433]:
+                    - img [ref=e434]
+            - row "GLIB-5 Glibenclamide Daonil 5mg Tablet Sulfonylurea Rx 490 $230.00 Active" [ref=e436]:
+              - cell "GLIB-5" [ref=e437]
+              - cell "Glibenclamide" [ref=e438]
+              - cell "Daonil" [ref=e439]
+              - cell "5mg" [ref=e440]
+              - cell "Tablet" [ref=e441]
+              - cell "Sulfonylurea" [ref=e442]
+              - cell "Rx" [ref=e443]:
+                - generic [ref=e444]: Rx
+              - cell "490" [ref=e445]
+              - cell "$230.00" [ref=e446]
+              - cell "Active" [ref=e447]:
+                - generic [ref=e448]: Active
+              - cell [ref=e449]:
+                - generic [ref=e450]:
+                  - button "View Details" [ref=e451]:
+                    - img [ref=e452]
+                  - button "Edit" [ref=e455]:
+                    - img [ref=e456]
+                  - button "Archive" [ref=e458]:
+                    - img [ref=e459]
+            - row "IBU-400 Ibuprofen Advil 400mg Tablet NSAID Non-Rx 425 $439.83 Active" [ref=e461]:
+              - cell "IBU-400" [ref=e462]
+              - cell "Ibuprofen" [ref=e463]
+              - cell "Advil" [ref=e464]
+              - cell "400mg" [ref=e465]
+              - cell "Tablet" [ref=e466]
+              - cell "NSAID" [ref=e467]
+              - cell "Non-Rx" [ref=e468]:
+                - generic [ref=e469]: Non-Rx
+              - cell "425" [ref=e470]
+              - cell "$439.83" [ref=e471]
+              - cell "Active" [ref=e472]:
+                - generic [ref=e473]: Active
+              - cell [ref=e474]:
+                - generic [ref=e475]:
+                  - button "View Details" [ref=e476]:
+                    - img [ref=e477]
+                  - button "Edit" [ref=e480]:
+                    - img [ref=e481]
+                  - button "Archive" [ref=e483]:
+                    - img [ref=e484]
+        - navigation "Pagination Navigation" [ref=e488]:
+          - generic [ref=e489]:
+            - paragraph [ref=e491]: Showing 1 to 10 of 23 results
+            - generic [ref=e493]:
+              - generic "&laquo; Previous" [ref=e495]:
+                - img [ref=e497]
+              - generic [ref=e501]: "1"
+              - button "Go to page 2" [ref=e503]: "2"
+              - button "Go to page 3" [ref=e505]: "3"
+              - button "Next &raquo;" [ref=e507]:
+                - img [ref=e508]
+  - contentinfo [ref=e510]:
+    - paragraph [ref=e512]: © 2026 SITHEMR. All rights reserved.

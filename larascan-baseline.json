@@ -1,0 +1,286 @@
+{
+    "version": 1,
+    "generated_at": "2026-07-28T03:27:29+00:00",
+    "findings": [
+        {
+            "check": "config.app-env",
+            "file": null,
+            "message": "APP_ENV is 'local' \u2014 leaks development-mode behavior in production.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "cookies.session-secure",
+            "file": null,
+            "message": "SESSION_SECURE_COOKIE is false \u2014 sessions cookies will be sent over HTTP and can be hijacked on shared networks.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "crypto.hardcoded-secret",
+            "file": "app\\traits\\soapclient.php",
+            "message": "Possible hardcoded secret (pattern 'high-entropy') \u2014 move to .env.",
+            "severity": "critical",
+            "count": 1
+        },
+        {
+            "check": "dependencies.npm-audit",
+            "file": null,
+            "message": "@huggingface/transformers * \u2014 Vulnerability in @huggingface/transformers",
+            "severity": "high",
+            "count": 1
+        },
+        {
+            "check": "dependencies.npm-audit",
+            "file": null,
+            "message": "@opencode-manager/memory * \u2014 Vulnerability in @opencode-manager/memory",
+            "severity": "high",
+            "count": 1
+        },
+        {
+            "check": "dependencies.npm-audit",
+            "file": null,
+            "message": "esbuild 0.27.3 - 0.28.0 \u2014 esbuild allows arbitrary file read when running the development server on Windows",
+            "severity": "low",
+            "count": 1
+        },
+        {
+            "check": "dependencies.npm-audit",
+            "file": null,
+            "message": "sharp <0.35.0 \u2014 sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+            "severity": "high",
+            "count": 1
+        },
+        {
+            "check": "files.unlink-user-input",
+            "file": "app\\livewire\\radiology\\radiologyresultscrud.php",
+            "message": "`unlink()` deletes filesystem entries \u2014 verify path is not user-controlled.",
+            "severity": "critical",
+            "count": 1
+        },
+        {
+            "check": "headers.hsts",
+            "file": null,
+            "message": "No HSTS middleware detected in the HTTP kernel \u2014 Strict-Transport-Security header is essential for HTTPS-only deployments.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "headers.referrer-policy",
+            "file": null,
+            "message": "No Referrer-Policy middleware detected \u2014 set a Referrer-Policy header to control referrer information leakage.",
+            "severity": "low",
+            "count": 1
+        },
+        {
+            "check": "headers.x-content-type-options",
+            "file": null,
+            "message": "No X-Content-Type-Options middleware detected \u2014 without nosniff, browsers may MIME-sniff responses and execute untrusted content.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "headers.x-frame-options",
+            "file": null,
+            "message": "No X-Frame-Options middleware detected \u2014 without it, your application may be vulnerable to clickjacking attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "injection.host-header",
+            "file": null,
+            "message": "app.url is not set or points to localhost \u2014 host header injection can redirect users, set cookies, generate signed URLs, and poison password reset emails.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'barangay_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'blood_type_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'city_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'civil_status_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'country_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'gender_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'nationality_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'occupation_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'philhealth_member_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'primary_care_provider_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'province_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'region_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "models.foreign-key-fillable",
+            "file": "app\\models\\patient.php",
+            "message": "Foreign key 'religion_id' in $fillable \u2014 allows mass assignment of ownership, enabling tenant escape attacks.",
+            "severity": "medium",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/auth/login has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/auth/logout has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/auth/me has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/auth/refresh has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/dicom/images/{id} has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/dicom/images/{id}/thumbnail has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/dicom/modalities has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/dicom/store has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/dicom/studies has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "routing.api-http-only",
+            "file": null,
+            "message": "API route api/dicom/worklist has no HTTPS-enforcing middleware and APP_URL is http://localhost. Add 'force.https' middleware or set APP_URL to https://.",
+            "severity": "info",
+            "count": 1
+        },
+        {
+            "check": "sql.variable-table-column",
+            "file": "app\\console\\commands\\clearclinicaldata.php",
+            "message": "Variable DB::table() argument \u2014 variable table/column name. Validate against an allowlist before passing.",
+            "severity": "high",
+            "count": 2
+        },
+        {
+            "check": "sql.variable-table-column",
+            "file": "app\\livewire\\billing\\billingcrud.php",
+            "message": "Variable DB::table() argument \u2014 variable table/column name. Validate against an allowlist before passing.",
+            "severity": "high",
+            "count": 2
+        },
+        {
+            "check": "xss.blade-unescaped",
+            "file": "E:\\sithemr\\resources/views\\livewire\\philhealth\\claim-submission.blade.php",
+            "message": "Blade {!! ... !!} unescaped output containing PHP variable \u2014 potential XSS if variable holds user input. Use {{ }} for HTML-escaped output.",
+            "severity": "high",
+            "count": 1
+        },
+        {
+            "check": "xss.blade-unescaped",
+            "file": "E:\\sithemr\\resources/views\\pages\\medical-records\\certificate-print.blade.php",
+            "message": "Blade {!! ... !!} unescaped output containing PHP variable \u2014 potential XSS if variable holds user input. Use {{ }} for HTML-escaped output.",
+            "severity": "high",
+            "count": 1
+        }
+    ]
+}

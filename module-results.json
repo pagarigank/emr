@@ -1,0 +1,1524 @@
+[
+  {
+    "id": "dashboard",
+    "name": "Dashboard",
+    "route": "/",
+    "testType": "nav-only",
+    "status": "pass",
+    "message": "Page loaded — Command Center  Live overview of hospital operations and financials.  SEPTEMBER ",
+    "screenshots": [
+      "dashboard-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "masters-tenant",
+    "name": "Tenant (Hospital)",
+    "route": "/masters/company",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-tenant-01-list.png",
+      "masters-tenant-02-form.png",
+      "masters-tenant-03-filled.png",
+      "masters-tenant-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-department",
+    "name": "Department",
+    "route": "/masters/department",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-department-01-list.png",
+      "masters-department-02-form.png",
+      "masters-department-03-filled.png",
+      "masters-department-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-users",
+    "name": "Users",
+    "route": "/masters/users",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — User Management  Manage system access and roles.  Add User Rows: 10 25 50 USERNA",
+    "screenshots": [
+      "masters-users-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "masters-hospital",
+    "name": "Hospital",
+    "route": "/masters/hospital",
+    "testType": "crud",
+    "status": "check",
+    "message": "Created but no success toast — verify manually",
+    "screenshots": [
+      "masters-hospital-01-list.png",
+      "masters-hospital-02-form.png",
+      "masters-hospital-03-filled.png",
+      "masters-hospital-04-after.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "masters-permissions",
+    "name": "Permissions",
+    "route": "/masters/permissions",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Permission Management  Manage system permissions  Add Permission Rows: 10 25 50 ",
+    "screenshots": [
+      "masters-permissions-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "masters-country",
+    "name": "Country",
+    "route": "/masters/country",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-country-01-list.png",
+      "masters-country-02-form.png",
+      "masters-country-03-filled.png",
+      "masters-country-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-region",
+    "name": "Region",
+    "route": "/masters/region",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-region-01-list.png",
+      "masters-region-02-form.png",
+      "masters-region-03-filled.png",
+      "masters-region-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-province",
+    "name": "Province/State",
+    "route": "/masters/province",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-province-01-list.png",
+      "masters-province-02-form.png",
+      "masters-province-03-filled.png",
+      "masters-province-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-city",
+    "name": "City/Municipality",
+    "route": "/masters/city",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-city-01-list.png",
+      "masters-city-02-form.png",
+      "masters-city-03-filled.png",
+      "masters-city-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-barangay",
+    "name": "Barangay",
+    "route": "/masters/barangay",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-barangay-01-list.png",
+      "masters-barangay-02-form.png",
+      "masters-barangay-03-filled.png",
+      "masters-barangay-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-religion",
+    "name": "Religion",
+    "route": "/masters/religion",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-religion-01-list.png",
+      "masters-religion-02-form.png",
+      "masters-religion-03-filled.png",
+      "masters-religion-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-gender",
+    "name": "Gender",
+    "route": "/masters/gender",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-gender-01-list.png",
+      "masters-gender-02-form.png",
+      "masters-gender-03-filled.png",
+      "masters-gender-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-civil-status",
+    "name": "Civil Status",
+    "route": "/masters/civil-status",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-civil-status-01-list.png",
+      "masters-civil-status-02-form.png",
+      "masters-civil-status-03-filled.png",
+      "masters-civil-status-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-nationality",
+    "name": "Nationality",
+    "route": "/masters/nationality",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-nationality-01-list.png",
+      "masters-nationality-02-form.png",
+      "masters-nationality-03-filled.png",
+      "masters-nationality-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-occupation",
+    "name": "Occupation",
+    "route": "/masters/occupation",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-occupation-01-list.png",
+      "masters-occupation-02-form.png",
+      "masters-occupation-03-filled.png",
+      "masters-occupation-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-blood-type",
+    "name": "Blood Type",
+    "route": "/masters/blood-type",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-blood-type-01-list.png",
+      "masters-blood-type-02-form.png",
+      "masters-blood-type-03-filled.png",
+      "masters-blood-type-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "masters-relationship",
+    "name": "Relationship",
+    "route": "/masters/relationship",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "masters-relationship-01-list.png",
+      "masters-relationship-02-form.png",
+      "masters-relationship-03-filled.png",
+      "masters-relationship-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "admin-roles",
+    "name": "Roles",
+    "route": "/admin/roles",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "admin-roles-01-list.png",
+      "admin-roles-02-form.png",
+      "admin-roles-03-filled.png",
+      "admin-roles-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "admin-role-perms",
+    "name": "Role Permissions",
+    "route": "/admin/role-permissions",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Role Permissions  Assign permissions to system roles  Select Role Doctor Staff S",
+    "screenshots": [
+      "admin-role-perms-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "admin-audit-log",
+    "name": "Audit Trail",
+    "route": "/admin/audit-log",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Permission Audit Trail  View all permission changes across the system  Search Ac",
+    "screenshots": [
+      "admin-audit-log-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "patients",
+    "name": "Patient Registration",
+    "route": "/patients",
+    "testType": "crud",
+    "status": "skip",
+    "message": "No Create/New/Add button found",
+    "screenshots": [
+      "patients-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "opd-consultations",
+    "name": "OPD Consultations",
+    "route": "/opd/consultations",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — OPD Consultations  Manage outpatient clinic encounters, vitals, and treatments. ",
+    "screenshots": [
+      "opd-consultations-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "opd-clinics",
+    "name": "OPD Clinics",
+    "route": "/opd/clinics",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "opd-clinics-01-list.png",
+      "opd-clinics-02-form.png",
+      "opd-clinics-03-filled.png",
+      "opd-clinics-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "opd-consultation-types",
+    "name": "Consultation Types",
+    "route": "/opd/consultation-types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "opd-consultation-types-01-list.png",
+      "opd-consultation-types-02-form.png",
+      "opd-consultation-types-03-filled.png",
+      "opd-consultation-types-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "opd-visit-types",
+    "name": "Visit Types",
+    "route": "/opd/visit-types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "opd-visit-types-01-list.png",
+      "opd-visit-types-02-form.png",
+      "opd-visit-types-03-filled.png",
+      "opd-visit-types-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "opd-services",
+    "name": "Services",
+    "route": "/opd/services",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "opd-services-01-list.png",
+      "opd-services-02-form.png",
+      "opd-services-03-filled.png",
+      "opd-services-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "opd-complaints",
+    "name": "Complaints",
+    "route": "/opd/complaints",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "opd-complaints-01-list.png",
+      "opd-complaints-02-form.png",
+      "opd-complaints-03-filled.png",
+      "opd-complaints-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "opd-referral-sources",
+    "name": "Referral Sources",
+    "route": "/opd/referral-sources",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "opd-referral-sources-01-list.png",
+      "opd-referral-sources-02-form.png",
+      "opd-referral-sources-03-filled.png",
+      "opd-referral-sources-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "er-triage",
+    "name": "Triage Records",
+    "route": "/er/triage",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — ER Triage Records  Manage emergency triage data and acuity levels.  New Triage R",
+    "screenshots": [
+      "er-triage-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "er-area",
+    "name": "ER Area/Admissions",
+    "route": "/er/area",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Emergency Room Area  Active  Completed Rows: 10 25 50 ACUITY\tENCOUNTER # ↑↓ \tPAT",
+    "screenshots": [
+      "er-area-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "er-acuity-levels",
+    "name": "Acuity Levels",
+    "route": "/er/acuity-levels",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "er-acuity-levels-01-list.png",
+      "er-acuity-levels-02-form.png",
+      "er-acuity-levels-03-filled.png",
+      "er-acuity-levels-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "er-mobility-statuses",
+    "name": "Mobility Statuses",
+    "route": "/er/mobility-statuses",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "er-mobility-statuses-01-list.png",
+      "er-mobility-statuses-02-form.png",
+      "er-mobility-statuses-03-filled.png",
+      "er-mobility-statuses-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "er-zones",
+    "name": "ER Zones",
+    "route": "/er/zones",
+    "testType": "crud",
+    "status": "check",
+    "message": "Created but no success toast — verify manually",
+    "screenshots": [
+      "er-zones-01-list.png",
+      "er-zones-02-form.png",
+      "er-zones-03-filled.png",
+      "er-zones-04-after.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "er-beds",
+    "name": "ER Beds",
+    "route": "/er/beds",
+    "testType": "crud",
+    "status": "check",
+    "message": "Created but no success toast — verify manually",
+    "screenshots": [
+      "er-beds-01-list.png",
+      "er-beds-02-form.png",
+      "er-beds-03-filled.png",
+      "er-beds-04-after.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "admission",
+    "name": "Admissions",
+    "route": "/admission",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Admission Management  Manage patient admissions from ER and active inpatients.  ",
+    "screenshots": [
+      "admission-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "ward-wards",
+    "name": "Wards",
+    "route": "/ward/wards",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "ward-wards-01-list.png",
+      "ward-wards-02-form.png",
+      "ward-wards-03-filled.png",
+      "ward-wards-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "ward-rooms",
+    "name": "Rooms",
+    "route": "/ward/rooms",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "ward-rooms-01-list.png",
+      "ward-rooms-02-form.png",
+      "ward-rooms-03-filled.png",
+      "ward-rooms-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "ward-room-types",
+    "name": "Room Types",
+    "route": "/ward/room-types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "ward-room-types-01-list.png",
+      "ward-room-types-02-form.png",
+      "ward-room-types-03-filled.png",
+      "ward-room-types-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "icu-wards",
+    "name": "ICU Wards",
+    "route": "/icu/wards",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — ICU Wards  Manage intensive care unit wards.  Add Ward Rows: 10 25 50 CODE ↑ \tNA",
+    "screenshots": [
+      "icu-wards-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "icu-beds",
+    "name": "ICU Beds",
+    "route": "/icu/beds",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — ICU Beds  Manage ICU bed inventory across wards.  Add Bed Rows: 10 25 50 CODE ↑ ",
+    "screenshots": [
+      "icu-beds-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "transfer",
+    "name": "Hospital Transfers",
+    "route": "/transfers",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Hospital Transfers  Track patient transfers to other healthcare facilities.  New",
+    "screenshots": [
+      "transfer-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "nursing",
+    "name": "Nursing",
+    "route": "/nursing",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — In-Patient Nursing  Manage admitted patients, vitals, care notes, and discharges",
+    "screenshots": [
+      "nursing-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "lab-sections",
+    "name": "Lab Sections",
+    "route": "/lab/sections",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "lab-sections-01-list.png",
+      "lab-sections-02-form.png",
+      "lab-sections-03-filled.png",
+      "lab-sections-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "lab-units",
+    "name": "Lab Units",
+    "route": "/lab/units",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "lab-units-01-list.png",
+      "lab-units-02-form.png",
+      "lab-units-03-filled.png",
+      "lab-units-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "lab-specimen-types",
+    "name": "Specimen Types",
+    "route": "/lab/specimen-types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "lab-specimen-types-01-list.png",
+      "lab-specimen-types-02-form.png",
+      "lab-specimen-types-03-filled.png",
+      "lab-specimen-types-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "lab-instruments",
+    "name": "Instruments",
+    "route": "/lab/instruments",
+    "testType": "crud",
+    "status": "check",
+    "message": "Created but no success toast — verify manually",
+    "screenshots": [
+      "lab-instruments-01-list.png",
+      "lab-instruments-02-form.png",
+      "lab-instruments-03-filled.png",
+      "lab-instruments-04-after.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "lab-tests",
+    "name": "Test Catalog",
+    "route": "/lab/tests",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "lab-tests-01-list.png",
+      "lab-tests-02-form.png",
+      "lab-tests-03-filled.png",
+      "lab-tests-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "lab-panels",
+    "name": "Panels",
+    "route": "/lab/panels",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "lab-panels-01-list.png",
+      "lab-panels-02-form.png",
+      "lab-panels-03-filled.png",
+      "lab-panels-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "lab-reference-ranges",
+    "name": "Reference Ranges",
+    "route": "/lab/reference-ranges",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (0 fields filled)",
+    "screenshots": [
+      "lab-reference-ranges-01-list.png",
+      "lab-reference-ranges-02-form.png",
+      "lab-reference-ranges-03-filled.png",
+      "lab-reference-ranges-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "lab-results",
+    "name": "Lab Results",
+    "route": "/lab/results",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Lab Results  Enter, review, and validate laboratory test results.  All Pending R",
+    "screenshots": [
+      "lab-results-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "lab-dispensing",
+    "name": "Lab Dispensing",
+    "route": "/lab/dispensing",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Lab Dispensing  Create and manage laboratory test requests from all departments.",
+    "screenshots": [
+      "lab-dispensing-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "radiology-modalities",
+    "name": "Modalities",
+    "route": "/radiology/modalities",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "radiology-modalities-01-list.png",
+      "radiology-modalities-02-form.png",
+      "radiology-modalities-03-filled.png",
+      "radiology-modalities-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "radiology-body-parts",
+    "name": "Body Parts",
+    "route": "/radiology/body-parts",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "radiology-body-parts-01-list.png",
+      "radiology-body-parts-02-form.png",
+      "radiology-body-parts-03-filled.png",
+      "radiology-body-parts-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "radiology-exam-types",
+    "name": "Exam Types",
+    "route": "/radiology/exam-types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "radiology-exam-types-01-list.png",
+      "radiology-exam-types-02-form.png",
+      "radiology-exam-types-03-filled.png",
+      "radiology-exam-types-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "radiology-results",
+    "name": "Radiology Results",
+    "route": "/radiology/results",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Radiology Results  Review and manage radiology exam results, readings, and attac",
+    "screenshots": [
+      "radiology-results-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "radiology-dispensing",
+    "name": "Radiology Dispensing",
+    "route": "/radiology/dispensing",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Radiology Dispensing  Create and manage radiology exam requests from all departm",
+    "screenshots": [
+      "radiology-dispensing-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "pharmacy-drugs",
+    "name": "Drug Formulary",
+    "route": "/pharmacy/drugs",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (0 fields filled)",
+    "screenshots": [
+      "pharmacy-drugs-01-list.png",
+      "pharmacy-drugs-02-form.png",
+      "pharmacy-drugs-03-filled.png",
+      "pharmacy-drugs-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "pharmacy-drug-batches",
+    "name": "Drug Batches",
+    "route": "/pharmacy/drug-batches",
+    "testType": "crud",
+    "status": "check",
+    "message": "Created but no success toast — verify manually",
+    "screenshots": [
+      "pharmacy-drug-batches-01-list.png",
+      "pharmacy-drug-batches-02-form.png",
+      "pharmacy-drug-batches-03-filled.png",
+      "pharmacy-drug-batches-04-after.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "pharmacy-inventory",
+    "name": "Stock Dashboard",
+    "route": "/pharmacy/inventory",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Drug Inventory Dashboard  TOTAL DRUGS  33  TOTAL BATCHES  119  STOCK VALUE  ₱5,6",
+    "screenshots": [
+      "pharmacy-inventory-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "pharmacy-purchase-orders",
+    "name": "Purchase Orders",
+    "route": "/pharmacy/purchase-orders",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Purchase Order Management  Create and manage drug procurement from suppliers.  N",
+    "screenshots": [
+      "pharmacy-purchase-orders-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "pharmacy-stock-adjustments",
+    "name": "Stock Adjustments",
+    "route": "/pharmacy/stock-adjustments",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Stock Adjustments New Adjustment ADJ. CODE \t TYPE \tDRUG\tBATCH\t QUANTITY \tUNIT CO",
+    "screenshots": [
+      "pharmacy-stock-adjustments-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "pharmacy-dispensing",
+    "name": "Pharmacy Dispensing",
+    "route": "/pharmacy/dispensing",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Pharmacy Dispensing  Create and manage medication requests from all departments.",
+    "screenshots": [
+      "pharmacy-dispensing-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "pharmacy-patient-record",
+    "name": "Patient Med Record",
+    "route": "/pharmacy/patient-medication-record",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Patient Medication Record Search for a Patient  Enter a patient name, code, or i",
+    "screenshots": [
+      "pharmacy-patient-record-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "pharmacy-reports",
+    "name": "Pharmacy Reports",
+    "route": "/pharmacy/reports",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Pharmacy Reports Expiry Report Stock Status Consumption Report  Drug batches gro",
+    "screenshots": [
+      "pharmacy-reports-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "billing-fund-sources",
+    "name": "Fund Sources",
+    "route": "/billing/fund-sources",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "billing-fund-sources-01-list.png",
+      "billing-fund-sources-02-form.png",
+      "billing-fund-sources-03-filled.png",
+      "billing-fund-sources-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "billing-insurance-providers",
+    "name": "Insurance Providers",
+    "route": "/billing/insurance-providers",
+    "testType": "crud",
+    "status": "skip",
+    "message": "No Create/New/Add button found",
+    "screenshots": [
+      "billing-insurance-providers-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "philhealth-claims",
+    "name": "E-Claims",
+    "route": "/philhealth/claims",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — PhilHealth Claims  Manage PhilHealth claims with CF4 clinical data capture for e",
+    "screenshots": [
+      "philhealth-claims-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "philhealth-icd10",
+    "name": "ICD-10 Codes",
+    "route": "/philhealth/icd10-codes",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "philhealth-icd10-01-list.png",
+      "philhealth-icd10-02-form.png",
+      "philhealth-icd10-03-filled.png",
+      "philhealth-icd10-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "philhealth-rvs",
+    "name": "RVS Codes",
+    "route": "/philhealth/rvs-codes",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "philhealth-rvs-01-list.png",
+      "philhealth-rvs-02-form.png",
+      "philhealth-rvs-03-filled.png",
+      "philhealth-rvs-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "philhealth-case-rates",
+    "name": "Case Rates",
+    "route": "/philhealth/case-rates",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (0 fields filled)",
+    "screenshots": [
+      "philhealth-case-rates-01-list.png",
+      "philhealth-case-rates-02-form.png",
+      "philhealth-case-rates-03-filled.png",
+      "philhealth-case-rates-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "philhealth-members",
+    "name": "Members",
+    "route": "/philhealth/members",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — PhilHealth Member Management  Manage PhilHealth member records for claims filing",
+    "screenshots": [
+      "philhealth-members-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "philhealth-hc-professionals",
+    "name": "HC Professionals",
+    "route": "/philhealth/hc-professionals",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Health Care Professionals  Unified registry of doctors, nurses, and other medica",
+    "screenshots": [
+      "philhealth-hc-professionals-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "philhealth-batches",
+    "name": "Claim Batches",
+    "route": "/philhealth/batches",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Claim Batches  Group claims into transmittal batches for e-Claims XML submission",
+    "screenshots": [
+      "philhealth-batches-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "philhealth-reports",
+    "name": "PhilHealth Reports",
+    "route": "/philhealth/reports",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — PhilHealth Reports  Summary statistics for PhilHealth e-Claims performance.  Dat",
+    "screenshots": [
+      "philhealth-reports-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "doctors-dashboard",
+    "name": "Doctor Dashboard",
+    "route": "/doctors/dashboard",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Doctors Portal  Manage your active patients and clinical workflows.  Outpatient ",
+    "screenshots": [
+      "doctors-dashboard-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "doctors-schedule",
+    "name": "Doctor Schedule",
+    "route": "/doctors/schedule",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Appointment Schedule  Manage patient appointment bookings and your daily schedul",
+    "screenshots": [
+      "doctors-schedule-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "ob-consultations",
+    "name": "OB Consultations",
+    "route": "/ob/consultations",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — OB/GYN Consultations  Active  Completed New Consultation Rows: 10 25 50 CONSULTA",
+    "screenshots": [
+      "ob-consultations-01-list.png"
+    ],
+    "recordCreated": false
+  },
+  {
+    "id": "ob-visit-types",
+    "name": "OB Visit Types",
+    "route": "/ob/visit-types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "ob-visit-types-01-list.png",
+      "ob-visit-types-02-form.png",
+      "ob-visit-types-03-filled.png",
+      "ob-visit-types-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "ob-fetal-presentations",
+    "name": "Fetal Presentations",
+    "route": "/ob/fetal-presentations",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "ob-fetal-presentations-01-list.png",
+      "ob-fetal-presentations-02-form.png",
+      "ob-fetal-presentations-03-filled.png",
+      "ob-fetal-presentations-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "ob-contraceptive-methods",
+    "name": "Contraceptive Methods",
+    "route": "/ob/contraceptive-methods",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "ob-contraceptive-methods-01-list.png",
+      "ob-contraceptive-methods-02-form.png",
+      "ob-contraceptive-methods-03-filled.png",
+      "ob-contraceptive-methods-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "delivery-rooms",
+    "name": "Delivery Rooms",
+    "route": "/delivery/rooms",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Record created (1 fields filled)",
+    "screenshots": [
+      "delivery-rooms-01-list.png",
+      "delivery-rooms-02-form.png",
+      "delivery-rooms-03-filled.png",
+      "delivery-rooms-04-after.png"
+    ],
+    "recordCreated": true
+  },
+  {
+    "id": "delivery-types",
+    "name": "Delivery Types",
+    "route": "/delivery/types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "delivery-types-01-list.png",
+      "delivery-types-02-form.png",
+      "delivery-types-03-filled.png",
+      "delivery-types-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077849,
+    "parent": null
+  },
+  {
+    "id": "delivery-complications",
+    "name": "Delivery Complications",
+    "route": "/delivery/complications",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "delivery-complications-01-list.png",
+      "delivery-complications-02-form.png",
+      "delivery-complications-03-filled.png",
+      "delivery-complications-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077852,
+    "parent": null
+  },
+  {
+    "id": "or-rooms",
+    "name": "OR Rooms",
+    "route": "/or/rooms",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "or-rooms-01-list.png",
+      "or-rooms-02-form.png",
+      "or-rooms-03-filled.png",
+      "or-rooms-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077852,
+    "parent": null
+  },
+  {
+    "id": "renal-dialysis-types",
+    "name": "Dialysis Types",
+    "route": "/renal-care/dialysis-types",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "renal-dialysis-types-01-list.png",
+      "renal-dialysis-types-02-form.png",
+      "renal-dialysis-types-03-filled.png",
+      "renal-dialysis-types-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077852,
+    "parent": null
+  },
+  {
+    "id": "supply-units",
+    "name": "Supply Units",
+    "route": "/supply/units",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "supply-units-01-list.png",
+      "supply-units-02-form.png",
+      "supply-units-03-filled.png",
+      "supply-units-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077852,
+    "parent": null
+  },
+  {
+    "id": "supply-categories",
+    "name": "Supply Categories",
+    "route": "/supply/categories",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "supply-categories-01-list.png",
+      "supply-categories-02-form.png",
+      "supply-categories-03-filled.png",
+      "supply-categories-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077852,
+    "parent": null
+  },
+  {
+    "id": "supply-suppliers",
+    "name": "Suppliers",
+    "route": "/supply/suppliers",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "supply-suppliers-01-list.png",
+      "supply-suppliers-02-form.png",
+      "supply-suppliers-03-filled.png",
+      "supply-suppliers-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077852,
+    "parent": null
+  },
+  {
+    "id": "supply-stock-locations",
+    "name": "Stock Locations",
+    "route": "/supply/stock-locations",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "supply-stock-locations-01-list.png",
+      "supply-stock-locations-02-form.png",
+      "supply-stock-locations-03-filled.png",
+      "supply-stock-locations-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077853,
+    "parent": null
+  },
+  {
+    "id": "supply-items",
+    "name": "Items",
+    "route": "/supply/items",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "supply-items-01-list.png",
+      "supply-items-02-form.png",
+      "supply-items-03-filled.png",
+      "supply-items-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077853,
+    "parent": null
+  },
+  {
+    "id": "procedure-categories",
+    "name": "Procedure Categories",
+    "route": "/procedures/categories",
+    "testType": "crud",
+    "status": "pass",
+    "message": "Screenshot captured — page loaded successfully",
+    "screenshots": [
+      "procedure-categories-01-list.png",
+      "procedure-categories-02-form.png",
+      "procedure-categories-03-filled.png",
+      "procedure-categories-04-after.png"
+    ],
+    "recordCreated": true,
+    "timestamp": 1789369077853,
+    "parent": null
+  },
+  {
+    "id": "billing",
+    "name": "Billing (Invoices)",
+    "route": "/billing",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Command Center with live patient census and financial snapshot",
+    "screenshots": [
+      "billing-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": null
+  },
+  {
+    "id": "delivery-schedule",
+    "name": "Delivery Schedule",
+    "route": "/delivery/schedule",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — DR Schedule  Manage delivery schedules, room assignments, and deliveries.  Add S",
+    "screenshots": [
+      "delivery-schedule-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "Delivery"
+  },
+  {
+    "id": "or-schedule",
+    "name": "OR Schedule",
+    "route": "/or/schedule",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — OR Schedule  Manage surgical schedules, room assignments, and procedures.  Add S",
+    "screenshots": [
+      "or-schedule-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "Operating Room"
+  },
+  {
+    "id": "renal-dialysis-sessions",
+    "name": "Dialysis Sessions",
+    "route": "/renal-care/dialysis-sessions",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Dialysis Sessions  Record and manage dialysis treatment sessions.  Add Session R",
+    "screenshots": [
+      "renal-dialysis-sessions-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "Renal Care"
+  },
+  {
+    "id": "supply-inventory",
+    "name": "Inventory",
+    "route": "/supply/inventory",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Item Batches  Manage item inventory batches, lot numbers, and expiry tracking.  ",
+    "screenshots": [
+      "supply-inventory-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "CSR / Supply"
+  },
+  {
+    "id": "supply-stock-adjustments",
+    "name": "Stock Adjustments",
+    "route": "/supply/stock-adjustments",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Stock Adjustments New Adjustment ADJ. CODE \t TYPE \tITEM\tBATCH\t QUANTITY \tUNIT CO",
+    "screenshots": [
+      "supply-stock-adjustments-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "CSR / Supply"
+  },
+  {
+    "id": "supply-dispensing",
+    "name": "Supply Dispensing",
+    "route": "/supply/dispensing",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — CSR Dispensing  Create and manage supply requests from all departments.  New Req",
+    "screenshots": [
+      "supply-dispensing-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "CSR / Supply"
+  },
+  {
+    "id": "procedure-procedures",
+    "name": "Procedures",
+    "route": "/procedures/procedures",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Procedures  Manage medical and surgical procedure catalog.  Add Procedure Rows: ",
+    "screenshots": [
+      "procedure-procedures-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "Procedures"
+  },
+  {
+    "id": "procedure-dispensing",
+    "name": "Procedure Dispensing",
+    "route": "/procedures/dispensing",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Procedures Dispensing  Create and manage procedure requests from all departments",
+    "screenshots": [
+      "procedure-dispensing-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "Procedures"
+  },
+  {
+    "id": "medical-records",
+    "name": "Medical Records",
+    "route": "/medical-records",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Medical Records  View complete patient encounter history and generate certificat",
+    "screenshots": [
+      "medical-records-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": null
+  },
+  {
+    "id": "yakap-dashboard",
+    "name": "YAKAP Dashboard",
+    "route": "/yakap/dashboard",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — YAKAP Dashboard  Overview of the PhilHealth YAKAP program.  Total Empaneled  0  ",
+    "screenshots": [
+      "yakap-dashboard-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "YAKAP"
+  },
+  {
+    "id": "yakap-empanelments",
+    "name": "Empanelments",
+    "route": "/yakap/empanelments",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — YAKAP Empanelments  Manage patient enrollment in the PhilHealth YAKAP program.  ",
+    "screenshots": [
+      "yakap-empanelments-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "YAKAP"
+  },
+  {
+    "id": "yakap-screenings",
+    "name": "Screenings",
+    "route": "/yakap/screenings",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — YAKAP Screenings  Track the 6 YAKAP cancer screenings for empaneled patients.  N",
+    "screenshots": [
+      "yakap-screenings-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "YAKAP"
+  },
+  {
+    "id": "yakap-capitation",
+    "name": "Capitation",
+    "route": "/yakap/capitation",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Capitation Payments  Manage YAKAP capitation payment tranches (40% / 60%).  New ",
+    "screenshots": [
+      "yakap-capitation-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "YAKAP"
+  },
+  {
+    "id": "yakap-fpe",
+    "name": "FPE Records",
+    "route": "/yakap/fpe-records",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — FPE Records  First Patient Encounter — YAKAP health risk assessment.  New FPE Re",
+    "screenshots": [
+      "yakap-fpe-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": "YAKAP"
+  },
+  {
+    "id": "konsulta",
+    "name": "Konsulta",
+    "route": "/konsulta",
+    "testType": "list-only",
+    "status": "pass",
+    "message": "Page loaded — Command Center  Live overview of hospital operations and financials.  SEPTEMBER ",
+    "screenshots": [
+      "konsulta-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": null
+  },
+  {
+    "id": "public-booking",
+    "name": "Public Appointment Booking",
+    "route": "/book-appointment",
+    "testType": "nav-only",
+    "status": "check",
+    "message": "Page may need verification",
+    "screenshots": [
+      "public-booking-01-list.png"
+    ],
+    "recordCreated": false,
+    "parent": null
+  }
+]

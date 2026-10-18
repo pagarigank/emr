@@ -1,0 +1,151 @@
+- generic [active] [ref=f116e1]:
+  - generic [ref=f116e2]:
+    - banner [ref=f116e3]:
+      - generic [ref=f116e4]:
+        - generic [ref=f116e5]:
+          - button [ref=f116e6]
+          - generic [ref=f116e9]:
+            - img "SITHEMR Logo" [ref=f116e10]
+            - heading "SITHEMR" [level=1] [ref=f116e11]
+        - button "D Demo Hospital Admin tenant_admin" [ref=f116e14]:
+          - generic [ref=f116e15]: D
+          - generic [ref=f116e16]:
+            - generic [ref=f116e17]: Demo Hospital Admin
+            - generic [ref=f116e18]: tenant_admin
+    - generic [ref=f116e21]:
+      - navigation [ref=f116e22]:
+        - generic [ref=f116e23]:
+          - generic [ref=f116e24]:
+            - paragraph [ref=f116e25]: Main
+            - link "Dashboard" [ref=f116e26] [cursor=pointer]:
+              - /url: /
+            - link "Doctors Portal" [ref=f116e29] [cursor=pointer]:
+              - /url: http://localhost:8000/doctors/dashboard
+            - link "Patients" [ref=f116e32] [cursor=pointer]:
+              - /url: /patients
+            - link "Medical Records" [ref=f116e35] [cursor=pointer]:
+              - /url: /medical-records
+          - generic [ref=f116e38]:
+            - paragraph [ref=f116e39]: Clinical Modules
+            - button "OPD" [ref=f116e41]
+            - generic [ref=f116e48]:
+              - button "Emergency Room" [ref=f116e49]
+              - generic [ref=f116e56]:
+                - link "Triage Records" [ref=f116e57] [cursor=pointer]:
+                  - /url: /er/triage
+                - link "ER Area" [ref=f116e61] [cursor=pointer]:
+                  - /url: /er/area
+                - link "Acuity Levels" [ref=f116e66] [cursor=pointer]:
+                  - /url: /er/acuity-levels
+                - link "Mobility Statuses" [ref=f116e71] [cursor=pointer]:
+                  - /url: /er/mobility-statuses
+                - link "ER Zones" [ref=f116e75] [cursor=pointer]:
+                  - /url: /er/zones
+                - link "ER Beds" [ref=f116e80] [cursor=pointer]:
+                  - /url: /er/beds
+            - button "Admission & Wards" [ref=f116e86]
+            - link "Nursing" [ref=f116e93] [cursor=pointer]:
+              - /url: /nursing
+            - button "Obstetrics (OB)" [ref=f116e97]
+            - button "Delivery" [ref=f116e105]
+            - button "Operating Room" [ref=f116e113]
+            - button "Renal Care" [ref=f116e121]
+          - generic [ref=f116e128]:
+            - paragraph [ref=f116e129]: Ancillary & Logistics
+            - button "Laboratory" [ref=f116e131]
+            - button "Radiology" [ref=f116e139]
+            - button "Pharmacy" [ref=f116e148]
+            - button "Procedures" [ref=f116e156]
+            - button "CSR / Supply" [ref=f116e165]
+          - generic [ref=f116e172]:
+            - paragraph [ref=f116e173]: Financial & Claims
+            - button "Billing" [ref=f116e175]
+            - button "PhilHealth" [ref=f116e183]
+            - button "YAKAP" [ref=f116e191]
+            - link "Transactions" [ref=f116e198] [cursor=pointer]:
+              - /url: /transactions
+            - link "Reports" [ref=f116e201] [cursor=pointer]:
+              - /url: /reports
+          - generic [ref=f116e204]:
+            - paragraph [ref=f116e205]: Administration
+            - button "Masters" [ref=f116e207]
+            - link "Roles" [ref=f116e214] [cursor=pointer]:
+              - /url: /admin/roles
+            - link "Role Permissions" [ref=f116e219] [cursor=pointer]:
+              - /url: /admin/role-permissions
+            - link "Audit Trail" [ref=f116e223] [cursor=pointer]:
+              - /url: /admin/audit-log
+      - main [ref=f116e227]:
+        - generic [ref=f116e231]:
+          - generic [ref=f116e232]:
+            - heading "Emergency Room Area" [level=2] [ref=f116e1153]
+            - generic [ref=f116e234]:
+              - button "Active" [ref=f116e1154]
+              - button "Completed" [ref=f116e1157]
+          - generic [ref=f116e1160]:
+            - generic [ref=f116e1161]:
+              - 'textbox "Search patients by name or encounter #..." [ref=f116e1162]'
+              - generic [ref=f116e1163]:
+                - generic [ref=f116e1164]: "Rows:"
+                - combobox [ref=f116e1165]:
+                  - option "10" [selected]
+                  - option "25"
+                  - option "50"
+            - table [ref=f116e1166]:
+              - rowgroup [ref=f116e1167]:
+                - row [ref=f116e1168]:
+                  - columnheader "Acuity" [ref=f116e1169]
+                  - 'columnheader "Encounter # ↑↓" [ref=f116e1170] [cursor=pointer]':
+                    - generic [ref=f116e1171]:
+                      - text: "Encounter #"
+                      - generic [ref=f116e1172]: ↑↓
+                  - columnheader "Patient Name ↓" [ref=f116e1173] [cursor=pointer]:
+                    - generic [ref=f116e1174]:
+                      - text: Patient Name
+                      - generic [ref=f116e1175]: ↓
+                  - columnheader "Bed / Zone" [ref=f116e1176]
+                  - columnheader "Physician" [ref=f116e1177]
+                  - columnheader "Arrival Time" [ref=f116e1178]
+                  - columnheader "Actions" [ref=f116e1179]
+              - rowgroup [ref=f116e1180]:
+                - row [ref=f116e1181]:
+                  - cell "ESI-2" [ref=f116e1182]
+                  - cell "ERA-20260712-7772" [ref=f116e1184]
+                  - cell "Mabini, Apolinario 44y" [ref=f116e1185]:
+                    - generic [ref=f116e1186]: Mabini, Apolinario
+                    - generic [ref=f116e1187]: 44y
+                  - cell "Emergent Bed 1 Orange Zone (Emergent)" [ref=f116e1188]:
+                    - generic [ref=f116e1189]: Emergent Bed 1
+                    - text: Orange Zone (Emergent)
+                  - cell "Dr. Dr. Juan Dela Cruz" [ref=f116e1190]
+                  - cell "13:48 Jul 12" [ref=f116e1191]:
+                    - generic [ref=f116e1192]: 13:48
+                    - generic [ref=f116e1193]: Jul 12
+                  - cell [ref=f116e1194]:
+                    - generic [ref=f116e1195]:
+                      - button "Treatment" [ref=f116e1196]
+                      - button "Dispo" [ref=f116e1199]
+                - row [ref=f116e1202]:
+                  - cell "ESI-1" [ref=f116e1203]
+                  - cell "ERA-20260711-5113 OECB" [ref=f116e1205]:
+                    - text: ERA-20260711-5113
+                    - generic [ref=f116e1206]: OECB
+                  - cell "Rizal, Jose 36y" [ref=f116e1207]:
+                    - generic [ref=f116e1208]: Rizal, Jose
+                    - generic [ref=f116e1209]: 36y
+                  - cell "Consultation Chair 1 Green Zone (Less Urgent)" [ref=f116e1210]:
+                    - generic [ref=f116e1211]: Consultation Chair 1
+                    - text: Green Zone (Less Urgent)
+                  - cell "Dr. Dr. Maria Santos" [ref=f116e1212]
+                  - cell "16:11 Jul 11" [ref=f116e1213]:
+                    - generic [ref=f116e1214]: 16:11
+                    - generic [ref=f116e1215]: Jul 11
+                  - cell [ref=f116e1216]:
+                    - generic [ref=f116e1217]:
+                      - button "Treatment" [ref=f116e1218]
+                      - button "Dispo" [ref=f116e1221]
+    - contentinfo [ref=f116e327]:
+      - paragraph [ref=f116e329]: © 2026 SITHEMR. All rights reserved.
+  - generic [ref=f116e1225]:
+    - generic [ref=f116e1228]: Disposition updated.
+    - button [ref=f116e1229]

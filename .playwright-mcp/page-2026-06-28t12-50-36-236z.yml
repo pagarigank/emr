@@ -1,0 +1,318 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - button "Delivery" [ref=e97]:
+          - generic [ref=e98]:
+            - img [ref=e99]
+            - generic [ref=e101]: Delivery
+          - img [ref=e102]
+        - button "Wards" [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic [ref=e109]: Wards
+          - img [ref=e110]
+        - link "Admission" [ref=e112] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e113]
+          - text: Admission
+        - link "Nursing" [ref=e115] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e116]
+          - text: Nursing
+        - link "Billing" [ref=e118] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e119]
+          - text: Billing
+        - link "Fund Sources" [ref=e121] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e122]
+          - text: Fund Sources
+        - button "OR" [ref=e125]:
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e129]: OR
+          - img [ref=e130]
+        - button "Emergency Room" [ref=e133]:
+          - generic [ref=e134]:
+            - img [ref=e135]
+            - generic [ref=e137]: Emergency Room
+          - img [ref=e138]
+        - button "OPD" [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - generic [ref=e145]: OPD
+          - img [ref=e146]
+        - button "OB" [ref=e149]:
+          - generic [ref=e150]:
+            - img [ref=e151]
+            - generic [ref=e153]: OB
+          - img [ref=e154]
+        - generic [ref=e156]:
+          - button "PhilHealth" [ref=e157]:
+            - generic [ref=e158]:
+              - img [ref=e159]
+              - generic [ref=e161]: PhilHealth
+            - img [ref=e162]
+          - generic [ref=e164]:
+            - link "ICD-10 Codes" [ref=e165] [cursor=pointer]:
+              - /url: /philhealth/icd10-codes
+            - link "RVS Codes" [ref=e166] [cursor=pointer]:
+              - /url: /philhealth/rvs-codes
+            - link "Case Rates" [ref=e167] [cursor=pointer]:
+              - /url: /philhealth/case-rates
+            - link "HC Professionals" [ref=e168] [cursor=pointer]:
+              - /url: /philhealth/hc-professionals
+            - link "Members" [ref=e169] [cursor=pointer]:
+              - /url: /philhealth/members
+            - link "E-Claims" [ref=e170] [cursor=pointer]:
+              - /url: /philhealth/claims
+            - link "Batches" [ref=e171] [cursor=pointer]:
+              - /url: /philhealth/batches
+            - link "Reports" [ref=e172] [cursor=pointer]:
+              - /url: /philhealth/reports
+        - button "YAKAP" [ref=e174]:
+          - generic [ref=e175]:
+            - img [ref=e176]
+            - generic [ref=e178]: YAKAP
+          - img [ref=e179]
+    - main [ref=e181]:
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - heading "ICD-10 Code Management" [level=2] [ref=e186]
+            - paragraph [ref=e187]: Manage ICD-10 diagnosis codes for PhilHealth claims (CF2/CF4).
+          - button "Add ICD-10 Code" [ref=e188]:
+            - img [ref=e189]
+            - text: Add ICD-10 Code
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - generic:
+              - img
+            - textbox "Search code, description or category…" [ref=e193]
+          - generic [ref=e194]:
+            - generic [ref=e195]: "Rows:"
+            - combobox [ref=e196]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=e198]:
+          - rowgroup [ref=e199]:
+            - row "Code ↑ Description ↑↓ Category ↑↓ Status Actions" [ref=e200]:
+              - columnheader "Code ↑" [ref=e201] [cursor=pointer]:
+                - generic [ref=e202]:
+                  - text: Code
+                  - generic [ref=e203]: ↑
+              - columnheader "Description ↑↓" [ref=e204] [cursor=pointer]:
+                - generic [ref=e205]:
+                  - text: Description
+                  - generic [ref=e206]: ↑↓
+              - columnheader "Category ↑↓" [ref=e207] [cursor=pointer]:
+                - generic [ref=e208]:
+                  - text: Category
+                  - generic [ref=e209]: ↑↓
+              - columnheader "Status" [ref=e210]
+              - columnheader "Actions" [ref=e211]
+          - rowgroup [ref=e212]:
+            - row "A09 Active" [ref=e213]:
+              - cell "A09" [ref=e214]
+              - cell [ref=e215]
+              - cell [ref=e216]
+              - cell "Active" [ref=e217]:
+                - generic [ref=e218]: Active
+              - cell [ref=e219]:
+                - generic [ref=e220]:
+                  - button "Edit" [ref=e221]:
+                    - img [ref=e222]
+                  - button "Archive" [ref=e224]:
+                    - img [ref=e225]
+            - row "A90 Active" [ref=e227]:
+              - cell "A90" [ref=e228]
+              - cell [ref=e229]
+              - cell [ref=e230]
+              - cell "Active" [ref=e231]:
+                - generic [ref=e232]: Active
+              - cell [ref=e233]:
+                - generic [ref=e234]:
+                  - button "Edit" [ref=e235]:
+                    - img [ref=e236]
+                  - button "Archive" [ref=e238]:
+                    - img [ref=e239]
+            - row "A91 Active" [ref=e241]:
+              - cell "A91" [ref=e242]
+              - cell [ref=e243]
+              - cell [ref=e244]
+              - cell "Active" [ref=e245]:
+                - generic [ref=e246]: Active
+              - cell [ref=e247]:
+                - generic [ref=e248]:
+                  - button "Edit" [ref=e249]:
+                    - img [ref=e250]
+                  - button "Archive" [ref=e252]:
+                    - img [ref=e253]
+            - row "E11.65 Active" [ref=e255]:
+              - cell "E11.65" [ref=e256]
+              - cell [ref=e257]
+              - cell [ref=e258]
+              - cell "Active" [ref=e259]:
+                - generic [ref=e260]: Active
+              - cell [ref=e261]:
+                - generic [ref=e262]:
+                  - button "Edit" [ref=e263]:
+                    - img [ref=e264]
+                  - button "Archive" [ref=e266]:
+                    - img [ref=e267]
+            - row "E11.9 Active" [ref=e269]:
+              - cell "E11.9" [ref=e270]
+              - cell [ref=e271]
+              - cell [ref=e272]
+              - cell "Active" [ref=e273]:
+                - generic [ref=e274]: Active
+              - cell [ref=e275]:
+                - generic [ref=e276]:
+                  - button "Edit" [ref=e277]:
+                    - img [ref=e278]
+                  - button "Archive" [ref=e280]:
+                    - img [ref=e281]
+            - row "I10 Active" [ref=e283]:
+              - cell "I10" [ref=e284]
+              - cell [ref=e285]
+              - cell [ref=e286]
+              - cell "Active" [ref=e287]:
+                - generic [ref=e288]: Active
+              - cell [ref=e289]:
+                - generic [ref=e290]:
+                  - button "Edit" [ref=e291]:
+                    - img [ref=e292]
+                  - button "Archive" [ref=e294]:
+                    - img [ref=e295]
+            - row "I11.9 Active" [ref=e297]:
+              - cell "I11.9" [ref=e298]
+              - cell [ref=e299]
+              - cell [ref=e300]
+              - cell "Active" [ref=e301]:
+                - generic [ref=e302]: Active
+              - cell [ref=e303]:
+                - generic [ref=e304]:
+                  - button "Edit" [ref=e305]:
+                    - img [ref=e306]
+                  - button "Archive" [ref=e308]:
+                    - img [ref=e309]
+            - row "J02.9 Active" [ref=e311]:
+              - cell "J02.9" [ref=e312]
+              - cell [ref=e313]
+              - cell [ref=e314]
+              - cell "Active" [ref=e315]:
+                - generic [ref=e316]: Active
+              - cell [ref=e317]:
+                - generic [ref=e318]:
+                  - button "Edit" [ref=e319]:
+                    - img [ref=e320]
+                  - button "Archive" [ref=e322]:
+                    - img [ref=e323]
+            - row "J03.90 Active" [ref=e325]:
+              - cell "J03.90" [ref=e326]
+              - cell [ref=e327]
+              - cell [ref=e328]
+              - cell "Active" [ref=e329]:
+                - generic [ref=e330]: Active
+              - cell [ref=e331]:
+                - generic [ref=e332]:
+                  - button "Edit" [ref=e333]:
+                    - img [ref=e334]
+                  - button "Archive" [ref=e336]:
+                    - img [ref=e337]
+            - row "J06.9 Active" [ref=e339]:
+              - cell "J06.9" [ref=e340]
+              - cell [ref=e341]
+              - cell [ref=e342]
+              - cell "Active" [ref=e343]:
+                - generic [ref=e344]: Active
+              - cell [ref=e345]:
+                - generic [ref=e346]:
+                  - button "Edit" [ref=e347]:
+                    - img [ref=e348]
+                  - button "Archive" [ref=e350]:
+                    - img [ref=e351]
+        - navigation "Pagination Navigation" [ref=e355]:
+          - generic [ref=e356]:
+            - paragraph [ref=e358]: Showing 1 to 10 of 25 results
+            - generic [ref=e360]:
+              - generic "&laquo; Previous" [ref=e362]:
+                - img [ref=e364]
+              - generic [ref=e368]: "1"
+              - button "Go to page 2" [ref=e370]: "2"
+              - button "Go to page 3" [ref=e372]: "3"
+              - button "Next &raquo;" [ref=e374]:
+                - img [ref=e375]
+  - contentinfo [ref=e377]:
+    - paragraph [ref=e379]: © 2026 SITHEMR. All rights reserved.

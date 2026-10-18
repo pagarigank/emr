@@ -1,0 +1,210 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - button [ref=f1e6]:
+          - img [ref=f1e7]
+        - generic [ref=f1e9]:
+          - img "SITHEMR Logo" [ref=f1e10]
+          - heading "SITHEMR" [level=1] [ref=f1e11]
+      - button "T Tenant Admin User tenant_admin" [ref=f1e14]:
+        - generic [ref=f1e15]: T
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: Tenant Admin User
+          - generic [ref=f1e18]: tenant_admin
+        - img [ref=f1e19]
+  - generic [ref=f1e21]:
+    - navigation [ref=f1e22]:
+      - generic [ref=f1e23]:
+        - generic [ref=f1e24]:
+          - paragraph [ref=f1e25]: Main
+          - link "Dashboard" [ref=f1e26] [cursor=pointer]:
+            - /url: /
+            - img [ref=f1e27]
+            - text: Dashboard
+          - link "Doctors Portal" [ref=f1e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+            - img [ref=f1e30]
+            - text: Doctors Portal
+          - link "Patients" [ref=f1e32] [cursor=pointer]:
+            - /url: /patients
+            - img [ref=f1e33]
+            - text: Patients
+          - link "Medical Records" [ref=f1e35] [cursor=pointer]:
+            - /url: /medical-records
+            - img [ref=f1e36]
+            - text: Medical Records
+        - generic [ref=f1e38]:
+          - paragraph [ref=f1e39]: Clinical Modules
+          - button "OPD" [ref=f1e41]:
+            - generic [ref=f1e42]:
+              - img [ref=f1e43]
+              - generic [ref=f1e45]: OPD
+            - img [ref=f1e46]
+          - generic [ref=f1e48]:
+            - button "Emergency Room" [ref=f1e49]:
+              - generic [ref=f1e50]:
+                - img [ref=f1e51]
+                - generic [ref=f1e53]: Emergency Room
+              - img [ref=f1e54]
+            - generic [ref=f1e56]:
+              - link "Triage Records" [ref=f1e57] [cursor=pointer]:
+                - /url: /er/triage
+                - img [ref=f1e58]
+                - generic [ref=f1e60]: Triage Records
+              - link "ER Area" [ref=f1e61] [cursor=pointer]:
+                - /url: /er/area
+                - img [ref=f1e62]
+                - generic [ref=f1e65]: ER Area
+              - link "Acuity Levels" [ref=f1e66] [cursor=pointer]:
+                - /url: /er/acuity-levels
+                - img [ref=f1e67]
+                - generic [ref=f1e70]: Acuity Levels
+              - link "Mobility Statuses" [ref=f1e71] [cursor=pointer]:
+                - /url: /er/mobility-statuses
+                - img [ref=f1e72]
+                - generic [ref=f1e74]: Mobility Statuses
+              - link "ER Zones" [ref=f1e75] [cursor=pointer]:
+                - /url: /er/zones
+                - img [ref=f1e76]
+                - generic [ref=f1e79]: ER Zones
+              - link "ER Beds" [ref=f1e80] [cursor=pointer]:
+                - /url: /er/beds
+                - img [ref=f1e81]
+                - generic [ref=f1e84]: ER Beds
+          - button "Admission & Wards" [ref=f1e86]:
+            - generic [ref=f1e87]:
+              - img [ref=f1e88]
+              - generic [ref=f1e90]: Admission & Wards
+            - img [ref=f1e91]
+          - link "Nursing" [ref=f1e93] [cursor=pointer]:
+            - /url: /nursing
+            - img [ref=f1e94]
+            - text: Nursing
+          - button "Obstetrics (OB)" [ref=f1e97]:
+            - generic [ref=f1e98]:
+              - img [ref=f1e99]
+              - generic [ref=f1e101]: Obstetrics (OB)
+            - img [ref=f1e102]
+          - button "Delivery" [ref=f1e105]:
+            - generic [ref=f1e106]:
+              - img [ref=f1e107]
+              - generic [ref=f1e109]: Delivery
+            - img [ref=f1e110]
+          - button "Operating Room" [ref=f1e113]:
+            - generic [ref=f1e114]:
+              - img [ref=f1e115]
+              - generic [ref=f1e117]: Operating Room
+            - img [ref=f1e118]
+          - button "Renal Care" [ref=f1e121]:
+            - generic [ref=f1e122]:
+              - img [ref=f1e123]
+              - generic [ref=f1e125]: Renal Care
+            - img [ref=f1e126]
+        - generic [ref=f1e128]:
+          - paragraph [ref=f1e129]: Ancillary & Logistics
+          - button "Laboratory" [ref=f1e131]:
+            - generic [ref=f1e132]:
+              - img [ref=f1e133]
+              - generic [ref=f1e135]: Laboratory
+            - img [ref=f1e136]
+          - button "Radiology" [ref=f1e139]:
+            - generic [ref=f1e140]:
+              - img [ref=f1e141]
+              - generic [ref=f1e144]: Radiology
+            - img [ref=f1e145]
+          - button "Pharmacy" [ref=f1e148]:
+            - generic [ref=f1e149]:
+              - img [ref=f1e150]
+              - generic [ref=f1e152]: Pharmacy
+            - img [ref=f1e153]
+          - button "Procedures" [ref=f1e156]:
+            - generic [ref=f1e157]:
+              - img [ref=f1e158]
+              - generic [ref=f1e161]: Procedures
+            - img [ref=f1e162]
+          - button "CSR / Supply" [ref=f1e165]:
+            - generic [ref=f1e166]:
+              - img [ref=f1e167]
+              - generic [ref=f1e169]: CSR / Supply
+            - img [ref=f1e170]
+        - generic [ref=f1e172]:
+          - paragraph [ref=f1e173]: Financial & Claims
+          - button "Billing" [ref=f1e175]:
+            - generic [ref=f1e176]:
+              - img [ref=f1e177]
+              - generic [ref=f1e179]: Billing
+            - img [ref=f1e180]
+          - button "PhilHealth" [ref=f1e183]:
+            - generic [ref=f1e184]:
+              - img [ref=f1e185]
+              - generic [ref=f1e187]: PhilHealth
+            - img [ref=f1e188]
+          - button "YAKAP" [ref=f1e191]:
+            - generic [ref=f1e192]:
+              - img [ref=f1e193]
+              - generic [ref=f1e195]: YAKAP
+            - img [ref=f1e196]
+          - link "Transactions" [ref=f1e198] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=f1e199]
+            - text: Transactions
+          - link "Reports" [ref=f1e201] [cursor=pointer]:
+            - /url: /reports
+            - img [ref=f1e202]
+            - text: Reports
+        - generic [ref=f1e204]:
+          - paragraph [ref=f1e205]: Administration
+          - button "Masters" [ref=f1e207]:
+            - generic [ref=f1e208]:
+              - img [ref=f1e209]
+              - generic [ref=f1e211]: Masters
+            - img [ref=f1e212]
+          - link "Roles" [ref=f1e214] [cursor=pointer]:
+            - /url: /admin/roles
+            - img [ref=f1e215]
+            - generic [ref=f1e218]: Roles
+          - link "Role Permissions" [ref=f1e219] [cursor=pointer]:
+            - /url: /admin/role-permissions
+            - img [ref=f1e220]
+            - generic [ref=f1e222]: Role Permissions
+          - link "Audit Trail" [ref=f1e223] [cursor=pointer]:
+            - /url: /admin/audit-log
+            - img [ref=f1e224]
+            - generic [ref=f1e226]: Audit Trail
+    - main [ref=f1e227]:
+      - generic [ref=f1e229]:
+        - generic [ref=f1e230]:
+          - generic [ref=f1e231]:
+            - heading "ER Triage Records" [level=2] [ref=f1e232]
+            - paragraph [ref=f1e233]: Manage emergency triage data and acuity levels.
+          - button "New Triage Record" [ref=f1e234]:
+            - img [ref=f1e235]
+            - text: New Triage Record
+        - generic [ref=f1e237]:
+          - generic [ref=f1e238]:
+            - generic:
+              - img
+            - textbox "Search patient or complaint…" [ref=f1e239]: test
+          - generic [ref=f1e240]:
+            - generic [ref=f1e241]: "Rows:"
+            - combobox [ref=f1e242]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+        - table [ref=f1e244]:
+          - rowgroup [ref=f1e245]:
+            - row "Datetime ↓ Patient Chief Complaint Acuity (ESI) Actions" [ref=f1e246]:
+              - columnheader "Datetime ↓" [ref=f1e247] [cursor=pointer]
+              - columnheader "Patient" [ref=f1e248]
+              - columnheader "Chief Complaint" [ref=f1e249]
+              - columnheader "Acuity (ESI)" [ref=f1e250]
+              - columnheader "Actions" [ref=f1e251]
+          - rowgroup [ref=f1e252]:
+            - row "No triage records found" [ref=f1e253]:
+              - cell "No triage records found" [ref=f1e254]:
+                - generic [ref=f1e255]:
+                  - img [ref=f1e256]
+                  - generic [ref=f1e258]: No triage records found
+  - contentinfo [ref=f1e259]:
+    - paragraph [ref=f1e261]: © 2026 SITHEMR. All rights reserved.

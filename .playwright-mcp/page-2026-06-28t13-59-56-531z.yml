@@ -1,0 +1,252 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - generic [ref=e9]:
+          - img "SITHEMR Logo" [ref=e10]
+          - heading "SITHEMR" [level=1] [ref=e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e14]:
+        - generic [ref=e15]: D
+        - generic [ref=e16]:
+          - generic [ref=e17]: Demo Hospital Admin
+          - generic [ref=e18]: tenant_admin
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - navigation [ref=e22]:
+      - generic [ref=e23]:
+        - link "Dashboard" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img [ref=e25]
+          - text: Dashboard
+        - link "Transactions" [ref=e27] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e28]
+          - text: Transactions
+        - link "Reports" [ref=e30] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e31]
+          - text: Reports
+        - link "Transfers" [ref=e33] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e34]
+          - text: Transfers
+        - button "Masters" [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Masters
+          - img [ref=e43]
+        - link "Patients" [ref=e45] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e46]
+          - text: Patients
+        - button "Laboratory" [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - generic [ref=e53]: Laboratory
+          - img [ref=e54]
+        - button "CSR / Supply" [ref=e57]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - generic [ref=e61]: CSR / Supply
+          - img [ref=e62]
+        - button "Pharmacy" [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - generic [ref=e69]: Pharmacy
+          - img [ref=e70]
+        - button "Procedures" [ref=e73]:
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - generic [ref=e77]: Procedures
+          - img [ref=e78]
+        - button "Radiology" [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e85]: Radiology
+          - img [ref=e86]
+        - button "Renal Care" [ref=e89]:
+          - generic [ref=e90]:
+            - img [ref=e91]
+            - generic [ref=e93]: Renal Care
+          - img [ref=e94]
+        - generic [ref=e96]:
+          - button "Delivery" [ref=e97]:
+            - generic [ref=e98]:
+              - img [ref=e99]
+              - generic [ref=e101]: Delivery
+            - img [ref=e102]
+          - generic [ref=e104]:
+            - link "Rooms" [ref=e105] [cursor=pointer]:
+              - /url: /delivery/rooms
+            - link "Schedule" [ref=e106] [cursor=pointer]:
+              - /url: /delivery/schedule
+            - link "Types" [ref=e107] [cursor=pointer]:
+              - /url: /delivery/types
+            - link "Complications" [ref=e108] [cursor=pointer]:
+              - /url: /delivery/complications
+        - button "Wards" [ref=e110]:
+          - generic [ref=e111]:
+            - img [ref=e112]
+            - generic [ref=e114]: Wards
+          - img [ref=e115]
+        - link "Admission" [ref=e117] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e118]
+          - text: Admission
+        - link "Nursing" [ref=e120] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e121]
+          - text: Nursing
+        - link "Billing" [ref=e123] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e124]
+          - text: Billing
+        - link "Fund Sources" [ref=e126] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e127]
+          - text: Fund Sources
+        - button "OR" [ref=e130]:
+          - generic [ref=e131]:
+            - img [ref=e132]
+            - generic [ref=e134]: OR
+          - img [ref=e135]
+        - button "Emergency Room" [ref=e138]:
+          - generic [ref=e139]:
+            - img [ref=e140]
+            - generic [ref=e142]: Emergency Room
+          - img [ref=e143]
+        - button "OPD" [ref=e146]:
+          - generic [ref=e147]:
+            - img [ref=e148]
+            - generic [ref=e150]: OPD
+          - img [ref=e151]
+        - button "OB" [ref=e154]:
+          - generic [ref=e155]:
+            - img [ref=e156]
+            - generic [ref=e158]: OB
+          - img [ref=e159]
+        - button "PhilHealth" [ref=e162]:
+          - generic [ref=e163]:
+            - img [ref=e164]
+            - generic [ref=e166]: PhilHealth
+          - img [ref=e167]
+        - button "YAKAP" [ref=e170]:
+          - generic [ref=e171]:
+            - img [ref=e172]
+            - generic [ref=e174]: YAKAP
+          - img [ref=e175]
+    - main [ref=e177]:
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e265]:
+            - generic [ref=e266]:
+              - 'heading "DR Schedule: DRS-00002" [level=2] [ref=e267]'
+              - paragraph
+            - generic [ref=e269]: Completed
+          - generic [ref=e270]:
+            - generic [ref=e271]:
+              - paragraph [ref=e272]: Patient
+              - paragraph [ref=e273]: Dela Cruz, Juan
+            - generic [ref=e274]:
+              - paragraph [ref=e275]: DR Room
+              - paragraph [ref=e276]: Delivery Room 2
+            - generic [ref=e277]:
+              - paragraph [ref=e278]: Delivery Type
+              - paragraph
+            - generic [ref=e279]:
+              - paragraph [ref=e280]: Attending Physician
+              - paragraph [ref=e281]: —
+            - generic [ref=e282]:
+              - paragraph [ref=e283]: Pediatrician
+              - paragraph [ref=e284]: —
+            - generic [ref=e285]:
+              - paragraph [ref=e286]: Anesthesiologist
+              - paragraph [ref=e287]: —
+            - generic [ref=e288]:
+              - paragraph [ref=e289]: Midwife
+              - paragraph [ref=e290]: —
+            - generic [ref=e291]:
+              - paragraph [ref=e292]: Scheduled Date
+              - paragraph [ref=e293]: Jun 27, 2026
+            - generic [ref=e294]:
+              - paragraph [ref=e295]: Time
+              - paragraph [ref=e296]: —
+          - generic [ref=e297]:
+            - generic [ref=e298]:
+              - heading "Pharmacy Orders 1" [level=3] [ref=e299]:
+                - img [ref=e300]
+                - text: Pharmacy Orders
+                - generic [ref=e302]: "1"
+              - button "Request Medication" [ref=e303]:
+                - img [ref=e304]
+                - text: Request Medication
+            - table [ref=e307]:
+              - rowgroup [ref=e308]:
+                - 'row "Request # Medications Priority Status Billing Total Date Actions" [ref=e309]':
+                  - 'columnheader "Request #" [ref=e310]'
+                  - columnheader "Medications" [ref=e311]
+                  - columnheader "Priority" [ref=e312]
+                  - columnheader "Status" [ref=e313]
+                  - columnheader "Billing" [ref=e314]
+                  - columnheader "Total" [ref=e315]
+                  - columnheader "Date" [ref=e316]
+                  - columnheader "Actions" [ref=e317]
+              - rowgroup [ref=e318]:
+                - row "PR-00003 0.9% NaCl IV 1L (x5.00) Pending ⋮ Routine Pending Pending ₱1,985.25 Jun 27, 16:40 Cancel" [ref=e319]:
+                  - cell "PR-00003" [ref=e320]
+                  - cell "0.9% NaCl IV 1L (x5.00) Pending ⋮" [ref=e321]:
+                    - generic [ref=e323]:
+                      - generic [ref=e324]: 0.9% NaCl IV 1L (x5.00)
+                      - generic [ref=e325]: Pending
+                      - button "⋮" [ref=e327]
+                  - cell "Routine" [ref=e328]
+                  - cell "Pending" [ref=e329]
+                  - cell "Pending" [ref=e330]
+                  - cell "₱1,985.25" [ref=e331]
+                  - cell "Jun 27, 16:40" [ref=e332]
+                  - cell "Cancel" [ref=e333]:
+                    - button "Cancel" [ref=e334]
+          - generic [ref=e335]:
+            - generic [ref=e336]:
+              - heading "Procedure Orders 1" [level=3] [ref=e337]:
+                - img [ref=e338]
+                - text: Procedure Orders
+                - generic [ref=e340]: "1"
+              - button "Request Procedure" [ref=e341]:
+                - img [ref=e342]
+                - text: Request Procedure
+            - table [ref=e345]:
+              - rowgroup [ref=e346]:
+                - 'row "Request # Procedures Status Billing Total Date Actions" [ref=e347]':
+                  - 'columnheader "Request #" [ref=e348]'
+                  - columnheader "Procedures" [ref=e349]
+                  - columnheader "Status" [ref=e350]
+                  - columnheader "Billing" [ref=e351]
+                  - columnheader "Total" [ref=e352]
+                  - columnheader "Date" [ref=e353]
+                  - columnheader "Actions" [ref=e354]
+              - rowgroup [ref=e355]:
+                - row "PRCD-00003 Adult Vaccination (Preventive) Pending ⋮ Pending Pending ₱2,400.00 Jun 27, 16:41 Cancel" [ref=e356]:
+                  - cell "PRCD-00003" [ref=e357]
+                  - cell "Adult Vaccination (Preventive) Pending ⋮" [ref=e358]:
+                    - generic [ref=e360]:
+                      - generic [ref=e361]: Adult Vaccination (Preventive)
+                      - generic [ref=e362]: Pending
+                      - button "⋮" [ref=e364]
+                  - cell "Pending" [ref=e365]
+                  - cell "Pending" [ref=e366]
+                  - cell "₱2,400.00" [ref=e367]
+                  - cell "Jun 27, 16:41" [ref=e368]
+                  - cell "Cancel" [ref=e369]:
+                    - button "Cancel" [ref=e370]
+        - generic [ref=e371]:
+          - button "← Back to Schedules" [ref=e372]
+          - generic [ref=e373]:
+            - button "Confirm Disposition" [ref=e374]:
+              - img [ref=e375]
+              - text: Confirm Disposition
+            - button "Save Clinical Notes" [active] [ref=e377]
+  - contentinfo [ref=e261]:
+    - paragraph [ref=e263]: © 2026 SITHEMR. All rights reserved.

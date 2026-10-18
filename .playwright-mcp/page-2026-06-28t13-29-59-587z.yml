@@ -1,0 +1,263 @@
+- generic [ref=e581]:
+  - banner [ref=e582]:
+    - generic [ref=e583]:
+      - generic [ref=e584]:
+        - button [ref=e585]:
+          - img [ref=e586]
+        - generic [ref=e588]:
+          - img "SITHEMR Logo" [ref=e589]
+          - heading "SITHEMR" [level=1] [ref=e590]
+      - button "D Demo Hospital Admin tenant_admin" [ref=e593]:
+        - generic [ref=e594]: D
+        - generic [ref=e595]:
+          - generic [ref=e596]: Demo Hospital Admin
+          - generic [ref=e597]: tenant_admin
+        - img [ref=e598]
+  - generic [ref=e600]:
+    - navigation [ref=e601]:
+      - generic [ref=e602]:
+        - link "Dashboard" [ref=e603] [cursor=pointer]:
+          - /url: /
+          - img [ref=e604]
+          - text: Dashboard
+        - link "Transactions" [ref=e606] [cursor=pointer]:
+          - /url: /transactions
+          - img [ref=e607]
+          - text: Transactions
+        - link "Reports" [ref=e609] [cursor=pointer]:
+          - /url: /reports
+          - img [ref=e610]
+          - text: Reports
+        - link "Transfers" [ref=e612] [cursor=pointer]:
+          - /url: /transfers
+          - img [ref=e613]
+          - text: Transfers
+        - button "Masters" [ref=e617]:
+          - generic [ref=e618]:
+            - img [ref=e619]
+            - generic [ref=e621]: Masters
+          - img [ref=e622]
+        - link "Patients" [ref=e624] [cursor=pointer]:
+          - /url: /patients
+          - img [ref=e625]
+          - text: Patients
+        - button "Laboratory" [ref=e628]:
+          - generic [ref=e629]:
+            - img [ref=e630]
+            - generic [ref=e632]: Laboratory
+          - img [ref=e633]
+        - button "CSR / Supply" [ref=e636]:
+          - generic [ref=e637]:
+            - img [ref=e638]
+            - generic [ref=e640]: CSR / Supply
+          - img [ref=e641]
+        - button "Pharmacy" [ref=e644]:
+          - generic [ref=e645]:
+            - img [ref=e646]
+            - generic [ref=e648]: Pharmacy
+          - img [ref=e649]
+        - button "Procedures" [ref=e652]:
+          - generic [ref=e653]:
+            - img [ref=e654]
+            - generic [ref=e656]: Procedures
+          - img [ref=e657]
+        - button "Radiology" [ref=e660]:
+          - generic [ref=e661]:
+            - img [ref=e662]
+            - generic [ref=e664]: Radiology
+          - img [ref=e665]
+        - button "Renal Care" [ref=e668]:
+          - generic [ref=e669]:
+            - img [ref=e670]
+            - generic [ref=e672]: Renal Care
+          - img [ref=e673]
+        - button "Delivery" [ref=e676]:
+          - generic [ref=e677]:
+            - img [ref=e678]
+            - generic [ref=e680]: Delivery
+          - img [ref=e681]
+        - button "Wards" [ref=e684]:
+          - generic [ref=e685]:
+            - img [ref=e686]
+            - generic [ref=e688]: Wards
+          - img [ref=e689]
+        - link "Admission" [ref=e691] [cursor=pointer]:
+          - /url: /admission
+          - img [ref=e692]
+          - text: Admission
+        - link "Nursing" [ref=e694] [cursor=pointer]:
+          - /url: /nursing
+          - img [ref=e695]
+          - text: Nursing
+        - link "Billing" [ref=e697] [cursor=pointer]:
+          - /url: /billing
+          - img [ref=e698]
+          - text: Billing
+        - link "Fund Sources" [ref=e700] [cursor=pointer]:
+          - /url: /billing/fund-sources
+          - img [ref=e701]
+          - text: Fund Sources
+        - button "OR" [ref=e704]:
+          - generic [ref=e705]:
+            - img [ref=e706]
+            - generic [ref=e708]: OR
+          - img [ref=e709]
+        - button "Emergency Room" [ref=e712]:
+          - generic [ref=e713]:
+            - img [ref=e714]
+            - generic [ref=e716]: Emergency Room
+          - img [ref=e717]
+        - button "OPD" [ref=e720]:
+          - generic [ref=e721]:
+            - img [ref=e722]
+            - generic [ref=e724]: OPD
+          - img [ref=e725]
+        - button "OB" [ref=e728]:
+          - generic [ref=e729]:
+            - img [ref=e730]
+            - generic [ref=e732]: OB
+          - img [ref=e733]
+        - button "PhilHealth" [ref=e736]:
+          - generic [ref=e737]:
+            - img [ref=e738]
+            - generic [ref=e740]: PhilHealth
+          - img [ref=e741]
+        - button "YAKAP" [ref=e744]:
+          - generic [ref=e745]:
+            - img [ref=e746]
+            - generic [ref=e748]: YAKAP
+          - img [ref=e749]
+    - main [ref=e751]:
+      - generic [ref=e753]:
+        - generic [ref=e754]:
+          - generic [ref=e755]:
+            - heading "Billing & Invoices" [level=2] [ref=e756]
+            - paragraph [ref=e757]: Manage patient invoices, service charges, and payments.
+          - button "Generate Invoice" [active] [ref=e758]:
+            - img [ref=e759]
+            - text: Generate Invoice
+        - generic [ref=e761]:
+          - generic [ref=e763]:
+            - img [ref=e765]
+            - generic [ref=e767]:
+              - paragraph [ref=e768]: Unbilled Services
+              - paragraph [ref=e769]: ₱6,110.88
+          - generic [ref=e771]:
+            - img [ref=e773]
+            - generic [ref=e775]:
+              - paragraph [ref=e776]: Outstanding Balance
+              - paragraph [ref=e777]: ₱0.00
+          - generic [ref=e779]:
+            - img [ref=e781]
+            - generic [ref=e783]:
+              - paragraph [ref=e784]: Total Collected
+              - paragraph [ref=e785]: ₱0.00
+        - navigation [ref=e787]:
+          - button "For Billing" [ref=e788]:
+            - generic [ref=e789]:
+              - img [ref=e790]
+              - text: For Billing
+          - button "Invoices" [ref=e792]:
+            - generic [ref=e793]:
+              - img [ref=e794]
+              - text: Invoices
+          - button "Payments" [ref=e796]:
+            - generic [ref=e797]:
+              - img [ref=e798]
+              - text: Payments
+          - button "Reports" [ref=e800]:
+            - generic [ref=e801]:
+              - img [ref=e802]
+              - text: Reports
+        - generic [ref=e804]:
+          - generic [ref=e805]:
+            - generic [ref=e806]:
+              - generic:
+                - img
+              - textbox "Search request code, type, or department…" [ref=e807]
+            - generic [ref=e808]:
+              - generic [ref=e809]: "Rows:"
+              - combobox [ref=e810]:
+                - option "10" [selected]
+                - option "25"
+                - option "50"
+          - table [ref=e812]:
+            - rowgroup [ref=e813]:
+              - row "Source Request Code Patient Department Amount Date" [ref=e814]:
+                - columnheader [ref=e815]
+                - columnheader "Source" [ref=e816]
+                - columnheader "Request Code" [ref=e817]
+                - columnheader "Patient" [ref=e818]
+                - columnheader "Department" [ref=e819]
+                - columnheader "Amount" [ref=e820]
+                - columnheader "Date" [ref=e821]
+            - rowgroup [ref=e822]:
+              - row "Pharmacy PR-00004 Dr. Cruz Emergency Room ₱340.88 2026-06-28" [ref=e823]:
+                - cell [ref=e824]:
+                  - checkbox [ref=e825]
+                - cell "Pharmacy" [ref=e826]:
+                  - generic [ref=e827]: Pharmacy
+                - cell "PR-00004" [ref=e828]
+                - cell "Dr. Cruz" [ref=e829]
+                - cell "Emergency Room" [ref=e830]
+                - cell "₱340.88" [ref=e831]
+                - cell "2026-06-28" [ref=e832]
+              - row "CSR CR-00003 Nurse Maria Emergency Room ₱270.00 2026-06-28" [ref=e833]:
+                - cell [ref=e834]:
+                  - checkbox [ref=e835]
+                - cell "CSR" [ref=e836]:
+                  - generic [ref=e837]: CSR
+                - cell "CR-00003" [ref=e838]
+                - cell "Nurse Maria" [ref=e839]
+                - cell "Emergency Room" [ref=e840]
+                - cell "₱270.00" [ref=e841]
+                - cell "2026-06-28" [ref=e842]
+              - row "OECB ERA-20260627-9034 Santos, Maria ER ₱5,500.00 2026-06-27" [ref=e843]:
+                - cell [ref=e844]:
+                  - checkbox [ref=e845]
+                - cell "OECB" [ref=e846]:
+                  - generic [ref=e847]: OECB
+                - cell "ERA-20260627-9034" [ref=e848]
+                - cell "Santos, Maria" [ref=e849]
+                - cell "ER" [ref=e850]
+                - cell "₱5,500.00" [ref=e851]
+                - cell "2026-06-27" [ref=e852]
+        - generic [ref=e858]:
+          - generic [ref=e859]:
+            - heading "Generate Invoice" [level=3] [ref=e860]
+            - button [ref=e861]:
+              - img [ref=e862]
+          - generic [ref=e864]:
+            - generic [ref=e865]:
+              - generic [ref=e866]:
+                - generic [ref=e867]: Invoice Code
+                - textbox [disabled] [ref=e868]: INV-00001
+              - generic [ref=e869]:
+                - generic [ref=e870]: Invoice Date
+                - textbox [ref=e871]: 2026-06-28
+            - generic [ref=e872]:
+              - generic [ref=e873]: Patient *
+              - textbox "Search by name or patient code..." [ref=e875]
+            - generic [ref=e876]:
+              - generic [ref=e877]: Notes
+              - textbox "Optional invoice notes..." [ref=e878]
+            - generic [ref=e879]:
+              - generic [ref=e880]:
+                - generic [ref=e881]: Selected Service Requests (0)
+                - generic [ref=e882]: Check items from the For Billing tab
+              - paragraph [ref=e884]: No services selected. Go to the For Billing tab and check items to include.
+            - generic [ref=e885]:
+              - generic [ref=e887]: Discount
+              - generic [ref=e888]:
+                - combobox [ref=e890]:
+                  - option "No Discount" [selected]
+                  - option "Percentage (%)"
+                  - option "Fixed (₱)"
+                - spinbutton [disabled] [ref=e892]: "0"
+            - generic [ref=e894]:
+              - button "Cancel" [ref=e895]
+              - button "Create Invoice" [ref=e896]:
+                - img [ref=e897]
+                - text: Create Invoice
+  - contentinfo [ref=e853]:
+    - paragraph [ref=e855]: © 2026 SITHEMR. All rights reserved.

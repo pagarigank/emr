@@ -1,0 +1,108 @@
+- generic [ref=f14e2]:
+  - banner [ref=f14e3]:
+    - generic [ref=f14e4]:
+      - generic [ref=f14e5]:
+        - button [ref=f14e6]
+        - generic [ref=f14e9]:
+          - img "SITHEMR Logo" [ref=f14e10]
+          - heading "SITHEMR" [level=1] [ref=f14e11]
+      - button "D Demo Hospital Admin tenant_admin" [ref=f14e14]:
+        - generic [ref=f14e15]: D
+        - generic [ref=f14e16]:
+          - generic [ref=f14e17]: Demo Hospital Admin
+          - generic [ref=f14e18]: tenant_admin
+  - generic [ref=f14e21]:
+    - navigation [ref=f14e22]:
+      - generic [ref=f14e23]:
+        - generic [ref=f14e24]:
+          - paragraph [ref=f14e25]: Main
+          - link "Dashboard" [ref=f14e26] [cursor=pointer]:
+            - /url: /
+          - link "Doctors Portal" [ref=f14e29] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/doctors/dashboard
+          - link "Patients" [ref=f14e32] [cursor=pointer]:
+            - /url: /patients
+          - link "Medical Records" [ref=f14e35] [cursor=pointer]:
+            - /url: /medical-records
+        - generic [ref=f14e38]:
+          - paragraph [ref=f14e39]: Clinical Modules
+          - button "OPD" [ref=f14e41]
+          - button "Emergency Room" [ref=f14e49]
+          - button "Admission & Wards" [ref=f14e57]
+          - link "Nursing" [ref=f14e64] [cursor=pointer]:
+            - /url: /nursing
+          - button "Obstetrics (OB)" [ref=f14e68]
+          - button "Delivery" [ref=f14e76]
+          - button "Operating Room" [ref=f14e84]
+          - button "Renal Care" [ref=f14e92]
+        - generic [ref=f14e99]:
+          - paragraph [ref=f14e100]: Ancillary & Logistics
+          - button "Laboratory" [ref=f14e102]
+          - button "Radiology" [ref=f14e110]
+          - button "Pharmacy" [ref=f14e119]
+          - button "Procedures" [ref=f14e127]
+          - button "CSR / Supply" [ref=f14e136]
+        - generic [ref=f14e143]:
+          - paragraph [ref=f14e144]: Financial & Claims
+          - button "Billing" [ref=f14e146]
+          - button "PhilHealth" [ref=f14e154]
+          - button "YAKAP" [ref=f14e162]
+          - link "Transactions" [ref=f14e169] [cursor=pointer]:
+            - /url: /transactions
+          - link "Reports" [ref=f14e172] [cursor=pointer]:
+            - /url: /reports
+        - generic [ref=f14e175]:
+          - paragraph [ref=f14e176]: Administration
+          - button "Masters" [ref=f14e178]
+          - link "Roles" [ref=f14e185] [cursor=pointer]:
+            - /url: /admin/roles
+          - link "Role Permissions" [ref=f14e190] [cursor=pointer]:
+            - /url: /admin/role-permissions
+          - link "Audit Trail" [ref=f14e194] [cursor=pointer]:
+            - /url: /admin/audit-log
+    - main [ref=f14e198]:
+      - generic [ref=f14e201]:
+        - button "Back to Patient List" [ref=f14e314]
+        - generic [ref=f14e206]:
+          - generic [ref=f14e207]:
+            - generic [ref=f14e212]:
+              - heading "demo3, demo3" [level=2] [ref=f14e317]
+              - generic [ref=f14e318]:
+                - generic [ref=f14e319]: ADM-00001
+                - generic [ref=f14e322]: "20260000001011"
+            - generic [ref=f14e323]:
+              - generic [ref=f14e324]:
+                - paragraph [ref=f14e325]: Admitted
+                - paragraph [ref=f14e326]: Jul 23, 2026 05:12 AM
+              - generic [ref=f14e327]:
+                - paragraph [ref=f14e328]: Room / Ward
+                - paragraph [ref=f14e329]: Ward Room 101Cardiology Ward
+              - button "Transfer Room" [ref=f14e330]
+          - generic [ref=f14e215]:
+            - generic [ref=f14e216]:
+              - paragraph [ref=f14e333]: Admission Type
+              - paragraph [ref=f14e334]: Emergency
+            - generic [ref=f14e335]:
+              - paragraph [ref=f14e336]: Source
+              - paragraph [ref=f14e337]: ER
+            - generic [ref=f14e338]:
+              - paragraph [ref=f14e339]: Attending Physician
+              - paragraph [ref=f14e340]: Dr. Juan Dela Cruz
+            - generic [ref=f14e341]:
+              - paragraph [ref=f14e342]: Admitting Diagnosis
+              - paragraph [ref=f14e343]: sdfsd
+        - navigation [ref=f14e345]:
+          - button [ref=f14e346]
+          - button [ref=f14e350]
+          - button [ref=f14e354]
+          - button [ref=f14e358]
+          - button [ref=f14e362]
+          - button [active] [ref=f14e366]
+        - generic [ref=f14e486]:
+          - heading "OR Schedule" [level=3] [ref=f14e487]
+          - button "Schedule OR" [ref=f14e488]
+        - generic [ref=f14e491]:
+          - paragraph [ref=f14e494]: No OR schedules for this admission.
+          - paragraph [ref=f14e495]: Click "Schedule OR" to create a new OR schedule for this patient.
+  - contentinfo [ref=f14e311]:
+    - paragraph [ref=f14e313]: © 2026 SITHEMR. All rights reserved.
