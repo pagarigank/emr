@@ -2,7 +2,29 @@
 
 This file tracks the overarching details, decisions, and modifications made throughout the lifetime of the project.
 
-## SESSION STATE — 2026-10-19 (Reports Module Light Color Theming Adherence COMPLETE & verified)
+## SESSION STATE — 2026-10-19 (Production Server Deployment & Migration COMPLETE & verified)
+
+### 2026-10-19 (Production Deployment to 192.168.100.201 & Migration Execution)
+- **[DEPLOYMENT]** Safely deployed the latest application codebase and migrations to the production server (`192.168.100.201` / `https://emr.sititsolutions.com`):
+  - **1. Pre-Deployment Configuration Safety**:
+    - Checked existing production `/var/www/sithemr/.env` to avoid overwriting production configurations (`APP_URL`, `DB_HOST`, `DB_USERNAME`, `APP_KEY`). Preserved existing working configuration.
+    - Generated a safe rollback backup archive at `/home/sitadmin/sithemr_pre_deploy_*.tar.gz`.
+  - **2. Selective File Transfer (33 Files)**:
+    - Transferred only the new and modified application files across `app/`, `resources/`, and `routes/`:
+      - Controllers & Livewire: `PdfReportController.php`, `HospitalReportsDashboard.php`, `MicuPatientCrud.php`, `DrugCrud.php`, `SecurityHeaders.php`, `MedicalRecordsCrud.php`, `BillingCrud.php`, dispensing components (`Lab`, `Opd`, `Pharmacy`, `Procedures`, `Radiology`, `Supply`), and models (`Admission`, `AdmissionRoomHistory`).
+      - Routes & Styles: `routes/web.php`, `resources/css/app.css`.
+      - Views: `hospital-reports-dashboard.blade.php`, `document-print.blade.php`, `invoice-print.blade.php`, medical certificate/billing/prescription PDF views.
+  - **3. Composer & Dependencies**:
+    - Executed `composer install --no-dev --optimize-autoloader` installing `barryvdh/laravel-dompdf` (v3.1.2) and generating optimized classmaps.
+  - **4. Database Migrations**:
+    - Ran `php artisan migrate --force` against production MSSQL database (`sithemr` on `127.0.0.1:1433`). All 191 tables confirmed fully up to date.
+  - **5. Frontend Asset Compilation & Caching**:
+    - Compiled production Vite bundle (`npm run build`) in 1.11s generating `public/build/assets/app-BKDpBm6J.css` and JS chunks.
+    - Cleared and regenerated optimized Laravel caches: `config:cache`, `route:cache`, `view:cache`.
+  - **6. Verification & Health Checks**:
+    - Verified all core classes (`PdfReportController`, `HospitalReportsDashboard`, `Pdf` facade) resolve via classmap.
+    - Verified DomPDF generates binary PDF buffers without errors on production CLI.
+    - Verified web server returns `HTTP 200` on `https://emr.sititsolutions.com/login` and `HTTP 302` for protected routes.
 
 ### 2026-10-19 (Application Color Theming Alignment — Zero Dark Themes)
 - **[UI/THEME]** Aligned the Reports Hub and Standalone Print Document views with the application's clean light healthcare color scheme:
