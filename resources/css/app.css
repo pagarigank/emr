@@ -19,6 +19,21 @@
     --color-light-blue-900: #0c4a6e;
 }
 
+/* Scrollbar hiding utilities */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.no-scrollbar,
+.scrollbar-none {
+    -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+}
+
+
 @media print {
     header,
     aside,

@@ -42,7 +42,7 @@
         {{-- Filter & Date Preset Control Bar --}}
         <div class="mt-6 pt-5 border-t border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             {{-- Quick Presets --}}
-            <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 md:pb-0">
+            <div class="flex items-center space-x-1.5 overflow-x-auto no-scrollbar scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pb-1 md:pb-0" style="scrollbar-width: none; -ms-overflow-style: none;">
                 <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 mr-2">Period:</span>
                 <button wire:click="applyPreset('today')" type="button"
                     class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors {{ $datePreset === 'today' ? 'bg-light-blue-600 text-white shadow-xs' : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
@@ -81,40 +81,40 @@
     </div>
 
     {{-- Main Navigation Tabs --}}
-    <div class="flex border-b border-gray-200 overflow-x-auto space-x-2">
+    <div class="flex border-b border-gray-200 overflow-x-auto no-scrollbar scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden space-x-2" style="scrollbar-width: none; -ms-overflow-style: none;">
         <button wire:click="setTab('overview')"
-            class="pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'overview' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
+            class="flex-shrink-0 -mb-px pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'overview' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
             <span>📊</span>
             <span>Executive Overview</span>
         </button>
 
         <button wire:click="setTab('ahsr')"
-            class="pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'ahsr' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
+            class="flex-shrink-0 -mb-px pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'ahsr' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
             <span>🏥</span>
             <span>DOH Statistical (AHSR)</span>
-            <span class="ml-1 px-1.5 py-0.2 bg-teal-100 text-teal-800 rounded text-xs font-bold">Mandatory</span>
+            <span class="ml-1 px-1.5 py-0.5 bg-teal-100 text-teal-800 rounded text-xs font-bold">Mandatory</span>
         </button>
 
         <button wire:click="setTab('census')"
-            class="pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'census' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
+            class="flex-shrink-0 -mb-px pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'census' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
             <span>📋</span>
             <span>Daily Census & Movement</span>
         </button>
 
         <button wire:click="setTab('pidsr')"
-            class="pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'pidsr' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
+            class="flex-shrink-0 -mb-px pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'pidsr' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
             <span>🛡️</span>
             <span>Disease Surveillance (PIDSR)</span>
         </button>
 
         <button wire:click="setTab('ancillary')"
-            class="pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'ancillary' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
+            class="flex-shrink-0 -mb-px pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'ancillary' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
             <span>🔬</span>
             <span>Ancillary & Pharmacy</span>
         </button>
 
         <button wire:click="setTab('financial')"
-            class="pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'financial' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
+            class="flex-shrink-0 -mb-px pb-3 px-4 text-sm font-semibold border-b-2 flex items-center space-x-2 whitespace-nowrap transition-colors {{ $activeTab === 'financial' ? 'border-light-blue-600 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300' }}">
             <span>💰</span>
             <span>Billing & PhilHealth</span>
         </button>
