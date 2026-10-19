@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\ER;
+namespace App\Models\Er;
 
 use App\Models\Patient;
 use Illuminate\Database\Eloquent\Builder;
@@ -46,3 +46,8 @@ class ErTriageRecord extends Model
         return $this->hasOne(ErAdmission::class, 'er_triage_record_id');
     }
 }
+
+if (!class_exists('App\Models\ER\ErTriageRecord', false)) {
+    class_alias(ErTriageRecord::class, 'App\Models\ER\ErTriageRecord');
+}
+
