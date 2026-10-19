@@ -2,7 +2,16 @@
 
 This file tracks the overarching details, decisions, and modifications made throughout the lifetime of the project.
 
-## SESSION STATE — 2026-10-19 (Production Server 500 Error Resolved & Verified)
+## SESSION STATE — 2026-10-19 (Horizontal Scrollbar Removed & Tab Styling Aligned)
+
+### 2026-10-19 (Reports Dashboard Tab Navigation — Scrollbar Elimination)
+- **[BUGFIX]** Eliminated native OS horizontal scrollbar on the Reports Hub tab navigation:
+  - **Issue Identified**: In Windows browsers, `overflow-x-auto` on the tab navigation container (`<div class="flex border-b border-gray-200 overflow-x-auto ...">`) rendered a thick gray OS scrollbar across the tab row, overlapping and clipping the active tab's bottom indicator border (`border-b-2 border-light-blue-600`).
+  - **Fix Applied**:
+    1. Added cross-browser `.no-scrollbar` and `.scrollbar-none` utility classes to [resources/css/app.css](file:///e:/sithemr/resources/css/app.css) (`::-webkit-scrollbar { display: none }`, `scrollbar-width: none`, `-ms-overflow-style: none`).
+    2. Updated tab bar and period preset containers in [hospital-reports-dashboard.blade.php](file:///e:/sithemr/resources/views/livewire/reports/hospital-reports-dashboard.blade.php) with `no-scrollbar`, Tailwind arbitrary variants `[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden`, and `flex-shrink-0 -mb-px` on tab buttons to ensure seamless border alignment.
+    3. Deployed updated CSS and Blade view to production server (`192.168.100.201`), ran `npm run build` with Vite, and cleared view/optimization caches (`php artisan view:clear && php artisan optimize:clear`).
+    4. Verified live response confirms clean tab row with zero horizontal scrollbar overlay.
 
 ### 2026-10-19 (Production 500 Error Fix — Case-Sensitive Namespace on Linux)
 - **[BUGFIX]** Resolved `500 Internal Server Error` on `https://emr.sititsolutions.com/reports`:
