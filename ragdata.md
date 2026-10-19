@@ -2,7 +2,19 @@
 
 This file tracks the overarching details, decisions, and modifications made throughout the lifetime of the project.
 
-## SESSION STATE — 2026-10-19 (Production Server Deployment & Migration COMPLETE & verified)
+## SESSION STATE — 2026-10-19 (Production Server 500 Error Resolved & Verified)
+
+### 2026-10-19 (Production 500 Error Fix — Case-Sensitive Namespace on Linux)
+- **[BUGFIX]** Resolved `500 Internal Server Error` on `https://emr.sititsolutions.com/reports`:
+  - **Root Cause**: `app/models/er/ertriagerecord.php` was declared with `namespace App\Models\ER;` (uppercase `ER`), while `HospitalReportsDashboard.php` and `PdfReportController.php` imported `use App\Models\Er\ErTriageRecord;` (titlecase `Er`). On Windows, filesystem case-insensitivity masked this mismatch; on Linux, Composer's optimized classmap and PSR-4 resolution failed with `Class "App\Models\Er\ErTriageRecord" not found`.
+  - **Fix**:
+    1. Updated `app/Models/er/ertriagerecord.php` namespace to `App\Models\Er;` to match the rest of the ER models (`ErAdmission`, `ErBed`, `ErZone`).
+    2. Added a backward-compatible alias `class_alias(ErTriageRecord::class, 'App\Models\ER\ErTriageRecord')` so any legacy code referencing `ER` continues to resolve.
+    3. Regenerated production optimized classmap (`composer dump-autoload -o`) and recached Laravel (`config:cache`, `route:cache`, `view:cache`).
+  - **Verification**: Verified authenticated HTTP requests against the production server:
+    - `https://emr.sititsolutions.com/reports` -> **HTTP 200** (151,715 bytes rendered)
+    - `https://emr.sititsolutions.com/reports/print/ahsr` -> **HTTP 200** (28,765 bytes rendered)
+    - `https://emr.sititsolutions.com/reports/pdf/ahsr` -> **HTTP 200** (884,927 bytes PDF generated)
 
 ### 2026-10-19 (Production Deployment to 192.168.100.201 & Migration Execution)
 - **[DEPLOYMENT]** Safely deployed the latest application codebase and migrations to the production server (`192.168.100.201` / `https://emr.sititsolutions.com`):
