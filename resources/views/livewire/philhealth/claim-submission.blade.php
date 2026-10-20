@@ -1,5 +1,22 @@
 <div>
-    @if($showModal)
+    @if(!$claimId)
+        <div class="rounded-2xl border border-indigo-100 bg-indigo-50/50 p-8 text-center max-w-lg mx-auto my-6">
+            <div class="w-14 h-14 mx-auto rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mb-3">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-gray-900">Claim Form Not Yet Saved</h3>
+            <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                CF5 DRG shadow billing calculation and eClaims submission require an existing claim record. Please fill out and save the <strong>Claim Form</strong> first.
+            </p>
+            <div class="mt-4">
+                <button type="button" wire:click="goToClaimForm"
+                        class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    Go to Claim Form
+                </button>
+            </div>
+        </div>
+    @elseif($showModal)
         <div class="space-y-0">
             {{-- Tabs --}}
             <div class="flex border-b border-gray-200 bg-gray-50/50 -mx-6 px-6 overflow-x-auto">

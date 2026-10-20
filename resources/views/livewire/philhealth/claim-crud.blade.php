@@ -131,17 +131,22 @@
         <div class="flex items-center gap-1 border-b border-gray-200 bg-gray-50/50 -mx-6 px-6 mb-6 overflow-x-auto">
             @php
                 $tabs = [
-                    'pullup' => ['label' => 'Clinical Pull-Up', 'icon' => 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12'],
-                    'form' => ['label' => 'Claim Form', 'icon' => 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'],
-                    'items' => ['label' => 'Claim Items', 'icon' => 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'],
-                    'submission' => ['label' => 'Submission', 'icon' => 'M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12'],
+                    'pullup' => ['step' => '1', 'label' => 'Clinical Pull-Up', 'sub' => 'Auto-Extract', 'icon' => 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12'],
+                    'form' => ['step' => '2', 'label' => 'Claim Form', 'sub' => 'CF1 to CF4', 'icon' => 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'],
+                    'items' => ['step' => '3', 'label' => 'Claim Items', 'sub' => 'eSOA Billing', 'icon' => 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'],
+                    'submission' => ['step' => '4', 'label' => 'CF5 & Submission', 'sub' => 'DRG / eClaims', 'icon' => 'M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12'],
                 ];
             @endphp
             @foreach($tabs as $key => $info)
                 <button wire:click="switchTab('{{ $key }}')"
-                        class="flex items-center gap-2 px-4 py-3 text-xs font-semibold border-b-2 transition-colors whitespace-nowrap {{ $activeTab === $key ? 'border-light-blue-500 text-light-blue-700' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $info['icon'] }}"/></svg>
-                    {{ $info['label'] }}
+                        class="flex items-center gap-2.5 px-4 py-3 text-xs font-semibold border-b-2 transition-all whitespace-nowrap {{ $activeTab === $key ? 'border-light-blue-600 text-light-blue-700 bg-white/60' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
+                    <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold {{ $activeTab === $key ? 'bg-light-blue-600 text-white' : 'bg-gray-200 text-gray-600' }}">
+                        {{ $info['step'] }}
+                    </span>
+                    <div class="text-left">
+                        <div class="leading-none">{{ $info['label'] }}</div>
+                        <div class="text-[10px] font-normal text-gray-400 mt-0.5">{{ $info['sub'] }}</div>
+                    </div>
                 </button>
             @endforeach
         </div>

@@ -8,6 +8,7 @@ use App\Models\PhilhealthMember;
 use App\Models\PhilhealthCaseRate;
 use App\Models\PhilhealthClaim;
 use App\Models\PhilhealthZBenefit;
+use App\Models\HealthCareProfessional;
 use App\Models\Delivery\DeliveryType;
 use Livewire\Component;
 
@@ -29,6 +30,13 @@ class ClaimForm extends Component
     public ?int $tertiary_icd10_code_id = null;
     public ?int $case_rate_id = null;
     public ?int $second_case_rate_id = null;
+
+    public ?int $attending_physician_id = null;
+    public ?int $referring_physician_id = null;
+    public string $blood_pressure = '';
+    public string $heart_rate = '';
+    public string $temperature = '';
+    public string $respiratory_rate = '';
 
     public string $date_admitted = '';
     public string $time_admitted = '';
@@ -69,6 +77,7 @@ class ClaimForm extends Component
     public $allCaseRates;
     public $deliveryTypes;
     public $icd10Codes;
+    public $doctors;
 
     protected function rules(): array
     {
@@ -81,6 +90,12 @@ class ClaimForm extends Component
             'claim_code' => ['required', 'string', 'max:20', $u],
             'patient_id' => ['required', 'integer', 'exists:patients,id'],
             'philhealth_member_id' => ['nullable', 'integer', 'exists:philhealth_members,id'],
+            'attending_physician_id' => ['nullable', 'integer', 'exists:health_care_professionals,id'],
+            'referring_physician_id' => ['nullable', 'integer', 'exists:health_care_professionals,id'],
+            'blood_pressure' => ['nullable', 'string', 'max:20'],
+            'heart_rate' => ['nullable', 'string', 'max:10'],
+            'temperature' => ['nullable', 'string', 'max:10'],
+            'respiratory_rate' => ['nullable', 'string', 'max:10'],
             'icd10_code_id' => ['nullable', 'integer', 'exists:icd_10_codes,id'],
             'secondary_icd10_code_id' => ['nullable', 'integer', 'exists:icd_10_codes,id'],
             'tertiary_icd10_code_id' => ['nullable', 'integer', 'exists:icd_10_codes,id'],
@@ -164,8 +179,17 @@ class ClaimForm extends Component
         $this->admitting_diagnosis = $data['admitting_diagnosis'] ?? $this->admitting_diagnosis;
         $this->er_admission_id = $data['er_admission_id'] ?? $this->er_admission_id;
         $this->admission_id = $data['admission_id'] ?? $this->admission_id;
+        $this->attending_physician_id = $data['attending_physician_id'] ?? $this->attending_physician_id;
         $this->encounter_type = $data['encounter_type'] ?? $this->encounter_type;
         $this->claim_type = $data['claim_type'] ?? $this->claim_type;
+        $this->blood_pressure = $data['blood_pressure'] ?? $this->blood_pressure;
+        $this->heart_rate = $data['heart_rate'] ?? $this->heart_rate;
+        $this->temperature = $data['temperature'] ?? $this->temperature;
+        $this->respiratory_rate = $data['respiratory_rate'] ?? $this->respiratory_rate;
+        $this->history_of_present_illness = $data['history_of_present_illness'] ?? $this->history_of_present_illness;
+        $this->physical_exam_findings = $data['physical_exam_findings'] ?? $this->physical_exam_findings;
+        $this->course_in_ward = $data['course_in_ward'] ?? $this->course_in_ward;
+        $this->outcome = $data['outcome'] ?? $this->outcome;
         if (isset($data['chief_complaint'])) {
             $this->chief_complaint = $data['chief_complaint'];
         }
@@ -199,6 +223,7 @@ class ClaimForm extends Component
         $this->philhealthMembers = PhilhealthMember::where('history', 1)->where('is_active', true)->orderBy('last_name')->get();
         $this->allCaseRates = PhilhealthCaseRate::where('history', 1)->where('is_active', true)->orderBy('description')->get();
         $this->deliveryTypes = DeliveryType::where('history', 1)->where('is_active', true)->orderBy('name')->get();
+        $this->doctors = HealthCareProfessional::where('history', 1)->where('is_active', true)->orderBy('last_name')->get();
     }
 
     public function loadClaim(int $id): void
@@ -212,6 +237,15 @@ class ClaimForm extends Component
         $this->patient_search = $r->patient ? "{$r->patient->last_name}, {$r->patient->first_name} ({$r->patient->patient_code})" : '';
         $this->patients = $r->patient ? collect([$r->patient]) : collect();
         $this->philhealth_member_id = $r->philhealth_member_id;
+        if ($r->patient_id) {
+            $this->dispatch('patient-selected', patientId: $r->patient_id);
+        }
+        $this->attending_physician_id = $r->attending_physician_id;
+        $this->referring_physician_id = $r->referring_physician_id;
+        $this->blood_pressure = $r->blood_pressure ?? '';
+        $this->heart_rate = $r->heart_rate ?? '';
+        $this->temperature = $r->temperature ?? '';
+        $this->respiratory_rate = $r->respiratory_rate ?? '';
         $this->icd10_code_id = $r->icd10_code_id;
         $this->secondary_icd10_code_id = $r->secondary_icd10_code_id;
         $this->tertiary_icd10_code_id = $r->tertiary_icd10_code_id;
@@ -362,13 +396,22 @@ class ClaimForm extends Component
         $this->zBenefits = array_values($this->zBenefits);
     }
 
+    public function saveAndProceed(): void
+    {
+        $this->save();
+        if ($this->editingId) {
+            $this->dispatch('claim-saved', claimId: $this->editingId, proceedToItems: true);
+        }
+    }
+
     public function openPullUp(): void
     {
         if (!$this->patient_id) {
-            $this->dispatch('toast', type: 'error', message: 'Select a patient first.');
+            $this->dispatch('toast', type: 'error', message: 'Select a patient first to pull clinical data.');
             return;
         }
-        $this->dispatch('open-pull-up', patientId: $this->patient_id);
+        $this->dispatch('patient-selected', patientId: $this->patient_id);
+        $this->dispatch('switch-claim-tab', tab: 'pullup');
     }
 
     public function openItems(): void
@@ -389,17 +432,22 @@ class ClaimForm extends Component
         }
         $this->patient_search = $patient ? "{$patient->last_name}, {$patient->first_name} ({$patient->patient_code})" : '';
         $this->patients = $patient ? collect([$patient]) : collect();
+        $this->dispatch('patient-selected', patientId: $id);
     }
 
     public function updatedPatientSearch(): void
     {
-        $this->patients = Patient::where('history', 1)
-            ->when($this->patient_search, fn($q) => $q->where(fn($i) => $i
-                ->where('last_name', 'like', '%' . $this->patient_search . '%')
-                ->orWhere('first_name', 'like', '%' . $this->patient_search . '%')
-                ->orWhere('patient_code', 'like', '%' . $this->patient_search . '%')
-            ))
-            ->orderBy('last_name')->limit(10)->get();
+        if (strlen(trim($this->patient_search)) >= 1) {
+            $this->patients = Patient::where('history', 1)
+                ->where(function ($q) {
+                    $q->where('last_name', 'like', '%' . $this->patient_search . '%')
+                      ->orWhere('first_name', 'like', '%' . $this->patient_search . '%')
+                      ->orWhere('patient_code', 'like', '%' . $this->patient_search . '%');
+                })
+                ->orderBy('last_name')->limit(10)->get();
+        } else {
+            $this->patients = collect();
+        }
     }
 
     public function close(): void
@@ -418,6 +466,12 @@ class ClaimForm extends Component
         $this->patient_id = null;
         $this->patient_search = '';
         $this->philhealth_member_id = null;
+        $this->attending_physician_id = null;
+        $this->referring_physician_id = null;
+        $this->blood_pressure = '';
+        $this->heart_rate = '';
+        $this->temperature = '';
+        $this->respiratory_rate = '';
         $this->icd10_code_id = null;
         $this->secondary_icd10_code_id = null;
         $this->tertiary_icd10_code_id = null;

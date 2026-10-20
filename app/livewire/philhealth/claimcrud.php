@@ -79,6 +79,20 @@ class ClaimCrud extends Component
         $this->dispatch('open-claim-submission', claimId: $id);
     }
 
+    public ?int $selectedPatientId = null;
+
+    #[\Livewire\Attributes\On('switch-claim-tab')]
+    public function onSwitchTab(string $tab): void
+    {
+        $this->switchTab($tab);
+    }
+
+    #[\Livewire\Attributes\On('patient-selected')]
+    public function onPatientSelected(int $patientId): void
+    {
+        $this->selectedPatientId = $patientId;
+    }
+
     public function switchTab(string $tab): void
     {
         $this->activeTab = $tab;
@@ -93,8 +107,10 @@ class ClaimCrud extends Component
 
     private function getClaimPatientId(): ?int
     {
-        if (!$this->entryClaimId) return null;
-        return PhilhealthClaim::find($this->entryClaimId)?->patient_id;
+        if ($this->entryClaimId) {
+            return PhilhealthClaim::find($this->entryClaimId)?->patient_id ?? $this->selectedPatientId;
+        }
+        return $this->selectedPatientId;
     }
 
     public function backToList(): void
@@ -102,6 +118,7 @@ class ClaimCrud extends Component
         $this->viewMode = 'list';
         $this->activeTab = 'form';
         $this->entryClaimId = null;
+        $this->selectedPatientId = null;
         $this->entryMode = 'create';
         $this->refreshPage();
     }
@@ -134,9 +151,21 @@ class ClaimCrud extends Component
     }
 
     #[\Livewire\Attributes\On('claim-saved')]
-    public function onClaimSaved(): void
+    public function onClaimSaved(?int $claimId = null, bool $proceedToItems = false): void
     {
-        $this->refreshPage();
+        if ($claimId) {
+            $this->entryClaimId = $claimId;
+            $this->entryMode = 'edit';
+            $claim = PhilhealthClaim::find($claimId);
+            if ($claim?->patient_id) {
+                $this->selectedPatientId = $claim->patient_id;
+            }
+            if ($proceedToItems) {
+                $this->switchTab('items');
+            }
+        } else {
+            $this->refreshPage();
+        }
     }
 
     #[\Livewire\Attributes\On('claim-status-changed')]

@@ -2,6 +2,47 @@
 
 This file tracks the overarching details, decisions, and modifications made throughout the lifetime of the project.
 
+## SESSION STATE — 2026-10-20 (PhilHealth eClaims 3.0, CF5 DRG Shadow Billing & Pharmacy DRG Compliance)
+
+### 2026-10-20 (PhilHealth eClaims 3.0, eSOA XML, CF4 Medicines, CF5 DRG Shadow Billing)
+- **[DOCS]** Comprehensive Technical Reference & Regulatory Specification:
+  - Researched and authored `eclaims3_drg_specification.md` and detailed artifact documenting:
+    1. eClaims 3.0 XML architecture (`eClaimsDef.dtd`) and transmittal headers.
+    2. Circular No. 2023-0026: Mandatory Electronic Statement of Account (eSOA) XML `<PARTICULARS>` element with 8 official library categories (`DRUGS_MEDICINE`, `SUPPLIES`, `LABORATORY`, `RADIOLOGY`, `PROCEDURES`, `ROOM_BOARD`, `PROFESSIONAL_FEE`, `OTHERS`).
+    3. Circular No. 2020-0010: Electronic Claim Form 4 (eCF4) `<MEDICINES>` XML block with itemized PNDF codes, generic names, preparations, and mandatory `NOMED` sentinel fallback.
+    4. Circular No. 2024-0006 & 2026-0012: Implementation of Claim Form 5 (CF5) DRG Shadow Billing Statement, Base Rate (₱35,000.00), Relative Weights (RW), 60/40 Healthcare Facility (HF) vs Professional Fee (PF) allocation, All Case Rate (ACR) baseline comparison, and net variance calculation.
+    5. Inpatient Pharmacy DRG bundling rules: routine medicines bundled into DRG base rate / HF fee with itemized eSOA and CF4 transparency.
+- **[FEATURE]** Clinical Data Pull-Up (`app/Livewire/Philhealth/ClinicalDataPullUp.php`):
+  - Enriched `pullFromEr()`: Extracts attending physician (`attending_physician_id`), vital signs (BP systolic/diastolic, HR, RR, Temp from `triageRecord`), chief complaint, treatment notes into course in ward, and maps disposition to PhilHealth outcomes (`Recovered`, `Improved`, `Died`, `HAMA`, `Transferred`).
+  - Enriched `pullFromWard()`: Extracts attending physician, latest vital signs (from `nursingVitals` or ER triage), clinical narratives (HPI, physical exam findings, course in ward), and disposition-to-outcome mapping.
+  - Enriched `pullFromOpd()`: Extracts attending physician, vital signs, chief complaint, HPI, physical exam findings, treatment plan, and assessment.
+  - Corrected `importFromBilling()`: Remapped billing item types to official PhilHealth categories (`Drug/Medicine`, `Laboratory`, `Radiology`, `Procedure`, `Supply`, `RoomBoard`, `ProfessionalFee`, `Others`) instead of dumping Lab and Radiology into generic `Others`.
+- **[FEATURE]** Claim Form Livewire Component & UI (`ClaimForm.php` & `claim-form.blade.php`):
+  - Added public properties, validation rules, and input controls for `attending_physician_id`, `referring_physician_id`, and admission vital signs (`blood_pressure`, `heart_rate`, `temperature`, `respiratory_rate`).
+  - Updated `receivePulledData()` to automatically hydrate attending doctor, vitals, clinical narratives, and outcome upon encounter selection.
+  - Added interactive Attending/Referring Physician select dropdowns and Admission Vital Signs input card to the Claim Form modal.
+- **[FEATURE]** eClaims 3.0 XML Generation (`app/Services/Philhealth/XmlBuilder.php`):
+  - Eager loads `cf5ShadowBilling` and `attendingPhysician`.
+  - Added `appendParticulars()`: Emits eSOA `<PARTICULARS>` itemized section with official categories per Circular 2023-0026.
+  - Added `appendMedicines()`: Emits CF4 `<MEDICINES>` section with prescribed drug line items and mandatory `<MEDICINE pDrugCode="NOMED".../>` sentinel fallback per Circular 2020-0010.
+  - Added `appendDrgShadowBilling()`: Emits `<DRG_SHADOW_BILLING>` node with DRG code, description, base rate, relative weight, total computed DRG rate, 60% HF fee, 40% PF fee, ACR baseline rate, variance amount, and status per Circular 2026-0012.
+  - Added Attending Physician license and vital signs (`Vital BP`, `Vital HR`, `Vital RR`, `Vital Temp`) to `<OBSERVATION>`.
+- **[FEATURE]** Claims Data-Entry UI/UX Audit & Ease-of-Use System Overhaul:
+  - Audited and verified all claim entry components for frictionless user experience:
+    1. **TypeError & Crash Prevention**: Made `openItems(?int $claimId = null)` and `openSubmission(?int $claimId = null)` nullable in `ClaimItems.php` and `ClaimSubmission.php`. When clicking tabs on an unsaved new claim, rendered clear guidance cards with direct "Go to Claim Form" buttons instead of crashing Livewire requests.
+    2. **Context Persistence on Save**: Updated `ClaimCrud::onClaimSaved(?int $claimId = null, bool $proceedToItems = false)` to retain the user in edit mode on the saved claim instead of ejecting back to the claims list.
+    3. **Guided 4-Step Workflow**: Re-architected tab navigation in `ClaimCrud.php` and `claim-crud.blade.php` into numbered steps with subheadings: `1. Clinical Pull-Up (Auto-Extract)`, `2. Claim Form (CF1 to CF4)`, `3. Claim Items (eSOA Billing)`, `4. CF5 & Submission (DRG / eClaims)`.
+    4. **Interactive Clinical Data Pull-Up**: Added inline patient autocomplete directly inside the Pull-Up tab (`ClinicalDataPullUp.php` and `clinical-data-pull-up.blade.php`), encounter cards for ER, Ward, and OPD with 1-click "Pull Data" (auto-switches to Form tab) and "Import Billing" (auto-switches to Items tab). Fixed admission code fallback.
+    5. **1-Click Clinical Data Shortcut in Claim Form**: Added a quick `[⚡ Pull Clinical Data]` button in Section A header and a `[Pull Encounters (CF4)]` button in the action bar. Replaced fragile Alpine autocomplete with reactive Blade loop powered by `wire:model.live.debounce`. Added `[Save & Proceed to Items →]` button.
+    6. **Reactive Itemized Billing Calculations**: Enhanced `ClaimItems.php` and `claim-items.blade.php` with `wire:model.live.debounce.300ms` for `quantity`, `unit_price`, `actual_amount`, and `claimed_amount`. Modifying quantity or unit price immediately computes row amounts and footer totals (`totalActual`, `totalClaimed`) without manual saves. Added `[Save & Proceed to CF5 DRG →]` button.
+  - Verified end-to-end with automated Playwright browser test suite (`step1` through `step9`), confirming zero PHP/Livewire crashes, seamless tab transitions, live calculations, and clean light healthcare aesthetic.
+- **[FEATURE]** Claim Form 5 (CF5) PDF Redesign (`resources/views/pages/philhealth/cf5pdf.blade.php`):
+  - Completely redesigned from legacy Z-Benefit form into the official **PhilHealth Claim Form 5 (CF5) — DRG Shadow Billing Statement** under Circular No. 2024-0006 and 2026-0012.
+  - Renders DRG Code, Title, Relative Weight, National Base Rate (₱35,000), Total DRG Rate, 60/40 HF & PF breakdown, ACR comparison table, and Net Variance Surplus/Deficit badge.
+  - Includes mandatory Pharmacy DRG bundling notice and top 12 itemized eSOA particulars table with hospital charge totals.
+  - Displays secondary Z-Benefit tranche schedule conditionally when applicable.
+  - Includes certification and tripartite signature blocks (Attending Physician, Medical Claims Officer, HCI Head).
+
 ## SESSION STATE — 2026-10-20 (PhilHealth OECB & EECL Mapping Ecosystem Completed)
 
 ### 2026-10-20 (PhilHealth OECB / FBE & Essential Emergency Care List (EECL) Full Suite)

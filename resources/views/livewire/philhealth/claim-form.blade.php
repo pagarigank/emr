@@ -3,22 +3,37 @@
         <form wire:submit="save" class="space-y-6">
             {{-- Section A: Patient & Admission --}}
             <div class="bg-gray-50/50 rounded-xl p-4 border border-gray-100">
-                <h4 class="text-sm font-semibold text-gray-700 mb-4 flex items-center"><span class="w-6 h-6 rounded-full bg-light-blue-100 text-light-blue-700 text-xs font-bold flex items-center justify-center mr-2">A</span> Patient & Admission Details</h4>
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="text-sm font-semibold text-gray-700 flex items-center"><span class="w-6 h-6 rounded-full bg-light-blue-100 text-light-blue-700 text-xs font-bold flex items-center justify-center mr-2">A</span> Patient &amp; Admission Details</h4>
+                    <button type="button" wire:click="openPullUp" class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold text-sky-700 bg-sky-50 border border-sky-200 rounded-lg hover:bg-sky-100 transition-colors shadow-xs">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        ⚡ Pull Clinical Data
+                    </button>
+                </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1.5">Patient <span class="text-red-500">*</span></label>
-                        <div class="relative" x-data="{ open: false, search: '' }" x-init="$nextTick(() => search = $wire.patient_search)" wire:key="patient-search-{{ $editingId }}">
-                            <input x-model="search" @input="$wire.patient_search = search; open = true" @focus="open = true" @click.away="setTimeout(() => open = false, 200)" type="text" placeholder="Search patient name or code…"
+                        <div class="relative" x-data="{ open: false }" wire:key="patient-search-{{ $editingId }}">
+                            <input wire:model.live.debounce.250ms="patient_search"
+                                   @focus="open = true" @click.away="setTimeout(() => open = false, 250)" type="text"
+                                   placeholder="Search patient name or code…"
                                    class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-light-blue-500/20 focus:border-light-blue-500 @error('patient_id') border-red-300 bg-red-50 @enderror">
                             @error('patient_id') <p class="mt-1 text-xs text-red-500 font-medium">{{ $message }}</p> @enderror
-                            <div x-show="open && search.length > 0" class="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                                <template x-for="p in $wire.patients" :key="p.id">
-                                    <div @click="$wire.selectPatient(p.id); search = p.last_name + ', ' + p.first_name + ' (' + p.patient_code + ')'; open = false" class="px-4 py-2.5 hover:bg-light-blue-50 cursor-pointer text-sm border-b border-gray-50 last:border-0">
-                                        <span class="font-medium" x-text="p.last_name + ', ' + p.first_name"></span>
-                                        <span class="text-gray-500 ml-2 font-mono" x-text="p.patient_code"></span>
+
+                            @if($patients && $patients->isNotEmpty())
+                            <div x-show="open" class="absolute z-30 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-xl max-h-56 overflow-y-auto divide-y divide-gray-100">
+                                @foreach($patients as $p)
+                                <div wire:click="selectPatient({{ $p->id }})" @click="open = false"
+                                     class="px-4 py-2.5 hover:bg-light-blue-50 cursor-pointer text-sm flex items-center justify-between transition-colors">
+                                    <div>
+                                        <span class="font-medium text-gray-900">{{ $p->last_name }}, {{ $p->first_name }}</span>
+                                        <span class="text-gray-500 ml-2 font-mono text-xs">({{ $p->patient_code }})</span>
                                     </div>
-                                </template>
+                                    <span class="text-[10px] font-semibold text-light-blue-700 bg-light-blue-50 px-2 py-0.5 rounded border border-light-blue-200">Select</span>
+                                </div>
+                                @endforeach
                             </div>
+                            @endif
                         </div>
                     </div>
                     <div>
@@ -111,6 +126,29 @@
                             @endforeach
                         </select>
                     </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Attending Physician (CF2/CF4)</label>
+                        <select wire:model="attending_physician_id" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-light-blue-500/20 focus:border-light-blue-500">
+                            <option value="">— Select Attending Physician —</option>
+                            @if($doctors)
+                                @foreach($doctors as $doc)
+                                    <option value="{{ $doc->id }}">{{ $doc->last_name }}, {{ $doc->first_name }} {{ $doc->middle_name ? substr($doc->middle_name, 0, 1) . '.' : '' }} ({{ $doc->license_number ?? 'HCP-' . $doc->id }})</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Referring Physician (Optional)</label>
+                        <select wire:model="referring_physician_id" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-light-blue-500/20 focus:border-light-blue-500">
+                            <option value="">— Select Referring Physician —</option>
+                            @if($doctors)
+                                @foreach($doctors as $doc)
+                                    <option value="{{ $doc->id }}">{{ $doc->last_name }}, {{ $doc->first_name }} {{ $doc->middle_name ? substr($doc->middle_name, 0, 1) . '.' : '' }} ({{ $doc->license_number ?? 'HCP-' . $doc->id }})</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -118,6 +156,29 @@
             <div class="bg-gray-50/50 rounded-xl p-4 border border-gray-100">
                 <h4 class="text-sm font-semibold text-gray-700 mb-4 flex items-center"><span class="w-6 h-6 rounded-full bg-light-blue-100 text-light-blue-700 text-xs font-bold flex items-center justify-center mr-2">B</span> CF4 — Clinical Data</h4>
                 <div class="space-y-4">
+                    {{-- Vital Signs at Admission --}}
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Admission Vital Signs</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white p-3 rounded-lg border border-gray-200">
+                            <div>
+                                <label class="block text-xs text-gray-600 mb-1">Blood Pressure (BP)</label>
+                                <input wire:model="blood_pressure" type="text" placeholder="120/80" class="w-full px-3 py-1.5 bg-gray-50 border border-gray-200 rounded text-xs text-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-light-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-600 mb-1">Heart Rate (bpm)</label>
+                                <input wire:model="heart_rate" type="text" placeholder="75" class="w-full px-3 py-1.5 bg-gray-50 border border-gray-200 rounded text-xs text-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-light-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-600 mb-1">Respiratory Rate (cpm)</label>
+                                <input wire:model="respiratory_rate" type="text" placeholder="18" class="w-full px-3 py-1.5 bg-gray-50 border border-gray-200 rounded text-xs text-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-light-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-600 mb-1">Temperature (°C)</label>
+                                <input wire:model="temperature" type="text" placeholder="36.8" class="w-full px-3 py-1.5 bg-gray-50 border border-gray-200 rounded text-xs text-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-light-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1.5">Chief Complaint</label>
                         <input wire:model="chief_complaint" type="text" placeholder="Primary reason for admission…" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 hover:bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-light-blue-500/20 focus:border-light-blue-500">
@@ -242,11 +303,23 @@
             </div>
 
             {{-- Action Buttons --}}
-            <div class="flex justify-end pt-2">
-                <button type="submit" class="px-5 py-2.5 text-sm font-medium text-white bg-light-blue-600 hover:bg-light-blue-700 rounded-xl shadow-sm transition-colors">
-                    <span wire:loading.remove wire:target="save">{{ $isEditing ? 'Update Claim' : 'Create Claim' }}</span>
-                    <span wire:loading wire:target="save" class="flex items-center"><svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>Saving…</span>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-gray-100">
+                <button type="button" wire:click="openPullUp"
+                        class="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-sky-700 bg-sky-50 border border-sky-200 rounded-xl hover:bg-sky-100 transition-colors shadow-xs w-full sm:w-auto justify-center">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Pull Encounters (CF4)
                 </button>
+                <div class="flex items-center space-x-2 w-full sm:w-auto justify-end">
+                    <button type="submit" class="px-5 py-2.5 text-xs font-semibold text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 rounded-xl shadow-sm transition-colors">
+                        <span wire:loading.remove wire:target="save">{{ $isEditing ? 'Save Claim' : 'Save as Draft' }}</span>
+                        <span wire:loading wire:target="save" class="flex items-center"><svg class="animate-spin -ml-1 mr-1.5 h-3.5 w-3.5 text-gray-700" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>Saving…</span>
+                    </button>
+                    <button type="button" wire:click="saveAndProceed"
+                            class="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-bold text-white bg-light-blue-600 hover:bg-light-blue-700 rounded-xl shadow-sm transition-colors">
+                        <span wire:loading.remove wire:target="saveAndProceed">Save &amp; Proceed to Items &rarr;</span>
+                        <span wire:loading wire:target="saveAndProceed" class="flex items-center"><svg class="animate-spin -ml-1 mr-1.5 h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>Saving…</span>
+                    </button>
+                </div>
             </div>
         </form>
     @else

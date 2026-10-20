@@ -23,6 +23,7 @@ class XmlBuilder
         $claim->loadMissing([
             'patient', 'philhealthMember', 'icd10Code', 'caseRate',
             'secondCaseRate', 'items', 'claimBatch', 'claimProcedures',
+            'cf5ShadowBilling', 'attendingPhysician',
         ]);
 
         $this->doc = new DOMDocument('1.0', 'UTF-8');
@@ -62,7 +63,7 @@ class XmlBuilder
         $batch->loadMissing([
             'claims.patient', 'claims.philhealthMember', 'claims.icd10Code',
             'claims.caseRate', 'claims.secondCaseRate', 'claims.items',
-            'claims.claimProcedures',
+            'claims.claimProcedures', 'claims.cf5ShadowBilling', 'claims.attendingPhysician',
         ]);
 
         $this->doc = new DOMDocument('1.0', 'UTF-8');
@@ -201,6 +202,15 @@ class XmlBuilder
             $claimEl->appendChild($pkg);
         }
 
+        // PARTICULARS (eSOA Itemized billing per Circular 2023-0026)
+        $this->appendParticulars($claimEl, $claim);
+
+        // MEDICINES (CF4 Pharmacy items or NOMED tag per Circular 2020-0010)
+        $this->appendMedicines($claimEl, $claim);
+
+        // DRG_SHADOW_BILLING (CF5 DRG statement per Circular 2024-0006 & 2026-0012)
+        $this->appendDrgShadowBilling($claimEl, $claim);
+
         // OBSERVATION
         $obs = $this->doc->createElement('OBSERVATION');
         $this->addObservationValue($obs, 'Patient Last Name', $claim->patient?->last_name ?? '');
@@ -214,6 +224,24 @@ class XmlBuilder
             $this->addObservationValue($obs, 'Member PIN', $claim->philhealthMember->pin);
             $this->addObservationValue($obs, 'Member Type', $this->mapMembershipType($claim->philhealthMember->membership_type ?? ''));
         }
+        if ($claim->attendingPhysician) {
+            $this->addObservationValue($obs, 'Attending Physician', "{$claim->attendingPhysician->last_name}, {$claim->attendingPhysician->first_name}");
+            if ($claim->attendingPhysician->license_number) {
+                $this->addObservationValue($obs, 'Attending Physician License', $claim->attendingPhysician->license_number);
+            }
+        }
+        if ($claim->blood_pressure) {
+            $this->addObservationValue($obs, 'Vital BP', $claim->blood_pressure);
+        }
+        if ($claim->heart_rate) {
+            $this->addObservationValue($obs, 'Vital HR', $claim->heart_rate);
+        }
+        if ($claim->respiratory_rate) {
+            $this->addObservationValue($obs, 'Vital RR', $claim->respiratory_rate);
+        }
+        if ($claim->temperature) {
+            $this->addObservationValue($obs, 'Vital Temp', $claim->temperature);
+        }
         $claimEl->appendChild($obs);
 
         // SYSTEM
@@ -221,6 +249,103 @@ class XmlBuilder
         $sys->setAttribute('pSystemName', $this->config['system']['name']);
         $sys->setAttribute('pSystemVersion', $this->config['system']['version']);
         $claimEl->appendChild($sys);
+    }
+
+    protected function appendParticulars(DOMElement $claimEl, PhilhealthClaim $claim): void
+    {
+        $items = $claim->items;
+        if (!$items || $items->isEmpty()) {
+            return;
+        }
+
+        $particularsEl = $this->doc->createElement('PARTICULARS');
+        foreach ($items as $item) {
+            $itemEl = $this->doc->createElement('ITEM');
+            $itemEl->setAttribute('pItemCode', $item->item_code ?: 'ITEM');
+            $itemEl->setAttribute('pItemDescription', $item->item_name ?: ($item->description ?: 'Hospital Item'));
+            $itemEl->setAttribute('pItemCategory', $this->mapItemCategory($item->item_type ?? 'Others'));
+            $itemEl->setAttribute('pQuantity', (string) (float) $item->quantity);
+            $itemEl->setAttribute('pUnitPrice', number_format((float) $item->unit_price, 2, '.', ''));
+            $itemEl->setAttribute('pTotalActualAmount', number_format((float) $item->actual_amount, 2, '.', ''));
+            $itemEl->setAttribute('pTotalClaimedAmount', number_format((float) $item->claimed_amount, 2, '.', ''));
+            $itemEl->setAttribute('pCoverageType', 'PHILHEALTH');
+            $particularsEl->appendChild($itemEl);
+        }
+        $claimEl->appendChild($particularsEl);
+    }
+
+    protected function appendMedicines(DOMElement $claimEl, PhilhealthClaim $claim): void
+    {
+        $drugItems = $claim->items ? $claim->items->filter(fn($i) => in_array($i->item_type, ['Drug/Medicine', 'Medicine', 'Drugs'])) : collect();
+        $medsEl = $this->doc->createElement('MEDICINES');
+
+        if ($drugItems->isNotEmpty()) {
+            foreach ($drugItems as $drug) {
+                $medEl = $this->doc->createElement('MEDICINE');
+                $medEl->setAttribute('pDrugCode', $drug->item_code ?: 'DRUG001');
+                $medEl->setAttribute('pGenericName', $drug->item_name ?: 'Prescribed Drug');
+                $medEl->setAttribute('pBrandName', $drug->item_name ?: 'Prescribed Drug');
+                $medEl->setAttribute('pPreparation', $drug->description ?: 'Standard');
+                $medEl->setAttribute('pQuantity', (string) (float) $drug->quantity);
+                $medEl->setAttribute('pUnitPrice', number_format((float) $drug->unit_price, 2, '.', ''));
+                $medEl->setAttribute('pTotalCost', number_format((float) $drug->actual_amount, 2, '.', ''));
+                $medsEl->appendChild($medEl);
+            }
+        } else {
+            // PhilHealth eCF4 Circular 2020-0010 mandatory NOMED sentinel tag
+            $medEl = $this->doc->createElement('MEDICINE');
+            $medEl->setAttribute('pDrugCode', 'NOMED');
+            $medEl->setAttribute('pGenericName', 'NONE');
+            $medEl->setAttribute('pBrandName', 'NONE');
+            $medEl->setAttribute('pPreparation', 'NONE');
+            $medEl->setAttribute('pQuantity', '0');
+            $medEl->setAttribute('pUnitPrice', '0.00');
+            $medEl->setAttribute('pTotalCost', '0.00');
+            $medsEl->appendChild($medEl);
+        }
+
+        $claimEl->appendChild($medsEl);
+    }
+
+    protected function appendDrgShadowBilling(DOMElement $claimEl, PhilhealthClaim $claim): void
+    {
+        $shadow = $claim->cf5ShadowBilling?->first();
+        if (!$shadow && ($claim->claim_type === 'DRG' || $claim->icd10Code || $claim->icd10_code_id)) {
+            try {
+                $shadow = app(\App\Services\Philhealth\Cf5ShadowBillingService::class)->calculate($claim);
+            } catch (\Throwable $e) {
+                $shadow = null;
+            }
+        }
+
+        if ($shadow) {
+            $drgEl = $this->doc->createElement('DRG_SHADOW_BILLING');
+            $drgEl->setAttribute('pDrgCode', $shadow->drg_code ?? 'DRG-999');
+            $drgEl->setAttribute('pDrgDescription', $shadow->drg_description ?? 'Unclassified DRG');
+            $drgEl->setAttribute('pBaseRate', number_format((float) $shadow->base_rate, 2, '.', ''));
+            $drgEl->setAttribute('pRelativeWeight', number_format((float) $shadow->drg_weight, 4, '.', ''));
+            $drgEl->setAttribute('pTotalDrgAmount', number_format((float) $shadow->total_drg_amount, 2, '.', ''));
+            $drgEl->setAttribute('pHospitalFee', number_format((float) $shadow->hf_amount, 2, '.', ''));
+            $drgEl->setAttribute('pProfessionalFee', number_format((float) $shadow->pf_amount, 2, '.', ''));
+            $drgEl->setAttribute('pActualCaseRate', number_format((float) $shadow->actual_case_rate_amount, 2, '.', ''));
+            $drgEl->setAttribute('pVarianceAmount', number_format((float) $shadow->difference_amount, 2, '.', ''));
+            $drgEl->setAttribute('pStatus', $shadow->status ?? 'Calculated');
+            $claimEl->appendChild($drgEl);
+        }
+    }
+
+    protected function mapItemCategory(string $type): string
+    {
+        return match (strtoupper($type)) {
+            'DRUG/MEDICINE', 'MEDICINE', 'DRUGS' => 'DRUGS_MEDICINE',
+            'SUPPLY', 'CSR' => 'SUPPLIES',
+            'LABORATORY', 'LAB' => 'LABORATORY',
+            'RADIOLOGY', 'RAD', 'X-RAY', 'ULTRASOUND' => 'RADIOLOGY',
+            'PROCEDURE', 'PROCEDURES' => 'PROCEDURES',
+            'ROOMBOARD', 'ROOM & BOARD', 'ACCOMMODATION' => 'ROOM_BOARD',
+            'PROFESSIONALFEE', 'PROF. FEE', 'PF', 'DOCTORFEE' => 'PROFESSIONAL_FEE',
+            default => 'OTHERS',
+        };
     }
 
     protected function addObservationValue(DOMElement $parent, string $particulars, string $value): void

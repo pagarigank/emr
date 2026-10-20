@@ -56,12 +56,17 @@ class ClaimSubmission extends Component
     }
 
     #[\Livewire\Attributes\On('open-claim-submission')]
-    public function openSubmission(int $claimId): void
+    public function openSubmission(?int $claimId = null): void
     {
         $this->claimId = $claimId;
         $this->activeTab = 'submission';
         $this->resetMessages();
         $this->showModal = true;
+    }
+
+    public function goToClaimForm(): void
+    {
+        $this->dispatch('switch-claim-tab', tab: 'form');
     }
 
     private function resetMessages(): void
@@ -286,11 +291,13 @@ class ClaimSubmission extends Component
     public function previewCf2(): void { $this->loadPreview('CF2 — HCI Report', 'cf2pdf', 'philhealth.claims.cf2pdf'); }
     public function previewCf3(): void { $this->loadPreview('CF3 — Clinical Record', 'cf3pdf', 'philhealth.claims.cf3pdf'); }
     public function previewCf4(): void { $this->loadPreview('CF4 — Clinical Abstract', 'cf4pdf', 'philhealth.claims.cf4pdf'); }
+    public function previewCf5(): void { $this->loadPreview('CF5 — DRG Shadow Billing Statement', 'cf5pdf', 'philhealth.claims.cf5pdf'); }
+    public function previewEsoa(): void { $this->loadPreview('eSOA — Electronic Statement of Account', 'esoapdf', 'philhealth.claims.esoapdf'); }
     public function previewEecl(): void { $this->loadPreview('EECL — Annex D Summary', 'eeclpdf', 'philhealth.claims.eeclpdf'); }
 
     private function loadPreview(string $title, string $view, string $route): void
     {
-        $claim = PhilhealthClaim::with(['patient', 'philhealthMember', 'attendingPhysician', 'referringPhysician', 'icd10Code', 'secondaryIcd10Code', 'tertiaryIcd10Code', 'caseRate', 'deliveryType', 'items', 'claimBatch', 'erAdmission.triageRecord.acuityLevel', 'erAdmission.oecbEntries'])->find($this->claimId);
+        $claim = PhilhealthClaim::with(['patient', 'philhealthMember', 'attendingPhysician', 'referringPhysician', 'icd10Code', 'secondaryIcd10Code', 'tertiaryIcd10Code', 'caseRate', 'deliveryType', 'items', 'claimBatch', 'cf5ShadowBilling', 'erAdmission.triageRecord.acuityLevel', 'erAdmission.oecbEntries'])->find($this->claimId);
         if ($claim) {
             $this->previewTitle = $title;
             $this->previewHtml = view("pages.philhealth.{$view}", compact('claim'))->render();

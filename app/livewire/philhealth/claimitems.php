@@ -33,10 +33,15 @@ class ClaimItems extends Component
     }
 
     #[\Livewire\Attributes\On('open-items')]
-    public function openItems(int $claimId): void
+    public function openItems(?int $claimId = null): void
     {
         $this->claimId = $claimId;
-        $this->loadItems();
+        if ($claimId) {
+            $this->loadItems();
+        } else {
+            $this->items = [];
+            $this->recalculateTotals();
+        }
         $this->showModal = true;
     }
 
@@ -106,9 +111,41 @@ class ClaimItems extends Component
         $this->recalculateTotals();
     }
 
+    public function updated($property = null): void
+    {
+        if ($property && str_starts_with($property, 'items.')) {
+            $parts = explode('.', $property);
+            if (count($parts) >= 3) {
+                $idx = (int) $parts[1];
+                $field = $parts[2];
+                if (in_array($field, ['quantity', 'unit_price']) && isset($this->items[$idx])) {
+                    $qty = (float) ($this->items[$idx]['quantity'] ?? 0);
+                    $price = (float) ($this->items[$idx]['unit_price'] ?? 0);
+                    $amt = round($qty * $price, 2);
+                    $this->items[$idx]['actual_amount'] = $amt;
+                    $this->items[$idx]['claimed_amount'] = $amt;
+                }
+            }
+        }
+        $this->recalculateTotals();
+    }
+
     public function updatedItems(): void
     {
         $this->recalculateTotals();
+    }
+
+    public function goToClaimForm(): void
+    {
+        $this->dispatch('switch-claim-tab', tab: 'form');
+    }
+
+    public function saveAndProceed(): void
+    {
+        $this->save();
+        if ($this->claimId) {
+            $this->dispatch('switch-claim-tab', tab: 'submission');
+        }
     }
 
     private function recalculateTotals(): void
@@ -189,7 +226,7 @@ class ClaimItems extends Component
 
         $this->dispatch('toast', type: 'success', message: 'Claim items saved.');
         $this->dispatch('items-saved', totals: ['actual' => $this->totalActual, 'claimed' => $this->totalClaimed]);
-        $this->showModal = false;
+        $this->loadItems();
     }
 
     private function syncProcedures(PhilhealthClaim $claim): void
