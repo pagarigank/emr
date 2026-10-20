@@ -20,6 +20,7 @@ class LabTest extends Model
     public function specimenType(): BelongsTo { return $this->belongsTo(SpecimenType::class, 'specimen_type_id'); }
     public function labUnit(): BelongsTo { return $this->belongsTo(LabUnit::class, 'lab_unit_id'); }
     public function referenceRanges(): HasMany { return $this->hasMany(ReferenceRange::class, 'lab_test_id'); }
+    public function eeclItem(): BelongsTo { return $this->belongsTo(\App\Models\Oecb\EeclItem::class, 'eecl_item_id'); }
 
     protected static function booted(): void { static::addGlobalScope('current', fn (Builder $q) => $q->where('history', 1)); }
 }

@@ -2,6 +2,26 @@
 
 This file tracks the overarching details, decisions, and modifications made throughout the lifetime of the project.
 
+## SESSION STATE — 2026-10-20 (PhilHealth OECB & EECL Mapping Ecosystem Completed)
+
+### 2026-10-20 (PhilHealth OECB / FBE & Essential Emergency Care List (EECL) Full Suite)
+- **[FEATURE]** Added `EeclItemCrud` (`/philhealth/eecl-items`):
+  - Statutory catalog manager for Essential Emergency Care List items under PhilHealth Circulars 2024-0033 and 2025-0020.
+  - Interactive search, status filtering, category pill switchers (Diagnostics, ER Services, Imaging, Medicines, Supplies), summary KPI cards, and modal editor for fixed fees, active toggles, and soft deletion.
+- **[FEATURE]** Added `OecbPackageCrud` (`/philhealth/oecb-packages`):
+  - Tab 1: Full management interface for 14 Core Emergency Presentations and their fixed fee schedules (Difficulty of Breathing ₱9,500, Chest Pain ₱12,000, Altered Mental Status ₱10,000, etc.).
+  - Tab 2: 1-Click Interactive Mapping Tool with live catalog tabs (`drugs`, `lab_tests`, `radiology`, `supplies`, `procedures`) linking hospital internal services directly to official EECL items for 1-click ER auto-billing. Includes "Smart Auto-Match by Name".
+- **[FEATURE]** Database Schema & Model Relationships:
+  - Migration `2026_10_19_235239_add_eecl_item_id_to_hospital_catalogs.php` executed on MSSQL, adding `eecl_item_id` foreign key referencing `eecl_items(id)` across `lab_tests`, `drugs`, `radiology_exam_types`, `procedures`, and `items`.
+  - Added `eeclItem(): BelongsTo` relationship on `LabTest`, `Drug`, `RadiologyExamType`, `Procedure`, and `Item`.
+- **[BUGFIX]** Billing Ledger Correction:
+  - Fixed `App\Models\Oecb\OecbEntry::postChargeToLedger`: Corrected logic from posting a debit charge to posting a credit adjustment (`credit => $amount, debit => 0`), properly treating PhilHealth OECB benefit as an insurance deduction rather than charging the patient.
+- **[FEATURE]** ER Admission Treatment & Auto-Sync (`ErAdmissionCrud`):
+  - Implemented `autoSyncEeclFromOrders()`: Automatically pulls fulfilled lab requests, pharmacy dispensations, radiology exams, CSR supplies, and procedures mapped to EECL codes directly into the encounter's Annex D EECL entries upon discharge.
+  - Automatically assesses triage acuity (ESI 1–2 Emergent ₱707.00 vs ESI 3–4 Urgent ₱260.00) to inject the mandatory ED Consultation fixed fee per Circular 2025-0020.
+  - Added live 24-hour OECB countdown timer badge on the patient treatment header card (warning when 24h outpatient emergency threshold is reached).
+  - Enforced Inpatient boundary in `saveDisposition()`: Admitted to Ward or ICU automatically clears `is_oecb` so the patient transitions to Inpatient All Case Rates (ACR) per Advisory 2026-0041, while outpatient discharge automatically syncs EECL entries.
+
 ## SESSION STATE — 2026-10-19 (Horizontal Scrollbar Removed & Tab Styling Aligned)
 
 ### 2026-10-19 (Reports Dashboard Tab Navigation — Scrollbar Elimination)

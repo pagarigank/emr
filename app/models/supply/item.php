@@ -18,6 +18,7 @@ class Item extends Model
     public function category(): BelongsTo { return $this->belongsTo(ItemCategory::class, 'item_category_id'); }
     public function supplier(): BelongsTo { return $this->belongsTo(Supplier::class, 'supplier_id'); }
     public function unit(): BelongsTo { return $this->belongsTo(SupplyUnit::class, 'supply_unit_id'); }
+    public function eeclItem(): BelongsTo { return $this->belongsTo(\App\Models\Oecb\EeclItem::class, 'eecl_item_id'); }
     
     public function batches() { return $this->hasMany(ItemBatch::class, 'item_id'); }
     public function stockAdjustments() { return $this->hasMany(ItemStockAdjustment::class, 'item_id'); }

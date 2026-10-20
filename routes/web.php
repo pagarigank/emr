@@ -451,6 +451,8 @@ Route::get('/book-appointment', \App\Livewire\Public\AppointmentBooking::class)-
             Route::get('case-rates', fn () => view('pages.philhealth.case-rates'))->name('case-rates');
             Route::get('hc-professionals', fn () => view('pages.philhealth.hc-professionals'))->name('hc-professionals');
             Route::get('members', fn () => view('pages.philhealth.members'))->name('members');
+            Route::get('eecl-items', fn () => view('pages.philhealth.eecl-items'))->name('eecl-items');
+            Route::get('oecb-packages', fn () => view('pages.philhealth.oecb-packages'))->name('oecb-packages');
         });
         Route::middleware('permission:philhealth.manage')->group(function () {
             Route::get('claims', fn () => view('pages.philhealth.claims'))->name('claims');

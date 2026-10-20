@@ -20,4 +20,5 @@ class Procedure extends Model
 
     public function category(): BelongsTo { return $this->belongsTo(ProcedureCategory::class, 'category_id'); }
     public function department(): BelongsTo { return $this->belongsTo(Department::class, 'department_id'); }
+    public function eeclItem(): BelongsTo { return $this->belongsTo(\App\Models\Oecb\EeclItem::class, 'eecl_item_id'); }
 }

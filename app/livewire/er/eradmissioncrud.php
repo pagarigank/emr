@@ -127,9 +127,13 @@ class ErAdmissionCrud extends Component
     public function addOecbEntry(): void
     {
         $this->oecbEntries[] = [
+            'id' => null,
+            'eecl_item_id' => null,
             'core_presentation' => '',
             'oecb_package_code' => '',
             'oecb_fixed_fee' => null,
+            'quantity' => 1,
+            'total_amount' => 0,
         ];
     }
 
@@ -151,7 +155,219 @@ class ErAdmissionCrud extends Component
             if ($fee) {
                 $this->oecbEntries[$index]['oecb_package_code'] = $fee->package_code;
                 $this->oecbEntries[$index]['oecb_fixed_fee'] = (float) $fee->fixed_fee;
+                $this->oecbEntries[$index]['quantity'] = $this->oecbEntries[$index]['quantity'] ?? 1;
+                $this->oecbEntries[$index]['total_amount'] = (float) $fee->fixed_fee * ($this->oecbEntries[$index]['quantity'] ?? 1);
             }
+        } elseif ($field === 'quantity') {
+            $qty = max(1, (float) ($value ?: 1));
+            $this->oecbEntries[$index]['quantity'] = $qty;
+            $fee = (float) ($this->oecbEntries[$index]['oecb_fixed_fee'] ?? 0);
+            $this->oecbEntries[$index]['total_amount'] = $qty * $fee;
+        }
+    }
+
+    public function autoSyncEeclFromOrders(): void
+    {
+        if (!$this->treatingId) return;
+
+        $adm = ErAdmission::with([
+            'triageRecord.acuityLevel',
+            'labRequests.items.labTest.eeclItem',
+            'radiologyRequests.items.examType.eeclItem',
+            'pharmacyRequests.items.drug.eeclItem',
+            'csrRequests.items.item.eeclItem',
+            'procedureRequests.items.procedure.eeclItem',
+        ])->find($this->treatingId);
+
+        if (!$adm) return;
+
+        $this->is_oecb = true;
+        $syncedCount = 0;
+        $existingEeclIds = collect($this->oecbEntries)->pluck('eecl_item_id')->filter()->all();
+
+        // 1. Mandatory ED Consultation based on Triage Acuity Level (PhilHealth Circular 2025-0020)
+        $acuityName = strtolower($adm->triageRecord?->acuityLevel?->name ?? '');
+        $acuityCode = strtolower($adm->triageRecord?->acuityLevel?->code ?? '');
+        $isEmergent = str_contains($acuityName, 'resuscitation') || str_contains($acuityName, 'emergent') || str_contains($acuityName, 'level 1') || str_contains($acuityName, 'level 2') || in_array($acuityCode, ['esi-1', 'esi-2', '1', '2']);
+
+        $consultationEecl = null;
+        if ($isEmergent) {
+            $consultationEecl = \App\Models\Oecb\EeclItem::where('is_active', true)
+                ->where(function ($q) {
+                    $q->where('item_name', 'like', '%Emergent ER Consultation%')
+                      ->orWhere('item_code', 'EECL-ED-001')
+                      ->orWhere('item_code', 'EECL-ES-001');
+                })->first();
+        } else {
+            $consultationEecl = \App\Models\Oecb\EeclItem::where('is_active', true)
+                ->where(function ($q) {
+                    $q->where('item_name', 'like', '%Urgent ER Consultation%')
+                      ->orWhere('item_code', 'EECL-ED-002')
+                      ->orWhere('item_code', 'EECL-ES-002');
+                })->first();
+        }
+
+        if ($consultationEecl && !in_array($consultationEecl->id, $existingEeclIds)) {
+            $this->oecbEntries[] = [
+                'id' => null,
+                'eecl_item_id' => $consultationEecl->id,
+                'core_presentation' => $consultationEecl->item_name,
+                'oecb_package_code' => $consultationEecl->item_code,
+                'oecb_fixed_fee' => (float) $consultationEecl->fixed_fee,
+                'quantity' => 1,
+                'total_amount' => (float) $consultationEecl->fixed_fee,
+            ];
+            $existingEeclIds[] = $consultationEecl->id;
+            $syncedCount++;
+        }
+
+        // 2. Sync from Lab Requests
+        foreach ($adm->labRequests as $req) {
+            foreach ($req->items as $item) {
+                $eecl = $item->labTest?->eeclItem;
+                if ($eecl && !in_array($eecl->id, $existingEeclIds)) {
+                    $this->oecbEntries[] = [
+                        'id' => null,
+                        'eecl_item_id' => $eecl->id,
+                        'core_presentation' => $eecl->item_name,
+                        'oecb_package_code' => $eecl->item_code,
+                        'oecb_fixed_fee' => (float) $eecl->fixed_fee,
+                        'quantity' => 1,
+                        'total_amount' => (float) $eecl->fixed_fee,
+                    ];
+                    $existingEeclIds[] = $eecl->id;
+                    $syncedCount++;
+                }
+            }
+        }
+
+        // 3. Sync from Radiology Requests
+        foreach ($adm->radiologyRequests as $req) {
+            foreach ($req->items as $item) {
+                $eecl = $item->examType?->eeclItem;
+                if ($eecl && !in_array($eecl->id, $existingEeclIds)) {
+                    $this->oecbEntries[] = [
+                        'id' => null,
+                        'eecl_item_id' => $eecl->id,
+                        'core_presentation' => $eecl->item_name,
+                        'oecb_package_code' => $eecl->item_code,
+                        'oecb_fixed_fee' => (float) $eecl->fixed_fee,
+                        'quantity' => 1,
+                        'total_amount' => (float) $eecl->fixed_fee,
+                    ];
+                    $existingEeclIds[] = $eecl->id;
+                    $syncedCount++;
+                }
+            }
+        }
+
+        // 4. Sync from Pharmacy Requests
+        foreach ($adm->pharmacyRequests as $req) {
+            foreach ($req->items as $item) {
+                $eecl = $item->drug?->eeclItem;
+                if ($eecl && !in_array($eecl->id, $existingEeclIds)) {
+                    $qty = (float) ($item->quantity_dispensed ?: ($item->quantity_requested ?: 1));
+                    $fee = (float) $eecl->fixed_fee;
+                    $this->oecbEntries[] = [
+                        'id' => null,
+                        'eecl_item_id' => $eecl->id,
+                        'core_presentation' => $eecl->item_name,
+                        'oecb_package_code' => $eecl->item_code,
+                        'oecb_fixed_fee' => $fee,
+                        'quantity' => $qty,
+                        'total_amount' => $qty * $fee,
+                    ];
+                    $existingEeclIds[] = $eecl->id;
+                    $syncedCount++;
+                }
+            }
+        }
+
+        // 5. Sync from CSR Supply Requests
+        foreach ($adm->csrRequests as $req) {
+            foreach ($req->items as $item) {
+                $eecl = $item->item?->eeclItem;
+                if ($eecl && !in_array($eecl->id, $existingEeclIds)) {
+                    $qty = (float) ($item->quantity_dispensed ?: ($item->quantity_requested ?: 1));
+                    $fee = (float) $eecl->fixed_fee;
+                    $this->oecbEntries[] = [
+                        'id' => null,
+                        'eecl_item_id' => $eecl->id,
+                        'core_presentation' => $eecl->item_name,
+                        'oecb_package_code' => $eecl->item_code,
+                        'oecb_fixed_fee' => $fee,
+                        'quantity' => $qty,
+                        'total_amount' => $qty * $fee,
+                    ];
+                    $existingEeclIds[] = $eecl->id;
+                    $syncedCount++;
+                }
+            }
+        }
+
+        // 6. Sync from Procedure Requests
+        foreach ($adm->procedureRequests as $req) {
+            foreach ($req->items as $item) {
+                $eecl = $item->procedure?->eeclItem;
+                if ($eecl && !in_array($eecl->id, $existingEeclIds)) {
+                    $fee = (float) $eecl->fixed_fee;
+                    $this->oecbEntries[] = [
+                        'id' => null,
+                        'eecl_item_id' => $eecl->id,
+                        'core_presentation' => $eecl->item_name,
+                        'oecb_package_code' => $eecl->item_code,
+                        'oecb_fixed_fee' => $fee,
+                        'quantity' => 1,
+                        'total_amount' => $fee,
+                    ];
+                    $existingEeclIds[] = $eecl->id;
+                    $syncedCount++;
+                }
+            }
+        }
+
+        // 7. Auto-suggest Core Presentation if no presentation exists
+        $hasCorePresentation = collect($this->oecbEntries)->contains(fn ($e) => empty($e['eecl_item_id']) && !empty($e['core_presentation']));
+        if (!$hasCorePresentation) {
+            $complaint = strtolower($adm->chief_complaint ?? $adm->initial_diagnosis ?? '');
+            $suggested = null;
+            if (str_contains($complaint, 'breath') || str_contains($complaint, 'dyspnea') || str_contains($complaint, 'asthma')) {
+                $suggested = 'Difficulty of Breathing';
+            } elseif (str_contains($complaint, 'chest') || str_contains($complaint, 'angina')) {
+                $suggested = 'Chest Pain';
+            } elseif (str_contains($complaint, 'abdom') || str_contains($complaint, 'stomach') || str_contains($complaint, 'epigastric')) {
+                $suggested = 'Severe Abdominal Pain';
+            } elseif (str_contains($complaint, 'headache') || str_contains($complaint, 'migraine')) {
+                $suggested = 'Severe Headache';
+            } elseif (str_contains($complaint, 'fever') || str_contains($complaint, 'pyrexia') || str_contains($complaint, 'febrile')) {
+                $suggested = 'Fever';
+            } elseif (str_contains($complaint, 'trauma') || str_contains($complaint, 'injury') || str_contains($complaint, 'wound') || str_contains($complaint, 'fall')) {
+                $suggested = 'Trauma/Injury';
+            } elseif (str_contains($complaint, 'seizure') || str_contains($complaint, 'convulsion')) {
+                $suggested = 'Active Seizure';
+            }
+
+            if ($suggested) {
+                $feeSchedule = \App\Models\Oecb\OecbFeeSchedule::whereHas('corePresentation', fn ($q) => $q->where('name', $suggested))->first();
+                if ($feeSchedule) {
+                    array_unshift($this->oecbEntries, [
+                        'id' => null,
+                        'eecl_item_id' => null,
+                        'core_presentation' => $suggested,
+                        'oecb_package_code' => $feeSchedule->package_code,
+                        'oecb_fixed_fee' => (float) $feeSchedule->fixed_fee,
+                        'quantity' => 1,
+                        'total_amount' => (float) $feeSchedule->fixed_fee,
+                    ]);
+                    $syncedCount++;
+                }
+            }
+        }
+
+        if ($syncedCount > 0) {
+            $this->dispatch('toast', type: 'success', message: "Auto-synced {$syncedCount} EECL item(s) & consultation from ER clinical orders!");
+        } else {
+            $this->dispatch('toast', type: 'info', message: 'No unlinked orders found. Ensure hospital items are mapped in the EECL Mapping Tool.');
         }
     }
 
@@ -219,9 +435,12 @@ class ErAdmissionCrud extends Component
         $this->is_oecb = (bool) ($adm->is_oecb ?? false);
         $this->oecbEntries = $adm->oecbEntries->map(fn ($e) => [
             'id' => $e->id,
+            'eecl_item_id' => $e->eecl_item_id,
             'core_presentation' => $e->core_presentation ?? '',
             'oecb_package_code' => $e->oecb_package_code ?? '',
             'oecb_fixed_fee' => $e->oecb_fixed_fee ? (float) $e->oecb_fixed_fee : null,
+            'quantity' => $e->quantity ? (float) $e->quantity : 1,
+            'total_amount' => $e->total_amount ? (float) $e->total_amount : ($e->oecb_fixed_fee ? (float) $e->oecb_fixed_fee : 0),
         ])->toArray();
         $this->disposition = $adm->disposition ?? 'Pending';
         $this->discharge_instructions = $adm->discharge_instructions ?? '';
@@ -280,9 +499,12 @@ class ErAdmissionCrud extends Component
             if (empty($entry['core_presentation'])) continue;
 
             $data = [
+                'eecl_item_id' => $entry['eecl_item_id'] ?? null,
                 'core_presentation' => $entry['core_presentation'],
                 'oecb_package_code' => $entry['oecb_package_code'] ?? null,
                 'oecb_fixed_fee' => $entry['oecb_fixed_fee'] ?? null,
+                'quantity' => $entry['quantity'] ?? 1,
+                'total_amount' => $entry['total_amount'] ?? ($entry['oecb_fixed_fee'] ?? 0),
                 'updated_by' => $this->currentUserId(),
                 'updated_date' => now(),
             ];
@@ -1036,20 +1258,34 @@ class ErAdmissionCrud extends Component
             }
         }
 
+        $isOecb = (bool) ($adm->is_oecb ?? false);
+        if (in_array($validated['disposition'], ['Admitted to Ward', 'Admitted to ICU'])) {
+            $isOecb = false;
+        }
+
         $adm->update([
             'disposition' => $validated['disposition'],
             'status' => $status,
+            'is_oecb' => $isOecb,
             'disposition_datetime' => $dispositionDate,
             'discharge_instructions' => $validated['discharge_instructions'],
             'updated_by' => $this->currentUserId(),
             'updated_date' => now(),
         ]);
 
-        if ($status === 'Completed') {
+        if ($status === 'Completed' && $isOecb) {
+            // Auto-sync EECL if entries are empty
+            if ($adm->oecbEntries()->count() === 0) {
+                $this->treatingId = $adm->id;
+                $this->oecbEntries = [];
+                $this->autoSyncEeclFromOrders();
+                $this->syncOecbEntries($adm);
+            }
+
             $uid = $this->currentUserId();
             $oecbEntries = $adm->oecbEntries()->where('billing_status', 'Pending')->get();
             foreach ($oecbEntries as $oecbEntry) {
-                $chargeAmount = (float) ($oecbEntry->oecb_fixed_fee ?? $oecbEntry->total_amount ?? 0);
+                $chargeAmount = (float) ($oecbEntry->total_amount ?? $oecbEntry->oecb_fixed_fee ?? 0);
                 if ($chargeAmount > 0) {
                     $oecbEntry->update(['billing_status' => 'Billed', 'updated_by' => $uid, 'updated_date' => now()]);
                     \App\Models\Oecb\OecbEntry::postChargeToLedger($oecbEntry, $chargeAmount, $uid);

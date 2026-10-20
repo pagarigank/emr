@@ -41,7 +41,7 @@ class OecbEntry extends Model
         $adm = $entry->erAdmission;
         $now = now();
 
-        \App\Models\Billing\PatientAccountEntry::postCharge([
+        \App\Models\Billing\PatientAccountEntry::postAdjustment([
             'tenant_id'           => $entry->tenant_id,
             'patient_id'          => $adm->patient_id,
             'admission_id'        => $adm->admission_id,
@@ -51,13 +51,13 @@ class OecbEntry extends Model
             'dr_schedule_id'      => null,
             'ob_consultation_id'  => null,
             'dialysis_session_id' => null,
-            'entry_type'          => 'charge',
+            'entry_type'          => 'adjustment',
             'source_type'         => 'OECB',
             'source_id'           => $entry->id,
             'source_code'         => $entry->oecb_package_code ?? $entry->core_presentation,
-            'debit'               => $amount,
-            'credit'              => 0,
-            'description'         => 'OECB: ' . ($entry->core_presentation ?? $entry->oecb_package_code),
+            'debit'               => 0,
+            'credit'              => $amount,
+            'description'         => 'PhilHealth OECB Benefit: ' . ($entry->core_presentation ?? $entry->oecb_package_code),
             'billing_invoice_id'  => null,
             'created_by'          => $userId,
             'created_date'        => $now,

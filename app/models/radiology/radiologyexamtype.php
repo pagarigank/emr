@@ -21,4 +21,5 @@ class RadiologyExamType extends Model
     public function modality(): BelongsTo { return $this->belongsTo(RadiologyModality::class, 'modality_id'); }
     public function bodyPart(): BelongsTo { return $this->belongsTo(RadiologyBodyPart::class, 'body_part_id'); }
     public function department(): BelongsTo { return $this->belongsTo(Department::class, 'department_id'); }
+    public function eeclItem(): BelongsTo { return $this->belongsTo(\App\Models\Oecb\EeclItem::class, 'eecl_item_id'); }
 }

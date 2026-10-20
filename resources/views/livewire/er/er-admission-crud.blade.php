@@ -44,9 +44,21 @@
                     <p class="text-sm font-bold text-gray-900 mt-0.5">{{ $activeAdmission->attendingPhysician ? 'Dr. ' . $activeAdmission->attendingPhysician->full_name : 'Unassigned' }}</p>
                 </div>
                 <div>
-                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Arrival / Elapsed</p>
+                    <div class="flex items-center justify-between">
+                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Arrival / Elapsed</p>
+                        @php
+                            $elapsedHours = $activeAdmission->admission_datetime ? $activeAdmission->admission_datetime->diffInHours(now()) : 0;
+                            $remainingHours = max(0, 24 - $elapsedHours);
+                        @endphp
+                        @if($is_oecb)
+                            <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold {{ $elapsedHours >= 24 ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-teal-100 text-teal-800 border border-teal-300' }}">
+                                <svg class="w-2.5 h-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                {{ $elapsedHours >= 24 ? '24h Limit (Admit/Transfer)' : ($remainingHours . 'h left in OECB') }}
+                            </span>
+                        @endif
+                    </div>
                     <p class="text-sm font-bold text-gray-900 mt-0.5">{{ $activeAdmission->admission_datetime->format('M d, Y H:i') }}</p>
-                    <p class="text-xs text-gray-500">{{ $activeAdmission->admission_datetime->diffForHumans() }}</p>
+                    <p class="text-xs text-gray-500">{{ $activeAdmission->admission_datetime->diffForHumans() }} ({{ $elapsedHours }}h)</p>
                 </div>
             </div>
             @if($activeAdmission->triageRecord)
@@ -96,44 +108,67 @@
             <div class="px-6 py-3 bg-sky-50/60 border-b border-sky-100">
                 <div class="flex items-center justify-between">
                     <label class="flex items-center gap-3 cursor-pointer select-none">
-                        <input type="checkbox" wire:model="is_oecb" class="w-4 h-4 rounded border-gray-300 text-sky-600 focus:ring-sky-500">
+                        <input type="checkbox" wire:model.live="is_oecb" class="w-4 h-4 rounded border-gray-300 text-sky-600 focus:ring-sky-500">
                         <div>
                             <span class="text-sm font-bold text-sky-800">OECB (Outpatient Emergency Care Benefit)</span>
-                            <p class="text-xs text-sky-600">PhilHealth OECB package — Annex A fixed fee schedule applies</p>
+                            <p class="text-xs text-sky-600">PhilHealth Outpatient Emergency Care Benefit &amp; Essential Emergency Care List (EECL Annex D)</p>
                         </div>
                     </label>
-                    @if($is_oecb && count($oecbEntries))
-                        <div class="text-right text-xs text-sky-700 bg-sky-100 px-2 py-1 rounded font-semibold">
-                            {{ count($oecbEntries) }} entr{{ count($oecbEntries) === 1 ? 'y' : 'ies' }}
-                            &mdash; Total: &#8369;{{ number_format(collect($oecbEntries)->sum('oecb_fixed_fee'), 2) }}
-                        </div>
-                    @endif
+                    <div class="flex items-center gap-2">
+                        @if($is_oecb)
+                        <button type="button" wire:click="autoSyncEeclFromOrders"
+                                class="inline-flex items-center px-2.5 py-1 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-300 rounded-lg hover:bg-emerald-100 transition-colors shadow-sm"
+                                title="Auto-pull mapped EECL items from laboratory, pharmacy, CSR supplies, and procedures">
+                            <svg class="w-3.5 h-3.5 mr-1 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Auto-Sync Clinical Orders
+                        </button>
+                        @endif
+                        @if($is_oecb && count($oecbEntries))
+                            <div class="text-right text-xs text-sky-700 bg-sky-100 px-2.5 py-1 rounded-lg font-semibold border border-sky-200">
+                                {{ count($oecbEntries) }} item{{ count($oecbEntries) === 1 ? '' : 's' }}
+                                &mdash; Total Benefit: &#8369;{{ number_format(collect($oecbEntries)->sum('total_amount'), 2) }}
+                            </div>
+                        @endif
+                    </div>
                 </div>
                 @if($is_oecb)
                 <div class="mt-3 space-y-3">
                     @foreach($oecbEntries as $index => $entry)
                     <div class="flex items-start gap-3 p-3 bg-white rounded-lg border border-sky-200 shadow-sm">
-                        <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-3">
-                            <div>
-                                <label class="block text-xs font-semibold text-sky-700 mb-1">Core Presentation <span class="text-red-500">*</span></label>
-                                <select wire:model="oecbEntries.{{ $index }}.core_presentation"
-                                        class="w-full px-3 py-2 bg-white border border-sky-200 rounded-lg text-sm text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 @error('oecbEntries.{{ $index }}.core_presentation') border-red-300 bg-red-50 @enderror">
-                                    <option value="">— Select Core Presentation —</option>
-                                    @foreach($corePresentations as $cp)
-                                        <option value="{{ $cp }}">{{ $cp }}</option>
-                                    @endforeach
-                                </select>
-                                @error('oecbEntries.{{ $index }}.core_presentation') <p class="mt-1 text-xs text-red-500 font-medium">{{ $message }}</p> @enderror
+                        <div class="flex-1 grid grid-cols-1 md:grid-cols-4 gap-3">
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-sky-700 mb-1">
+                                    {{ !empty($entry['eecl_item_id']) ? 'EECL Item / Description' : 'Core Presentation / Package' }} <span class="text-red-500">*</span>
+                                </label>
+                                @if(!empty($entry['eecl_item_id']))
+                                    <div class="flex items-center">
+                                        <input type="text" wire:model="oecbEntries.{{ $index }}.core_presentation"
+                                               class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-medium text-gray-900" readonly>
+                                    </div>
+                                @else
+                                    <select wire:model.live="oecbEntries.{{ $index }}.core_presentation"
+                                            class="w-full px-3 py-2 bg-white border border-sky-200 rounded-lg text-sm text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 @error('oecbEntries.{{ $index }}.core_presentation') border-red-300 bg-red-50 @enderror">
+                                        <option value="">— Select Core Presentation —</option>
+                                        @foreach($corePresentations as $cp)
+                                            <option value="{{ $cp }}">{{ $cp }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('oecbEntries.{{ $index }}.core_presentation') <p class="mt-1 text-xs text-red-500 font-medium">{{ $message }}</p> @enderror
+                                @endif
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-sky-700 mb-1">Package Code</label>
-                                <input type="text" wire:model="oecbEntries.{{ $index }}.oecb_package_code" placeholder="Auto-filled from fee schedule" readonly
-                                       class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900">
+                                <label class="block text-xs font-semibold text-sky-700 mb-1">Code &amp; Qty</label>
+                                <div class="flex items-center gap-1.5">
+                                    <input type="text" wire:model="oecbEntries.{{ $index }}.oecb_package_code" placeholder="Code" readonly
+                                           class="w-2/3 px-2 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs font-mono text-gray-900">
+                                    <input type="number" step="1" min="1" wire:model.live="oecbEntries.{{ $index }}.quantity" placeholder="Qty"
+                                           class="w-1/3 px-2 py-2 bg-white border border-gray-200 rounded-lg text-xs text-center font-bold text-gray-900">
+                                </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-sky-700 mb-1">Fixed Fee (&#8369;)</label>
-                                <input type="number" step="0.01" min="0" wire:model="oecbEntries.{{ $index }}.oecb_fixed_fee" placeholder="0.00" readonly
-                                       class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900">
+                                <label class="block text-xs font-semibold text-sky-700 mb-1">Total Fee (&#8369;)</label>
+                                <input type="number" step="0.01" min="0" wire:model="oecbEntries.{{ $index }}.total_amount" placeholder="0.00" readonly
+                                       class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm font-semibold text-gray-900">
                             </div>
                         </div>
                         <button type="button" wire:click="removeOecbEntry({{ $index }})" class="mt-6 p-1.5 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="Remove entry">
@@ -141,17 +176,23 @@
                         </button>
                     </div>
                     @endforeach
-                    <button type="button" wire:click="addOecbEntry" class="inline-flex items-center px-3 py-1.5 text-xs font-semibold text-sky-700 bg-white border border-sky-300 rounded-lg hover:bg-sky-50 transition-colors">
-                        <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                        Add OECB Entry
-                    </button>
-                    @if($treatingId && count($oecbEntries) > 0)
-                    <a href="{{ route('er.admission.eeclpdf', $treatingId) }}" target="_blank"
-                       class="inline-flex items-center px-3 py-1.5 text-xs font-semibold text-white bg-teal-600 border border-teal-700 rounded-lg hover:bg-teal-700 transition-colors ml-2">
-                        <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-                        Print EECL (Annex D)
-                    </a>
-                    @endif
+                    <div class="flex items-center gap-2 pt-1">
+                        <button type="button" wire:click="addOecbEntry" class="inline-flex items-center px-3 py-1.5 text-xs font-semibold text-sky-700 bg-white border border-sky-300 rounded-lg hover:bg-sky-50 transition-colors shadow-sm">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            Add Manual OECB Package
+                        </button>
+                        <button type="button" wire:click="autoSyncEeclFromOrders" class="inline-flex items-center px-3 py-1.5 text-xs font-semibold text-emerald-700 bg-white border border-emerald-300 rounded-lg hover:bg-emerald-50 transition-colors shadow-sm">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Auto-Sync Clinical Orders
+                        </button>
+                        @if($treatingId && count($oecbEntries) > 0)
+                        <a href="{{ route('er.admission.eeclpdf', $treatingId) }}" target="_blank"
+                           class="inline-flex items-center px-3 py-1.5 text-xs font-semibold text-white bg-teal-600 border border-teal-700 rounded-lg hover:bg-teal-700 transition-colors shadow-sm">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                            Print EECL (Annex D)
+                        </a>
+                        @endif
+                    </div>
                 </div>
                 @endif
             </div>

@@ -640,6 +640,12 @@
                                     <a href="/philhealth/batches" wire:navigate class="flex items-center px-3 py-2 rounded-md text-sm text-blue-400 hover:text-blue-700 hover:bg-blue-50 transition-colors {{ request()->is('philhealth/batches*') ? 'hover:text-blue-700 hover:bg-blue-50' : '' }}">
                                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg><span>Batches</span>
                                     </a>
+                                    <a href="/philhealth/eecl-items" wire:navigate class="flex items-center px-3 py-2 rounded-md text-sm text-blue-400 hover:text-blue-700 hover:bg-blue-50 transition-colors {{ request()->is('philhealth/eecl-items*') ? 'hover:text-blue-700 hover:bg-blue-50' : '' }}">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg><span>EECL Items (Annex D)</span>
+                                    </a>
+                                    <a href="/philhealth/oecb-packages" wire:navigate class="flex items-center px-3 py-2 rounded-md text-sm text-blue-400 hover:text-blue-700 hover:bg-blue-50 transition-colors {{ request()->is('philhealth/oecb-packages*') ? 'hover:text-blue-700 hover:bg-blue-50' : '' }}">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg><span>OECB Packages &amp; Mapping</span>
+                                    </a>
                                     @endcan
                                     @can('reports.view')
                                     <a href="/philhealth/reports" wire:navigate class="flex items-center px-3 py-2 rounded-md text-sm text-blue-400 hover:text-blue-700 hover:bg-blue-50 transition-colors {{ request()->is('philhealth/reports*') ? 'hover:text-blue-700 hover:bg-blue-50' : '' }}">

@@ -29,6 +29,7 @@ class Drug extends Model
     }
 
     public function batches(): HasMany { return $this->hasMany(DrugBatch::class, 'drug_id'); }
+    public function eeclItem(): \Illuminate\Database\Eloquent\Relations\BelongsTo { return $this->belongsTo(\App\Models\Oecb\EeclItem::class, 'eecl_item_id'); }
 
     public function getDrugNameAttribute(): string
     {
