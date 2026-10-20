@@ -37,10 +37,32 @@ yarn-error.log*
 /.phpunit.cache
 .php-cs-fixer.cache
 .phpactor.json
-.ruff_cache/
+*.ruff_cache/
 .pytest_cache/
+__pycache__/
+*.py[cod]
+*$py.class
+/graphify-out/
+/SSSITHEMR/
 *debug*.html
 *larascan*.json
+
+# Scratch & Debug Scripts
+check_*.php
+find_*.php
+fix_*.php
+get_*.php
+clone_cruds.php
+generate_schema.php
+list_tables.php
+schema.php
+set_user_tenant.php
+update_tenant_id_to_1.php
+fix*.py
+listpngs.py
+
+# Root-level screenshot dumps (canonical screenshots remain in module-screenshots/ & opd-screenshots/)
+/*.png
 
 # ==============================================================================
 # Playwright & Ad-Hoc E2E Testing Artifacts

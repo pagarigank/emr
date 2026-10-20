@@ -148,8 +148,6 @@ SCREENSHOT_MAP = {
 PNG_SOURCES = [
     'E:/sithemr/module-screenshots',
     'E:/sithemr/opd-screenshots',
-    'E:/sithemr/SSSITHEMR',
-    '.',
 ]
 
 def get_png_registry():
