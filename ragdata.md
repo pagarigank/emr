@@ -2,6 +2,32 @@
 
 This file tracks the overarching details, decisions, and modifications made throughout the lifetime of the project.
 
+## SESSION STATE — 2026-10-22 (Renal Care Hemodialysis Station CRUD, Infection Isolation Tags, eCF4 Statutory Parameters & PhilHealth RVS 90935)
+
+### 2026-10-22 (Dialysis Stations, Infection Isolation, eCF4 & Automatic Billing Hook)
+- **[FEATURE]** Dialysis Machines & Infection Isolation Stations CRUD (`app/Livewire/RenalCare/DialysisMachineCrud.php` & `DialysisMachine.php`):
+  - Created `dialysis_machines` table migration (`2026_10_22_000001_create_dialysis_machines_table.php`) with multi-tenant scoping and audit trail.
+  - Implemented Station categories: `Regular`, `HepB_Isolation`, `HepC_Isolation`, and `ICU_Mobile` to enforce DOH & PhilHealth strict isolation protocols for $HBsAg^+$ and $Anti\text{-}HCV^+$ patients.
+  - Implemented operational machine statuses: `Available`, `Occupied`, `Disinfecting`, `Maintenance` with live quick-action status switches.
+  - Built Livewire CRUD component (`DialysisMachineCrud.php`), Blade view (`dialysis-machine-crud.blade.php`), page route `/renal-care/dialysis-machines`, and navigation link in main app layout with KPI metrics (Total Machines, Available, In Use, Isolation Bays).
+- **[FEATURE]** Hemodialysis Master Data Seeding (`database/seeders/DialysisMasterSeeder.php`):
+  - Seeded 8 hemodialysis stations/machines with dedicated Hep B bay (`ISO-B01`), Hep C bay (`ISO-C01`), and bedside ICU mobile unit (`ICU-M01`).
+  - Seeded ICD-10 diagnosis codes `N18.5` (Chronic kidney disease, stage 5 / ESRD), `N18.6` (ESRD), `N18.9` (CKD, unspecified).
+  - Seeded RVS procedure codes `90935` (Hemodialysis procedure with single evaluation), `90937` (Hemodialysis procedure with repeated evaluation), `90945` (Dialysis procedure other than hemodialysis).
+  - Seeded PhilHealth Case Rate `90935` (₱4,000.00 single session case rate).
+- **[FEATURE]** eCF4 Dialysis Statutory Clinical Fields & Automated Billing Hook (`DialysisSessionCrud.php` & `dialysis-sessions` migration):
+  - Created migration `2026_10_22_000002_add_ecf4_and_station_fields_to_dialysis_sessions_table.php` adding machine ID, shift, session number (1-156), attending nephrologist, dialysis nurse, dry weight, actual/goal UF (L), Qb/Qd flow rates, dialysate bath, dialyzer model & reuse number, anticoagulation type/units, pre/post vitals, complications, and `procedure_request_id`.
+  - Added dynamic machine status synchronization: session `In Progress` auto-occupies machine, `Completed` flags machine for `Disinfecting`, and `Cancelled` releases machine to `Available`.
+  - Implemented automated Procedure Billing hook: saving a session auto-generates a `ProcedureRequest` with item `HD-SESS` (₱4,500.00) hooked directly into the patient's unbilled billing queue.
+  - Redesigned session list table with station isolation badges, shift allocation, session tracking (#X of 156), and billing status indicator.
+  - Built comprehensive eCF4 modal with infection isolation warning callouts for Hep B/C bays, dry/actual weight inputs, flow rates, heparin dosage, and pre/post vitals.
+- **[FEATURE]** PhilHealth eCF4 Clinical Data Pull-Up & Claim Auto-Matching (`ClinicalDataPullUp.php` & `ClaimForm.php`):
+  - Added migration `2026_10_22_000003_add_dialysis_session_id_to_philhealth_claims_table.php` adding `dialysis_session_id` to `philhealth_claims`.
+  - Implemented `pullFromDialysis(int $dialysisSessionId)` in `ClinicalDataPullUp.php`: extracts dialysis session date, RVS code `90935`, ICD-10 `N18.5`, attending nephrologist, vital signs, and formatted eCF4 clinical parameters narrative into Claim Form.
+  - Updated `importFromBilling()` to pull Hemodialysis procedure charges (`HD-SESS ₱4,500.00`), supply, pharmacy, and laboratory items from dialysis encounters directly into Claim Items.
+  - Added dedicated Renal Care / Hemodialysis Encounters card in `clinical-data-pull-up.blade.php` with 1-click `[⚡ Pull Dialysis Data]` and `[📦 Import Billing]` buttons.
+  - Updated `ClaimForm.php` to accept `dialysis_session_id`, auto-match ICD-10 `N18.5` and RVS `90935` case rate, and persist dialysis links on PhilHealth claims.
+
 ## SESSION STATE — 2026-10-20 (PhilHealth eClaims 3.0, CF5 DRG Shadow Billing & Pharmacy DRG Compliance)
 
 ### 2026-10-20 (PhilHealth eClaims 3.0, eSOA XML, CF4 Medicines, CF5 DRG Shadow Billing)

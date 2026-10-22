@@ -137,6 +137,11 @@ class PhilhealthClaim extends Model
         return $this->belongsTo(\App\Models\Admission::class, 'admission_id');
     }
 
+    public function dialysisSession(): BelongsTo
+    {
+        return $this->belongsTo(\App\Models\RenalCare\DialysisSession::class, 'dialysis_session_id');
+    }
+
     public function secondCaseRate(): BelongsTo
     {
         return $this->belongsTo(PhilhealthCaseRate::class, 'second_case_rate_id');

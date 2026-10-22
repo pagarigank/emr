@@ -68,6 +68,7 @@ class ClaimForm extends Component
 
     public ?int $er_admission_id = null;
     public ?int $admission_id = null;
+    public ?int $dialysis_session_id = null;
 
     public array $zBenefits = [];
     public array $filteredCaseRates = [];
@@ -121,6 +122,7 @@ class ClaimForm extends Component
             'hci_signatory_name' => ['nullable', 'string', 'max:150'],
             'er_admission_id' => ['nullable', 'integer'],
             'admission_id' => ['nullable', 'integer'],
+            'dialysis_session_id' => ['nullable', 'integer'],
             'delivery_date' => ['nullable', 'date'],
             'delivery_type_id' => ['nullable', 'integer'],
             'newborn_outcome' => ['nullable', 'string', 'max:50'],
@@ -177,8 +179,14 @@ class ClaimForm extends Component
         $this->date_discharged = $data['date_discharged'] ?? $this->date_discharged;
         $this->time_discharged = $data['time_discharged'] ?? $this->time_discharged;
         $this->admitting_diagnosis = $data['admitting_diagnosis'] ?? $this->admitting_diagnosis;
+        if (!empty($data['discharge_diagnosis'])) {
+            $this->discharge_diagnosis = $data['discharge_diagnosis'];
+        } elseif (!empty($data['final_diagnosis']) && empty($this->discharge_diagnosis)) {
+            $this->discharge_diagnosis = $data['final_diagnosis'];
+        }
         $this->er_admission_id = $data['er_admission_id'] ?? $this->er_admission_id;
         $this->admission_id = $data['admission_id'] ?? $this->admission_id;
+        $this->dialysis_session_id = $data['dialysis_session_id'] ?? $this->dialysis_session_id;
         $this->attending_physician_id = $data['attending_physician_id'] ?? $this->attending_physician_id;
         $this->encounter_type = $data['encounter_type'] ?? $this->encounter_type;
         $this->claim_type = $data['claim_type'] ?? $this->claim_type;
@@ -192,6 +200,23 @@ class ClaimForm extends Component
         $this->outcome = $data['outcome'] ?? $this->outcome;
         if (isset($data['chief_complaint'])) {
             $this->chief_complaint = $data['chief_complaint'];
+        }
+
+        // Auto-match ICD-10 if provided
+        if (!empty($data['icd_code'])) {
+            $icd = Icd10Code::where('history', 1)->where('code', $data['icd_code'])->first();
+            if ($icd) {
+                $this->icd10_code_id = $icd->id;
+                $this->filterCaseRates();
+            }
+        }
+
+        // Auto-match RVS Case Rate if provided
+        if (!empty($data['rvs_code'])) {
+            $cr = PhilhealthCaseRate::where('history', 1)->where('rvs_code', $data['rvs_code'])->first();
+            if ($cr) {
+                $this->case_rate_id = $cr->id;
+            }
         }
     }
 
@@ -271,6 +296,7 @@ class ClaimForm extends Component
         $this->hci_signatory_name = $r->hci_signatory_name ?? '';
         $this->er_admission_id = $r->er_admission_id;
         $this->admission_id = $r->admission_id;
+        $this->dialysis_session_id = $r->dialysis_session_id;
         $this->delivery_date = $r->delivery_date?->format('Y-m-d') ?? '';
         $this->delivery_type_id = $r->delivery_type_id;
         $this->newborn_outcome = $r->newborn_outcome ?? '';
@@ -301,6 +327,7 @@ class ClaimForm extends Component
         $data['chief_complaint'] = $this->chief_complaint;
         $data['encounter_type'] = $this->encounter_type;
         $data['second_case_rate_id'] = $this->second_case_rate_id;
+        $data['dialysis_session_id'] = $this->dialysis_session_id;
 
         if ($this->isEditing) {
             PhilhealthClaim::findOrFail($this->editingId)->update(array_merge($data, [

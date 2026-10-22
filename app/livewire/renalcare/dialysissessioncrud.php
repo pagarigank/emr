@@ -2,9 +2,12 @@
 
 namespace App\Livewire\RenalCare;
 
+use App\Models\Admission;
 use App\Models\CsrRequest;
 use App\Models\CsrRequestItem;
 use App\Models\Department;
+use App\Models\Er\ErAdmission;
+use App\Models\HealthCareProfessional;
 use App\Models\LabRequest;
 use App\Models\LabRequestItem;
 use App\Models\LabTest;
@@ -18,9 +21,11 @@ use App\Models\Procedures\ProcedureRequestItem;
 use App\Models\Radiology\RadiologyExamType;
 use App\Models\Radiology\RadiologyRequest;
 use App\Models\Radiology\RadiologyRequestItem;
+use App\Models\RenalCare\DialysisMachine;
 use App\Models\RenalCare\DialysisSession;
 use App\Models\RenalCare\DialysisType;
 use App\Models\Supply\Item;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -28,16 +33,40 @@ class DialysisSessionCrud extends Component
 {
     use WithPagination;
 
-    public string $search = '', $patient_search = '', $sortField = 'code', $sortDirection = 'asc';
+    public string $search = '', $patient_search = '', $sortField = 'code', $sortDirection = 'desc';
+    public string $stationFilter = '', $statusFilter = '', $shiftFilter = '';
     public int $perPage = 10;
 
     public bool $showModal = false, $showDeleteModal = false, $showTreatmentForm = false, $showDispositionModal = false, $isEditing = false;
     public ?int $editingId = null, $treatingId = null;
 
     // Session fields
-    public string $code = '', $session_date = '', $access_type = '', $pre_weight = '', $post_weight = '', $pre_bp = '', $post_bp = '', $heart_rate = '', $medications = '', $notes = '', $status = 'Scheduled';
-    public ?string $patient_id = null, $dialysis_type_id = null;
+    public string $code = '', $session_date = '', $access_type = 'AV Fistula', $access_site = '';
+    public string $shift = 'Shift 1 (AM)';
+    public ?int $session_number = null;
+    public string $pre_weight = '', $post_weight = '', $dry_weight = '';
+    public string $uf_goal_liters = '', $uf_actual_liters = '';
+    public ?int $blood_flow_rate_qb = 300, $dialysate_flow_rate_qd = 500;
+    public string $dialysate_bath = 'Bicarbonate / K+ 2.0 / Ca++ 1.25';
+    public string $anticoagulation_type = 'Heparin';
+    public ?int $heparin_dose_units = 5000;
+    public string $dialyzer_model = 'Fresenius FX80';
+    public int $dialyzer_reuse_number = 0;
+    public string $pre_bp = '', $post_bp = '', $heart_rate = '';
+    public string $pre_temp = '36.5', $post_temp = '36.6';
+    public ?int $pre_rr = 18, $post_rr = 18;
+    public string $complications = 'None';
+    public string $medications = '', $notes = '', $status = 'Scheduled';
+
+    public ?string $patient_id = null;
+    public ?string $dialysis_type_id = null;
+    public ?string $dialysis_machine_id = null;
+    public ?string $attending_physician_id = null;
+    public ?string $dialysis_nurse_id = null;
+    public ?string $admission_id = null;
+    public ?string $er_admission_id = null;
     public bool $is_active = true;
+    public bool $auto_post_billing = true;
 
     // Treatment form fields
     public string $treatment_history_of_present_illness = '';
@@ -93,26 +122,52 @@ class DialysisSessionCrud extends Component
     protected function rules(): array
     {
         return [
-            'code'             => ['required', 'string', 'max:30'],
-            'patient_id'       => ['required', 'integer', 'exists:patients,id'],
-            'dialysis_type_id' => ['nullable', 'integer', 'exists:dialysis_types,id'],
-            'access_type'      => ['nullable', 'string', 'max:50'],
-            'session_date'     => ['required', 'date'],
-            'pre_weight'       => ['nullable', 'numeric', 'min:0', 'max:999.99'],
-            'post_weight'      => ['nullable', 'numeric', 'min:0', 'max:999.99'],
-            'pre_bp'           => ['nullable', 'string', 'max:20'],
-            'post_bp'          => ['nullable', 'string', 'max:20'],
-            'heart_rate'       => ['nullable', 'integer', 'min:0', 'max:300'],
-            'medications'      => ['nullable', 'string'],
-            'notes'            => ['nullable', 'string'],
-            'status'           => ['required', 'string', 'max:30'],
-            'is_active'        => ['boolean'],
+            'code'                   => ['required', 'string', 'max:30'],
+            'patient_id'             => ['required', 'integer', 'exists:patients,id'],
+            'dialysis_type_id'       => ['nullable', 'integer', 'exists:dialysis_types,id'],
+            'dialysis_machine_id'    => ['nullable', 'integer', 'exists:dialysis_machines,id'],
+            'shift'                  => ['nullable', 'string', 'max:30'],
+            'session_number'         => ['nullable', 'integer', 'min:1', 'max:156'],
+            'attending_physician_id' => ['nullable', 'integer', 'exists:health_care_professionals,id'],
+            'dialysis_nurse_id'      => ['nullable', 'integer'],
+            'admission_id'           => ['nullable', 'integer'],
+            'er_admission_id'        => ['nullable', 'integer'],
+            'access_type'            => ['nullable', 'string', 'max:50'],
+            'access_site'            => ['nullable', 'string', 'max:100'],
+            'session_date'           => ['required', 'date'],
+            'pre_weight'             => ['nullable', 'numeric', 'min:0', 'max:999.99'],
+            'post_weight'            => ['nullable', 'numeric', 'min:0', 'max:999.99'],
+            'dry_weight'             => ['nullable', 'numeric', 'min:0', 'max:999.99'],
+            'uf_goal_liters'         => ['nullable', 'numeric', 'min:0', 'max:20'],
+            'uf_actual_liters'       => ['nullable', 'numeric', 'min:0', 'max:20'],
+            'blood_flow_rate_qb'     => ['nullable', 'integer', 'min:0', 'max:1000'],
+            'dialysate_flow_rate_qd' => ['nullable', 'integer', 'min:0', 'max:2000'],
+            'dialysate_bath'         => ['nullable', 'string', 'max:100'],
+            'anticoagulation_type'   => ['nullable', 'string', 'max:50'],
+            'heparin_dose_units'     => ['nullable', 'integer', 'min:0', 'max:50000'],
+            'dialyzer_model'         => ['nullable', 'string', 'max:100'],
+            'dialyzer_reuse_number'  => ['nullable', 'integer', 'min:0', 'max:30'],
+            'pre_bp'                 => ['nullable', 'string', 'max:20'],
+            'post_bp'                => ['nullable', 'string', 'max:20'],
+            'pre_temp'               => ['nullable', 'numeric', 'min:30', 'max:45'],
+            'post_temp'              => ['nullable', 'numeric', 'min:30', 'max:45'],
+            'pre_rr'                 => ['nullable', 'integer', 'min:0', 'max:100'],
+            'post_rr'                => ['nullable', 'integer', 'min:0', 'max:100'],
+            'heart_rate'             => ['nullable', 'integer', 'min:0', 'max:300'],
+            'complications'          => ['nullable', 'string', 'max:255'],
+            'medications'            => ['nullable', 'string'],
+            'notes'                  => ['nullable', 'string'],
+            'status'                 => ['required', 'string', 'max:30'],
+            'is_active'              => ['boolean'],
         ];
     }
 
     protected array $validationAttributes = ['code' => 'Session Code'];
 
     public function updatingSearch(): void { $this->resetPage(); }
+    public function updatingStationFilter(): void { $this->resetPage(); }
+    public function updatingStatusFilter(): void { $this->resetPage(); }
+    public function updatingShiftFilter(): void { $this->resetPage(); }
 
     public function sortBy(string $field): void
     {
@@ -121,27 +176,65 @@ class DialysisSessionCrud extends Component
         $this->resetPage();
     }
 
-    public function openCreate(): void { $this->resetForm(); $this->isEditing = false; $this->session_date = now()->format('Y-m-d'); $this->showModal = true; }
+    public function openCreate(): void
+    {
+        $this->resetForm();
+        $this->isEditing = false;
+        $this->session_date = now()->format('Y-m-d');
+        $this->code = $this->generateCode();
+        $this->auto_post_billing = true;
+        $this->showModal = true;
+    }
 
     public function openEdit(int $id): void
     {
         $r = DialysisSession::findOrFail($id);
-        $this->editingId = $r->id; $this->code = $r->code;
+        $this->editingId = $r->id;
+        $this->code = $r->code;
         $this->patient_id = (string) $r->patient_id;
         $this->patient_search = $r->patient ? "{$r->patient->last_name}, {$r->patient->first_name} ({$r->patient->patient_code})" : '';
         $this->dialysis_type_id = $r->dialysis_type_id ? (string) $r->dialysis_type_id : null;
-        $this->access_type = $r->access_type ?? '';
+        $this->dialysis_machine_id = $r->dialysis_machine_id ? (string) $r->dialysis_machine_id : null;
+        $this->shift = $r->shift ?? 'Shift 1 (AM)';
+        $this->session_number = $r->session_number;
+        $this->attending_physician_id = $r->attending_physician_id ? (string) $r->attending_physician_id : null;
+        $this->dialysis_nurse_id = $r->dialysis_nurse_id ? (string) $r->dialysis_nurse_id : null;
+        $this->admission_id = $r->admission_id ? (string) $r->admission_id : null;
+        $this->er_admission_id = $r->er_admission_id ? (string) $r->er_admission_id : null;
+
+        $this->access_type = $r->access_type ?? 'AV Fistula';
+        $this->access_site = $r->access_site ?? '';
         $this->session_date = $r->session_date ? $r->session_date->format('Y-m-d') : '';
         $this->pre_weight = (string) ($r->pre_weight ?? '');
         $this->post_weight = (string) ($r->post_weight ?? '');
+        $this->dry_weight = (string) ($r->dry_weight ?? '');
+        $this->uf_goal_liters = (string) ($r->uf_goal_liters ?? '');
+        $this->uf_actual_liters = (string) ($r->uf_actual_liters ?? '');
+        $this->blood_flow_rate_qb = $r->blood_flow_rate_qb ?? 300;
+        $this->dialysate_flow_rate_qd = $r->dialysate_flow_rate_qd ?? 500;
+        $this->dialysate_bath = $r->dialysate_bath ?? 'Bicarbonate / K+ 2.0 / Ca++ 1.25';
+        $this->anticoagulation_type = $r->anticoagulation_type ?? 'Heparin';
+        $this->heparin_dose_units = $r->heparin_dose_units ?? 5000;
+        $this->dialyzer_model = $r->dialyzer_model ?? 'Fresenius FX80';
+        $this->dialyzer_reuse_number = $r->dialyzer_reuse_number ?? 0;
+
         $this->pre_bp = $r->pre_bp ?? '';
         $this->post_bp = $r->post_bp ?? '';
+        $this->pre_temp = (string) ($r->pre_temp ?? '36.5');
+        $this->post_temp = (string) ($r->post_temp ?? '36.6');
+        $this->pre_rr = $r->pre_rr ?? 18;
+        $this->post_rr = $r->post_rr ?? 18;
         $this->heart_rate = (string) ($r->heart_rate ?? '');
+        $this->complications = $r->complications ?? 'None';
+
         $this->medications = $r->medications ?? '';
         $this->notes = $r->notes ?? '';
         $this->status = $r->status;
-        $this->is_active = $r->is_active;
-        $this->isEditing = true; $this->showModal = true;
+        $this->is_active = (bool) $r->is_active;
+        $this->auto_post_billing = (bool) ($r->procedure_request_id !== null);
+
+        $this->isEditing = true;
+        $this->showModal = true;
     }
 
     public function save(): void
@@ -149,30 +242,143 @@ class DialysisSessionCrud extends Component
         if (!$this->isEditing) {
             $this->code = $this->generateCode();
         }
+
         $data = $this->validate();
+        $tid = $this->currentTenantId();
+        $uid = $this->currentUserId();
+
         if ($this->isEditing) {
-            DialysisSession::findOrFail($this->editingId)->update(array_merge($data, [
-                'updated_by' => $this->currentUserId(), 'updated_date' => now(),
+            $session = DialysisSession::findOrFail($this->editingId);
+            $session->update(array_merge($data, [
+                'updated_by' => $uid,
+                'updated_date' => now(),
             ]));
+            $this->syncMachineStatus($session);
+            if ($this->auto_post_billing && !$session->procedure_request_id) {
+                $this->createProcedureBilling($session);
+            }
             $this->dispatch('toast', type: 'success', message: 'Dialysis session updated successfully.');
         } else {
-            DialysisSession::create(array_merge($data, [
-                'tenant_id' => $this->currentTenantId(),
-                'history' => 1, 'created_by' => $this->currentUserId(), 'created_date' => now(),
-                'updated_by' => $this->currentUserId(), 'updated_date' => now(),
+            $session = DialysisSession::create(array_merge($data, [
+                'tenant_id' => $tid,
+                'history' => 1,
+                'created_by' => $uid,
+                'created_date' => now(),
+                'updated_by' => $uid,
+                'updated_date' => now(),
             ]));
-            $this->dispatch('toast', type: 'success', message: 'Dialysis session created successfully.');
+            $this->syncMachineStatus($session);
+            if ($this->auto_post_billing) {
+                $this->createProcedureBilling($session);
+            }
+            $this->dispatch('toast', type: 'success', message: 'Dialysis session created and queued.');
         }
+
         $this->closeModal();
+    }
+
+    /**
+     * Automatic Billing Hook: Auto-create Hemodialysis procedure charge
+     */
+    private function createProcedureBilling(DialysisSession $session): void
+    {
+        $tid = $this->currentTenantId();
+        $uid = $this->currentUserId();
+        $now = now();
+
+        // Find standard Hemodialysis procedure from catalog
+        $procedure = Procedure::where('tenant_id', $tid)
+            ->where('is_active', true)
+            ->where(function ($q) {
+                $q->where('code', 'HD-SESS')
+                  ->orWhere('name', 'like', '%Hemodialysis%');
+            })
+            ->first();
+
+        $charge = $procedure ? (float) ($procedure->standard_charge ?? 4500.00) : 4500.00;
+        $procName = $procedure ? $procedure->name : 'Hemodialysis Session (4 hrs)';
+        $procCode = $this->generateProcedureRequestCode($tid);
+
+        $procStatus = ($session->status === 'Completed') ? 'Complete' : 'Pending';
+
+        $procRequest = ProcedureRequest::create([
+            'tenant_id' => $tid,
+            'dialysis_session_id' => $session->id,
+            'request_code' => $procCode,
+            'requesting_department_id' => $this->renalDepartmentId(),
+            'requesting_doctor_id' => $session->attending_physician_id,
+            'status' => $procStatus,
+            'billing_status' => 'Pending',
+            'total_amount' => $charge,
+            'notes' => "Auto-posted for Hemodialysis Session {$session->code} ({$session->shift})",
+            'is_active' => true,
+            'history' => 1,
+            'created_by' => $uid,
+            'created_date' => $now,
+            'updated_by' => $uid,
+            'updated_date' => $now,
+        ]);
+
+        ProcedureRequestItem::create([
+            'procedure_request_id' => $procRequest->id,
+            'procedure_id' => $procedure?->id,
+            'procedure_name' => $procName,
+            'category_name' => 'Renal / Hemodialysis',
+            'quantity' => 1,
+            'unit_charge' => $charge,
+            'total_charge' => $charge,
+            'status' => $procStatus,
+            'is_active' => true,
+            'history' => 1,
+            'created_by' => $uid,
+            'created_date' => $now,
+            'updated_by' => $uid,
+            'updated_date' => $now,
+        ]);
+
+        $session->update([
+            'procedure_request_id' => $procRequest->id,
+            'updated_by' => $uid,
+            'updated_date' => $now,
+        ]);
+    }
+
+    private function syncMachineStatus(DialysisSession $session): void
+    {
+        if (!$session->dialysis_machine_id) return;
+
+        $machine = DialysisMachine::find($session->dialysis_machine_id);
+        if (!$machine) return;
+
+        $newStatus = match ($session->status) {
+            'In Progress' => 'Occupied',
+            'Completed'   => 'Disinfecting',
+            'Cancelled'   => 'Available',
+            default       => ($machine->status === 'Occupied' ? 'Available' : $machine->status),
+        };
+
+        if ($machine->status !== $newStatus) {
+            $machine->update([
+                'status' => $newStatus,
+                'updated_by' => $this->currentUserId(),
+                'updated_date' => now(),
+            ]);
+        }
     }
 
     public function confirmDelete(int $id): void { $this->editingId = $id; $this->showDeleteModal = true; }
 
     public function delete(): void
     {
-        DialysisSession::findOrFail($this->editingId)->update([
-            'history' => 0, 'updated_by' => $this->currentUserId(), 'updated_date' => now(),
+        $s = DialysisSession::findOrFail($this->editingId);
+        $s->update([
+            'history' => 0,
+            'updated_by' => $this->currentUserId(),
+            'updated_date' => now(),
         ]);
+        if ($s->dialysis_machine_id) {
+            DialysisMachine::where('id', $s->dialysis_machine_id)->update(['status' => 'Available']);
+        }
         $this->closeModal();
         $this->dispatch('toast', type: 'success', message: 'Dialysis session archived successfully.');
     }
@@ -181,8 +387,27 @@ class DialysisSessionCrud extends Component
 
     private function resetForm(): void
     {
-        $this->reset(['editingId', 'code', 'patient_id', 'patient_search', 'dialysis_type_id', 'access_type', 'session_date', 'pre_weight', 'post_weight', 'pre_bp', 'post_bp', 'heart_rate', 'medications', 'notes']);
-        $this->status = 'Scheduled'; $this->is_active = true; $this->resetValidation();
+        $this->reset([
+            'editingId', 'code', 'patient_id', 'patient_search', 'dialysis_type_id', 'dialysis_machine_id',
+            'shift', 'session_number', 'attending_physician_id', 'dialysis_nurse_id', 'admission_id',
+            'er_admission_id', 'access_site', 'session_date', 'pre_weight', 'post_weight', 'dry_weight',
+            'uf_goal_liters', 'uf_actual_liters', 'pre_bp', 'post_bp', 'pre_temp', 'post_temp',
+            'pre_rr', 'post_rr', 'heart_rate', 'medications', 'notes'
+        ]);
+        $this->access_type = 'AV Fistula';
+        $this->shift = 'Shift 1 (AM)';
+        $this->blood_flow_rate_qb = 300;
+        $this->dialysate_flow_rate_qd = 500;
+        $this->dialysate_bath = 'Bicarbonate / K+ 2.0 / Ca++ 1.25';
+        $this->anticoagulation_type = 'Heparin';
+        $this->heparin_dose_units = 5000;
+        $this->dialyzer_model = 'Fresenius FX80';
+        $this->dialyzer_reuse_number = 0;
+        $this->complications = 'None';
+        $this->status = 'Scheduled';
+        $this->is_active = true;
+        $this->auto_post_billing = true;
+        $this->resetValidation();
     }
 
     private function generateCode(): string
@@ -192,7 +417,7 @@ class DialysisSessionCrud extends Component
             ->orderBy('id', 'desc')
             ->first();
         $num = $last ? ((int) substr($last->code, 3)) + 1 : 1;
-        return 'DS-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+        return 'DS-' . str_pad((string) $num, 5, '0', STR_PAD_LEFT);
     }
 
     // ——— Treatment Form ———
@@ -215,20 +440,20 @@ class DialysisSessionCrud extends Component
     {
         $validated = $this->validate([
             'treatment_history_of_present_illness' => ['nullable', 'string', 'max:10000'],
-            'treatment_physical_exam_findings' => ['nullable', 'string', 'max:10000'],
-            'treatment_assessment' => ['nullable', 'string', 'max:10000'],
-            'treatment_orders_summary' => ['nullable', 'string', 'max:10000'],
-            'treatment_treatment_notes' => ['nullable', 'string', 'max:10000'],
+            'treatment_physical_exam_findings'    => ['nullable', 'string', 'max:10000'],
+            'treatment_assessment'                 => ['nullable', 'string', 'max:10000'],
+            'treatment_orders_summary'             => ['nullable', 'string', 'max:10000'],
+            'treatment_treatment_notes'            => ['nullable', 'string', 'max:10000'],
         ]);
 
         DialysisSession::findOrFail($this->treatingId)->update([
             'history_of_present_illness' => $validated['treatment_history_of_present_illness'],
-            'physical_exam_findings' => $validated['treatment_physical_exam_findings'],
-            'assessment' => $validated['treatment_assessment'],
-            'orders_summary' => $validated['treatment_orders_summary'],
-            'treatment_notes' => $validated['treatment_treatment_notes'],
-            'updated_by' => $this->currentUserId(),
-            'updated_date' => now(),
+            'physical_exam_findings'     => $validated['treatment_physical_exam_findings'],
+            'assessment'                 => $validated['treatment_assessment'],
+            'orders_summary'             => $validated['treatment_orders_summary'],
+            'treatment_notes'            => $validated['treatment_treatment_notes'],
+            'updated_by'                 => $this->currentUserId(),
+            'updated_date'               => now(),
         ]);
 
         $this->dispatch('toast', type: 'success', message: 'Treatment record updated.');
@@ -242,38 +467,19 @@ class DialysisSessionCrud extends Component
         $this->showOrderRadiologyModal = false;
         $this->showOrderPharmacyModal = false;
         $this->showOrderProcedureModal = false;
-        $this->reset(['treatingId', 'orderLabPriority', 'orderLabNotes', 'orderCsrNotes', 'orderRadiologyPriority', 'orderRadiologyNotes', 'orderCsrQuantities', 'orderPharmacyPriority', 'orderPharmacyNotes', 'orderPharmacyQuantities', 'orderProcedureNotes', 'orderProcedureQuantities']);
+        $this->reset([
+            'treatingId', 'orderLabPriority', 'orderLabNotes', 'orderCsrNotes',
+            'orderRadiologyPriority', 'orderRadiologyNotes', 'orderCsrQuantities',
+            'orderPharmacyPriority', 'orderPharmacyNotes', 'orderPharmacyQuantities',
+            'orderProcedureNotes', 'orderProcedureQuantities'
+        ]);
     }
 
-    public function closeOrderLab(): void
-    {
-        $this->showOrderLabModal = false;
-        $this->reset(['orderLabPriority', 'orderLabNotes']);
-    }
-
-    public function closeOrderCsr(): void
-    {
-        $this->showOrderCsrModal = false;
-        $this->reset(['orderCsrNotes', 'orderCsrQuantities']);
-    }
-
-    public function closeOrderRadiology(): void
-    {
-        $this->showOrderRadiologyModal = false;
-        $this->reset(['orderRadiologyPriority', 'orderRadiologyNotes']);
-    }
-
-    public function closeOrderPharmacy(): void
-    {
-        $this->showOrderPharmacyModal = false;
-        $this->reset(['orderPharmacyPriority', 'orderPharmacyNotes', 'orderPharmacyQuantities', 'orderPharmacyFrequencies', 'orderPharmacyRoutes']);
-    }
-
-    public function closeOrderProcedure(): void
-    {
-        $this->showOrderProcedureModal = false;
-        $this->reset(['orderProcedureNotes', 'orderProcedureQuantities']);
-    }
+    public function closeOrderLab(): void { $this->showOrderLabModal = false; $this->reset(['orderLabPriority', 'orderLabNotes']); }
+    public function closeOrderCsr(): void { $this->showOrderCsrModal = false; $this->reset(['orderCsrNotes', 'orderCsrQuantities']); }
+    public function closeOrderRadiology(): void { $this->showOrderRadiologyModal = false; $this->reset(['orderRadiologyPriority', 'orderRadiologyNotes']); }
+    public function closeOrderPharmacy(): void { $this->showOrderPharmacyModal = false; $this->reset(['orderPharmacyPriority', 'orderPharmacyNotes', 'orderPharmacyQuantities', 'orderPharmacyFrequencies', 'orderPharmacyRoutes']); }
+    public function closeOrderProcedure(): void { $this->showOrderProcedureModal = false; $this->reset(['orderProcedureNotes', 'orderProcedureQuantities']); }
 
     // ——— Disposition ———
 
@@ -289,7 +495,7 @@ class DialysisSessionCrud extends Component
     public function saveDisposition(): void
     {
         $validated = $this->validate([
-            'disposition' => ['required', 'string', 'in:Pending,Completed,Transferred,Discharged,Cancelled'],
+            'disposition'            => ['required', 'string', 'in:Pending,Completed,Transferred,Discharged,Cancelled'],
             'discharge_instructions' => ['nullable', 'string', 'max:5000'],
         ]);
 
@@ -299,20 +505,28 @@ class DialysisSessionCrud extends Component
         $status = 'Scheduled';
         $dispositionDate = null;
         if ($validated['disposition'] !== 'Pending') {
-            $status = 'Completed';
+            $status = ($validated['disposition'] === 'Cancelled') ? 'Cancelled' : 'Completed';
             $dispositionDate = now();
         }
 
         $r->update([
-            'disposition' => $validated['disposition'],
-            'status' => $status,
+            'disposition'          => $validated['disposition'],
+            'status'               => $status,
             'disposition_datetime' => $dispositionDate,
             'discharge_instructions' => $validated['discharge_instructions'],
-            'updated_by' => $this->currentUserId(),
-            'updated_date' => now(),
+            'updated_by'           => $this->currentUserId(),
+            'updated_date'         => now(),
         ]);
 
-        $this->dispatch('toast', type: 'success', message: 'Disposition updated.');
+        $this->syncMachineStatus($r);
+
+        // Complete procedure request if completed
+        if ($status === 'Completed' && $r->procedure_request_id) {
+            ProcedureRequest::where('id', $r->procedure_request_id)->update(['status' => 'Complete']);
+            ProcedureRequestItem::where('procedure_request_id', $r->procedure_request_id)->update(['status' => 'Complete']);
+        }
+
+        $this->dispatch('toast', type: 'success', message: 'Disposition and status updated.');
         if ($this->showTreatmentForm) {
             $this->showTreatmentForm = false;
             $this->reset(['treatingId']);
@@ -321,15 +535,13 @@ class DialysisSessionCrud extends Component
         $this->reset(['editingId']);
     }
 
-    // ——— Order Refresh ———
-
     public function refreshOrders(): void
     {
         if ($this->treatingId === null) return;
         $this->dispatch('$refresh');
     }
 
-    // ——— Lab Orders ———
+    // ——— Order Placement Methods ———
 
     public function openOrderLab(): void
     {
@@ -419,7 +631,7 @@ class DialysisSessionCrud extends Component
     {
         $last = LabRequest::withoutGlobalScopes()->where('tenant_id', $tid)->orderBy('id', 'desc')->first();
         $num = $last ? ((int) substr($last->request_code, 3)) + 1 : 1;
-        return 'LR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+        return 'LR-' . str_pad((string) $num, 5, '0', STR_PAD_LEFT);
     }
 
     // ——— CSR Orders ———
@@ -514,7 +726,7 @@ class DialysisSessionCrud extends Component
     {
         $last = CsrRequest::withoutGlobalScopes()->where('tenant_id', $tid)->orderBy('id', 'desc')->first();
         $num = $last ? ((int) substr($last->request_code, 3)) + 1 : 1;
-        return 'CR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+        return 'CR-' . str_pad((string) $num, 5, '0', STR_PAD_LEFT);
     }
 
     // ——— Radiology Orders ———
@@ -606,7 +818,7 @@ class DialysisSessionCrud extends Component
     {
         $last = RadiologyRequest::withoutGlobalScopes()->where('tenant_id', $tid)->orderBy('id', 'desc')->first();
         $num = $last ? ((int) substr($last->request_code, 3)) + 1 : 1;
-        return 'RR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+        return 'RR-' . str_pad((string) $num, 5, '0', STR_PAD_LEFT);
     }
 
     // ——— Pharmacy Orders ———
@@ -715,7 +927,7 @@ class DialysisSessionCrud extends Component
     {
         $last = PharmacyRequest::withoutGlobalScopes()->where('tenant_id', $tid)->orderBy('id', 'desc')->first();
         $num = $last ? ((int) substr($last->request_code, 3)) + 1 : 1;
-        return 'PR-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+        return 'PR-' . str_pad((string) $num, 5, '0', STR_PAD_LEFT);
     }
 
     // ——— Procedure Orders ———
@@ -759,7 +971,8 @@ class DialysisSessionCrud extends Component
         $request = ProcedureRequest::create([
             'tenant_id' => $tid, 'dialysis_session_id' => $session->id,
             'request_code' => $code, 'requesting_department_id' => $this->renalDepartmentId(),
-            'requesting_doctor_id' => auth()->user()?->health_care_professional_id, 'status' => 'Pending', 'billing_status' => 'Pending',
+            'requesting_doctor_id' => $session->attending_physician_id ?? auth()->user()?->health_care_professional_id,
+            'status' => 'Pending', 'billing_status' => 'Pending',
             'total_amount' => $total,
             'notes' => 'Ordered from Dialysis Session' . ($this->orderProcedureNotes ? "\n\n" . $this->orderProcedureNotes : ''),
             'is_active' => true, 'history' => 1,
@@ -809,22 +1022,30 @@ class DialysisSessionCrud extends Component
     {
         $last = ProcedureRequest::withoutGlobalScopes()->where('tenant_id', $tid)->orderBy('id', 'desc')->first();
         $num = $last ? ((int) substr($last->request_code, 5)) + 1 : 1;
-        return 'PRCD-' . str_pad($num, 5, '0', STR_PAD_LEFT);
+        return 'PRCD-' . str_pad((string) $num, 5, '0', STR_PAD_LEFT);
     }
 
     public function render()
     {
+        $tid = $this->currentTenantId();
+
         $items = DialysisSession::query()
-            ->where('tenant_id', $this->currentTenantId())
-            ->when($this->search, fn ($q) =>
-                $q->where(fn ($inner) =>
-                    $inner->where('code', 'like', '%' . $this->search . '%')
-                          ->orWhere('access_type', 'like', '%' . $this->search . '%')
-                          ->orWhereHas('patient', fn ($pq) => $pq->where('last_name', 'like', '%' . $this->search . '%')
-                              ->orWhere('first_name', 'like', '%' . $this->search . '%')
-                              ->orWhere('patient_code', 'like', '%' . $this->search . '%'))
-                )
-            )
+            ->where('tenant_id', $tid)
+            ->with(['patient', 'dialysisType', 'dialysisMachine', 'attendingPhysician'])
+            ->when($this->search, function ($q) {
+                $s = '%' . $this->search . '%';
+                $q->where(function ($inner) use ($s) {
+                    $inner->where('code', 'like', $s)
+                          ->orWhere('access_type', 'like', $s)
+                          ->orWhere('access_site', 'like', $s)
+                          ->orWhereHas('patient', fn ($pq) => $pq->where('last_name', 'like', $s)
+                              ->orWhere('first_name', 'like', $s)
+                              ->orWhere('patient_code', 'like', $s));
+                });
+            })
+            ->when($this->stationFilter, fn ($q) => $q->where('dialysis_machine_id', $this->stationFilter))
+            ->when($this->statusFilter, fn ($q) => $q->where('status', $this->statusFilter))
+            ->when($this->shiftFilter, fn ($q) => $q->where('shift', $this->shiftFilter))
             ->orderBy($this->sortField, $this->sortDirection)
             ->paginate($this->perPage);
 
@@ -837,7 +1058,7 @@ class DialysisSessionCrud extends Component
 
         if ($this->showTreatmentForm && $this->treatingId !== null) {
             $activeSession = DialysisSession::with([
-                'patient', 'dialysisType',
+                'patient', 'dialysisType', 'dialysisMachine', 'attendingPhysician', 'dialysisNurse',
                 'labRequests.items.labTest',
                 'csrRequests.items.item',
                 'radiologyRequests.items.examType',
@@ -853,7 +1074,7 @@ class DialysisSessionCrud extends Component
         }
 
         $patients = $this->patient_search
-            ? Patient::where('tenant_id', $this->currentTenantId())
+            ? Patient::where('tenant_id', $tid)
                 ->where(function ($q) {
                     $q->where('last_name', 'like', '%' . $this->patient_search . '%')
                       ->orWhere('first_name', 'like', '%' . $this->patient_search . '%')
@@ -863,36 +1084,30 @@ class DialysisSessionCrud extends Component
                 ->get(['id', 'patient_code', 'first_name', 'last_name'])
             : collect();
 
-        $dialysisTypes = DialysisType::query()->orderBy('name')->get(['id', 'code', 'name']);
+        $dialysisTypes = DialysisType::query()->where('is_active', true)->orderBy('name')->get(['id', 'code', 'name']);
+        $dialysisMachines = DialysisMachine::query()->where('tenant_id', $tid)->where('is_active', true)->orderBy('station_code')->get(['id', 'station_code', 'station_name', 'station_category', 'status']);
+        $doctors = HealthCareProfessional::query()->where('tenant_id', $tid)->where('is_active', true)->orderBy('last_name')->get(['id', 'first_name', 'last_name', 'specialization', 'philhealth_accreditation_number']);
+        $nurses = User::query()->where('tenant_id', $tid)->where('is_active', true)->orderBy('first_name')->get(['id', 'first_name', 'last_name', 'email']);
 
-        $labTests = LabTest::where('is_active', true)
-            ->where('tenant_id', $this->currentTenantId())
-            ->orderBy('name')->get(['id', 'code', 'name', 'standard_charge']);
+        // Inpatient admissions if patient selected
+        $admissions = $this->patient_id
+            ? Admission::where('tenant_id', $tid)->where('patient_id', $this->patient_id)->where('status', 'Admitted')->orderBy('admission_date', 'desc')->get(['id', 'admission_code', 'admission_date'])
+            : collect();
 
-        $supplyItems = Item::where('is_active', true)
-            ->where('tenant_id', $this->currentTenantId())
-            ->with('unit')
-            ->orderBy('name')->get(['id', 'code', 'name', 'unit_cost']);
+        $erAdmissions = $this->patient_id
+            ? ErAdmission::where('tenant_id', $tid)->where('patient_id', $this->patient_id)->where('status', 'Active')->orderBy('admission_datetime', 'desc')->get(['id', 'er_case_no', 'admission_datetime'])
+            : collect();
 
-        $examTypes = RadiologyExamType::where('is_active', true)
-            ->where('tenant_id', $this->currentTenantId())
-            ->with('modality')
-            ->orderBy('name')->get(['id', 'code', 'name', 'standard_charge']);
-
-        $drugs = Drug::where('is_active', true)
-            ->where('tenant_id', $this->currentTenantId())
-            ->orderBy('generic_name')
-            ->get(['id', 'drug_code', 'generic_name', 'brand_name', 'drug_strength', 'dosage_form', 'route']);
-
-        $procedures = Procedure::where('is_active', true)
-            ->where('tenant_id', $this->currentTenantId())
-            ->with('category')
-            ->orderBy('name')
-            ->get(['id', 'name', 'category_id', 'standard_charge']);
+        $labTests = LabTest::where('is_active', true)->where('tenant_id', $tid)->orderBy('name')->get(['id', 'code', 'name', 'standard_charge']);
+        $supplyItems = Item::where('is_active', true)->where('tenant_id', $tid)->with('unit')->orderBy('name')->get(['id', 'code', 'name', 'unit_cost']);
+        $examTypes = RadiologyExamType::where('is_active', true)->where('tenant_id', $tid)->with('modality')->orderBy('name')->get(['id', 'code', 'name', 'standard_charge']);
+        $drugs = Drug::where('is_active', true)->where('tenant_id', $tid)->orderBy('generic_name')->get(['id', 'drug_code', 'generic_name', 'brand_name', 'drug_strength', 'dosage_form', 'route']);
+        $procedures = Procedure::where('is_active', true)->where('tenant_id', $tid)->with('category')->orderBy('name')->get(['id', 'name', 'category_id', 'standard_charge']);
 
         return view('livewire.renal-care.dialysis-session-crud', compact(
             'items', 'activeSession', 'labOrders', 'csrOrders', 'radiologyOrders', 'pharmacyOrders', 'procedureOrders',
-            'patients', 'dialysisTypes', 'labTests', 'supplyItems', 'examTypes', 'drugs', 'procedures'
+            'patients', 'dialysisTypes', 'dialysisMachines', 'doctors', 'nurses', 'admissions', 'erAdmissions',
+            'labTests', 'supplyItems', 'examTypes', 'drugs', 'procedures'
         ));
     }
 }

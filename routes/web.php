@@ -230,6 +230,7 @@ Route::get('/book-appointment', \App\Livewire\Public\AppointmentBooking::class)-
 
     // ── Renal Care Routes ──────────────────────────────────────────────────────
     Route::prefix('renal-care')->name('renal-care.')->middleware('permission:renal.view')->group(function () {
+        Route::get('dialysis-machines', fn () => view('pages.renal-care.dialysis-machines'))->name('dialysis-machines');
         Route::get('dialysis-types', fn () => view('pages.renal-care.dialysis-types'))->name('dialysis-types');
         Route::get('dialysis-sessions', fn () => view('pages.renal-care.dialysis-sessions'))->name('dialysis-sessions');
     });

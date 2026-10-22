@@ -27,6 +27,11 @@ class DialysisSession extends Model
         'session_date' => 'date',
         'pre_weight' => 'decimal:2',
         'post_weight' => 'decimal:2',
+        'dry_weight' => 'decimal:2',
+        'uf_goal_liters' => 'decimal:2',
+        'uf_actual_liters' => 'decimal:2',
+        'pre_temp' => 'decimal:1',
+        'post_temp' => 'decimal:1',
         'disposition_datetime' => 'datetime',
     ];
 
@@ -34,6 +39,12 @@ class DialysisSession extends Model
 
     public function patient(): BelongsTo { return $this->belongsTo(Patient::class, 'patient_id'); }
     public function dialysisType(): BelongsTo { return $this->belongsTo(DialysisType::class, 'dialysis_type_id'); }
+    public function dialysisMachine(): BelongsTo { return $this->belongsTo(DialysisMachine::class, 'dialysis_machine_id'); }
+    public function attendingPhysician(): BelongsTo { return $this->belongsTo(\App\Models\HealthCareProfessional::class, 'attending_physician_id'); }
+    public function dialysisNurse(): BelongsTo { return $this->belongsTo(\App\Models\User::class, 'dialysis_nurse_id'); }
+    public function admission(): BelongsTo { return $this->belongsTo(\App\Models\Admission::class, 'admission_id'); }
+    public function erAdmission(): BelongsTo { return $this->belongsTo(\App\Models\Er\ErAdmission::class, 'er_admission_id'); }
+    public function procedureRequest(): BelongsTo { return $this->belongsTo(ProcedureRequest::class, 'procedure_request_id'); }
 
     public function labRequests(): HasMany { return $this->hasMany(LabRequest::class, 'dialysis_session_id'); }
     public function csrRequests(): HasMany { return $this->hasMany(CsrRequest::class, 'dialysis_session_id'); }

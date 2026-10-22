@@ -220,16 +220,78 @@
             </div>
             @endif
 
+            {{-- Renal Care / Hemodialysis Sessions --}}
+            @if($dialysisSessions && $dialysisSessions->isNotEmpty())
+            <div class="bg-white rounded-xl border border-teal-200 p-4 shadow-sm">
+                <h4 class="text-xs font-bold text-teal-900 uppercase tracking-wider mb-3 flex items-center justify-between">
+                    <span class="flex items-center">
+                        <span class="w-5 h-5 rounded-full bg-teal-100 text-teal-700 text-[10px] font-bold flex items-center justify-center mr-2">HD</span>
+                        Renal Care / Hemodialysis Sessions ({{ $dialysisSessions->count() }})
+                    </span>
+                    <span class="text-[10px] font-semibold text-teal-700 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">PhilHealth RVS 90935</span>
+                </h4>
+                <div class="space-y-2.5">
+                    @foreach($dialysisSessions as $ds)
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 bg-teal-50/50 border border-teal-100 rounded-xl hover:bg-teal-100/50 transition-colors gap-3">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-2 text-xs flex-wrap">
+                                <span class="font-mono font-bold text-teal-800">{{ $ds->code }}</span>
+                                <span class="text-gray-400">•</span>
+                                <span class="text-gray-700">{{ $ds->session_date?->format('M d, Y') }}</span>
+                                <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-gray-100 text-gray-700">{{ $ds->shift ?? 'Shift 1' }}</span>
+                                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800">#{{ $ds->session_number ?? '1' }} of 156</span>
+                                @if($ds->dialysisMachine)
+                                    @if($ds->dialysisMachine->station_category === 'HepB_Isolation')
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">☣ HepB Bay ({{ $ds->dialysisMachine->station_code }})</span>
+                                    @elseif($ds->dialysisMachine->station_category === 'HepC_Isolation')
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-900 border border-rose-300">☣ HepC Bay ({{ $ds->dialysisMachine->station_code }})</span>
+                                    @elseif($ds->dialysisMachine->station_category === 'ICU_Mobile')
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200">ICU Mobile</span>
+                                    @else
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] bg-white border border-gray-200 text-gray-600">{{ $ds->dialysisMachine->station_name }}</span>
+                                    @endif
+                                @endif
+                                <span class="px-1.5 py-0.5 rounded text-[10px] font-medium 
+                                    @if($ds->status === 'Completed') bg-green-100 text-green-800
+                                    @elseif($ds->status === 'In Progress') bg-blue-100 text-blue-800
+                                    @else bg-gray-100 text-gray-600 @endif">{{ $ds->status }}</span>
+                            </div>
+                            <div class="text-xs text-gray-700 font-medium mt-1 truncate">
+                                Access: {{ $ds->access_type ?? 'AV Fistula' }} @if($ds->access_site)({{ $ds->access_site }})@endif &bull; Dry Wt: {{ $ds->dry_weight ? $ds->dry_weight.'kg' : '—' }} &bull; Actual UF: {{ $ds->uf_actual_liters ? $ds->uf_actual_liters.'L' : '—' }} &bull; Dialyzer: {{ $ds->dialyzer_model ?? 'Fresenius FX80' }} (Reuse #{{ $ds->dialyzer_reuse_number ?? 0 }})
+                            </div>
+                            @if($ds->attendingPhysician)
+                            <p class="text-[11px] text-gray-500 mt-0.5">Nephrologist: Dr. {{ $ds->attendingPhysician->first_name }} {{ $ds->attendingPhysician->last_name }} ({{ $ds->attendingPhysician->philhealth_accreditation_number ? 'PAN: '.$ds->attendingPhysician->philhealth_accreditation_number : 'Accredited' }})</p>
+                            @endif
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <button type="button" wire:click="pullFromDialysis({{ $ds->id }})"
+                                    class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg shadow-sm transition-colors" title="Extract eCF4 dialysis parameters into PhilHealth Claim">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Pull Dialysis Data
+                            </button>
+                            <button type="button" wire:click="importFromBilling(dialysisSessionId: {{ $ds->id }})"
+                                    class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-teal-800 bg-white border border-teal-300 hover:bg-teal-100 rounded-lg transition-colors" title="Import procedure charge HD-SESS ₱4,500.00 into Claim items">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                                Import Billing
+                            </button>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            @endif
+
             {{-- Empty State --}}
             @if(
                 (!$erAdmissions || $erAdmissions->isEmpty()) &&
                 (!$admissions || $admissions->isEmpty()) &&
-                (!$opdConsultations || $opdConsultations->isEmpty())
+                (!$opdConsultations || $opdConsultations->isEmpty()) &&
+                (!$dialysisSessions || $dialysisSessions->isEmpty())
             )
             <div class="text-center py-10 text-gray-400 bg-white rounded-xl border border-gray-200">
                 <svg class="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 <p class="text-base font-bold text-gray-800">No Encounters Found for this Patient</p>
-                <p class="text-xs text-gray-500 mt-1 max-w-sm mx-auto">This patient has no recorded ER visits, Ward admissions, or OPD consultations. You can enter diagnosis and vitals manually on the Claim Form.</p>
+                <p class="text-xs text-gray-500 mt-1 max-w-sm mx-auto">This patient has no recorded ER visits, Ward admissions, OPD consultations, or Dialysis sessions. You can enter diagnosis and vitals manually on the Claim Form.</p>
                 <button type="button" wire:click="$dispatch('switch-claim-tab', { tab: 'form' })"
                         class="mt-4 px-4 py-2 text-xs font-semibold text-white bg-light-blue-600 hover:bg-light-blue-700 rounded-xl shadow-sm transition-colors">
                     Proceed to Claim Form &rarr;

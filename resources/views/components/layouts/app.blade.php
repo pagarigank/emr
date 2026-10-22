@@ -345,6 +345,9 @@
                                     <a href="/renal-care/dialysis-sessions" wire:navigate class="flex items-center px-3 py-2 rounded-md text-sm text-cyan-400 hover:text-cyan-700 hover:bg-cyan-50 transition-colors {{ request()->is('renal-care/dialysis-sessions') ? 'hover:text-cyan-700 hover:bg-cyan-50' : '' }}">
                                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg><span>Dialysis Sessions</span>
                                     </a>
+                                    <a href="/renal-care/dialysis-machines" wire:navigate class="flex items-center px-3 py-2 rounded-md text-sm text-cyan-400 hover:text-cyan-700 hover:bg-cyan-50 transition-colors {{ request()->is('renal-care/dialysis-machines') ? 'hover:text-cyan-700 hover:bg-cyan-50' : '' }}">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg><span>Machines &amp; Stations</span>
+                                    </a>
                                     @endcan
                                     @can('admin.masters')
                                     <a href="/renal-care/dialysis-types" wire:navigate class="flex items-center px-3 py-2 rounded-md text-sm text-cyan-400 hover:text-cyan-700 hover:bg-cyan-50 transition-colors {{ request()->is('renal-care/dialysis-types') ? 'hover:text-cyan-700 hover:bg-cyan-50' : '' }}">
